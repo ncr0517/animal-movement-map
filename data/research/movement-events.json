@@ -1,0 +1,509 @@
+[
+  {
+    "id": "hsus-hsi-rename-humane-world-for-animals-2025",
+    "entity_ids": [
+      "humane-world-for-animals"
+    ],
+    "type": "announcement",
+    "title": "HSUS and HSI rename to Humane World for Animals",
+    "summary": "The Humane Society of the United States and Humane Society International adopted a single new name, Humane World for Animals.",
+    "event_date": "2025-02",
+    "source_published": null,
+    "source_url": "https://en.wikipedia.org/wiki/Humane_World_for_Animals",
+    "source_title": "Humane World for Animals - Wikipedia",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "reported",
+    "notes": "Wikipedia cites a WJLA report dated 2025-02-13; the organisation's homepage confirms the 'formerly HSUS and HSI' wording but no date."
+  },
+  {
+    "id": "lse-coller-centre-animal-sentience-announced-2025",
+    "entity_ids": [
+      "jeremy-coller-centre-for-animal-sentience"
+    ],
+    "type": "plan_announced",
+    "title": "LSE announces Jeremy Coller Centre for Animal Sentience",
+    "summary": "LSE announced a new research centre on animal sentience, funded by a £4m multi-year commitment from the Jeremy Coller Foundation, to launch in autumn 2025.",
+    "event_date": "2025-03-25",
+    "source_published": "2025-03-25",
+    "source_url": "https://www.lse.ac.uk/news/latest-news-from-lse/c-march/lse-centre-animal-sentience",
+    "source_title": "LSE centre animal sentience",
+    "amount": 4000000,
+    "currency": "GBP",
+    "funder_id": null,
+    "recipient_id": "jeremy-coller-centre-for-animal-sentience",
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Funder (Jeremy Coller Foundation) is not a map entity."
+  },
+  {
+    "id": "open-philanthropy-renamed-coefficient-giving-2025",
+    "entity_ids": [
+      "coefficient-giving"
+    ],
+    "type": "announcement",
+    "title": "Open Philanthropy renamed Coefficient Giving",
+    "summary": "Open Philanthropy, a major funder of farm animal welfare work, changed its name to Coefficient Giving, signalling a move toward multi-donor funds.",
+    "event_date": "2025-11-18",
+    "source_published": "2025-11-18",
+    "source_url": "https://www.vox.com/future-perfect/469038/open-philanthropy-coefficient-giving-name-change",
+    "source_title": "One of the world's most influential philanthropies is changing its name. Here's why it matters. (Vox)",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "animal-ask-kenya-report-2025",
+    "entity_ids": [
+      "animal-ask"
+    ],
+    "type": "report_published",
+    "title": "Animal Ask publishes Kenya advocacy prioritisation report",
+    "summary": "Report identifying promising interventions for animal advocacy in Kenya, including legislation on poultry welfare and preventing a shift to caged layer hen systems.",
+    "event_date": "2025-12-17",
+    "source_published": "2025-12-17",
+    "source_url": "https://www.animalask.org/post/animal-advocacy-in-kenya-opportunities-for-impact",
+    "source_title": "Animal Advocacy in Kenya: Opportunities For Impact",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "doj-lawsuit-michigan-cage-free-law-2026",
+    "entity_ids": [
+      "animal-equality"
+    ],
+    "type": "legal_development",
+    "title": "US DOJ sues to challenge Michigan cage-free egg law",
+    "summary": "The US Department of Justice filed a federal lawsuit in western Michigan challenging the state's cage-free egg law (in effect since 2025) on interstate commerce grounds.",
+    "event_date": "2026-01-22",
+    "source_published": "2026-02-28",
+    "source_url": "https://animalequality.org/blog/michigan-cage-free-egg-lawsuit/",
+    "source_title": "Federal lawsuit challenges Michigan cage-free egg law",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Reported by Animal Equality (an advocacy party); the lawsuit's outcome was not checked."
+  },
+  {
+    "id": "wai-2026-research-grants",
+    "entity_ids": [
+      "wild-animal-initiative"
+    ],
+    "type": "grant_awarded",
+    "title": "Wild Animal Initiative awards 13 research grants",
+    "summary": "Wild Animal Initiative selected 13 research projects for a total of $727,658 in wild animal welfare science grants, from about 400 expressions of interest.",
+    "event_date": "2026-06-23",
+    "source_published": "2026-06-23",
+    "source_url": "https://www.wildanimalinitiative.org/blog/2026-grants",
+    "source_title": "Wild Animal Initiative awards 13 grants for wild animal welfare research",
+    "amount": 727658,
+    "currency": "USD",
+    "funder_id": "wild-animal-initiative",
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "uk-supreme-court-muller-protest-acquittals-2026",
+    "entity_ids": [
+      "animal-rising"
+    ],
+    "type": "legal_development",
+    "title": "UK Supreme Court upholds acquittals of anti-dairy protesters",
+    "summary": "The UK Supreme Court upheld the acquittals of six campaigners charged with public nuisance over 2022 protests at a Müller dairy site; Animal Rising calls it a precedent on protest rights.",
+    "event_date": "2026-07-14",
+    "source_published": "2026-07-14",
+    "source_url": "https://www.animalrising.org/post/victory-for-protest-rights-as-supreme-court-rejects-public-nuisance-appeal",
+    "source_title": "Victory for Protest Rights as Supreme Court Rejects Public Nuisance Appeal",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Source is the campaign group's own press release; framing is theirs."
+  },
+  {
+    "id": "aim-animal-incubation-round-call-2026",
+    "entity_ids": [
+      "ambitious-impact"
+    ],
+    "type": "open_call",
+    "title": "AIM opens first animal-only incubation round",
+    "summary": "Ambitious Impact opened its first animal-only round of the Charity Entrepreneurship Incubation Program (Feb–Apr 2027), with a funded exploration phase leading to a seed funding proposal.",
+    "event_date": "2026-08",
+    "source_published": "2026-08-21",
+    "source_url": "https://joinhive.substack.com/p/august-2026",
+    "source_title": "Hive Highlights: August 2026",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": "2026-09-13",
+    "status": "reported",
+    "notes": "Reported via Hive newsletter; AIM's own announcement not fetched."
+  },
+  {
+    "id": "ea-awf-cage-free-scale-rfp-2026",
+    "entity_ids": [
+      "ea-animal-welfare-fund"
+    ],
+    "type": "open_call",
+    "title": "EA Animal Welfare Fund seeks large cage-free proposals",
+    "summary": "The EA Animal Welfare Fund invited proposals to scale cage-free transitions for laying hens, especially in Asia, Latin America and Africa; grants of $100,000 to $5M+.",
+    "event_date": "2026-08",
+    "source_published": "2026-08-21",
+    "source_url": "https://joinhive.substack.com/p/august-2026",
+    "source_title": "Hive Highlights: August 2026",
+    "amount": null,
+    "currency": null,
+    "funder_id": "ea-animal-welfare-fund",
+    "recipient_id": null,
+    "deadline": "2026-10-15",
+    "status": "reported",
+    "notes": "15 October was a priority deadline. Reported via Hive newsletter; fund's own call page not fetched."
+  },
+  {
+    "id": "animal-ask-india-leverage-points-2026",
+    "entity_ids": [
+      "animal-ask"
+    ],
+    "type": "report_published",
+    "title": "Animal Ask publishes India prioritisation report",
+    "summary": "Three-part report on strategic priorities for animal advocacy in India, covering the scale of animal use and recommended asks for aquatic and land animals, policy and food systems.",
+    "event_date": "2026-08-17",
+    "source_published": "2026-08-17",
+    "source_url": "https://www.animalask.org/post/leverage-points-animal-advocacy-india",
+    "source_title": "Leverage Points: strategic prioritisation for Animal Advocacy in India",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "singapore-cultivated-beef-duck-approvals-2026",
+    "entity_ids": [
+      "good-food-institute"
+    ],
+    "type": "legal_development",
+    "title": "Singapore approves cultivated duck and cultivated beef",
+    "summary": "The Singapore Food Agency approved cultivated duck (Parima, April 2026) and the first cultivated beef (Aleph Farms, August 2026), described by GFI APAC as world firsts.",
+    "event_date": "2026-08",
+    "source_published": "2026-08-28",
+    "source_url": "https://gfi.org/blog/why-singapores-world-first-cultivated-beef-and-duck-approvals-matter/",
+    "source_title": "Why Singapore's World-First Cultivated Beef and Duck Approvals Matter - GFI APAC",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "alep-pig-welfare-white-paper-2026",
+    "entity_ids": [
+      "european-institute-for-animal-law-policy"
+    ],
+    "type": "report_published",
+    "title": "White paper on ending cages for pigs in the EU",
+    "summary": "The European Institute for Animal Law & Policy published 'Reforming Pig Welfare in the European Union: The Case for a Cage-Free Future', covering law, welfare and economics of banning sow stalls and farrowing crates.",
+    "event_date": "2026-09-07",
+    "source_published": "2026-09-07",
+    "source_url": "https://animallaweurope.org/white-paper-reforming-pig-welfare-in-the-european-union/",
+    "source_title": "Our new White Paper: \"Reforming Pig Welfare in the European Union\"",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "italy-gabbie-vuote-signatures-senate-2026",
+    "entity_ids": [
+      "essere-animali",
+      "animal-equality",
+      "compassion-in-world-farming",
+      "humane-world-for-animals"
+    ],
+    "type": "campaign_outcome",
+    "title": "Italian cage-ban citizens' bill filed with 62,000+ signatures",
+    "summary": "Over 62,000 certified signatures for a popular-initiative bill to ban cages for all farmed species in Italy were filed with the Senate by Essere Animali and allied groups.",
+    "event_date": "2026-09-22",
+    "source_published": "2026-09-23",
+    "source_url": "https://www.essereanimali.org/2026/09/gabbie-vuote-consegnate-in-senato-oltre-62-mila-firme/",
+    "source_title": "Gabbie Vuote: consegnate in Senato oltre 62 mila firme certificate",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Signature collection closed 14 Sept 2026; the bill's presentation was announced in the Senate session of 22 Sept. Allies also included LAV, ENPA, OIPA and others not on the map."
+  },
+  {
+    "id": "ace-movement-grants-round-11-2026",
+    "entity_ids": [
+      "animal-charity-evaluators",
+      "ace-movement-grants"
+    ],
+    "type": "grant_awarded",
+    "title": "ACE awards latest Movement Grants",
+    "summary": "Animal Charity Evaluators awarded $1,054,939 to 21 projects and organisations after assessing 74 full applications in its latest Movement Grants round.",
+    "event_date": "2026-09-29",
+    "source_published": "2026-09-29",
+    "source_url": "https://animalcharityevaluators.org/blog/announcing-round-11-movement-grants/",
+    "source_title": "Announcing our latest Movement Grants",
+    "amount": 1054939,
+    "currency": "USD",
+    "funder_id": "animal-charity-evaluators",
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "URL slug identifies this as round 11."
+  },
+  {
+    "id": "ace-research-database-launch-2026",
+    "entity_ids": [
+      "animal-charity-evaluators",
+      "open-paws"
+    ],
+    "type": "announcement",
+    "title": "ACE launches searchable Research Database",
+    "summary": "ACE launched a searchable database of studies and reports relevant to farmed and wild animal advocacy, rebuilt from its Research Library in collaboration with Open Paws.",
+    "event_date": "2026-10-08",
+    "source_published": "2026-10-08",
+    "source_url": "https://animalcharityevaluators.org/blog/introducing-research-database/",
+    "source_title": "Introducing the ACE Research Database",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "eu-lead-gunshot-restriction-2026",
+    "entity_ids": [
+      "eurogroup-for-animals"
+    ],
+    "type": "legal_development",
+    "title": "EU backs phase-out of lead gunshot",
+    "summary": "EU decision-makers backed a restriction phasing out the sale and use of lead gunshot, protecting wild birds from lead poisoning; lead bullets were excluded.",
+    "event_date": "2026-10",
+    "source_published": "2026-10-08",
+    "source_url": "https://www.eurogroupforanimals.org/news/lead-gunshot-be-phased-out-across-european-union",
+    "source_title": "Lead gunshot to be phased out across the European Union",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "asia-farm-animal-day-2026",
+    "entity_ids": [
+      "asia-for-animals-coalition",
+      "compassion-in-world-farming",
+      "hive"
+    ],
+    "type": "project_active",
+    "title": "Asia Farm Animal Day 2026 'One Life' campaign",
+    "summary": "Asia for Animals ran Asia Farm Animal Day (4–10 Oct 2026) online, spotlighting less-noticed farmed animals such as rabbits, donkeys, crustaceans, ducks, frogs and civets.",
+    "event_date": "2026-10-04",
+    "source_published": "2026-10-15",
+    "source_url": "https://www.asiaforanimals.com/post/looking-back-at-asia-farm-animal-day-2026",
+    "source_title": "The Lives We Overlook: Looking Back at Asia Farm Animal Day 2026",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "who-gfi-apac-partnership-2026",
+    "entity_ids": [
+      "good-food-institute"
+    ],
+    "type": "announcement",
+    "title": "WHO regional centre and GFI APAC sign partnership",
+    "summary": "GFI Asia Pacific and WHO's Asia-Pacific Centre for Environment and Health announced a multi-year partnership including a first WHO report on sustainable food systems and alternative proteins in the Western Pacific.",
+    "event_date": "2026-10-14",
+    "source_published": "2026-10-14",
+    "source_url": "https://gfi.org/blog/world-health-organization-plans-landmark-report-on-sustainable-food-systems/",
+    "source_title": "World Health Organization plans landmark report on sustainable food systems",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "mfa-serving-up-change-2026",
+    "entity_ids": [
+      "mercy-for-animals"
+    ],
+    "type": "report_published",
+    "title": "MFA releases 2nd 'Serving Up Change' foodservice ranking",
+    "summary": "Mercy For Animals published the second edition of its Serving Up Change report, ranking North American foodservice providers on chicken welfare.",
+    "event_date": "2026-10-14",
+    "source_published": "2026-10-14",
+    "source_url": "https://mercyforanimals.org/blog/serving-up-change-report-2/",
+    "source_title": "The Hidden Truth Behind the Tray: 2nd Edition of Serving Up Change Report",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "nyc-romanchs-law-horse-carriages-2026",
+    "entity_ids": [
+      "animal-legal-defense-fund"
+    ],
+    "type": "legal_development",
+    "title": "NYC Council votes to phase out horse-drawn carriages",
+    "summary": "New York City Council passed Romanch's Law (Intro 943), ending new horse-drawn carriage licences and phasing out the industry by 1 June 2028; mayoral signature was pending.",
+    "event_date": "2026-10-22",
+    "source_published": "2026-10-22",
+    "source_url": "https://aldf.org/article/nyc-council-passes-romanchs-law-in-historic-vote-to-end-horse-drawn-carriages-by-2028/",
+    "source_title": "NYC Council Passes Romanch's Law in Historic Vote to End Horse-Drawn Carriages by 2028",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "denmark-mink-farming-end-2026",
+    "entity_ids": [
+      "eurogroup-for-animals"
+    ],
+    "type": "legal_development",
+    "title": "Denmark to end mink farming by August 2027",
+    "summary": "Denmark decided not to seek an exemption from the EU ban on breeding American mink (listed as an invasive species in 2025), so its remaining seven mink farms must close by August 2027.",
+    "event_date": "2026-10",
+    "source_published": "2026-10-23",
+    "source_url": "https://www.eurogroupforanimals.org/news/major-victory-denmark-end-mink-farming",
+    "source_title": "Major victory: Denmark to end mink farming",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "ace-influenced-giving-2025-2026",
+    "entity_ids": [
+      "animal-charity-evaluators"
+    ],
+    "type": "report_published",
+    "title": "ACE reports $7.3m counterfactual influenced giving",
+    "summary": "ACE's 2025–2026 influenced giving reports estimate $7.3 million in donations to its Recommended Charities that would not otherwise have occurred, within at least $14.7 million influenced in total.",
+    "event_date": "2026-10-28",
+    "source_published": "2026-10-28",
+    "source_url": "https://animalcharityevaluators.org/blog/announcing-latest-influenced-giving-metrics-2026/",
+    "source_title": "The Second Year in a Row of Record Generosity: Announcing ACE's 2025–2026 Influenced Giving Reports",
+    "amount": 7300000,
+    "currency": "USD",
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "faunalytics-brazil-voters-study-2026",
+    "entity_ids": [
+      "faunalytics"
+    ],
+    "type": "report_published",
+    "title": "Faunalytics study on farmed animal policy and Brazilian voters",
+    "summary": "Faunalytics surveyed nearly 2,000 Brazilians on which farmed animal policies voters reward or punish, to inform efforts to put farmed animals on Brazil's political agenda.",
+    "event_date": "2026-10-28",
+    "source_published": "2026-10-28",
+    "source_url": "https://faunalytics.org/votos-pelos-animais-brazil-voters/",
+    "source_title": "Votos Pelos Animais: How Farmed Animal Policy Wins Votes In Brazil",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  },
+  {
+    "id": "dc-denver-foie-gras-ballot-bans-2026",
+    "entity_ids": [
+      "sentient-media"
+    ],
+    "type": "legal_development",
+    "title": "Washington, D.C. and Denver voters pass foie gras bans",
+    "summary": "Ballot measures banning force-feeding and sale of foie gras passed with 73% in D.C. and 66.55% in Denver in the 2026 midterms; both take effect 1 July 2027 barring legal challenges.",
+    "event_date": "2026-11",
+    "source_published": "2026-11-04",
+    "source_url": "https://sentientmedia.org/denver-and-d-c-have-voted-to-ban-foie-gras/",
+    "source_title": "Denver and D.C. Have Voted to Ban Foie Gras",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Campaigns led by Pro-Animal Future (not yet a map entity). Sentient Media is the reporting source, not a party."
+  },
+  {
+    "id": "eu-commission-work-programme-2027-animal-welfare-2026",
+    "entity_ids": [
+      "european-institute-for-animal-law-policy"
+    ],
+    "type": "legal_development",
+    "title": "EU 2027 Work Programme omits farm animal cage proposals",
+    "summary": "The European Commission's 2027 Work Programme did not mention promised revisions on laying hens, broiler chickens and pigs; a pig cage proposal had been planned for 2027 under the July Livestock Strategy.",
+    "event_date": "2026-11-04",
+    "source_published": "2026-11-04",
+    "source_url": "https://animallaweurope.org/commissions-new-work-programme-where-are-the-animals/",
+    "source_title": "The Commission's New Work Programme: Where Are the Animals?",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Analysis by an advocacy think tank; the Commission's stated December 2026 poultry proposal timeline was not independently checked."
+  }
+]

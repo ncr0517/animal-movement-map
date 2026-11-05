@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Animal Movement Map</title>
+<meta name="description" content="A navigable, source-linked overview of organisations, programmes, funders and resources across the animal movement, refreshed from public sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap masthead">
+  <div>
+    <h1>Animal Movement Map <em>v0.1</em></h1>
+    <p>Who is doing what across the animal movement: organisations, programmes, funders and resources, each with linked sources. This first version looks in depth at <strong>fish and other aquatic animals</strong> and sketches the rest of the movement more lightly.</p>
+  </div>
+  <div class="freshness" id="freshness" aria-live="polite">Loading data…</div>
+</div>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="toolbar-inner">
+      <nav class="tabs" aria-label="Views">
+        <a href="#map" data-view="map">Map</a>
+        <a href="#directory" data-view="directory">Directory</a>
+        <a href="#changes" data-view="changes">Changes</a>
+        <a href="#funding" data-view="funding">Funding</a>
+        <a href="#about" data-view="about">About</a>
+      </nav>
+      <label class="search">
+        <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search names, aliases, summaries…" aria-label="Search the map">
+      </label>
+      <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filters">Filters <span class="n" id="filter-count"></span></button>
+    </div>
+    <div class="filters collapsed" id="filters">
+      <div class="chipset" id="species-chips" role="group" aria-label="Species"></div>
+      <select id="f-region" aria-label="Region"><option value="">All regions</option></select>
+      <select id="f-intervention" aria-label="Intervention"><option value="">All interventions</option></select>
+      <select id="f-kind" aria-label="Kind"><option value="">All kinds</option></select>
+      <label class="toggle"><input type="checkbox" id="f-aquatic"> Aquatic deep-dive only</label>
+      <label class="toggle"><input type="checkbox" id="f-direct" checked> Show direct-action &amp; abolitionist groups</label>
+      <button class="reset" id="reset" type="button">Clear filters</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap" id="view" tabindex="-1"></main>
+
+<footer class="wrap">
+  <p>Absence from the map is not evidence that no work exists. Posting volume is not organisational activity or effectiveness. Where markers sit shows a primary function only; it does not imply collaboration, endorsement or influence.</p>
+  <p id="footer-meta"></p>
+</footer>
+
+<div id="drawer-root"></div>
+<script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "animal-movement-map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A navigable, source-linked field map of the animal movement, refreshed from public sources.",
+  "scripts": {
+    "build": "node scripts/build-seed.mjs",
+    "test": "node --test test/*.test.js",
+    "dev": "npm run build && wrangler d1 execute animal-movement-map --local --file=db/schema.sql && wrangler d1 execute animal-movement-map --local --file=db/seed.sql && wrangler dev",
+    "db:remote": "wrangler d1 execute animal-movement-map --remote --file=db/schema.sql && wrangler d1 execute animal-movement-map --remote --file=db/seed.sql",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.150.0"
+  }
+}

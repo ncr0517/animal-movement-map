@@ -1,0 +1,2090 @@
+[
+  {
+    "id": "aquatic-life-institute",
+    "name": "Aquatic Life Institute",
+    "aliases": [
+      "ALI"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "crustaceans",
+      "cephalopods"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US",
+      "FR"
+    ],
+    "interventions": [
+      "certification-standards",
+      "corporate-campaigns",
+      "legislation-policy",
+      "research",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Works on the welfare of farmed and wild-caught aquatic animals worldwide by engaging seafood certification schemes, companies and policymakers, publishing research reports and benchmarks, and leading the Aquatic Animal Alliance coalition.",
+    "website": "https://www.ali.fish/",
+    "hq": "United States",
+    "founded": "2019",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.ali.fish/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.ali.fish/about",
+        "title": "About us — Aquatic Life Institute",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/aquatic-life-institute/",
+        "title": "Aquatic Life Institute — Animal Charity Evaluators review",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "aquaticlifeinstitute.org redirects to ali.fish. HQ (US), French subsidiary and founding year 2019 are from the ACE review. ACE-recommended charity (2024)."
+  },
+  {
+    "id": "aquatic-animal-alliance",
+    "name": "Aquatic Animal Alliance",
+    "aliases": [
+      "AAA"
+    ],
+    "kind": "network",
+    "parent_id": "aquatic-life-institute",
+    "categories": [
+      "movement-infrastructure",
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "crustaceans",
+      "cephalopods"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "capacity-building",
+      "legislation-policy",
+      "producer-engagement",
+      "public-awareness",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Coalition of advocacy organisations created by Aquatic Life Institute in 2020 to improve the welfare of aquatic animals in the food system through industry engagement, policy advocacy, public education and research; its blog features member campaigns worldwide.",
+    "website": "https://aquaticanimalalliance.org/",
+    "hq": null,
+    "founded": "2020",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://aquaticanimalalliance.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://aquaticanimalalliance.org/",
+        "title": "Aquatic Animal Alliance — home",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/aquatic-life-institute/",
+        "title": "Aquatic Life Institute — Animal Charity Evaluators review",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "ACE review cites 180+ member organisations in over 75 countries (figure as reported by ACE, 2025)."
+  },
+  {
+    "id": "fish-welfare-initiative",
+    "name": "Fish Welfare Initiative",
+    "aliases": [
+      "FWI"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "advocacy-campaigns",
+      "funding"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "south-asia",
+      "east-asia"
+    ],
+    "countries": [
+      "IN",
+      "CN"
+    ],
+    "interventions": [
+      "farm-practices",
+      "producer-engagement",
+      "research",
+      "humane-slaughter",
+      "grantmaking"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Works to improve the welfare of farmed fishes, currently mainly in India through its Alliance for Responsible Aquaculture farm programme and field research (feed, slaughter, lice detection), and collaborates with stakeholders in China.",
+    "website": "https://www.fishwelfareinitiative.org/",
+    "hq": "United States",
+    "founded": "2019",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.fishwelfareinitiative.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.fishwelfareinitiative.org/",
+        "title": "Improving Farmed Fish Welfare | Fish Welfare Initiative",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.fishwelfareinitiative.org/transparency",
+        "title": "Transparency — Fish Welfare Initiative",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.fishwelfareinitiative.org/china",
+        "title": "Fish Welfare in China | Fish Welfare Initiative",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/fish-welfare-initiative/",
+        "title": "Fish Welfare Initiative — Animal Charity Evaluators review",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "'hq' reflects registration as a US 501(c)(3) (EIN 85-2065536); field operations are in India. Founding year 2019 per ACE. Site navigation also lists The Philippines; a Sept 2026 post describes operations in India and China and is scoping expansion to another country. Launched through Ambitious Impact/Charity Entrepreneurship (per AIM site)."
+  },
+  {
+    "id": "fwi-alliance-for-responsible-aquaculture",
+    "name": "Alliance for Responsible Aquaculture",
+    "aliases": [
+      "ARA"
+    ],
+    "kind": "programme",
+    "parent_id": "fish-welfare-initiative",
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "farm-practices",
+      "producer-engagement",
+      "data-tools"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Fish Welfare Initiative's core farm programme in Andhra Pradesh, India: staff measure water quality (e.g. dissolved oxygen) at enrolled ponds and recommend corrective actions to farmers when readings fall outside set ranges.",
+    "website": "https://www.fishwelfareinitiative.org/",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.fishwelfareinitiative.org/post/rfp-india",
+        "title": "Open Call: Funding New Ideas to Improve the Welfare of Farmed Fishes in India",
+        "accessed": "2026-11-05",
+        "published": "2026-10-06"
+      },
+      {
+        "url": "https://www.fishwelfareinitiative.org/post/data-issues",
+        "title": "Data Issues and Retraction in Our Farm Program",
+        "accessed": "2026-11-05",
+        "published": "2026-10-21"
+      }
+    ],
+    "notes": "Operating regions named as Eluru (138 farms) and Nellore (46 farms) in the Oct 2026 post; FWI retracted two years of Nellore data after detecting data fabrication."
+  },
+  {
+    "id": "shrimp-welfare-project",
+    "name": "Shrimp Welfare Project",
+    "aliases": [
+      "SWP"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "welfare-technology",
+      "welfare-science"
+    ],
+    "species": [
+      "crustaceans"
+    ],
+    "regions": [
+      "global",
+      "south-asia",
+      "southeast-asia",
+      "latin-america",
+      "africa",
+      "europe"
+    ],
+    "countries": [
+      "GB",
+      "VN",
+      "HN",
+      "IN",
+      "ID",
+      "EC",
+      "LK",
+      "VE",
+      "TH",
+      "NG"
+    ],
+    "interventions": [
+      "humane-slaughter",
+      "corporate-campaigns",
+      "producer-engagement",
+      "farm-practices",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Works with shrimp producers, seafood suppliers and retailers to improve farmed shrimp welfare, chiefly by providing electrical stunners for pre-slaughter stunning, helping retailers adopt shrimp welfare policies (e.g. on eyestalk ablation), farmer engagement in India and research.",
+    "website": "https://www.shrimpwelfareproject.org/",
+    "hq": "United Kingdom",
+    "founded": "2021",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.shrimpwelfareproject.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.shrimpwelfareproject.org/",
+        "title": "Shrimp Welfare Project — home",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.shrimpwelfareproject.org/shrimpact",
+        "title": "(Shr)Impact — Shrimp Welfare Project",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/shrimp-welfare-project/",
+        "title": "Shrimp Welfare Project — Animal Charity Evaluators review",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://rethinkpriorities.org/impact-area/uncovering-neglected-issues-advancing-shrimp-welfare/",
+        "title": "Uncovering neglected issues: advancing shrimp welfare — Rethink Priorities",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Registered charity in the UK (no. 1204414). Founded 2021 per ACE; incubated by Charity Entrepreneurship (Ambitious Impact). Countries are those listed for stunner impact on the (Shr)Impact page. ACE Recommended Charity 2023-2025."
+  },
+  {
+    "id": "swp-humane-slaughter-initiative",
+    "name": "Humane Slaughter Initiative",
+    "aliases": [
+      "HSI (SWP)"
+    ],
+    "kind": "programme",
+    "parent_id": "shrimp-welfare-project",
+    "categories": [
+      "welfare-technology",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "crustaceans"
+    ],
+    "regions": [
+      "southeast-asia",
+      "south-asia",
+      "latin-america",
+      "africa"
+    ],
+    "countries": [
+      "VN",
+      "HN",
+      "IN",
+      "ID",
+      "EC",
+      "LK",
+      "VE",
+      "TH",
+      "NG"
+    ],
+    "interventions": [
+      "humane-slaughter",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Shrimp Welfare Project programme that provides electrical stunners to aquaculture producers at minimal or no cost; SWP reports 37 corporate stunner agreements across 9 countries, of which 20 stunners were installed and commissioned at time of access.",
+    "website": "https://www.shrimpwelfareproject.org/humane-slaughter-initiative",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.shrimpwelfareproject.org/shrimpact",
+        "title": "(Shr)Impact — Shrimp Welfare Project",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.shrimpwelfareproject.org/",
+        "title": "Shrimp Welfare Project — home",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Not to be confused with Humane Society International (also abbreviated HSI). Agreement/stunner counts are SWP's own figures and change over time."
+  },
+  {
+    "id": "crustacean-compassion",
+    "name": "Crustacean Compassion",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "crustaceans",
+      "cephalopods"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK charity campaigning for legal protection and humane treatment of decapod crustaceans (e.g. crabs, lobsters), including bans on boiling alive and live sales, protections in science, supermarket scorecards and a code of practice; recently also campaigns on cephalopods.",
+    "website": "https://www.crustaceancompassion.org/",
+    "hq": "United Kingdom",
+    "founded": "2016",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.crustaceancompassion.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.crustaceancompassion.org/",
+        "title": "Crustacean Compassion | UK Animal Welfare Organisation",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.crustaceancompassion.org/single-post/a-decade-of-decapod-protection-celebrating-10-years-of-crustacean-compassion",
+        "title": "A decade of decapod protection: Celebrating 10 years of Crustacean Compassion",
+        "accessed": "2026-11-05",
+        "published": "2026-06-10"
+      }
+    ],
+    "notes": "Registered charity in England and Wales (no. 1215720). Founding year inferred from a June 2026 post marking its tenth anniversary (began as a volunteer campaign). Some pages returned a bot check (HTTP 429) on repeat requests."
+  },
+  {
+    "id": "fishcount",
+    "name": "fishcount.org.uk",
+    "aliases": [
+      "Fishcount"
+    ],
+    "kind": "resource",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "wild-fish",
+      "farmed-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "data-tools",
+      "research",
+      "humane-slaughter"
+    ],
+    "approach": "research",
+    "summary": "Website on reducing fish suffering in commercial fishing and fish farming; publishes estimates of numbers of fishes killed (e.g. 1.1-2.2 trillion wild fishes caught annually 2000-2019; ~124 billion farmed fishes killed in 2019) and reports on capture and humane slaughter.",
+    "website": "https://fishcount.org.uk/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fishcount.org.uk/",
+        "title": "fishcount.org.uk — home",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "curl returned HTTP 403; content read via WebFetch. The page does not name an operating organisation (copyright 'fishcount.org.uk 2010-2025'). Estimates are reported as published in the journal Animal Welfare. Site lists new pages on a humane fish slaughter policy roadmap and farmed invertebrate estimates."
+  },
+  {
+    "id": "fair-fish-international",
+    "name": "fair-fish international",
+    "aliases": [
+      "fair-fish"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [
+      "CH"
+    ],
+    "interventions": [
+      "research",
+      "certification-standards",
+      "public-awareness",
+      "producer-engagement",
+      "legislation-policy"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Association founded in Switzerland in 2000 working on the welfare of fishes in fisheries and aquaculture through research (the fair-fish database), public awareness, policy work and advice to industry, including fish welfare criteria for the Friend of the Sea label.",
+    "website": "https://fair-fish.net/",
+    "hq": "Switzerland",
+    "founded": "2000",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fair-fish.net/page/T27/our-vision-and-mission",
+        "title": "fair-fish - Our Vision and Mission",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://fair-fish.net/page/VOl/carefishfarm",
+        "title": "fair-fish - Carefish/farm",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found (/feed/ returned 404). Runs Carefish/farm (since 2017) and Carefish/catch projects."
+  },
+  {
+    "id": "fair-fish-database",
+    "name": "fair-fish database",
+    "aliases": [
+      "FishEthoBase"
+    ],
+    "kind": "resource",
+    "parent_id": "fair-fish-international",
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "data-tools",
+      "research"
+    ],
+    "approach": "research",
+    "summary": "Open database compiling scientific knowledge on the welfare of aquatic species in aquaculture ('farm' branch) and fisheries ('catch' branch), assigning each species a WelfareScore based on 10 criteria for minimal and best-possible conditions.",
+    "website": "https://fair-fish.net/page/1DB/fair-fish-database",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fair-fish.net/page/1DB/fair-fish-database",
+        "title": "fair-fish database",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://friendofthesea.org/fos-and-fair-fish-awarded-open-philantropy-project-grant-to-boost-fish-welfare/",
+        "title": "FoS and fair-fish awarded Open Philanthropy Project grant to boost Fish Welfare",
+        "accessed": "2026-11-05",
+        "published": "2018-01-16"
+      }
+    ],
+    "notes": "fishethobase.net did not respond (connection failure/503). The 2018 FOS page refers to 'the FishEthoBase research team of fair-fish international'; that the current 'fair-fish database' is the renamed FishEthoBase is inferred, not stated on the fetched page."
+  },
+  {
+    "id": "eurogroup-for-animals",
+    "name": "Eurogroup for Animals",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "movement-infrastructure",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "crustaceans",
+      "cephalopods",
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "BE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Pan-European animal advocacy umbrella organisation; its Aquatic Animals policy area pushes for EU welfare rules for farmed and wild-caught fish, crustaceans and cephalopods (including at slaughter) and opposes octopus farming, publishing white papers and factsheets.",
+    "website": "https://www.eurogroupforanimals.org/",
+    "hq": "Belgium",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.eurogroupforanimals.org/feed",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.eurogroupforanimals.org/what-we-do/policy-areas/aquatic-animals",
+        "title": "Aquatic Animals | Eurogroup for Animals",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.eurogroupforanimals.org/who-we-are",
+        "title": "Who we are | Eurogroup for Animals",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Feed covers all Eurogroup news, not only aquatic. Address: Brussels."
+  },
+  {
+    "id": "compassion-in-world-farming",
+    "name": "Compassion in World Farming",
+    "aliases": [
+      "CIWF"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "cephalopods",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "International farm animal welfare organisation; aquatic work includes EU policy advocacy on farmed fish welfare and opposition to octopus farming, including joint work with Eurogroup for Animals on Nueva Pescanova's proposed Canary Islands octopus farm.",
+    "website": "https://www.ciwf.org.uk/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.eurogroupforanimals.org/library/exposing-environmental-risks-octopus-farming",
+        "title": "Exposing the environmental risks of octopus farming (Eurogroup for Animals / CIWF case study)",
+        "accessed": "2026-11-05",
+        "published": "2024-07-12"
+      },
+      {
+        "url": "https://www.eurogroupforanimals.org/news/eu-vision-2040-step-towards-protection-aquatic-animals",
+        "title": "EU Vision 2040: a step towards protection for aquatic animals",
+        "accessed": "2026-11-05",
+        "published": "2026-10-21"
+      }
+    ],
+    "notes": "All CIWF domains tried (ciwf.org.uk, ciwf.org, ciwf.eu, ciwf.com) returned HTTP 429 (Vercel security checkpoint), so CIWF's own pages, HQ and feeds could not be verified. Facts here come from Eurogroup pages, which quote a CIWF Aquaculture Policy Officer."
+  },
+  {
+    "id": "albert-schweitzer-foundation",
+    "name": "Albert Schweitzer Foundation",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "certification-standards",
+      "legislation-policy"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Berlin-based foundation working against factory farming; since 2016 it has worked on aquaculture welfare, including the Aquaculture Welfare Standards Initiative with retailers, scientists, authorities and certifiers.",
+    "website": "https://albertschweitzerfoundation.org/",
+    "hq": "Germany",
+    "founded": "2000",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://albertschweitzerfoundation.org/campaigns/aquaculture-welfare-standards-initiative",
+        "title": "Aquaculture Welfare Standards Initiative • Albert Schweitzer Foundation",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://albertschweitzerfoundation.org/news/the-albert-schweitzer-foundation-celebrates-25-years",
+        "title": "The Albert Schweitzer Foundation celebrates 25 years",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found."
+  },
+  {
+    "id": "aquaculture-welfare-standards-initiative",
+    "name": "Aquaculture Welfare Standards Initiative",
+    "aliases": [
+      "AWSI"
+    ],
+    "kind": "programme",
+    "parent_id": "albert-schweitzer-foundation",
+    "categories": [
+      "advocacy-campaigns",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "certification-standards",
+      "corporate-campaigns",
+      "humane-slaughter",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Multi-stakeholder initiative (industry incl. major supermarkets, science, authorities, certifiers) that issues aquaculture welfare recommendations on water quality, handling, feeding, transport and stunning, and seeks uptake via certification schemes such as ASC and GGN.",
+    "website": "https://albertschweitzerfoundation.org/campaigns/aquaculture-welfare-standards-initiative",
+    "hq": "Germany",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://albertschweitzerfoundation.org/campaigns/aquaculture-welfare-standards-initiative",
+        "title": "Aquaculture Welfare Standards Initiative • Albert Schweitzer Foundation",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": null
+  },
+  {
+    "id": "animal-equality",
+    "name": "Animal Equality",
+    "aliases": [
+      "Animal Equality UK"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "community-media"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global",
+      "europe",
+      "north-america",
+      "latin-america",
+      "uk"
+    ],
+    "countries": [],
+    "interventions": [
+      "investigations",
+      "corporate-campaigns",
+      "legislation-policy",
+      "litigation",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "International farmed animal protection organisation running investigations, corporate, legal and public campaigns; its fish work highlights the absence of legal slaughter protections in fish farming and fishing, and Animal Equality UK has campaigned on Scottish farmed fish.",
+    "website": "https://animalequality.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animalequality.org/feed/",
+        "type": "rss",
+        "verified": true
+      },
+      {
+        "url": "https://animalequality.org/news/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animalequality.org/issues/fish/",
+        "title": "The fish industry: Cruelty on a massive scale — Animal Equality",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://thehumaneleague.org.uk/article/parliamentary-reception-shines-a-light-on-forgotten-fishes",
+        "title": "Parliamentary reception shines a light on forgotten fishes — The Humane League UK",
+        "accessed": "2026-11-05",
+        "published": "2025-01-22"
+      }
+    ],
+    "notes": "Fish is one of several issue areas, not the main focus. Operates country sites (homepage says it works in 15 countries); US entity is a 501(c)(3). Feeds are global-site feeds covering all topics."
+  },
+  {
+    "id": "the-humane-league-uk",
+    "name": "The Humane League UK",
+    "aliases": [
+      "THL UK"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "chickens"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK charity campaigning on farmed animal welfare; its fish work calls for species-specific legislation requiring pre-slaughter stunning of farmed fish and has included parliamentary events in the Scottish Parliament.",
+    "website": "https://thehumaneleague.org.uk/",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://thehumaneleague.org.uk/article/parliamentary-reception-shines-a-light-on-forgotten-fishes",
+        "title": "Parliamentary reception shines a light on forgotten fishes — The Humane League UK",
+        "accessed": "2026-11-05",
+        "published": "2025-01-22"
+      },
+      {
+        "url": "https://thehumaneleague.org.uk/our-campaigns",
+        "title": "Live Campaigns — The Humane League UK",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Registered charity no. 1177926. Its live campaigns page (accessed) lists chicken welfare, not fish, as the current live campaign. No RSS feed found (/feed 404)."
+  },
+  {
+    "id": "mercy-for-animals",
+    "name": "Mercy For Animals",
+    "aliases": [
+      "MFA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "community-media"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "cephalopods",
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america",
+      "latin-america",
+      "south-asia",
+      "southeast-asia",
+      "global"
+    ],
+    "countries": [
+      "US",
+      "CA",
+      "BR",
+      "IN",
+      "MY"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "public-awareness",
+      "legislation-policy",
+      "investigations"
+    ],
+    "approach": "mixed",
+    "summary": "US-based farmed animal organisation working in several countries; aquatic work includes public advocacy against octopus farming and, per Rethink Priorities, an early corporate shrimp welfare campaign that led Tesco to pledge to end eyestalk ablation and ice-slurry slaughter.",
+    "website": "https://mercyforanimals.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://mercyforanimals.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mercyforanimals.org/blog/octopus-farming/",
+        "title": "Octopus Farming Isn't Here Yet — Let's Keep it That Way",
+        "accessed": "2026-11-05",
+        "published": "2026-06-03"
+      },
+      {
+        "url": "https://rethinkpriorities.org/impact-area/uncovering-neglected-issues-advancing-shrimp-welfare/",
+        "title": "Uncovering neglected issues: advancing shrimp welfare — Rethink Priorities",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://mercyforanimals.org/",
+        "title": "Home - Mercy For Animals",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Aquatic animals are a minor part of overall work. Countries from site footer (US/CA, Brazil, Latam, India, Malaysia). Feed mixes MFA blog posts with links to external press coverage."
+  },
+  {
+    "id": "welfare-footprint-institute",
+    "name": "Welfare Footprint Institute",
+    "aliases": [
+      "WFI",
+      "Welfare Footprint Project",
+      "Welfare Footprint"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "data-tools"
+    ],
+    "approach": "research",
+    "summary": "Research institute developing the Welfare Footprint Framework, which quantifies welfare as cumulative time in affective states; aquatic work includes appraisals of farmed fish species, fish slaughter (e.g. air asphyxia in rainbow trout) and whiteleg shrimp welfare.",
+    "website": "https://welfarefootprint.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://welfarefootprint.org/",
+        "title": "Welfare Footprint Institute — animal welfare quantification",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://welfarefootprint.org/species/welfare-of-farmed-fish",
+        "title": "Welfare of Farmed Fish | WFI",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://welfarefootprint.org/shrimp",
+        "title": "Shrimp welfare | WFI",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Incorporated as a US 501(c)(3). Commonly referred to as 'Welfare Footprint Project'; the current site uses 'Welfare Footprint Institute' (a formal rename was not confirmed on a fetched page). Shrimp project was commissioned by Shrimp Welfare Project. No RSS feed found."
+  },
+  {
+    "id": "rethink-priorities",
+    "name": "Rethink Priorities",
+    "aliases": [
+      "RP"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "crustaceans",
+      "farmed-fish",
+      "insects",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US",
+      "GB"
+    ],
+    "interventions": [
+      "research"
+    ],
+    "approach": "research",
+    "summary": "Research organisation whose Animal Welfare Department has produced reports on shrimp welfare (scale, welfare threats, prioritisation, interventions); RP states this work informed Charity Entrepreneurship's incubation of Shrimp Welfare Project.",
+    "website": "https://rethinkpriorities.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://rethinkpriorities.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://rethinkpriorities.org/impact-area/uncovering-neglected-issues-advancing-shrimp-welfare/",
+        "title": "Uncovering neglected issues: advancing shrimp welfare — Rethink Priorities",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://rethinkpriorities.org/",
+        "title": "Rethink Priorities — home",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Has US and UK entities (UK company no. 14807023). Feed is valid but its most recent item was dated 2025-11-26 at time of access."
+  },
+  {
+    "id": "ambitious-impact",
+    "name": "Ambitious Impact",
+    "aliases": [
+      "AIM",
+      "Charity Entrepreneurship"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "incubation-careers",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "careers-talent",
+      "capacity-building",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Charity incubator (formerly Charity Entrepreneurship) that trains founders and launches new charities; aquatic charities launched through it include Shrimp Welfare Project and Fish Welfare Initiative, and it also incubated Animal Ask.",
+    "website": "https://www.ambitiousimpact.com/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.ambitiousimpact.com/our-charities",
+        "title": "Our charities — Ambitious Impact",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.ambitiousimpact.com/",
+        "title": "Ambitious Impact | Quit your job. Start a charity",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "charityentrepreneurship.com redirects to ambitiousimpact.com. Web search snippets also described Centre for Aquaculture Progress as profiled by Charity Entrepreneurship, but the CE page redirected and this was not confirmed. No RSS feed found."
+  },
+  {
+    "id": "animal-ask",
+    "name": "Animal Ask",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global",
+      "europe",
+      "south-asia"
+    ],
+    "countries": [],
+    "interventions": [
+      "research"
+    ],
+    "approach": "research",
+    "summary": "Research organisation helping animal advocacy groups prioritise policy and corporate asks; aquatic outputs include reviews of the economics and supply chains of European fish farming and strategies for aquatic animals in India.",
+    "website": "https://www.animalask.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animalask.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animalask.org/",
+        "title": "Home | Animal Ask",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.animalask.org/post/the-economics-of-fish-farming-and-fish-welfare-in-europe",
+        "title": "The economics of fish farming and fish welfare in Europe",
+        "accessed": "2026-11-05",
+        "published": "2025-05-02"
+      }
+    ],
+    "notes": "Fiscally sponsored by Anti Entropy (US 501(c)(3)); incubated through Charity Entrepreneurship (per site footer)."
+  },
+  {
+    "id": "rspca-assured",
+    "name": "RSPCA Assured",
+    "aliases": [],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "chickens",
+      "pigs",
+      "cows"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "certification-standards"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK farm animal welfare assurance scheme and label linked to the RSPCA; its salmon (1,200+ requirements) and trout (800+) standards cover the fish's whole lives, including water quality monitoring, space allowances, handling limits and transport.",
+    "website": "https://www.rspcaassured.org.uk/",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.rspcaassured.org.uk/standards/salmon-trout",
+        "title": "Salmon and trout welfare — RSPCA Assured",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://www.ali.fish/blog/n2aexpc3mffuug039f3bb0vlhhgf10-kad55",
+        "title": "RSPCA Ranks 2nd in 2024 Aquaculture Certification Schemes Benchmark (Aquatic Life Institute)",
+        "accessed": "2026-11-05",
+        "published": "2024-10-18"
+      }
+    ],
+    "notes": "RSPCA (parent charity) is not a separate entity in this dataset. The ALI source is cited by feed item title/date only; ranking detail not independently checked. No RSS feed found."
+  },
+  {
+    "id": "aquaculture-stewardship-council",
+    "name": "Aquaculture Stewardship Council",
+    "aliases": [
+      "ASC"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "NL",
+      "GB"
+    ],
+    "interventions": [
+      "certification-standards",
+      "producer-engagement",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Certification and improver programme for farmed seafood, launched in 2010; its unified Farm Standard (launched 2025) includes fish welfare requirements, and in 2026 it began a Responsible Shrimp Slaughter Project on stunning and slaughter.",
+    "website": "https://asc-aqua.org/",
+    "hq": "Netherlands",
+    "founded": "2010",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://asc-aqua.org/news/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://asc-aqua.org/about-asc/",
+        "title": "About ASC",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://asc-aqua.org/news/shrimp-welfare-project/",
+        "title": "ASC launches project to bridge science-to-practice gap in shrimp welfare",
+        "accessed": "2026-11-05",
+        "published": "2026-09-28"
+      },
+      {
+        "url": "https://www.ali.fish/blog/asc-farm-standard-2025",
+        "title": "Behind the Reform: ALI's Role in Shaping the ASC Farm Standard Revision",
+        "accessed": "2026-11-05",
+        "published": "2025-06-03"
+      }
+    ],
+    "notes": "Primarily an environmental/social certification body; welfare is one component. Launched with IDH and WWF Netherlands; registered in Utrecht with a UK entity. asc-aqua.org/feed/ returned valid RSS with 0 items; the /news/feed/ feed has items."
+  },
+  {
+    "id": "centre-for-aquaculture-progress",
+    "name": "Centre for Aquaculture Progress",
+    "aliases": [
+      "CAP"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "research",
+      "producer-engagement",
+      "certification-standards",
+      "humane-slaughter"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Independent research think tank translating fish welfare science into practical guidance for European aquaculture, including Operational Welfare Indicator protocols (rainbow trout, sea bream, sea bass) and work on electrical stunning in Mediterranean aquaculture.",
+    "website": "https://centreforaquacultureprogress.org/",
+    "hq": "Germany",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://centreforaquacultureprogress.org/",
+        "title": "Centre for Aquaculture Progress (CAP)",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://centreforaquacultureprogress.org/about",
+        "title": "About | Centre for Aquaculture Progress",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Contact address in Berlin (c/o UES gGmbH). Web search snippets mentioned Charity Entrepreneurship origins and an Open Philanthropy grant; neither was confirmed on a fetched page. No RSS feed found."
+  },
+  {
+    "id": "fishethogroup",
+    "name": "FishEthoGroup",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "certification-standards",
+      "producer-engagement",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "Non-profit association of professionals studying and improving the welfare of farmed and wild-caught fishes; provides research, consultancy, training, welfare protocols and certification requirements to the aquaculture sector.",
+    "website": "https://fishethogroup.net/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fishethogroup.net/",
+        "title": "FishEthoGroup — home",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://friendofthesea.org/marine-conservation-projects-and-awareness/fish-welfare/",
+        "title": "Fish Welfare Project — Friend of the Sea",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "HQ not stated on fetched homepage. Partner in Friend of the Sea's Fish Welfare Project; listed fair-fish international among partner logos."
+  },
+  {
+    "id": "friend-of-the-sea",
+    "name": "Friend of the Sea",
+    "aliases": [
+      "FOS",
+      "World Sustainability Organization"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "IT"
+    ],
+    "interventions": [
+      "certification-standards"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Seafood sustainability certification run by World Sustainability Organization; its Fish Welfare Project, developed with fair-fish and FishEthoGroup, offers 24 species-specific aquaculture welfare standards and five fisheries welfare standards by fishing gear.",
+    "website": "https://friendofthesea.org/",
+    "hq": "Italy",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://friendofthesea.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://friendofthesea.org/marine-conservation-projects-and-awareness/fish-welfare/",
+        "title": "Fish Welfare Project — Friend of the Sea",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://friendofthesea.org/about-us/",
+        "title": "About us — Friend of the Sea",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Primarily a sustainability certifier; welfare is one programme. Fisheries standards developed with CCMAR, fair-fish, FishEthoGroup and Demos (CareFish Catch project). Page states the project's operational phase is supported by Coefficient Giving. Feed covers all FOS news."
+  },
+  {
+    "id": "dyrevernalliansen",
+    "name": "Dyrevernalliansen",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "farmed-animals",
+      "fur-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NO"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "corporate-campaigns"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Norwegian animal protection organisation working on intensive farming, fish farming, fur farming and animal experiments; its fish farming work highlights mortality, disease and parasite problems in Norwegian salmon aquaculture.",
+    "website": "https://dyrevern.no/",
+    "hq": "Norway",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://dyrevern.no/vart-arbeid/fiskeoppdrett/",
+        "title": "Fiskeoppdrett og oppdrettsfisk – Dyrevernalliansen",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://dyrevern.no/",
+        "title": "Dyrevernalliansen — home",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Norwegian-language site; no English name confirmed on fetched pages. /feed/ returned HTML, not RSS."
+  },
+  {
+    "id": "animal-law-foundation",
+    "name": "The Animal Law Foundation",
+    "aliases": [
+      "Animal Law Foundation"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "farmed-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "litigation",
+      "legislation-policy",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK legal research charity working to strengthen animal protection law and its enforcement; aquatic work includes the legal case that boiling decapods alive is unlawful and calls for official Scottish guidance on farmed fish welfare.",
+    "website": "https://animallawfoundation.org/",
+    "hq": "United Kingdom",
+    "founded": "2022",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animallawfoundation.org/insights?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animallawfoundation.org/about",
+        "title": "About | The Animal Law Foundation",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animallawfoundation.org/offishial-guidance",
+        "title": "OfFISHial Guidance — Animal Law Foundation",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://aquaticanimalalliance.org/blog/landmark-victory-for-crustaceans",
+        "title": "A Landmark Victory for Crustaceans and a Blueprint for Legal Interpretation",
+        "accessed": "2026-11-05",
+        "published": "2026-02-11"
+      }
+    ],
+    "notes": "Founding year 2022 from the AAA guest post by its Executive Director."
+  },
+  {
+    "id": "one-health-and-development-initiative",
+    "name": "One Health and Development Initiative",
+    "aliases": [
+      "OHDI"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-fish",
+      "chickens"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "NG"
+    ],
+    "interventions": [
+      "capacity-building",
+      "legislation-policy",
+      "farm-practices",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Nonprofit applying a One Health approach to human, animal, plant and environmental health; runs the Africa Fish and Aquaculture Welfare (AFIWEL) Program and poultry welfare work in Nigeria.",
+    "website": "https://onehealthdev.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://onehealthdev.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://onehealthdev.org/",
+        "title": "Home - One Health and Development Initiative (OHDI)",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Aquatic work is one of several programmes. HQ not confirmed on fetched pages (Nigeria listed in countries because of projects described there). Feed covers all OHDI news."
+  },
+  {
+    "id": "afiwel",
+    "name": "Africa Fish and Aquaculture Welfare Program",
+    "aliases": [
+      "AFIWEL"
+    ],
+    "kind": "programme",
+    "parent_id": "one-health-and-development-initiative",
+    "categories": [
+      "welfare-science",
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "KE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "capacity-building",
+      "farm-practices",
+      "certification-standards",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Pan-African programme promoting farmed fish welfare through policy integration, farmer training, digital tools, advocacy and certification models; reports activity in 11 African countries and supported Kenya's 2026 national fish welfare SOP.",
+    "website": "https://onehealthdev.org/our-projects/afiwel/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://onehealthdev.org/our-projects/afiwel/",
+        "title": "AFIWEL - One Health and Development Initiative (OHDI)",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://aquaticanimalalliance.org/blog/one-health-and-development-initiative-fw-msop",
+        "title": "From Vision to National Policy: Kenya Launches Africa's First National Fish Welfare Manual SOP",
+        "accessed": "2026-11-05",
+        "published": "2026-07-07"
+      }
+    ],
+    "notes": "The 11 countries are not listed on the fetched page; only Kenya is confirmed."
+  },
+  {
+    "id": "animal-welfare-observatory",
+    "name": "Animal Welfare Observatory",
+    "aliases": [
+      "Observatorio de Bienestar Animal",
+      "OBA",
+      "AWO"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "chickens"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "ES"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "investigations",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Spanish advocacy organisation working on the welfare of farmed chickens and fishes; aquatic work covers aquaculture fish welfare and campaigns on imported farmed whiteleg shrimp (eyestalk ablation, slaughter without stunning).",
+    "website": "https://animalwelfareobservatory.org/",
+    "hq": "Spain",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalwelfareobservatory.org/nuestro-trabajo/bienestar-langostinos/",
+        "title": "Shrimp welfare — Animal Welfare Observatory",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/",
+        "title": "Animal Charity Evaluators — home (recommended charities list)",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "observatoriobienestaranimal.org did not connect; animalwelfareobservatory.org works. ACE lists it among recommended charities ('works to improve the welfare of farmed chickens and fishes in Spain'). No RSS feed found."
+  },
+  {
+    "id": "alianima",
+    "name": "Alianima",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "producer-engagement",
+      "legislation-policy",
+      "research",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Brazilian farmed animal welfare organisation; its 'Peixes Sentem' campaign addresses fish welfare in aquaculture and fishing, and it publishes the Observatório do Peixe report on tilapia welfare and productivity.",
+    "website": "https://alianima.org/",
+    "hq": "Brazil",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://alianima.org/",
+        "title": "Alianima — home",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://alianima.org/nossa-atuacao/futuro-sem-gaiolas/peixes-sentem/",
+        "title": "Peixes Sentem — Alianima",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "HQ inferred from Brazil-focused Portuguese-language site. /feed/ returned HTML, not RSS."
+  },
+  {
+    "id": "observatorio-do-peixe",
+    "name": "Observatório do Peixe",
+    "aliases": [
+      "Fish Observatory (Alianima)"
+    ],
+    "kind": "resource",
+    "parent_id": "alianima",
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "research",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Alianima report series (3rd edition) compiling scientific evidence on links between animal welfare and productivity in Brazilian tilapia farming, which accounts for about 70% of Brazil's farmed fish production.",
+    "website": "https://observatoriodopeixe.com.br/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://observatoriodopeixe.com.br/",
+        "title": "Observatório do Peixe - 3ª edição",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "Publication date of the 3rd edition not stated on the fetched page."
+  },
+  {
+    "id": "animal-charity-evaluators",
+    "name": "Animal Charity Evaluators",
+    "aliases": [
+      "ACE"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US charity evaluator that recommends animal charities and runs a Recommended Charity Fund and Movement Grants; recommended charities include aquatic-focused Shrimp Welfare Project, Aquatic Life Institute and Animal Welfare Observatory.",
+    "website": "https://animalcharityevaluators.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animalcharityevaluators.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animalcharityevaluators.org/",
+        "title": "Animal Charity Evaluators | Helping People Help Animals",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "US 501(c)(3) (EIN 36-4684978). Not aquatic-specific; included as an evaluator/funder of aquatic groups."
+  },
+  {
+    "id": "ea-animal-welfare-fund",
+    "name": "Animal Welfare Fund (EA Funds)",
+    "aliases": [
+      "EA Animal Welfare Fund",
+      "AWF"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "chickens",
+      "insects",
+      "wild-animals"
+    ],
+    "regions": [
+      "global",
+      "asia",
+      "africa",
+      "latin-america"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Grantmaking fund under EA Funds; its stated goals include aquatic animal welfare R&D and on-farm improvements for farmed shrimp and fish in Asia, Africa and Latin America, and making humane slaughter the default for shrimp.",
+    "website": "https://funds.effectivealtruism.org/funds/animal-welfare",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://funds.effectivealtruism.org/funds/animal-welfare",
+        "title": "Animal Welfare Fund | Effective Altruism Funds",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "'hq' reflects the UK registered office of the EA Funds legal entities shown in the site footer. Grant reports are published on the EA Forum. No RSS feed found."
+  },
+  {
+    "id": "coefficient-giving",
+    "name": "Coefficient Giving",
+    "aliases": [
+      "Open Philanthropy",
+      "Open Philanthropy Project"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Philanthropic funder (formerly Open Philanthropy) whose farm animal welfare grantmaking includes aquatic projects, e.g. support for ASC's Responsible Shrimp Slaughter Project and Friend of the Sea's Fish Welfare Project.",
+    "website": "https://coefficientgiving.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://asc-aqua.org/news/shrimp-welfare-project/",
+        "title": "ASC launches project to bridge science-to-practice gap in shrimp welfare",
+        "accessed": "2026-11-05",
+        "published": "2026-09-28"
+      },
+      {
+        "url": "https://friendofthesea.org/marine-conservation-projects-and-awareness/fish-welfare/",
+        "title": "Fish Welfare Project — Friend of the Sea",
+        "accessed": "2026-11-05",
+        "published": null
+      },
+      {
+        "url": "https://friendofthesea.org/fos-and-fair-fish-awarded-open-philantropy-project-grant-to-boost-fish-welfare/",
+        "title": "FoS and fair-fish awarded Open Philanthropy Project grant to boost Fish Welfare",
+        "accessed": "2026-11-05",
+        "published": "2018-01-16"
+      }
+    ],
+    "notes": "coefficientgiving.org returned HTTP 403 to curl and WebFetch, so its own pages were not read. The link to Open Philanthropy is inferred from openphilanthropy.org redirecting to coefficientgiving.org. Grant amounts not verified."
+  },
+  {
+    "id": "essere-animali",
+    "name": "Essere Animali",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-fish",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "IT"
+    ],
+    "interventions": [
+      "research",
+      "legislation-policy",
+      "certification-standards"
+    ],
+    "approach": "unclear",
+    "summary": "Italian animal protection organisation; aquatic work includes a 2023 report finding that pre-slaughter stunning of farmed fish would have little impact on production costs and criticism of Italy's 'Sustainable Aquaculture' certification for lacking a stunning requirement.",
+    "website": "https://www.essereanimali.org/",
+    "hq": "Italy",
+    "founded": null,
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.eurogroupforanimals.org/news/new-report-reveals-minimal-cost-fish-welfare",
+        "title": "New report reveals the minimal cost of fish welfare — Eurogroup for Animals",
+        "accessed": "2026-11-05",
+        "published": "2023-02-14"
+      }
+    ],
+    "notes": "essereanimali.org returned HTTP 502 on every attempt, so the organisation's own site, current activity and feeds could not be verified; status set to 'unclear'. Facts are from a 2023 Eurogroup page."
+  },
+  {
+    "id": "ali-aquaculture-certification-benchmark",
+    "name": "Aquaculture Certification Schemes Benchmark: Aquatic Animal Welfare",
+    "aliases": [
+      "ALI Certification Benchmark"
+    ],
+    "kind": "resource",
+    "parent_id": "aquatic-life-institute",
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "cephalopods"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "certification-standards",
+      "research",
+      "data-tools"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Aquatic Life Institute report comparing welfare requirements in major seafood certification schemes (3rd edition, Oct 2024: 8 schemes and 1 ratings agency) on water quality, stocking density, enrichment, feed, stunning and slaughter, and species prohibitions.",
+    "website": "https://www.ali.fish/resource-library/aquaculture-certification-schemes-benchmark-2024",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.ali.fish/resource-library/aquaculture-certification-schemes-benchmark-2024",
+        "title": "2024 Aquaculture Certification Schemes Benchmark: Aquatic Animal Welfare",
+        "accessed": "2026-11-05",
+        "published": "2024-10-07"
+      }
+    ],
+    "notes": "The 2024 edition carries a published correction on GAP's insect-feed ban. A later edition was not found during this research."
+  },
+  {
+    "id": "wfi-trout-air-asphyxia-analysis",
+    "name": "Quantifying the welfare impact of air asphyxia in rainbow trout slaughter",
+    "aliases": [
+      "Welfare Footprint fish slaughter pain track"
+    ],
+    "kind": "resource",
+    "parent_id": "welfare-footprint-institute",
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "humane-slaughter"
+    ],
+    "approach": "research",
+    "summary": "Peer-reviewed Welfare Footprint analysis (Scientific Reports, 2025) estimating about 10 (1.9-21.7) minutes of moderate to intense pain per rainbow trout killed by air asphyxia, and modelling the cost-effectiveness of electrical and percussive stunning.",
+    "website": "https://welfarefootprint.org/publications/trout-air-asphyxia.html",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://welfarefootprint.org/publications/trout-air-asphyxia.html",
+        "title": "Air asphyxia in rainbow trout slaughter | WFI",
+        "accessed": "2026-11-05",
+        "published": null
+      }
+    ],
+    "notes": "DOI 10.1038/s41598-025-04272-1. WFI also hosts a 'Fish welfare at slaughter' species page and a farmed fish appraisal."
+  }
+]
