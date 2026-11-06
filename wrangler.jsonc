@@ -2,22 +2,20 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "animal-movement-map",
   "main": "src/index.js",
+  "account_id": "aa83981d86bb86bc36bb57d62f924cf7",
   "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
-  },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "animal-movement-map",
-      "database_id": "REPLACE_WITH_D1_ID"
+      "database_id": "500ab7c8-b20a-4bec-bd0f-bdc49a3beac0"
     }
   ],
   // Hourly: each run checks a small batch of sources that are due under their
   // own cadence (daily feeds, monthly homepage checks), with backoff on failures.
   "triggers": { "crons": ["23 * * * *"] },
   "observability": { "enabled": true },
-  "vars": { "PUBLIC_URL": "" }
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": { "PUBLIC_URL": "https://animal-movement-map.ncr0517.workers.dev" }
 }

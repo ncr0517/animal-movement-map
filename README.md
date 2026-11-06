@@ -23,7 +23,8 @@ aliases and summaries.
 
 ```
 Cloudflare Worker (src/index.js)
- ├─ static assets: public/ (index.html, app.js, styles.css, snapshot.json fallback)
+ ├─ static pages: public/ (index.html, app.js, styles.css, snapshot.json fallback),
+ │   bundled into src/generated/static.js at build time and served by the Worker
  ├─ GET  /api/snapshot           entities + events + recent feed items (cached 5 min)
  ├─ POST /api/corrections        public corrections queue
  ├─ /api/admin/*                 review corrections, inspect sources/items, run refresh (Bearer ADMIN_TOKEN)
@@ -53,15 +54,29 @@ npm run dev        # builds seed, loads local D1, runs wrangler dev
 
 ## Deploy (Cloudflare)
 
+Live at **https://animal-movement-map.ncr0517.workers.dev** (D1 database `animal-movement-map` is already created and
+its id is in `wrangler.jsonc`).
+
 ```bash
-npx wrangler d1 create animal-movement-map      # paste the database_id into wrangler.jsonc
-npm run build
-npm run db:remote                               # load schema + seed into remote D1
-npx wrangler secret put ADMIN_TOKEN             # any long random string
+npm run build                                   # seed SQL + snapshot + bundled static pages
+npm run db:remote                               # reload entities/events/sources (corrections are kept)
 npx wrangler deploy
 ```
 
+First-time setup on a new account: `npx wrangler d1 create animal-movement-map`, put the id in `wrangler.jsonc`, and
+`npx wrangler secret put ADMIN_TOKEN` with a long random string.
+
+Static pages are embedded in the Worker instead of using Workers Static Assets, so a deploy is a single API
+call authenticated with the account API token. This works from environments that inject the token at a proxy.
+
 Wrangler needs `CLOUDFLARE_API_TOKEN` with Workers Scripts: Edit, D1: Edit and Account Settings: Read.
+
+After a reseed, run a first refresh pass instead of waiting for the hourly batches:
+
+```bash
+curl -X POST -H "authorization: Bearer $ADMIN_TOKEN" -H 'content-type: application/json' \
+  -d '{"batch":10}' https://animal-movement-map.ncr0517.workers.dev/api/admin/refresh
+```
 
 ## Docs
 

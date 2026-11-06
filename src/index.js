@@ -1,4 +1,5 @@
 import { runRefresh } from './refresh.js';
+import STATIC from './generated/static.js';
 
 const STALE_DAYS = 180;
 const DAY = 86400_000;
@@ -41,7 +42,7 @@ async function buildSnapshot(env) {
     db.prepare('SELECT * FROM events'),
     db.prepare('SELECT * FROM event_entities'),
     db.prepare("SELECT id, entity_id, url, kind, cadence, last_checked, last_success, last_status, error, consecutive_failures FROM sources WHERE visibility='public'"),
-    db.prepare('SELECT * FROM refresh_runs WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1'),
+    db.prepare('SELECT * FROM refresh_runs WHERE finished_at IS NOT NULL AND sources_checked > 0 ORDER BY id DESC LIMIT 1'),
     db.prepare(`SELECT f.id, f.entity_id, f.title, f.link, f.published, f.first_seen, f.excerpt, f.signal, f.species, f.mentions, f.meaningful
                 FROM feed_items f JOIN sources s ON s.id=f.source_id
                 WHERE s.visibility='public' AND COALESCE(f.published, f.first_seen) >= ? ORDER BY COALESCE(f.published, f.first_seen) DESC LIMIT 400`)
@@ -168,6 +169,17 @@ async function adminRoutes(request, env, url) {
   return json({ error: 'Not found' }, { status: 404 });
 }
 
+function serveStatic(request, url) {
+  const key = url.pathname === '/' ? '/index.html' : url.pathname;
+  const f = STATIC[key];
+  if (!f || !['GET', 'HEAD'].includes(request.method)) return new Response('Not found', { status: 404, headers: { 'content-type': 'text/plain' } });
+  if (request.headers.get('if-none-match') === f.etag) return new Response(null, { status: 304, headers: { etag: f.etag } });
+  const cache = key === '/index.html' ? 'public, max-age=0, must-revalidate' : 'public, max-age=300';
+  return new Response(request.method === 'HEAD' ? null : f.body, {
+    headers: { 'content-type': f.type, etag: f.etag, 'cache-control': cache, 'x-content-type-options': 'nosniff', 'referrer-policy': 'strict-origin-when-cross-origin' },
+  });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -177,7 +189,7 @@ export default {
       if (url.pathname === '/api/corrections' && request.method === 'POST') return submitCorrection(request, env);
       if (url.pathname.startsWith('/api/admin/')) return adminRoutes(request, env, url);
       if (url.pathname.startsWith('/api/')) return json({ error: 'Not found' }, { status: 404 });
-      return env.ASSETS.fetch(request);
+      return serveStatic(request, url);
     } catch (err) {
       console.error(err);
       return json({ error: 'Server error', detail: String(err?.message || err) }, { status: 500 });

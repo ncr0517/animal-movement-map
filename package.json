@@ -5,7 +5,7 @@
   "type": "module",
   "description": "A navigable, source-linked field map of the animal movement, refreshed from public sources.",
   "scripts": {
-    "build": "node scripts/build-seed.mjs",
+    "build": "node scripts/build-seed.mjs && node scripts/build-static.mjs",
     "test": "node --test test/*.test.js",
     "dev": "npm run build && wrangler d1 execute animal-movement-map --local --file=db/schema.sql && wrangler d1 execute animal-movement-map --local --file=db/seed.sql && wrangler dev",
     "db:remote": "wrangler d1 execute animal-movement-map --remote --file=db/schema.sql && wrangler d1 execute animal-movement-map --remote --file=db/seed.sql",
