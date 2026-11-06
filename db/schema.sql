@@ -66,6 +66,7 @@ CREATE TABLE events (
   funder_id TEXT,
   recipient_id TEXT,
   deadline TEXT,
+  call_state TEXT,             -- reviewed override: open | closed | forthcoming | rolling-or-unstated (else derived from deadline)
   status TEXT NOT NULL,        -- confirmed | reported | uncertain | disputed | superseded
   conflicts_with TEXT,         -- JSON array of event ids that report something different
   origin TEXT NOT NULL,        -- curated | feed

@@ -211,6 +211,7 @@ for (const f of eventFiles) {
       funder_id: funder,
       recipient_id: recipient,
       deadline: raw.deadline || null,
+      call_state: null,
       status: ENUMS.eventStatus.includes(raw.status) ? raw.status : 'reported',
       conflicts_with: [],
       origin: 'curated',
@@ -220,6 +221,23 @@ for (const f of eventFiles) {
     if (events.has(id)) { warnings.push(`event ${id}: duplicate id in ${path.basename(f)} — later copy kept`); }
     events.set(id, ev);
   }
+}
+
+// ---- Reviewed overrides (accepted corrections, manual fixes) ----
+const CALL_STATES = ['open', 'closed', 'forthcoming', 'rolling-or-unstated'];
+const overrides = fs.existsSync(R('data/curated/overrides.json')) ? readJson(R('data/curated/overrides.json')) : {};
+const applyPatch = (target, patch, label) => {
+  for (const [k, v] of Object.entries(patch)) {
+    if (k.startsWith('_')) continue;
+    if (k === 'call_state' && !CALL_STATES.includes(v)) { warnings.push(`override ${label}: bad call_state "${v}"`); continue; }
+    target[k] = v;
+  }
+};
+for (const [id, patch] of Object.entries(overrides.events || {})) {
+  if (events.has(id)) applyPatch(events.get(id), patch, id); else warnings.push(`override for unknown event ${id}`);
+}
+for (const [id, patch] of Object.entries(overrides.entities || {})) {
+  if (entities.has(id)) applyPatch(entities.get(id), patch, id); else warnings.push(`override for unknown entity ${id}`);
 }
 
 // Duplicate & conflict detection for grants: same funder + recipient + period.
@@ -281,9 +299,9 @@ for (const e of entities.values()) {
 }
 for (const [alias, id] of aliasIdx) sql.push(`INSERT OR IGNORE INTO aliases (alias_norm,alias,entity_id) VALUES (${q(alias)},${q(alias)},${q(id)});`);
 for (const ev of events.values()) {
-  sql.push(`INSERT INTO events (id,type,title,summary,event_date,source_published,last_checked,source_url,source_title,amount,currency,funder_id,recipient_id,deadline,status,conflicts_with,origin,notes,created_at) VALUES (${[
+  sql.push(`INSERT INTO events (id,type,title,summary,event_date,source_published,last_checked,source_url,source_title,amount,currency,funder_id,recipient_id,deadline,call_state,status,conflicts_with,origin,notes,created_at) VALUES (${[
     ev.id, ev.type, ev.title, ev.summary, ev.event_date, ev.source_published, ev.last_checked, ev.source_url, ev.source_title, ev.amount,
-    ev.currency, ev.funder_id, ev.recipient_id, ev.deadline, ev.status, JSON.stringify(ev.conflicts_with), ev.origin, ev.notes, now,
+    ev.currency, ev.funder_id, ev.recipient_id, ev.deadline, ev.call_state, ev.status, JSON.stringify(ev.conflicts_with), ev.origin, ev.notes, now,
   ].map(q).join(',')});`);
   for (const eid of ev.entity_ids) sql.push(`INSERT OR IGNORE INTO event_entities (event_id,entity_id) VALUES (${q(ev.id)},${q(eid)});`);
 }
@@ -307,7 +325,7 @@ const snapshot = {
   })),
   events: [...events.values()].map((ev) => ({
     ...ev,
-    call_state: ev.type !== 'open_call' ? null : !ev.deadline ? 'rolling-or-unstated' : Date.parse(ev.deadline) + DAY < Date.now() ? 'closed' : 'open',
+    call_state: ev.type !== 'open_call' ? null : ev.call_state ? ev.call_state : !ev.deadline ? 'rolling-or-unstated' : Date.parse(ev.deadline) + DAY < Date.now() ? 'closed' : 'open',
   })),
   changes: [],
 };

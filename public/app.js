@@ -210,8 +210,11 @@ function entityLinks(ids) {
 function changeItems() {
   const active = filtersActive();
   const ok = (ids) => !active || ids.some((id) => state.byId[id] && matches(state.byId[id]));
+  const today = new Date().toISOString().slice(0, 10);
+  // Order by when the change became knowable: future-dated records (forthcoming calls, laws taking
+  // effect later) sort by their publication or check date, not by the future date.
   const curated = state.data.events.filter((ev) => ok(ev.entity_ids)).map((ev) => ({
-    kind: 'curated', date: ev.event_date || ev.source_published, ev,
+    kind: 'curated', date: ev.event_date && ev.event_date <= today ? ev.event_date : ev.source_published || ev.last_checked || ev.event_date, ev,
   }));
   const auto = (state.data.changes || []).filter((c) => c.meaningful && ok([c.entity_id, ...(c.mentions || [])].filter(Boolean))).map((c) => ({
     kind: 'auto', date: c.published || c.first_seen, c,
@@ -221,10 +224,10 @@ function changeItems() {
     .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 }
 
-function eventRow(ev) {
+function eventRow(ev, sortDate) {
   const amount = ev.amount != null ? ` · <span class="mono">${money(ev.amount, ev.currency)}</span>` : '';
   return `<li class="tl-item">
-    <div class="tl-date">${fmtDate(ev.event_date || ev.source_published)}</div>
+    <div class="tl-date">${fmtDate(sortDate || ev.event_date || ev.source_published)}</div>
     <div>
       <div class="meta" style="margin-bottom:3px"><span class="pill type">${esc(EVENT_TYPE[ev.type] || ev.type)}</span>
         <span class="pill ${esc(ev.status)}" title="${esc(STATUS_HELP[ev.status] || '')}">${esc(ev.status)}</span>
@@ -266,7 +269,7 @@ function renderChanges() {
     <div>
       <div class="section-head"><h2>Recent changes</h2><span class="muted mono">${items.length} shown</span></div>
       <div class="seg" role="group" aria-label="Which changes">${seg('all', 'All')}${seg('curated', 'Curated records')}${seg('auto', `Auto-detected (${nAuto})`)}</div>
-      <ul class="timeline">${items.map((i) => (i.kind === 'curated' ? eventRow(i.ev) : feedRow(i.c))).join('') ||
+      <ul class="timeline">${items.map((i) => (i.kind === 'curated' ? eventRow(i.ev, i.date) : feedRow(i.c))).join('') ||
         `<li class="muted" style="padding:16px 0">${state.live ? 'No changes match these filters.' : 'Auto-detected changes appear here once the refresher has run on the deployed site.'}</li>`}</ul>
     </div>
     <aside class="side">
@@ -292,7 +295,7 @@ function renderFunding() {
   for (const g of grants) if (g.amount != null && g.status !== 'superseded') totals[g.currency || '?'] = (totals[g.currency || '?'] || 0) + g.amount;
   const funders = new Set(grants.map((g) => g.funder_id).filter(Boolean));
   const recips = new Set(grants.map((g) => g.recipient_id).filter(Boolean));
-  const order = { open: 0, 'rolling-or-unstated': 1, closed: 2 };
+  const order = { open: 0, 'rolling-or-unstated': 1, forthcoming: 2, closed: 3 };
   calls.sort((a, b) => (order[a.call_state] ?? 3) - (order[b.call_state] ?? 3) || String(a.deadline || '9').localeCompare(String(b.deadline || '9')));
   const name = (id) => (state.byId[id] ? `<button class="elink" data-id="${esc(id)}">${esc(state.byId[id].name)}</button>` : '—');
 

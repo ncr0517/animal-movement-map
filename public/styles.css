@@ -175,6 +175,7 @@ td .rowlink:hover { color: var(--water); text-decoration: underline; }
 .pill { display: inline-block; font-size: 0.6875rem; font-weight: 600; letter-spacing: .03em; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
 .pill.confirmed, .pill.open { color: var(--ok); }
 .pill.reported, .pill.rolling-or-unstated { color: var(--warn); }
+.pill.forthcoming { color: var(--water); }
 .pill.uncertain, .pill.stale { color: var(--warn); border-style: dashed; }
 .pill.disputed, .pill.closed { color: var(--bad); }
 .pill.auto { color: var(--ink-3); border-style: dotted; }

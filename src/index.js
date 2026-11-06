@@ -28,6 +28,7 @@ function isAdmin(request, env) {
 
 function callState(ev, now) {
   if (ev.type !== 'open_call') return null;
+  if (ev.call_state) return ev.call_state;
   if (!ev.deadline) return 'rolling-or-unstated';
   return Date.parse(ev.deadline) + DAY < now ? 'closed' : 'open';
 }
@@ -43,7 +44,7 @@ async function buildSnapshot(env) {
     db.prepare('SELECT * FROM refresh_runs WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1'),
     db.prepare(`SELECT f.id, f.entity_id, f.title, f.link, f.published, f.first_seen, f.excerpt, f.signal, f.species, f.mentions, f.meaningful
                 FROM feed_items f JOIN sources s ON s.id=f.source_id
-                WHERE s.visibility='public' AND f.first_seen >= ? ORDER BY COALESCE(f.published, f.first_seen) DESC LIMIT 400`)
+                WHERE s.visibility='public' AND COALESCE(f.published, f.first_seen) >= ? ORDER BY COALESCE(f.published, f.first_seen) DESC LIMIT 400`)
       .bind(new Date(now - 120 * DAY).toISOString()),
   ]);
 

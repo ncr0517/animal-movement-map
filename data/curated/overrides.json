@@ -1,0 +1,234 @@
+{
+  "_comment": "Field-level patches applied after research files are merged. Use for accepted corrections and reviewed fixes. Keys are entity or event ids. Each patch should say why in _why.",
+  "events": {
+    "call-ambitious-impact-incubation-feb-2027-factory-farming": {
+      "call_state": "closed",
+      "_why": "Animal-focused cohort applications closed; next listed cohort is not animal-focused (per research notes 2026-11-05)."
+    },
+    "call-horizon-europe-cl6-2027-02-farm2fork-06": {
+      "call_state": "forthcoming",
+      "_why": "EU Funding & Tenders lists the topic as 'forthcoming'; the deadline is not an open window."
+    },
+    "call-blueperch-expressions-of-interest": {
+      "call_state": "forthcoming",
+      "_why": "Hive round-up describes timing as mid-2027."
+    }
+  },
+  "entities": {
+    "university-of-stirling": {
+      "name": "University of Stirling (Institute of Aquaculture)",
+      "kind": "organisation",
+      "categories": [
+        "welfare-science"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish"
+      ],
+      "regions": [
+        "uk"
+      ]
+    },
+    "fai-farms": {
+      "name": "FAI Farms",
+      "kind": "organisation",
+      "categories": [
+        "welfare-science"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish"
+      ]
+    },
+    "wageningen-university": {
+      "name": "Wageningen University & Research",
+      "kind": "organisation",
+      "categories": [
+        "welfare-science"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "wild-fish"
+      ],
+      "regions": [
+        "europe"
+      ]
+    },
+    "animal-law-italia": {
+      "name": "Animal Law Italia",
+      "kind": "organisation",
+      "categories": [
+        "policy-law"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "crustaceans"
+      ],
+      "regions": [
+        "europe"
+      ]
+    },
+    "awash": {
+      "name": "AWASH",
+      "kind": "organisation",
+      "categories": [
+        "advocacy-campaigns"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish"
+      ],
+      "regions": [
+        "africa"
+      ]
+    },
+    "mtu-loomus": {
+      "name": "MTÜ Loomus",
+      "kind": "organisation",
+      "categories": [
+        "advocacy-campaigns"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish"
+      ],
+      "regions": [
+        "europe"
+      ]
+    },
+    "animal-activism-collective": {
+      "name": "Animal Activism Collective",
+      "kind": "organisation",
+      "categories": [
+        "advocacy-campaigns"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "crustaceans"
+      ]
+    },
+    "fundacion-derecho-y-defensa-animal": {
+      "name": "Fundación Derecho y Defensa Animal",
+      "kind": "organisation",
+      "categories": [
+        "policy-law"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish"
+      ],
+      "regions": [
+        "latin-america"
+      ]
+    },
+    "center-for-responsible-seafood": {
+      "name": "Center for Responsible Seafood",
+      "kind": "organisation",
+      "categories": [
+        "welfare-technology"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "crustaceans"
+      ]
+    },
+    "national-lottery-community-fund": {
+      "name": "National Lottery Community Fund",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "regions": [
+        "uk"
+      ]
+    },
+    "sharegift": {
+      "name": "ShareGift",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "regions": [
+        "uk"
+      ]
+    },
+    "bbsrc": {
+      "name": "BBSRC (UKRI)",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "aliases": [
+        "Biotechnology and Biological Sciences Research Council"
+      ],
+      "regions": [
+        "uk"
+      ]
+    },
+    "science-for-animal-welfare": {
+      "name": "Science for Animal Welfare",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "aliases": [
+        "UFAW",
+        "Universities Federation for Animal Welfare"
+      ],
+      "regions": [
+        "uk"
+      ]
+    },
+    "kickstarting-for-good": {
+      "name": "Kickstarting for Good",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
+    },
+    "blueperch": {
+      "name": "BluePerch",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "species": [
+        "farmed-fish",
+        "wild-fish"
+      ]
+    },
+    "who-let-docs-out": {
+      "name": "Who Let the Docs Out",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
+    },
+    "strategic-animal-funding-circle": {
+      "name": "Strategic Animal Funding Circle",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
+    },
+    "european-commission": {
+      "name": "European Commission (Horizon Europe)",
+      "kind": "funder",
+      "categories": [
+        "funding"
+      ],
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "regions": [
+        "europe"
+      ]
+    }
+  }
+}
