@@ -1444,7 +1444,8 @@
       {
         "url": "https://faunalytics.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [
@@ -2240,7 +2241,8 @@
       {
         "url": "https://animalcharityevaluators.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [
@@ -2866,9 +2868,7 @@
   {
     "id": "sentient-media",
     "name": "Sentient Media",
-    "aliases": [
-      "Sentient"
-    ],
+    "aliases": [],
     "kind": "organisation",
     "parent_id": null,
     "categories": [
@@ -2896,7 +2896,8 @@
       {
         "url": "https://sentientmedia.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [

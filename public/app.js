@@ -67,10 +67,20 @@ function ago(d) {
   if (days < 60) return `${days} days ago`;
   return `${Math.round(days / 30)} months ago`;
 }
+// Returns HTML-safe text: callers put it straight into innerHTML.
 function money(n, cur) {
   if (n == null) return '—';
-  try { return new Intl.NumberFormat('en-GB', { style: 'currency', currency: cur || 'USD', maximumFractionDigits: 0 }).format(n); }
-  catch { return `${n.toLocaleString('en-GB')} ${cur || ''}`; }
+  try { return esc(new Intl.NumberFormat('en-GB', { style: 'currency', currency: cur || 'USD', maximumFractionDigits: 0 }).format(n)); }
+  catch { return esc(`${Number(n).toLocaleString('en-GB')} ${cur || ''}`.trim()); }
+}
+
+// Mirrors src/lib/calls.js: a deadline more than a day past closes a call, whatever the data says. The
+// static snapshot and the edge-cached API response were computed earlier than now.
+function currentCallState(ev, now = Date.now()) {
+  if (ev.type !== 'open_call') return ev.call_state ?? null;
+  const ok = typeof ev.deadline === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(ev.deadline);
+  const t = ok ? Date.parse(`${ev.deadline}T00:00:00Z`) : NaN;
+  return !Number.isNaN(t) && t + 86400000 < now ? 'closed' : ev.call_state;
 }
 
 function glyph(e) {
@@ -281,6 +291,7 @@ function renderChanges() {
       <ul>
         <li>${state.data.source_health.feeds} public feeds checked daily; ${state.data.source_health.total - state.data.source_health.feeds} homepages checked monthly</li>
         <li>Last run: ${lr ? `${fmtDate(lr.finished_at, { precise: true })} UTC (${lr.sources_checked} sources, ${lr.new_items} new items)` : 'not run yet'}</li>
+        ${refreshDelayed() ? `<li style="color:var(--bad)">Refresh delayed: ${esc(state.data.refresher.detail)}</li>` : ''}
         <li>${state.data.source_health.failing} sources currently failing</li>
       </ul>
     </aside></div>`;
@@ -291,8 +302,18 @@ function renderFunding() {
   const ok = (ev) => !active || ev.entity_ids.some((id) => state.byId[id] && matches(state.byId[id]));
   const grants = state.data.events.filter((e) => e.type === 'grant_awarded' && ok(e)).sort((a, b) => String(b.event_date || '').localeCompare(String(a.event_date || '')));
   const calls = state.data.events.filter((e) => e.type === 'open_call' && ok(e));
+  // A grant record with no single recipient is a round total (all the grants of one round). Per-recipient
+  // records from the same funder and announcement are part of it, so they are not added a second time.
+  // Records whose sources disagree (disputed) are left out of the sums rather than counted twice.
+  const counted = (g) => g.amount != null && g.status !== 'superseded' && g.status !== 'disputed';
+  const rounds = grants.filter((g) => !g.recipient_id);
+  const single = grants.filter((g) => g.recipient_id);
+  const inRound = (g) => rounds.some((r) => counted(r) && r.funder_id === g.funder_id && r.source_url === g.source_url && (r.currency || '?') === (g.currency || '?'));
   const totals = {};
-  for (const g of grants) if (g.amount != null && g.status !== 'superseded') totals[g.currency || '?'] = (totals[g.currency || '?'] || 0) + g.amount;
+  const add = (g) => { totals[g.currency || '?'] = (totals[g.currency || '?'] || 0) + g.amount; };
+  for (const g of single) if (counted(g) && !inRound(g)) add(g);
+  for (const r of rounds) if (counted(r)) add(r);
+  const nDisputed = grants.filter((g) => g.amount != null && g.status === 'disputed').length;
   const funders = new Set(grants.map((g) => g.funder_id).filter(Boolean));
   const recips = new Set(grants.map((g) => g.recipient_id).filter(Boolean));
   const order = { open: 0, 'rolling-or-unstated': 1, forthcoming: 2, closed: 3 };
@@ -303,16 +324,17 @@ function renderFunding() {
     <section class="fund" style="margin-top:16px">
       <div class="section-head"><h2>Grants awarded</h2></div>
       <div class="stats">
-        <div class="stat"><div class="v">${grants.length}</div><div class="l">disclosed grant records</div></div>
+        <div class="stat"><div class="v">${single.length}</div><div class="l">disclosed grants to named recipients</div></div>
+        ${rounds.length ? `<div class="stat"><div class="v">${rounds.length}</div><div class="l">round totals (several grants each)</div></div>` : ''}
         <div class="stat"><div class="v">${funders.size}</div><div class="l">funders</div></div>
         <div class="stat"><div class="v">${recips.size}</div><div class="l">recipients</div></div>
         ${Object.entries(totals).map(([c, v]) => `<div class="stat"><div class="v">${money(v, c)}</div><div class="l">total disclosed in ${esc(c)}</div></div>`).join('')}
       </div>
-      <p class="muted" style="font-size:var(--s-sm);max-width:90ch">These totals add up publicly disclosed awards in this sample only. They do not show an organisation's budget, or how much of the money is still unspent.</p>
+      <p class="muted" style="font-size:var(--s-sm);max-width:90ch">These totals add up publicly disclosed awards in this sample only. They do not show an organisation's budget, or how much of the money is still unspent. A round total counts its whole round once; the round's individual grants listed below are not added again.${nDisputed ? ` ${nDisputed} record${nDisputed === 1 ? '' : 's'} whose sources disagree ${nDisputed === 1 ? 'is' : 'are'} left out of the totals.` : ''}</p>
       <div class="table-wrap"><table>
         <thead><tr><th>Awarded</th><th>Funder</th><th>Recipient</th><th>Purpose</th><th style="text-align:right">Amount</th><th>Status</th><th>Source</th></tr></thead>
         <tbody>${grants.map((g) => `<tr>
-          <td class="mono" style="white-space:nowrap">${fmtDate(g.event_date)}</td><td>${name(g.funder_id)}</td><td>${name(g.recipient_id)}</td>
+          <td class="mono" style="white-space:nowrap">${fmtDate(g.event_date)}</td><td>${name(g.funder_id)}</td><td>${g.recipient_id ? name(g.recipient_id) : '<span class="muted">several (round total)</span>'}</td>
           <td>${esc(g.title)}${g.conflicts_with?.length ? ' <span class="pill disputed">conflicting reports</span>' : ''}</td>
           <td class="amount">${money(g.amount, g.currency)}</td>
           <td><span class="pill ${esc(g.status)}" title="${esc(STATUS_HELP[g.status] || '')}">${esc(g.status)}</span></td>
@@ -530,14 +552,20 @@ function setupFilters() {
   try { if (localStorage.getItem('amm-direct') === '0') { state.f.direct = false; $('#f-direct').checked = false; } } catch {}
 }
 
+// The Worker reports whether the hourly refresher is keeping up (src/index.js refresherHealth).
+function refreshDelayed() {
+  return state.live && state.data.refresher?.status === 'degraded';
+}
+
 function renderFreshness() {
   const d = state.data;
   const lr = d.last_refresh;
   const health = d.source_health;
-  const cls = !state.live ? '' : health.failing > health.total * 0.25 ? 'warn' : 'ok';
+  const delayed = refreshDelayed();
+  const cls = !state.live ? '' : delayed || health.failing > health.total * 0.25 ? 'warn' : 'ok';
   $('#freshness').innerHTML = `
-    <div><span class="dot ${cls}"></span><b>${state.live ? 'Live data' : 'Static snapshot'}</b> · ${d.entities.length} entries · ${d.events.length} records</div>
-    <div>${lr ? `Last refresh ${ago(lr.finished_at)} · ${lr.sources_checked} sources checked` : state.live ? 'Waiting for the first scheduled refresh' : `Built ${fmtDate(d.generated_at)}`}</div>`;
+    <div><span class="dot ${cls}"></span><b>${state.live ? (delayed ? 'Live data · refresh delayed' : 'Live data') : 'Static snapshot'}</b> · ${d.entities.length} entries · ${d.events.length} records</div>
+    <div>${delayed ? `${esc(d.refresher.detail)} ` : ''}${lr ? `Last refresh ${ago(lr.finished_at)} · ${lr.sources_checked} sources checked` : state.live ? 'Waiting for the first scheduled refresh' : `Built ${fmtDate(d.generated_at)}`}</div>`;
   $('#footer-meta').textContent = `${health.total} public sources monitored · snapshot generated ${fmtDate(d.generated_at, { precise: true })} UTC`;
 }
 
@@ -560,6 +588,7 @@ async function main() {
     return;
   }
   state.byId = Object.fromEntries(state.data.entities.map((e) => [e.id, e]));
+  for (const ev of state.data.events) ev.call_state = currentCallState(ev);
   setupFilters();
   renderFreshness();
 

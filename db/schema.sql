@@ -4,14 +4,18 @@
 --  * preserve conflicting reports instead of overwriting them
 --  * distinguish grants awarded from open calls, announced plans from active projects
 --  * every claim is source-linked; corrections are queued for human review
+--
+-- `npm run db:remote` runs this file and then db/seed.sql. Tables rebuilt from the research files are
+-- dropped and recreated. Tables that hold what the live site has gathered (corrections, feed items and the
+-- refresh-run log) are created only if missing, so a reseed never loses them. Every index on those tables is
+-- IF NOT EXISTS too, so this file can run again on a database that already has them.
 
 DROP TABLE IF EXISTS entities;
 DROP TABLE IF EXISTS aliases;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS event_entities;
 DROP TABLE IF EXISTS sources;
-DROP TABLE IF EXISTS feed_items;
-DROP TABLE IF EXISTS refresh_runs;
+
 -- corrections are user-submitted: never dropped by a re-seed
 CREATE TABLE IF NOT EXISTS corrections (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,9 +47,10 @@ CREATE TABLE entities (
   updated_at TEXT NOT NULL
 );
 
+-- Names used to spot mentions of an entity in feed posts (src/lib/feeds.js detectMentions).
 CREATE TABLE aliases (
-  alias_norm TEXT NOT NULL,
-  alias TEXT NOT NULL,
+  alias_norm TEXT NOT NULL,    -- the name in mentionForm(): lower case, punctuation removed, leading "the" dropped
+  alias TEXT NOT NULL,         -- the name as written (one-word names match only with these capitals)
   entity_id TEXT NOT NULL,
   PRIMARY KEY (alias_norm, entity_id)
 );
@@ -87,6 +92,7 @@ CREATE TABLE sources (
   kind TEXT NOT NULL,          -- feed | homepage
   cadence TEXT NOT NULL,       -- daily | weekly | monthly
   visibility TEXT NOT NULL DEFAULT 'public',  -- public | restricted (restricted sources are never shown publicly)
+  reuse TEXT NOT NULL DEFAULT 'full',          -- full | headline (publisher allows only headline + link: no excerpts)
   last_checked TEXT,
   last_success TEXT,
   last_status INTEGER,
@@ -96,7 +102,8 @@ CREATE TABLE sources (
   consecutive_failures INTEGER NOT NULL DEFAULT 0
 );
 
-CREATE TABLE feed_items (
+-- Kept across reseeds: items that have dropped off a feed cannot be fetched again.
+CREATE TABLE IF NOT EXISTS feed_items (
   id TEXT PRIMARY KEY,         -- hash of source + guid/link
   source_id TEXT NOT NULL,
   entity_id TEXT,
@@ -109,16 +116,19 @@ CREATE TABLE feed_items (
   species TEXT,                -- JSON array of species tags detected in the text
   mentions TEXT,               -- JSON array of other entity ids named in the text
   meaningful INTEGER NOT NULL DEFAULT 0,
-  reviewed INTEGER NOT NULL DEFAULT 0
+  reviewed INTEGER NOT NULL DEFAULT 0  -- set by POST /api/admin/items/reviewed
 );
 
-CREATE INDEX idx_feed_items_seen ON feed_items(first_seen);
-CREATE INDEX idx_feed_items_entity ON feed_items(entity_id);
+CREATE INDEX IF NOT EXISTS idx_feed_items_seen ON feed_items(first_seen);
+CREATE INDEX IF NOT EXISTS idx_feed_items_entity ON feed_items(entity_id);
+-- /api/snapshot filters and sorts on this expression; without the index every rebuild scans feed_items.
+CREATE INDEX IF NOT EXISTS idx_feed_items_when ON feed_items(COALESCE(published, first_seen));
 
-CREATE TABLE refresh_runs (
+-- Kept across reseeds, so the site's "last refresh" survives one.
+CREATE TABLE IF NOT EXISTS refresh_runs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   started_at TEXT NOT NULL,
-  finished_at TEXT,
+  finished_at TEXT,            -- NULL while running; stays NULL if the invocation was killed
   trigger TEXT,
   sources_checked INTEGER DEFAULT 0,
   new_items INTEGER DEFAULT 0,

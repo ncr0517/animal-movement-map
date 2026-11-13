@@ -1,8 +1,8 @@
-# Seed build report (2026-11-06T15:02:15.925Z)
+# Seed build report (2026-11-13T14:31:12.235Z)
 
 - Entities: 117 (18 stubs)
-- Events: 104
-- Sources: 140 (45 feeds)
+- Events: 103
+- Sources: 140 (45 feeds, 3 headline-only)
 
 ## Entities by primary category
 - advocacy-campaigns: 34
@@ -24,8 +24,8 @@
 - announcement: 10
 - campaign_outcome: 2
 - plan_announced: 3
-- open_call: 17
-- grant_awarded: 41
+- grant_awarded: 42
+- open_call: 15
 
 ## Reconciled (merged) records
 - mercy-for-animals (movement) → mercy-for-animals (aquatic)
@@ -42,7 +42,12 @@
 - ea-animal-welfare-fund (movement) → ea-animal-welfare-fund (aquatic)
 - animal-charity-evaluators (movement) → animal-charity-evaluators (aquatic)
 - ambitious-impact (movement) → ambitious-impact (aquatic)
-- event awf-shrimp-welfare-project-2026-q1-wild-caught → awf-shrimp-welfare-project-2026-q1-direct-work
+- event fwi-open-call-india-2026 → call-fish-welfare-initiative-india-2026 (same_as)
+- event aim-animal-incubation-round-call-2026 → call-ambitious-impact-incubation-feb-2027-factory-farming (same_as)
+
+## Round totals (grant records with no single recipient; the Funding view counts them separately)
+- wai-2026-research-grants
+- ace-movement-grants-round-11-2026
 
 ## Stub entities created from references
 - university-of-stirling (from cg-university-of-stirling-fish-welfare-research-2025)

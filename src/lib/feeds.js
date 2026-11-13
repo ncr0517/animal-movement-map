@@ -2,8 +2,13 @@
 // Regex-based on purpose: Workers' free tier allows ~10ms CPU per invocation,
 // so we avoid a full XML DOM and cap how much of each feed we read.
 
-const MAX_FEED_BYTES = 400_000;
+export const MAX_FEED_BYTES = 400_000;
 const MAX_ITEMS = 25;
+// A link longer than this, or not http(s), is dropped: one feed must not be able to inflate /api/snapshot.
+export const MAX_LINK_CHARS = 2000;
+const MAX_GUID_CHARS = 500;
+// A feed date more than a day ahead is wrong; it is dropped so the item sorts by when we first saw it.
+const MAX_FUTURE_MS = 86400_000;
 
 const ENTITY_MAP = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', '#39': "'" };
 
@@ -52,9 +57,24 @@ export function toIsoDate(raw) {
   return new Date(t).toISOString();
 }
 
-export function parseFeed(xml) {
+export function cleanLink(raw) {
+  const u = (raw || '').trim();
+  return u && u.length <= MAX_LINK_CHARS && /^https?:\/\/\S+$/i.test(u) ? u : null;
+}
+
+// The document's root element, after any BOM, XML declaration, processing instructions, comments and doctype.
+// A substring test is not enough: an RSS item can quote "<feed>" in its HTML, and an HTML page can contain "<rss".
+function rootElement(text) {
+  const m = text.match(/^\uFEFF?\s*(?:(?:<\?[\s\S]*?\?>|<!--[\s\S]*?-->|<!DOCTYPE[^>[]*(?:\[[\s\S]*?\])?\s*>)\s*)*<([A-Za-z_][\w.:-]*)/i);
+  return m ? m[1].toLowerCase().replace(/^[\w.-]+:(?=(?:rss|feed|rdf)$)/, '') : null;
+}
+
+export function parseFeed(xml, { now = Date.now() } = {}) {
   const text = xml.length > MAX_FEED_BYTES ? xml.slice(0, MAX_FEED_BYTES) : xml;
-  const isAtom = /<feed[\s>]/i.test(text) && /<entry[\s>]/i.test(text);
+  const root = rootElement(text);
+  const isAtom = root === 'feed';
+  const valid = root === 'rss' || root === 'feed' || root === 'rdf';
+  if (!valid) return { format: null, items: [], valid: false };
   const blocks = isAtom
     ? text.match(/<entry[\s>][\s\S]*?<\/entry>/gi) || []
     : text.match(/<item[\s>][\s\S]*?<\/item>/gi) || [];
@@ -62,16 +82,17 @@ export function parseFeed(xml) {
   for (const b of blocks.slice(0, MAX_ITEMS)) {
     const title = stripTags(tag(b, 'title') || '');
     if (!title) continue;
-    const link = isAtom ? atomLink(b) : stripTags(tag(b, 'link') || '') || null;
-    const guid = stripTags(tag(b, 'guid') || tag(b, 'id') || '') || link || title;
-    const published = toIsoDate(
+    const link = cleanLink(isAtom ? atomLink(b) : stripTags(tag(b, 'link') || ''));
+    const guid = (stripTags(tag(b, 'guid') || tag(b, 'id') || '') || link || title).slice(0, MAX_GUID_CHARS);
+    let published = toIsoDate(
       tag(b, 'pubDate') || tag(b, 'published') || tag(b, 'updated') || tag(b, 'dc:date')
     );
+    if (published && Date.parse(published) > now + MAX_FUTURE_MS) published = null;
     const body = tag(b, 'description') || tag(b, 'summary') || tag(b, 'content:encoded') || tag(b, 'content') || '';
     const excerpt = stripTags(body).slice(0, 400);
     items.push({ title: title.slice(0, 300), link, guid, published, excerpt });
   }
-  return { format: isAtom ? 'atom' : 'rss', items, valid: blocks.length > 0 || /<rss|<feed|<rdf/i.test(text) };
+  return { format: isAtom ? 'atom' : 'rss', items, valid };
 }
 
 // ---- Classification -------------------------------------------------------
@@ -130,14 +151,41 @@ export function normalizeName(s) {
     .trim();
 }
 
-// aliasIndex: array of [aliasNorm, entityId]; only aliases >= 4 chars are used for
-// mention detection, to avoid matching short acronyms inside ordinary words.
+// How a name is written for matching mentions in feed text. Unlike normalizeName it keeps generic words such
+// as "foundation", so "The Animal Law Foundation" becomes "animal law foundation", not "animal law".
+export function mentionForm(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/^the /, '');
+}
+
+// Ordinary phrases that happen to be an entity's name once generic words are removed. Rows built before
+// mentionForm existed still hold these forms, so they are skipped until the next reseed replaces them.
+const GENERIC_MENTIONS = new Set(['animal law']);
+
+const stripAccents = (s) => String(s || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+
+// aliasIndex: array of [aliasNorm, entityId, alias?]. Aliases shorter than 4 characters are never used, to
+// avoid matching short acronyms inside ordinary words. A one-word alias ("Hive", "Lever", "AWASH") only
+// matches when the text writes it with the same capitals as the alias, so "a hive of activity" or
+// "the market is awash" do not count; a one-word alias with no capitals is not used at all.
 export function detectMentions(text, aliasIndex, selfId) {
-  const norm = ' ' + normalizeName(text) + ' ';
+  const norm = ' ' + mentionForm(text) + ' ';
+  const words = new Set(stripAccents(text).split(/[^A-Za-z0-9]+/).filter(Boolean));
   const found = new Set();
-  for (const [alias, id] of aliasIndex) {
-    if (id === selfId || alias.length < 4) continue;
-    if (norm.includes(' ' + alias + ' ')) found.add(id);
+  for (const [alias, id, raw] of aliasIndex) {
+    if (id === selfId || alias.length < 4 || GENERIC_MENTIONS.has(alias) || found.has(id)) continue;
+    if (alias.includes(' ')) {
+      if (norm.includes(' ' + alias + ' ')) found.add(id);
+      continue;
+    }
+    const word = stripAccents(raw).replace(/[^A-Za-z0-9]+/g, '');
+    if (word.toLowerCase() === alias && /[A-Z]/.test(word) && words.has(word)) found.add(id);
   }
   return [...found];
 }

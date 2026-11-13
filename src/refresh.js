@@ -1,9 +1,11 @@
-import { parseFeed, analyseItem } from './lib/feeds.js';
+import { parseFeed, analyseItem, MAX_FEED_BYTES } from './lib/feeds.js';
+import { readCapped } from './lib/body.js';
 
 const HOUR = 3600_000;
 const CADENCE_MS = { daily: 24 * HOUR, weekly: 7 * 24 * HOUR, monthly: 30 * 24 * HOUR };
 // Small batches keep each cron invocation inside free-tier CPU and subrequest limits.
 const DEFAULT_BATCH = 6;
+// One deadline for the whole check: the request, the headers and reading the body.
 const FETCH_TIMEOUT_MS = 12_000;
 
 async function sha1(s) {
@@ -19,98 +21,128 @@ function isDue(src, now) {
 }
 
 async function loadAliasIndex(db) {
-  const { results } = await db.prepare('SELECT alias_norm, entity_id FROM aliases').all();
-  return results.map((r) => [r.alias_norm, r.entity_id]);
+  const { results } = await db.prepare('SELECT alias_norm, entity_id, alias FROM aliases').all();
+  return results.map((r) => [r.alias_norm, r.entity_id, r.alias]);
 }
 
-async function fetchWithTimeout(url, init) {
+// Fetch a source within one deadline. For feeds, read at most MAX_FEED_BYTES of the body and drop the
+// rest, so a huge or trickling feed can neither exhaust memory nor hold the run open.
+async function fetchSource(url, init, { timeoutMs, readBody }) {
   const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort('timeout'), FETCH_TIMEOUT_MS);
+  const deadline = Date.now() + timeoutMs;
+  const t = setTimeout(() => ctrl.abort(new Error(`Timed out after ${Math.round(timeoutMs / 1000)} s`)), timeoutMs);
   try {
-    return await fetch(url, { ...init, signal: ctrl.signal, redirect: 'follow' });
+    const res = await fetch(url, { ...init, signal: ctrl.signal, redirect: 'follow' });
+    if (!readBody || !res.ok) {
+      await res.body?.cancel().catch(() => {});
+      return { res, text: null };
+    }
+    const { text } = await readCapped(res.body, { maxBytes: MAX_FEED_BYTES, deadline });
+    return { res, text };
   } finally {
     clearTimeout(t);
   }
 }
 
-export async function runRefresh(env, { trigger = 'cron', batch = DEFAULT_BATCH, sourceId = null } = {}) {
+export async function runRefresh(env, { trigger = 'cron', batch = DEFAULT_BATCH, sourceId = null, timeoutMs = FETCH_TIMEOUT_MS } = {}) {
   const db = env.DB;
-  const startedAt = new Date().toISOString();
   const run = await db
     .prepare('INSERT INTO refresh_runs (started_at, trigger) VALUES (?, ?) RETURNING id')
-    .bind(startedAt, trigger)
+    .bind(new Date().toISOString(), trigger)
     .first();
 
-  const now = Date.now();
-  const { results: all } = sourceId
-    ? await db.prepare("SELECT * FROM sources WHERE id = ? AND visibility = 'public'").bind(sourceId).all()
-    : await db.prepare("SELECT * FROM sources WHERE visibility = 'public' ORDER BY last_checked IS NOT NULL, last_checked ASC").all();
-  const due = all.filter((s) => sourceId || isDue(s, now)).slice(0, batch);
+  let checked = 0, newItems = 0, meaningful = 0, errors = 0;
+  // finished_at is written even when the run throws, so a crash shows as a run with errors rather than as a
+  // run that never ends. (If the platform kills the invocation outright, finished_at stays empty, and the
+  // snapshot's `refresher` status reports that.)
+  try {
+    const now = Date.now();
+    const { results: all } = sourceId
+      ? await db.prepare("SELECT * FROM sources WHERE id = ? AND visibility = 'public'").bind(sourceId).all()
+      : await db.prepare("SELECT * FROM sources WHERE visibility = 'public' ORDER BY last_checked IS NOT NULL, last_checked ASC").all();
+    const due = all.filter((s) => sourceId || isDue(s, now)).slice(0, batch);
 
-  const aliasIndex = due.some((s) => s.kind === 'feed') ? await loadAliasIndex(db) : [];
-  const ua = `AnimalMovementMap/0.1 (+${env.PUBLIC_URL || 'https://animal-movement-map.workers.dev'}/#about)`;
+    const aliasIndex = due.some((s) => s.kind === 'feed') ? await loadAliasIndex(db) : [];
+    const ua = `AnimalMovementMap/0.1 (+${env.PUBLIC_URL || 'https://animal-movement-map.workers.dev'}/#about)`;
 
-  let newItems = 0, meaningful = 0, errors = 0;
+    for (const src of due) {
+      const checkedAt = new Date().toISOString();
+      // Claim the source before fetching it, and count the attempt as a failure until it succeeds. If another
+      // run (a manual refresh overlapping the cron) claimed it first, skip it. If this invocation is killed
+      // mid-check, the source has still moved to the back of the queue and into backoff, so it cannot block
+      // every later run.
+      const claim = await db
+        .prepare('UPDATE sources SET last_checked=?, consecutive_failures=consecutive_failures+1 WHERE id=? AND last_checked IS ?')
+        .bind(checkedAt, src.id, src.last_checked ?? null)
+        .run();
+      if (!claim.meta?.changes) continue;
+      checked++;
 
-  for (const src of due) {
-    const checkedAt = new Date().toISOString();
-    try {
-      const headers = { 'user-agent': ua, accept: src.kind === 'feed' ? 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.5' : 'text/html,*/*' };
-      if (src.etag) headers['if-none-match'] = src.etag;
-      if (src.last_modified) headers['if-modified-since'] = src.last_modified;
-      const res = await fetchWithTimeout(src.url, { method: 'GET', headers });
-
-      if (res.status === 304) {
-        await db.prepare('UPDATE sources SET last_checked=?, last_success=?, last_status=304, error=NULL, consecutive_failures=0 WHERE id=?')
-          .bind(checkedAt, checkedAt, src.id).run();
-        continue;
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      if (src.kind === 'feed') {
-        const xml = await res.text();
-        const feed = parseFeed(xml);
-        if (!feed.valid) throw new Error('Response was not a valid RSS/Atom feed');
-        const stmts = [];
-        for (const item of feed.items) {
-          const id = await sha1(`${src.id}|${item.guid}`);
-          const a = analyseItem(item, aliasIndex, src.entity_id);
-          stmts.push(
-            db.prepare(`INSERT OR IGNORE INTO feed_items
-              (id, source_id, entity_id, title, link, published, first_seen, excerpt, signal, species, mentions, meaningful)
-              VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`)
-              .bind(id, src.id, src.entity_id, item.title, item.link, item.published, checkedAt, item.excerpt,
-                a.signal, JSON.stringify(a.species), JSON.stringify(a.mentions), a.meaningful)
-          );
+      const succeeded = async (status, etag, lastModified) => {
+        await db.prepare(`UPDATE sources SET last_success=?, last_status=?, etag=?, last_modified=?,
+            error=NULL, consecutive_failures=0 WHERE id=?`)
+          .bind(checkedAt, status, etag, lastModified, src.id).run();
+        if (src.kind === 'homepage' && src.entity_id) {
+          await db.prepare('UPDATE entities SET last_checked=? WHERE id=?').bind(checkedAt, src.entity_id).run();
         }
-        if (stmts.length) {
-          const results = await db.batch(stmts);
-          for (const r of results) if (r.meta?.changes) newItems++;
-          // count meaningful items first seen in this run
-          const m = await db.prepare('SELECT COUNT(*) AS n FROM feed_items WHERE source_id=? AND first_seen=? AND meaningful=1')
-            .bind(src.id, checkedAt).first();
-          meaningful += m?.n || 0;
-        }
-      } else {
-        // homepage liveness check: we only record that the site responded
-        await res.body?.cancel();
-      }
+      };
 
-      await db.prepare(`UPDATE sources SET last_checked=?, last_success=?, last_status=?, etag=?, last_modified=?,
-          error=NULL, consecutive_failures=0 WHERE id=?`)
-        .bind(checkedAt, checkedAt, res.status, res.headers.get('etag'), res.headers.get('last-modified'), src.id).run();
-      if (src.kind === 'homepage' && src.entity_id) {
-        await db.prepare('UPDATE entities SET last_checked=? WHERE id=?').bind(checkedAt, src.entity_id).run();
+      try {
+        const headers = { 'user-agent': ua, accept: src.kind === 'feed' ? 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.5' : 'text/html,*/*' };
+        if (src.etag) headers['if-none-match'] = src.etag;
+        if (src.last_modified) headers['if-modified-since'] = src.last_modified;
+        const { res, text } = await fetchSource(src.url, { method: 'GET', headers }, { timeoutMs, readBody: src.kind === 'feed' });
+
+        if (res.status === 304) {
+          // Unchanged since the last check. That is still a successful check: a homepage answering 304 is alive.
+          await succeeded(304, res.headers.get('etag') || src.etag || null, res.headers.get('last-modified') || src.last_modified || null);
+          continue;
+        }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        if (src.kind === 'feed') {
+          const feed = parseFeed(text);
+          if (!feed.valid) throw new Error('Response was not a valid RSS/Atom feed');
+          // Some publishers allow only the headline and link to be reused (docs/source-inventory.md). Their
+          // excerpts are used for classification here but are never stored or published.
+          const keepExcerpt = src.reuse !== 'headline';
+          const stmts = [];
+          for (const item of feed.items) {
+            const id = await sha1(`${src.id}|${item.guid}`);
+            const a = analyseItem(item, aliasIndex, src.entity_id);
+            stmts.push(
+              db.prepare(`INSERT OR IGNORE INTO feed_items
+                (id, source_id, entity_id, title, link, published, first_seen, excerpt, signal, species, mentions, meaningful)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`)
+                .bind(id, src.id, src.entity_id, item.title, item.link, item.published, checkedAt, keepExcerpt ? item.excerpt : null,
+                  a.signal, JSON.stringify(a.species), JSON.stringify(a.mentions), a.meaningful)
+            );
+          }
+          if (stmts.length) {
+            const results = await db.batch(stmts);
+            for (const r of results) if (r.meta?.changes) newItems++;
+            // count meaningful items first seen in this run
+            const m = await db.prepare('SELECT COUNT(*) AS n FROM feed_items WHERE source_id=? AND first_seen=? AND meaningful=1')
+              .bind(src.id, checkedAt).first();
+            meaningful += m?.n || 0;
+          }
+        }
+        // A homepage check only records that the site answered; fetchSource has already discarded the body.
+
+        await succeeded(res.status, res.headers.get('etag'), res.headers.get('last-modified'));
+      } catch (err) {
+        errors++;
+        await db.prepare('UPDATE sources SET last_status=?, error=? WHERE id=?')
+          .bind(/HTTP (\d+)/.exec(String(err))?.[1] || null, String(err?.message || err).slice(0, 300), src.id).run();
       }
-    } catch (err) {
-      errors++;
-      await db.prepare(`UPDATE sources SET last_checked=?, last_status=?, error=?, consecutive_failures=consecutive_failures+1 WHERE id=?`)
-        .bind(checkedAt, /HTTP (\d+)/.exec(String(err))?.[1] || null, String(err?.message || err).slice(0, 300), src.id).run();
     }
+  } catch (err) {
+    errors++;
+    throw err;
+  } finally {
+    await db.prepare('UPDATE refresh_runs SET finished_at=?, sources_checked=?, new_items=?, meaningful_items=?, errors=? WHERE id=?')
+      .bind(new Date().toISOString(), checked, newItems, meaningful, errors, run.id).run();
   }
 
-  await db.prepare('UPDATE refresh_runs SET finished_at=?, sources_checked=?, new_items=?, meaningful_items=?, errors=? WHERE id=?')
-    .bind(new Date().toISOString(), due.length, newItems, meaningful, errors, run.id).run();
-
-  return { run_id: run.id, sources_checked: due.length, new_items: newItems, meaningful_items: meaningful, errors };
+  return { run_id: run.id, sources_checked: checked, new_items: newItems, meaningful_items: meaningful, errors };
 }
