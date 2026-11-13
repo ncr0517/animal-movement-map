@@ -1851,7 +1851,8 @@
       {
         "url": "https://animalcharityevaluators.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [

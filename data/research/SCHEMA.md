@@ -47,13 +47,37 @@ Today is 2026-11-05 — use that as `accessed` / `last_checked`.
   "summary": "<= 300 chars, neutral",
   "event_date": "YYYY-MM-DD or YYYY-MM or YYYY (date the thing happened / was awarded)",
   "source_published": "YYYY-MM-DD or null (date the source page was published)",
+  "accessed": "YYYY-MM-DD (the day you checked the source says this; shown as 'Last checked')",
   "source_url": "...",
   "source_title": "...",
   "amount": number or null,
-  "currency": "USD | GBP | EUR | ... or null",
+  "currency": "3-letter code: USD | GBP | EUR | ... or null",
   "funder_id": "slug or null",
-  "recipient_id": "slug or null",
-  "deadline": "YYYY-MM-DD or null (open calls only)",
+  "recipient_id": "slug or null (null only for a round total: one record for all the grants of a round)",
+  "deadline": "YYYY-MM-DD or null (open calls only; anything else is cleared by the build, so put wording like 'rolling' in notes)",
   "status": "confirmed | reported | uncertain",
+  "same_as": "optional: id of another record that reports the same thing; the build merges this one into it",
+  "source_record_id": "optional: the funder's own id for the grant, when its database gives one",
   "notes": null
 }
+
+## Feeds that may be shown only as headline + link
+Some publishers' terms allow reuse of the headline and link but not the text (docs/source-inventory.md). Mark their
+feed `"reuse": "headline"`: the refresher still reads the text to classify a post, but never stores or shows it.
+
+## How the build reconciles records (scripts/lib/seed.mjs)
+- Two records are merged only when one names the other in `same_as`, or when they are identical in every field that
+  identifies them. Records that only look alike (same funder, recipient, month and amount; or the same funder's call
+  with the same deadline) are kept apart and listed as warnings in data/seed/build-report.md: add `same_as` if they
+  are one record.
+- Grants dated only by year are never compared. Grants with different `source_record_id`s (or EA Funds "record id"s
+  in notes) are never merged or disputed.
+- Grants for the same funder, recipient and month with different known amounts are kept as they are and listed as
+  warnings: one funder can make two grants to one recipient in a month. If they are two reports of one grant, add
+  `same_as`, or mark both `"status": "disputed"` with `conflicts_with` in data/curated/overrides.json (disputed
+  amounts are left out of the Funding totals). An unknown amount is not a disagreement.
+- data/curated/overrides.json is applied after reconciliation, and each overridden field is checked like a research
+  value (a typo in a kind, category, currency or deadline is dropped with a warning).
+- An unreadable or invalid input file stops the build, and so does a build that would publish more than 10% fewer
+  researched (non-stub) entities or events than the committed db/seed.sql, or lose more than half of a section's
+  researched entities (set ALLOW_SHRINK=1 when that is intended).

@@ -1444,7 +1444,8 @@
       {
         "url": "https://faunalytics.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [
@@ -1884,7 +1885,9 @@
   {
     "id": "brooks-institute",
     "name": "Brooks Institute for Animal Rights Law and Policy",
-    "aliases": [],
+    "aliases": [
+      "Brooks Institute"
+    ],
     "kind": "funder",
     "parent_id": null,
     "categories": [
@@ -2240,7 +2243,8 @@
       {
         "url": "https://animalcharityevaluators.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [
@@ -2866,9 +2870,7 @@
   {
     "id": "sentient-media",
     "name": "Sentient Media",
-    "aliases": [
-      "Sentient"
-    ],
+    "aliases": [],
     "kind": "organisation",
     "parent_id": null,
     "categories": [
@@ -2896,7 +2898,8 @@
       {
         "url": "https://sentientmedia.org/feed/",
         "type": "rss",
-        "verified": true
+        "verified": true,
+        "reuse": "headline"
       }
     ],
     "sources": [

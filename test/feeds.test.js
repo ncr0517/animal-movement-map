@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFeed, analyseItem, normalizeName, detectMentions } from '../src/lib/feeds.js';
+import { parseFeed, analyseItem, normalizeName, detectMentions, cleanLink } from '../src/lib/feeds.js';
 
 const RSS = `<?xml version="1.0"?><rss><channel><title>X</title>
 <item><title><![CDATA[Applications now open for our 2027 Movement Grants]]></title>
@@ -65,4 +65,132 @@ test('generic posts are not surfaced as meaningful', () => {
   for (const title of ['The Puppy and the Pond: Reflections on my internship', 'We are hiring a programme manager', 'Thank you to our volunteers']) {
     assert.equal(analyseItem({ title, excerpt: '' }, [], null).meaningful, 0, title);
   }
+});
+
+// ---- Audit 2026-11-10 ---------------------------------------------------------------------------------
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+test('format comes from the root element, not from tags quoted inside items', () => {
+  const rss = `<?xml version="1.0"?><rss><channel>
+    <item><title>One</title><description><![CDATA[<p>An Atom document has a <feed> root and <entry> children.</p>]]></description></item>
+    <item><title>Two</title></item></channel></rss>`;
+  const f = parseFeed(rss);
+  assert.equal(f.format, 'rss');
+  assert.equal(f.items.length, 2);
+  assert.equal(f.valid, true);
+});
+
+test('an HTML page that merely contains "<rss" is not a valid feed', () => {
+  const f = parseFeed('<!doctype html><html><body><rss-widget src="x"></rss-widget></body></html>');
+  assert.equal(f.valid, false);
+  assert.equal(f.items.length, 0);
+});
+
+test('a feed after a BOM, stylesheet instruction, comment and doctype is still recognised', () => {
+  const f = parseFeed('﻿<?xml version="1.0"?>\n<?xml-stylesheet href="s.xsl"?>\n<!-- c -->\n<!DOCTYPE rss>\n<rss><channel><item><title>A</title></item></channel></rss>');
+  assert.equal(f.valid, true);
+  assert.equal(f.items.length, 1);
+});
+
+test('links are http(s) and bounded, far-future dates are dropped', () => {
+  const now = Date.parse('2026-11-12T00:00:00Z');
+  const long = 'https://example.org/' + 'a'.repeat(16000);
+  const xml = `<rss><channel>
+    <item><title>Long</title><link>${long}</link><guid>${'g'.repeat(5000)}</guid><pubDate>Thu, 01 Jan 2099 00:00:00 GMT</pubDate></item>
+    <item><title>Script</title><link>javascript:alert(1)</link><pubDate>Wed, 11 Nov 2026 09:00:00 GMT</pubDate></item>
+    <item><title>Fine</title><link>https://example.org/ok</link><pubDate>Thu, 12 Nov 2026 20:00:00 GMT</pubDate></item>
+  </channel></rss>`;
+  const [a, b, c] = parseFeed(xml, { now }).items;
+  assert.equal(a.link, null);
+  assert.equal(a.guid.length, 5000, 'the guid is only hashed, so it is kept whole and the item keeps its id');
+  assert.equal(a.published, null);
+  assert.equal(b.link, null);
+  assert.equal(b.published, '2026-11-11T09:00:00.000Z');
+  assert.equal(c.link, 'https://example.org/ok');
+  assert.equal(c.published, '2026-11-12T20:00:00.000Z');
+});
+
+// The alias rows the build writes to db/seed.sql (the same rows the refresher loads).
+function seedAliasIndex() {
+  const sql = fs.readFileSync(fileURLToPath(new URL('../db/seed.sql', import.meta.url)), 'utf8').replace(/\r\n/g, '\n');
+  const unq = (s) => s.replace(/''/g, "'");
+  return [...sql.matchAll(/^INSERT OR IGNORE INTO aliases \(alias_norm,alias,entity_id\) VALUES \('((?:[^']|'')*)','((?:[^']|'')*)','((?:[^']|'')*)'\);$/gm)]
+    .map((m) => [unq(m[1]), unq(m[3]), unq(m[2])]);
+}
+
+test('ordinary words and phrases are not mentions of entities (seed alias table)', () => {
+  const idx = seedAliasIndex();
+  assert.ok(idx.length > 100);
+  assert.deepEqual(detectMentions('The market is awash with shrimp; companies pull every lever', idx, null), []);
+  assert.deepEqual(detectMentions('Join the hive of activity, viva la revolution', idx, null), []);
+  assert.deepEqual(detectMentions('The Animal Law Podcast, episode 136', idx, null), []);
+  assert.deepEqual(detectMentions("Canada's leading animal law organization", idx, null), []);
+  assert.deepEqual(detectMentions('protect sentient crabs and lobsters', idx, null), []);
+});
+
+test('real names are still found, including one-word names written as the entity writes them', () => {
+  const idx = seedAliasIndex();
+  const m = detectMentions('Hive and AWASH join Lever Foundation and The Animal Law Foundation; UFAW and the Universities Federation for Animal Welfare comment', idx, null);
+  for (const id of ['hive', 'awash', 'lever', 'animal-law', 'science-for-animal-welfare']) assert.ok(m.includes(id), id);
+  assert.ok(detectMentions('Biotechnology and Biological Sciences Research Council funds salmon study', idx, null).includes('bbsrc'));
+});
+
+test('rows from the old alias table (lower case, generic words stripped) do not produce false mentions', () => {
+  const oldRows = [['animal law', 'animal-law', 'animal law'], ['lever', 'lever', 'lever'], ['hive', 'hive', 'hive'], ['humane league', 'thl', 'humane league']];
+  assert.deepEqual(detectMentions('The Animal Law Podcast: pull every lever in the Hive', oldRows, null), []);
+  assert.deepEqual(detectMentions('The Humane League wins again', oldRows, null), ['thl']);
+});
+
+// ---- Review of PR #1 (2026-11-13) ---------------------------------------------------------------------
+test('a hostile prologue or unclosed tags cannot make parsing take long', () => {
+  // Each of these took between a second and minutes with the old patterns; a linear scan takes a few ms.
+  const item = (inner) => `<rss><item><title>a</title><description>${inner}</description></item>`;
+  const bodies = {
+    comments: '<!--a-->'.repeat(26) + '!',
+    instructions: '<?a?>'.repeat(26) + '!',
+    'unclosed items': '<rss>' + '<item '.repeat(50_000),
+    'unclosed entries': '<feed>' + '<entry '.repeat(50_000),
+    'unclosed titles': '<rss><item>' + '<title '.repeat(50_000) + '</item>',
+    'unclosed guids': '<rss><item><title>a</title>' + '<guid>'.repeat(50_000) + '</item>',
+    'unclosed CDATA': item('<![CDATA['.repeat(25_000)),
+    'unclosed tags': item('<![CDATA[' + '<'.repeat(350_000) + ']]>'),
+    'unclosed scripts': item('&lt;script'.repeat(30_000)),
+  };
+  for (const [name, body] of Object.entries(bodies)) {
+    const started = performance.now();
+    parseFeed(body);
+    assert.ok(performance.now() - started < 150, `${name}: ${Math.round(performance.now() - started)} ms`);
+  }
+  assert.equal(parseFeed('<!--a-->'.repeat(40) + '!').valid, false);
+  assert.equal(parseFeed('<!DOCTYPE rss [ <!ENTITY q "]"> ]>\n<rss><channel><item><title>A</title></item></channel></rss>').valid, true);
+});
+
+test('an item with no guid is known by its link as written, so items that share a title stay apart', () => {
+  const xml = `<rss><channel>
+    <item><title>Weekly update</title><link>/posts/1</link></item>
+    <item><title>Weekly update</title><link>/posts/2</link></item>
+    <item><title>Weekly update</title><link>https://example.org/posts/3</link></item>
+    <item><title>Weekly update</title></item>
+  </channel></rss>`;
+  const items = parseFeed(xml).items;
+  assert.deepEqual(items.map((i) => i.guid), ['/posts/1', '/posts/2', 'https://example.org/posts/3', 'Weekly update']);
+  assert.deepEqual(items.map((i) => i.link), [null, null, 'https://example.org/posts/3', null], 'only a usable link is shown');
+});
+
+test('control characters and unpaired surrogates are dropped, and links are printable ASCII', () => {
+  const junk = '&#1;&#x1F;&#127;&#x9F;&#xD800;\u0002\u0085';
+  const xml = `<rss><channel><item><title>Ti${junk}tle${'😀'.repeat(200)}</title><link>https://example.org/${'&#1;'.repeat(50)}</link>
+    <description>Ex${junk}cerpt</description></item>
+    <item><title>Two</title><link>https://example.org/café?q=1</link></item></channel></rss>`;
+  const [a, b] = parseFeed(xml).items;
+  assert.ok(a.title.startsWith('Title😀'), JSON.stringify(a.title.slice(0, 10)));
+  assert.equal(a.title.length, 300 - 1, 'the clip does not cut an emoji in half');
+  assert.equal(a.excerpt, 'Excerpt');
+  assert.equal(a.link, 'https://example.org/', 'the decoded control characters are gone from the link');
+  assert.equal(b.link, 'https://example.org/caf%C3%A9?q=1');
+  assert.equal(/\\u[0-9a-f]{4}/.test(JSON.stringify(a)), false, 'nothing is written as a 6-byte JSON escape');
+  assert.equal(cleanLink('https://example.org/\u0001'), null);
+  assert.equal(cleanLink('https://example.org/\ud800'), null);
+  assert.equal(cleanLink('https://Bücher.example/x'), 'https://xn--bcher-kva.example/x');
 });
