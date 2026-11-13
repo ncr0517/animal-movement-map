@@ -182,23 +182,32 @@ async function cached(request, ctx, ttl, producer) {
 // ---- Public corrections queue ------------------------------------------------------------------------
 // The form is the only public write. Its limits: JSON only (a cross-site form or text/plain POST is
 // refused, and a cross-site fetch with a JSON content type needs a CORS preflight, which this Worker never
-// grants), a 16 KB body, an optional per-IP rate limiter (the CORRECTIONS_LIMITER binding, when the owner
-// adds it), at most CORRECTIONS_PER_CLIENT_DAY a day from one address, and an overall cap per hour and per
-// day. The caps are checked in the same statement that stores the correction, so parallel requests cannot
-// get past them. They count the corrections of the last hour and day that are still in the queue and not
-// rejected, so deleting or rejecting spam reopens the form. One address alone cannot reach the overall caps;
-// many addresses together still can (docs/handoff.md).
+// grants), a 16 KB body, an optional rate limiter (the CORRECTIONS_LIMITER binding, when the owner adds it),
+// at most CORRECTIONS_PER_CLIENT_DAY a day from one address, and an overall cap per hour and per day. The caps
+// are checked in the same statement that stores the correction, so parallel requests cannot get past them.
+// They count the corrections of the last hour and day that are still in the queue and not rejected, so
+// deleting or rejecting spam reopens the form.
+// An "address" is an IPv4 address or an IPv6 /64 (src/lib/client.js), not a person. One address alone cannot
+// reach the overall caps, but one person who controls several can close the form for everyone: the /64s of an
+// IPv6 /48 or /56 they route, or Tor and other proxies (docs/handoff.md). Turnstile is the real fix.
+// Once the overall caps refuse a correction, the form is marked closed until they could next allow one
+// (correction_gate), so each refused request after that reads that row and the sender's own count, not the
+// recent queue.
 const CORRECTION_KINDS = new Set(['correction', 'missing-entity', 'removal-request', 'access-concern']);
 const CORRECTION_STATUSES = ['accepted', 'rejected', 'needs-info', 'pending'];
 const CORRECTION_MAX_BYTES = 16 * 1024;
 const CORRECTIONS_PER_HOUR = 30;
 const CORRECTIONS_PER_DAY = 200;
 const CORRECTIONS_PER_CLIENT_DAY = 5;
+const SENDER_KEEP_MS = 2 * DAY;
 const clip = (v, n) => (typeof v === 'string' ? v.trim().slice(0, n) : null) || null;
+const isoAgo = (now, ms) => new Date(now - ms).toISOString();
+// How many rows matching `where` exist, reading at most `cap` (the bound LIMIT) of them.
+const count = (from, where) => `(SELECT COUNT(*) FROM (SELECT 1 FROM ${from} WHERE ${where} LIMIT ?))`;
 
 // Who sent a correction, for the per-address cap: the address (an IPv6 address cut to its /64) as an HMAC keyed
-// with the admin token, so the stored value cannot be turned back into an address without it. Rows older than
-// two days are deleted.
+// with the admin token, so the stored value cannot be turned back into an address without it. The hourly cron
+// deletes rows once they are two days old (pruneSenders).
 async function clientKey(request, env) {
   const enc = new TextEncoder();
   const key = await crypto.subtle.importKey('raw', enc.encode(env.ADMIN_TOKEN || 'animal-movement-map'), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
@@ -207,12 +216,14 @@ async function clientKey(request, env) {
 }
 
 // Created by db/schema.sql; created here too, so corrections keep working on a database that has not been
-// reseeded since this table was added.
-const CORRECTION_CLIENTS_DDL = [
+// reseeded since these tables were added.
+const CORRECTIONS_DDL = [
   `CREATE TABLE IF NOT EXISTS correction_clients (correction_id INTEGER PRIMARY KEY, client TEXT NOT NULL, created_at TEXT NOT NULL)`,
   'CREATE INDEX IF NOT EXISTS idx_correction_clients ON correction_clients(client, created_at)',
-  'CREATE INDEX IF NOT EXISTS idx_corrections_recent ON corrections(created_at, status)',
+  'CREATE TABLE IF NOT EXISTS correction_gate (id INTEGER PRIMARY KEY CHECK (id = 1), closed_until TEXT NOT NULL)',
+  "CREATE INDEX IF NOT EXISTS idx_corrections_open ON corrections(created_at) WHERE status <> 'rejected'",
 ];
+const missingTable = (err) => /no such table: correction_(clients|gate)\b/i.test(String(err?.message || err));
 
 // Stores the correction if every cap allows it, and returns its id (null when a cap is reached). One batch,
 // which D1 runs as a single transaction: the first statement checks the caps and inserts in one step; the
@@ -220,9 +231,6 @@ const CORRECTION_CLIENTS_DDL = [
 // belongs to an earlier batch that already recorded its sender, and OR IGNORE leaves that alone).
 async function storeCorrection(db, values, client, now) {
   const at = new Date(now).toISOString();
-  const since = (ms) => new Date(now - ms).toISOString();
-  // How many rows matching `where` exist, reading at most `cap` of them.
-  const count = (from, where) => `(SELECT COUNT(*) FROM (SELECT 1 FROM ${from} WHERE ${where} LIMIT ?))`;
   const [inserted] = await db.batch([
     db.prepare(`INSERT INTO corrections (entity_id, event_id, kind, field, proposed_value, evidence_url, note, contact, created_at)
         SELECT ?,?,?,?,?,?,?,?,?
@@ -231,14 +239,55 @@ async function storeCorrection(db, values, client, now) {
           AND ${count('corrections', "created_at > ? AND status <> 'rejected'")} < ?
         RETURNING id`)
       .bind(...values, at,
-        client, since(DAY), CORRECTIONS_PER_CLIENT_DAY, CORRECTIONS_PER_CLIENT_DAY,
-        since(HOUR), CORRECTIONS_PER_HOUR, CORRECTIONS_PER_HOUR,
-        since(DAY), CORRECTIONS_PER_DAY, CORRECTIONS_PER_DAY),
+        client, isoAgo(now, DAY), CORRECTIONS_PER_CLIENT_DAY, CORRECTIONS_PER_CLIENT_DAY,
+        isoAgo(now, HOUR), CORRECTIONS_PER_HOUR, CORRECTIONS_PER_HOUR,
+        isoAgo(now, DAY), CORRECTIONS_PER_DAY, CORRECTIONS_PER_DAY),
     db.prepare(`INSERT OR IGNORE INTO correction_clients (correction_id, client, created_at)
         SELECT id, ?, created_at FROM corrections WHERE id = (SELECT MAX(id) FROM corrections) AND created_at = ?`)
       .bind(client, at),
   ]);
   return inserted.results[0]?.id ?? null;
+}
+
+// After the overall caps refuse a correction: mark the form closed until the first moment they could allow one
+// again. That is when the 30th newest counted correction of the last hour turns an hour old, or the 200th of the
+// last day turns a day old (the later of the two when both caps are full). One statement, so it cannot undo an
+// admin's reopenForm that ran in between. When the refusal came from the sender's own cap instead (two requests
+// from one address at once), neither cap is full and nothing is written. This reads the recent queue, but only
+// once each time the form closes.
+async function closeForm(db, now) {
+  const edge = (shift) => `SELECT strftime('%Y-%m-%dT%H:%M:%fZ', created_at, '${shift}') AS t
+      FROM (SELECT created_at FROM corrections WHERE created_at > ? AND status <> 'rejected' ORDER BY created_at DESC LIMIT 1 OFFSET ?)`;
+  await db.prepare(`INSERT OR REPLACE INTO correction_gate (id, closed_until)
+      SELECT 1, MAX(t) FROM (${edge('+1 hour')} UNION ALL ${edge('+1 day')}) HAVING MAX(t) IS NOT NULL`)
+    .bind(isoAgo(now, HOUR), CORRECTIONS_PER_HOUR - 1, isoAgo(now, DAY), CORRECTIONS_PER_DAY - 1).run();
+}
+
+// Rejected and deleted corrections stop counting toward the caps: drop the "closed" mark so the form opens again
+// at once (if the caps are still full, the next refused request sets it again).
+async function reopenForm(db) {
+  await db.prepare('DELETE FROM correction_gate').run().catch((err) => { if (!missingTable(err)) throw err; });
+}
+
+// The correction's id, or null when the form is closed or a cap is reached. A request the form would refuse in
+// any case (the form is marked closed, or this address has used its allowance) is answered from one small read
+// of a primary key and an index, before anything counts the recent queue.
+async function admitCorrection(db, values, client, now) {
+  const at = new Date(now).toISOString();
+  const pre = await db.prepare(`SELECT (SELECT closed_until FROM correction_gate WHERE id = 1) AS closed_until,
+      ${count('correction_clients', 'client = ? AND created_at > ?')} AS mine`)
+    .bind(client, isoAgo(now, DAY), CORRECTIONS_PER_CLIENT_DAY).first();
+  if ((pre?.closed_until && pre.closed_until > at) || (pre?.mine ?? 0) >= CORRECTIONS_PER_CLIENT_DAY) return null;
+  const id = await storeCorrection(db, values, client, now);
+  if (id == null) await closeForm(db, now).catch((err) => console.error('marking the corrections form closed failed', err));
+  return id;
+}
+
+// Senders are kept only as long as the per-address cap needs them. Run by the hourly cron, so rows go after two
+// days whether or not anyone writes in the meantime.
+async function pruneSenders(db, now) {
+  await db.prepare('DELETE FROM correction_clients WHERE created_at < ?').bind(isoAgo(now, SENDER_KEEP_MS)).run()
+    .catch((err) => { if (!missingTable(err)) throw err; });
 }
 
 async function submitCorrection(request, env) {
@@ -261,27 +310,25 @@ async function submitCorrection(request, env) {
 
   const busy = () => json({ error: 'The review queue is not taking more corrections right now. Try again later.' },
     { status: 429, headers: { 'retry-after': '3600' } });
+  // Keyed like the per-address cap (an IPv6 /64 as one), so addresses inside one /64 cannot take turns.
   if (env.CORRECTIONS_LIMITER) {
-    const { success } = await env.CORRECTIONS_LIMITER.limit({ key: request.headers.get('cf-connecting-ip') || 'unknown' });
+    const { success } = await env.CORRECTIONS_LIMITER.limit({ key: clientPrefix(request.headers.get('cf-connecting-ip')) });
     if (!success) return busy();
   }
   const values = [clip(body.entity_id, 120), clip(body.event_id, 120), kind, clip(body.field, 80), clip(body.proposed_value, 2000),
     evidence, note, clip(body.contact, 200)];
   const client = await clientKey(request, env);
   const now = Date.now();
+  const db = env.DB;
   let id;
   try {
-    id = await storeCorrection(env.DB, values, client, now);
+    id = await admitCorrection(db, values, client, now);
   } catch (err) {
-    if (!/no such table: correction_clients/i.test(String(err?.message || err))) throw err;
-    await env.DB.batch(CORRECTION_CLIENTS_DDL.map((sql) => env.DB.prepare(sql)));
-    id = await storeCorrection(env.DB, values, client, now);
+    if (!missingTable(err)) throw err;
+    await db.batch(CORRECTIONS_DDL.map((sql) => db.prepare(sql)));
+    id = await admitCorrection(db, values, client, now);
   }
-  if (id == null) return busy();
-  // Senders are kept only as long as the per-address cap needs them.
-  await env.DB.prepare('DELETE FROM correction_clients WHERE created_at < ?').bind(new Date(now - 2 * DAY).toISOString()).run()
-    .catch((err) => console.error('pruning correction_clients failed', err));
-  return json({ ok: true, id }, { status: 201 });
+  return id == null ? busy() : json({ ok: true, id }, { status: 201 });
 }
 
 // ids (an array of integers) → a single bound JSON parameter, read with json_each: D1 allows at most 100
@@ -326,6 +373,7 @@ async function adminRoutes(request, env, url) {
       ? await db.prepare(`DELETE FROM corrections WHERE ${where.join(' AND ')}`).bind(...binds).run()
       : await db.prepare(`UPDATE corrections SET status='rejected', reviewer_note=?, reviewed_at=? WHERE ${where.join(' AND ')}`)
         .bind(clip(b.reviewer_note, 2000), new Date().toISOString(), ...binds).run();
+    await reopenForm(db);
     return json({ ok: true, changed: r.meta?.changes ?? 0 });
   }
   const m = url.pathname.match(/^\/api\/admin\/corrections\/(\d+)$/);
@@ -334,6 +382,7 @@ async function adminRoutes(request, env, url) {
     if (!CORRECTION_STATUSES.includes(b.status)) return json({ error: 'status must be accepted, rejected, needs-info or pending' }, { status: 400 });
     await db.prepare('UPDATE corrections SET status=?, reviewer_note=?, reviewed_at=? WHERE id=?')
       .bind(b.status, clip(b.reviewer_note, 2000), new Date().toISOString(), Number(m[1])).run();
+    await reopenForm(db);
     return json({ ok: true });
   }
   if (url.pathname === '/api/admin/refresh' && request.method === 'POST') {
@@ -403,5 +452,7 @@ export default {
 
   async scheduled(event, env, ctx) {
     ctx.waitUntil(runRefresh(env, { trigger: `cron ${event.cron}` }).catch((err) => console.error('refresh run failed', err)));
+    // Separate from the refresh, so a refresh that is slow or killed does not keep old senders.
+    ctx.waitUntil(pruneSenders(env.DB, Date.now()).catch((err) => console.error('pruning correction_clients failed', err)));
   },
 };

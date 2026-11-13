@@ -179,7 +179,8 @@ test('an item with no guid is known by its link as written, so items that share 
 });
 
 test('control characters and unpaired surrogates are dropped, and links are printable ASCII', () => {
-  const junk = '&#1;&#x1F;&#127;&#x9F;&#xD800;\u0002\u0085';
+  // 0x81 and 0x9D are the C1 codes Windows-1252 leaves undefined; the others in 0x80-0x9F are punctuation.
+  const junk = '&#1;&#x1F;&#127;&#x81;&#157;&#xD800;\u0002\u009d';
   const xml = `<rss><channel><item><title>Ti${junk}tle${'😀'.repeat(200)}</title><link>https://example.org/${'&#1;'.repeat(50)}</link>
     <description>Ex${junk}cerpt</description></item>
     <item><title>Two</title><link>https://example.org/café?q=1</link></item></channel></rss>`;
@@ -193,4 +194,31 @@ test('control characters and unpaired surrogates are dropped, and links are prin
   assert.equal(cleanLink('https://example.org/\u0001'), null);
   assert.equal(cleanLink('https://example.org/\ud800'), null);
   assert.equal(cleanLink('https://Bücher.example/x'), 'https://xn--bcher-kva.example/x');
+});
+
+test('Windows-1252 punctuation written as C1 codes is read as browsers read it, so the words and mentions around it stay', () => {
+  const aliases = [['shrimp welfare project', 'shrimp-welfare-project', 'Shrimp Welfare Project'], ['hive', 'hive', 'Hive']];
+  const feed = (title, body) => parseFeed(`<rss><channel><item><title>${title}</title><guid>g</guid>
+    <description>${body}</description></item></channel></rss>`).items[0];
+  // Decimal, hex, escaped inside HTML (decoded on the second pass), and the raw character.
+  for (const apos of ['&#146;', '&#x92;', '&amp;#146;', '\u0092']) {
+    const item = feed(`Shrimp Welfare Project${apos}s new report &#150; a review`, `Hive${apos}s survey of shrimp farms`);
+    assert.equal(item.title, 'Shrimp Welfare Project’s new report – a review', apos);
+    assert.equal(item.excerpt, 'Hive’s survey of shrimp farms', apos);
+    assert.deepEqual(analyseItem(item, aliases, 'x').mentions, ['shrimp-welfare-project', 'hive'], apos);
+    assert.equal(/\\u[0-9a-f]{4}/.test(JSON.stringify(item)), false, 'still nothing written as a JSON escape');
+  }
+  // Dashes and ellipses with no spaces around them keep the words apart.
+  const joined = feed('Report&#150;Shrimp Welfare Project', 'Hive&#133;Shrimp Welfare Project');
+  assert.equal(joined.title, 'Report–Shrimp Welfare Project');
+  assert.equal(joined.excerpt, 'Hive…Shrimp Welfare Project');
+  assert.deepEqual(analyseItem(joined, aliases, 'x').mentions.sort(), ['hive', 'shrimp-welfare-project']);
+
+  // Every code from 0x80 to 0x9F decodes as Windows-1252 does; the five it leaves undefined are dropped.
+  const decoder = new TextDecoder('windows-1252');
+  for (let code = 0x80; code <= 0x9f; code++) {
+    const expected = decoder.decode(Uint8Array.of(code));
+    const want = expected.charCodeAt(0) <= 0x9f ? '' : expected;
+    assert.equal(feed(`a&#${code};b`, 'x').title, `a${want}b`, code.toString(16));
+  }
 });

@@ -13,6 +13,8 @@ before(async () => {
 });
 
 const ORIGIN = 'https://amm.test';
+const HOUR = 3600_000;
+const DAY = 24 * HOUR;
 const seeded = () => createD1().load('db/schema.sql').load('db/seed.sql');
 async function call(env, path, init = {}) {
   const ctx = makeCtx();
@@ -75,6 +77,12 @@ test('new corrections are capped per hour, and an optional rate limiter is used 
   const limited = { DB: seeded(), CORRECTIONS_LIMITER: { limit: async ({ key }) => ({ success: key !== '203.0.113.9' }) } };
   const blocked = await call(limited, '/api/corrections', post(note, { 'content-type': 'application/json', 'cf-connecting-ip': '203.0.113.9' }));
   assert.equal(blocked.status, 429);
+
+  // The limiter counts addresses the way the per-address cap does: the addresses of one IPv6 /64 are one.
+  const keys = [];
+  const keyed = { DB: seeded(), CORRECTIONS_LIMITER: { limit: async ({ key }) => { keys.push(key); return { success: true }; } } };
+  for (const ip of ['2001:db8:1:2::5', '2001:db8:1:2:ffff::9', '192.0.2.7']) await call(keyed, '/api/corrections', post(note, from(ip)));
+  assert.deepEqual(keys, ['2001:db8:1:2::/64', '2001:db8:1:2::/64', '192.0.2.7']);
 });
 
 test('parallel submissions cannot get past the caps', async () => {
@@ -132,14 +140,85 @@ test('deleting or rejecting spam reopens the form', async () => {
   assert.equal((await call(env2, '/api/corrections', post(note, from('192.0.2.1')))).status, 201, 'rejected corrections no longer count');
 });
 
-test('corrections work on a database not reseeded since the sender table was added, and old senders are deleted', async () => {
-  const env = { DB: seeded() };
-  env.DB.sqlite.exec('DROP TABLE correction_clients; DROP INDEX idx_corrections_recent');
+test('corrections and admin changes work on a database not reseeded since the sender and gate tables were added', async () => {
+  const env = { DB: seeded(), ADMIN_TOKEN: 'test-token' };
+  const auth = { authorization: 'Bearer test-token', 'content-type': 'application/json' };
+  const db = env.DB.sqlite;
+  db.exec('DROP TABLE correction_clients; DROP TABLE correction_gate; DROP INDEX idx_corrections_open');
+  db.prepare("INSERT INTO corrections (note, kind, created_at) VALUES ('spam', 'correction', ?)").run(new Date().toISOString());
+  const rej = await call(env, '/api/admin/corrections/bulk', { method: 'POST', headers: auth, body: JSON.stringify({ action: 'reject', ids: [1] }) });
+  assert.equal(rej.status, 200, 'rejecting works before the gate table exists');
+  assert.equal((await call(env, '/api/admin/corrections/1', { method: 'POST', headers: auth, body: '{"status":"pending"}' })).status, 200);
   assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.1')))).status, 201);
-  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM correction_clients').get().n, 1);
-  env.DB.sqlite.prepare("INSERT INTO correction_clients VALUES (999, 'old', ?)").run(new Date(Date.now() - 3 * 24 * 3600_000).toISOString());
+  assert.equal(db.prepare('SELECT COUNT(*) AS n FROM correction_clients').get().n, 1);
+  assert.ok(db.prepare("SELECT 1 FROM sqlite_master WHERE name = 'idx_corrections_open'").get());
+
+  // Reseeded with the schema that had correction_clients but not correction_gate.
+  db.exec('DROP TABLE correction_gate');
   assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.2')))).status, 201);
-  assert.deepEqual(env.DB.sqlite.prepare("SELECT client FROM correction_clients WHERE client = 'old'").all(), []);
+});
+
+test('once the overall caps are full, a refused correction reads only the closed mark, not the recent queue', async () => {
+  const env = { DB: seeded(), ADMIN_TOKEN: 'test-token' };
+  const auth = { authorization: 'Bearer test-token', 'content-type': 'application/json' };
+  const db = env.DB.sqlite;
+  const now = Date.now();
+  // The daily cap is full (200 corrections from 2 to 22 hours ago), the hourly cap is empty, and rejected spam
+  // from the same day sits in between.
+  const ins = db.prepare("INSERT INTO corrections (note, kind, status, created_at) VALUES ('x', 'correction', ?, ?)");
+  const times = Array.from({ length: 200 }, (_, i) => new Date(now - 2 * HOUR - i * 6 * 60_000).toISOString());
+  for (const t of times) ins.run('pending', t);
+  for (let i = 0; i < 300; i++) ins.run('rejected', new Date(now - 3 * HOUR - i * 60_000).toISOString());
+  const gate = () => db.prepare('SELECT closed_until FROM correction_gate').get()?.closed_until;
+
+  assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.1')))).status, 429);
+  assert.equal(gate(), new Date(Date.parse(times[199]) + DAY).toISOString(), 'closed until the oldest of the 200 is a day old');
+
+  // Fresh addresses, and the same one again: one statement each, through a primary key and an index.
+  for (const ip of ['203.0.113.9', '203.0.113.9', '2001:db8:5::1', '198.51.100.20']) {
+    const before = env.DB.calls.length;
+    assert.equal((await call(env, '/api/corrections', post(note, from(ip)))).status, 429, ip);
+    const ran = env.DB.calls.slice(before);
+    assert.equal(ran.length, 1, `${ip}: ${ran.length} statements`);
+    assert.doesNotMatch(ran[0], /\bFROM corrections\b/, `${ip}: the recent corrections are not counted`);
+  }
+  assert.equal(countRows(env.DB), 500);
+
+  // Rejecting one correction reopens the form at once.
+  const first = db.prepare("SELECT id FROM corrections WHERE status = 'pending' ORDER BY id LIMIT 1").get().id;
+  await call(env, `/api/admin/corrections/${first}`, { method: 'POST', headers: auth, body: JSON.stringify({ status: 'rejected' }) });
+  assert.equal(gate(), undefined);
+  assert.equal((await call(env, '/api/corrections', post(note, from('203.0.113.9')))).status, 201);
+  assert.equal((await call(env, '/api/corrections', post(note, from('203.0.113.10')))).status, 429, 'full again');
+  assert.ok(gate() > new Date().toISOString());
+
+  // A mark whose time has passed does not hold the form closed: here the oldest counted correction ages out.
+  db.prepare('DELETE FROM corrections WHERE created_at = ?').run(times[199]);
+  db.prepare('UPDATE correction_gate SET closed_until = ?').run(new Date(Date.now() - 1000).toISOString());
+  assert.equal((await call(env, '/api/corrections', post(note, from('203.0.113.11')))).status, 201);
+});
+
+test('the hourly cron deletes senders older than two days, even when no correction has been accepted since', async () => {
+  const cron = async (env) => {
+    const ctx = makeCtx();
+    await worker.scheduled({ cron: '23 * * * *' }, env, ctx);
+    await ctx.settle();
+  };
+  const db = createD1().load('db/schema.sql'); // no sources: the refresh fetches nothing
+  const ins = db.sqlite.prepare('INSERT INTO correction_clients VALUES (?, ?, ?)');
+  ins.run(1, 'three days old', new Date(Date.now() - 3 * DAY).toISOString());
+  ins.run(2, 'a day old', new Date(Date.now() - DAY).toISOString());
+  await cron({ DB: db });
+  assert.deepEqual(db.sqlite.prepare('SELECT client FROM correction_clients').all().map((r) => r.client), ['a day old']);
+
+  // A database that has never had the table: nothing to delete, and nothing logged.
+  const bare = createD1().load('db/schema.sql');
+  bare.sqlite.exec('DROP TABLE correction_clients');
+  const logged = [];
+  const original = console.error;
+  console.error = (...args) => logged.push(args.map(String).join(' '));
+  try { await cron({ DB: bare }); } finally { console.error = original; }
+  assert.deepEqual(logged, []);
 });
 
 test('admin can page through corrections and reject or delete them in bulk', async () => {

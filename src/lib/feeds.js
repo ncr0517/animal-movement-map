@@ -52,16 +52,31 @@ export function decodeEntities(s) {
     .replace(/&([a-z#0-9]+);/gi, (m, n) => ENTITY_MAP[n.toLowerCase()] ?? m);
 }
 
+// Codes 0x80-0x9F are C1 control characters in Unicode, but in feeds they are almost always Windows-1252
+// punctuation: "&#146;" for an apostrophe, "&#150;" for a dash, "&#133;" for an ellipsis, or the same bytes
+// carried over from Windows-1252 text read as Latin-1. Browsers read such references as Windows-1252 (HTML's
+// numeric character reference rules), and so does this, for references and raw characters alike: deleting them
+// would join "Project&#146;s" into "Projects" and lose the mention. The five codes Windows-1252 leaves undefined
+// (0x81, 0x8D, 0x8F, 0x90, 0x9D) are still dropped as control characters.
+const CP1252 = {
+  0x80: 0x20ac, 0x82: 0x201a, 0x83: 0x0192, 0x84: 0x201e, 0x85: 0x2026, 0x86: 0x2020, 0x87: 0x2021, 0x88: 0x02c6,
+  0x89: 0x2030, 0x8a: 0x0160, 0x8b: 0x2039, 0x8c: 0x0152, 0x8e: 0x017d, 0x91: 0x2018, 0x92: 0x2019, 0x93: 0x201c,
+  0x94: 0x201d, 0x95: 0x2022, 0x96: 0x2013, 0x97: 0x2014, 0x98: 0x02dc, 0x99: 0x2122, 0x9a: 0x0161, 0x9b: 0x203a,
+  0x9c: 0x0153, 0x9e: 0x017e, 0x9f: 0x0178,
+};
+
 // Control characters (other than tab, newline and carriage return) and unpaired surrogates are not text. JSON
-// writes each one as a 6-byte escape, so a feed made of them could inflate /api/snapshot six-fold.
+// writes each one as a 6-byte escape, so a feed made of them could inflate /api/snapshot six-fold. (The
+// Windows-1252 characters above are ordinary characters, which JSON writes as they are.)
 const isJunkCode = (c) => (c < 0x20 && c !== 9 && c !== 10 && c !== 13) || (c >= 0x7f && c <= 0x9f) || (c >= 0xd800 && c <= 0xdfff);
 function safeChar(code) {
-  if (isJunkCode(code)) return '';
-  try { return String.fromCodePoint(code); } catch { return ''; }
+  const c = CP1252[code] ?? code;
+  if (isJunkCode(c)) return '';
+  try { return String.fromCodePoint(c); } catch { return ''; }
 }
 const CONTROLS = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/g;
 const LONE_SURROGATES = /[\ud800-\udbff](?![\udc00-\udfff])|(?<![\ud800-\udbff])[\udc00-\udfff]/g;
-const dropJunk = (s) => s.replace(CONTROLS, '').replace(LONE_SURROGATES, '');
+const dropJunk = (s) => s.replace(CONTROLS, (ch) => safeChar(ch.charCodeAt(0))).replace(LONE_SURROGATES, '');
 
 // The first n UTF-16 units, without cutting a surrogate pair in half.
 function clipText(s, n) {

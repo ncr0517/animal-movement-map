@@ -60,7 +60,8 @@ link only) are classified from their text, but the text is never stored or shown
    `POST /api/admin/corrections/:id`. Clear spam in bulk with `POST /api/admin/corrections/bulk` and
    `{"action": "reject" | "delete", "ids": [...]}` or `{"action": ..., "from_id": n, "to_id": m}` (pending rows only,
    unless you add `"status": "any"`). Rejected and deleted corrections no longer count toward the form's caps, so
-   clearing spam reopens the form. Apply accepted corrections to the curated JSON and redeploy the seed.
+   clearing spam through these endpoints reopens the form. Apply accepted corrections to the curated JSON and
+   redeploy the seed.
 3. **Monthly:** check `GET /api/admin/sources` for failing feeds; spot-check 20 random claims.
 4. **Rebuild:** `npm run build` regenerates `db/seed.sql` and the report (merges, stubs, conflicts, warnings). It stops
    without writing anything if an input file is invalid, or if it would publish far fewer researched entries (stubs
@@ -72,15 +73,19 @@ link only) are classified from their text, but the text is never stored or shown
 All admin endpoints need `Authorization: Bearer $ADMIN_TOKEN` (set with `wrangler secret put ADMIN_TOKEN`).
 
 The public corrections form accepts JSON only, at most 16 KB, at most 5 corrections a day from one address (an IPv6
-/64 counts as one; only an HMAC of it is stored, for two days), and at most 30 an hour and 200 a day across everyone
-(`src/index.js`). Rejected and deleted corrections do not count. The caps are checked in the statement that stores the
-correction, so parallel requests cannot get past them.
+/64 counts as one; only an HMAC of it is stored, and the hourly cron deletes it after two days), and at most 30 an
+hour and 200 a day across everyone (`src/index.js`). Rejected and deleted corrections do not count. The caps are
+checked in the statement that stores the correction, so parallel requests cannot get past them.
 
-One address cannot close the form, but enough addresses together can: 6 fill the hourly cap and 40 the daily one, and
-then everyone gets 429 until the window passes. Nothing alerts the maintainer. Clearing the spam reopens the form;
-Turnstile would stop it happening. If a `CORRECTIONS_LIMITER` rate-limit binding is added in `wrangler.jsonc`, it is
-also applied per IP address. Its period can only be 10 or 60 seconds, so even its strictest setting (1 a minute)
-allows more than the 5 a day above: it only takes load off the database when one address floods the form.
+An address is not a person, so one person can still close the form: 6 addresses fill the hourly cap and 40 the daily
+one, and one person can control that many (the /64s of an IPv6 /48 or /56 they route, or Tor and other proxies).
+Then everyone gets 429 until the window passes. Nothing alerts the maintainer. While the form is closed, each refused
+request reads the closed mark (`correction_gate`) and the sender's own count, not the queue. Rejecting or deleting
+spam through the admin endpoints reopens the form at once. If you delete corrections in D1 directly instead, also run
+`DELETE FROM correction_gate`, or the form stays closed until the window passes. Turnstile would stop all this
+happening. If a `CORRECTIONS_LIMITER` rate-limit binding is added in `wrangler.jsonc`, it is also applied per address
+(an IPv6 /64 counts as one). Its period can only be 10 or 60 seconds, so even its strictest setting (1 a minute)
+allows more than the 5 a day above, and refused requests already cost the database only a few row reads.
 
 ## Reconciliation rules
 
