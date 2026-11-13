@@ -18,6 +18,24 @@ test('the documented Node version is the one the test helper needs (node:sqlite 
   }
 });
 
+test('the docs say one person with several addresses can close the corrections form, with the numbers the code uses', () => {
+  const src = read('src/index.js');
+  const cap = (name) => Number(src.match(new RegExp(`^const ${name} = (\\d+);`, 'm'))[1]);
+  const perAddress = cap('CORRECTIONS_PER_CLIENT_DAY');
+  const hourly = Math.ceil(cap('CORRECTIONS_PER_HOUR') / perAddress);
+  const daily = Math.ceil(cap('CORRECTIONS_PER_DAY') / perAddress);
+  for (const f of ['docs/handoff.md', 'docs/update-workflow.md', 'src/lib/client.js', 'src/index.js']) {
+    const text = read(f).replace(/\n\s*(\/\/ )?/g, ' ');
+    assert.match(text, /not a person|addresses, not people/, `${f}: an address is not a person`);
+    assert.match(text, /\/48 or \/56/, `${f}: one person can hold many /64s`);
+    assert.match(text, /\bTor\b/, f);
+    assert.doesNotMatch(text, /many addresses together|Many senders at once/i, f);
+  }
+  for (const f of ['docs/handoff.md', 'docs/update-workflow.md']) {
+    assert.match(read(f).replace(/\s+/g, ' '), new RegExp(`${hourly} addresses fill the hourly cap and ${daily} the daily one`), f);
+  }
+});
+
 test('the deploy steps upload the Worker before reloading the database', () => {
   for (const f of ['README.md', 'docs/handoff.md']) {
     const text = read(f);

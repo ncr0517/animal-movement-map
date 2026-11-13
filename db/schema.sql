@@ -32,18 +32,29 @@ CREATE TABLE IF NOT EXISTS corrections (
   created_at TEXT NOT NULL,
   reviewed_at TEXT
 );
--- The corrections form counts the corrections of the last hour and day that are not rejected.
-CREATE INDEX IF NOT EXISTS idx_corrections_recent ON corrections(created_at, status);
+-- The corrections form counts the corrections of the last hour and day that are not rejected. Rejected rows
+-- are left out of the index, so a pile of rejected spam does not make each count read it again.
+DROP INDEX IF EXISTS idx_corrections_recent;
+CREATE INDEX IF NOT EXISTS idx_corrections_open ON corrections(created_at) WHERE status <> 'rejected';
 
 -- Who sent each recent correction, for the per-address cap: an HMAC of the address (an IPv6 address cut to
--- its /64), never the address. Rows older than two days are deleted. The Worker also creates this table if a
--- database that has not been reseeded lacks it.
+-- its /64), never the address. The hourly cron deletes rows older than two days. The Worker also creates this
+-- table if a database that has not been reseeded lacks it.
 CREATE TABLE IF NOT EXISTS correction_clients (
   correction_id INTEGER PRIMARY KEY,
   client TEXT NOT NULL,
   created_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_correction_clients ON correction_clients(client, created_at);
+
+-- At most one row: once the overall caps refuse a correction, the form is closed until closed_until, and
+-- refused requests read this row (and the sender's own count), not the recent corrections. The admin endpoints
+-- that change or delete corrections delete it. If you delete corrections in D1 directly, run
+-- `DELETE FROM correction_gate` too. The Worker creates this table if a database that has not been reseeded lacks it.
+CREATE TABLE IF NOT EXISTS correction_gate (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  closed_until TEXT NOT NULL
+);
 
 CREATE TABLE entities (
   id TEXT PRIMARY KEY,

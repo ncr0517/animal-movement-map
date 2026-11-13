@@ -1,6 +1,7 @@
 # Handoff: Animal Movement Map
 
-Start here. Written for the owner and the next agent. Last updated 13 November 2026, after the audit fixes and their review.
+Start here. Written for the owner and the next agent. Last updated 13 November 2026, after the audit fixes and two
+reviews of them.
 
 ## What it is
 
@@ -34,7 +35,7 @@ On Windows, use Git Bash.
 
 ```bash
 npm ci
-npm test         # 64 tests, about 6 seconds
+npm test         # 68 tests, about 6 seconds
 npm run build    # writes db/seed.sql, public/snapshot.json, data/seed/build-report.md
 npm run dev      # local site with a local database
 ```
@@ -103,7 +104,9 @@ Feeds and mentions:
   Wageningen University, Brooks Institute).
 - Feed links must be printable web links under 2,000 characters, control characters are dropped from feed text, feed
   dates far in the future are ignored, and the snapshot carries at most 1.5 MB of feed posts. One feed can no longer
-  push the snapshot past Movement Match's 4 MB limit.
+  push the snapshot past Movement Match's 4 MB limit. Windows-1252 punctuation written as a control code (`&#146;`
+  for an apostrophe, `&#150;` for a dash) is read as that punctuation, as browsers read it, not dropped, so
+  "Project&#146;s" stays "Project’s" and the mention of the project is kept.
 - A post with no guid is known by its link as written, as before the audit, so posts that share a title are all kept
   and stored posts keep their ids.
 - Feed type is read from the document itself, so an RSS post that quotes `<feed>` is not misread as Atom.
@@ -119,7 +122,10 @@ The public site and API:
 - The corrections form now accepts JSON only, at most 16 KB each, at most 5 a day from one address (an IPv6 /64
   counts as one), and at most 30 an hour and 200 a day overall. The caps are checked in the same statement that
   stores the correction, so parallel requests can't get past them. Rejected and deleted corrections don't count, so
-  clearing spam reopens the form. Before, anyone could fill the database.
+  clearing spam reopens the form. Before, anyone could fill the database. Once the overall caps are full, the form is
+  marked closed until they would next allow a correction, so each refused request reads 2 rows of the database
+  instead of counting the recent queue (it read about 200, or thousands with rejected spam in the day). The hourly
+  cron deletes the stored address hashes after two days, whether or not anyone writes in between.
 - New admin tools: page through corrections (`?before_id=`), reject or delete in bulk
   (`/api/admin/corrections/bulk`), and mark feed posts reviewed (`/api/admin/items/reviewed`).
 - Pages are served with a Content-Security-Policy, and amounts with a malformed currency are escaped. A bad value in
@@ -146,33 +152,42 @@ The data and the build:
 - Feed posts are kept across reseeds. Before, a reseed lost posts that had dropped off their feed.
 
 A review of these fixes on 13 November found 14 more problems in them. They are fixed in the same pull request, and
-the list above describes the result.
+the list above describes the result. A second review the same day found 4 more in those fixes: refused corrections
+were costly to the database, address hashes outlived their two days on a quiet form, the docs called an address one
+sender, and `&#146;`-style punctuation was deleted. They are fixed in a follow-up pull request (`fix/review-round-2`),
+and the list above includes them.
 
 ## What changes only after the owner deploys
 
 Nothing above is live yet. The live site still runs the 6 November code and data.
 
-- After `npm run deploy`: all the refresher, API, corrections, admin, page and security fixes. The Worker creates
-  the new `correction_clients` table itself if the database doesn't have it yet.
+- After `npm run deploy`: all the refresher, API, corrections, admin, page, feed-text and security fixes. The Worker
+  creates the new `correction_clients` and `correction_gate` tables (and the corrections index the caps use) itself
+  if the database doesn't have them yet, and the hourly cron starts deleting old address hashes.
 - After `npm run db:remote`: the restored grant, the de-duplicated calls, the record dates, the new name table for
   spotting mentions (with the plain-name aliases), the headline-only flags for ACE, Sentient Media and Faunalytics,
-  and the new indexes.
+  and the new indexes. It also drops `idx_corrections_recent` if an earlier build of this work created it; the
+  index that replaces it, `idx_corrections_open`, leaves rejected corrections out.
 
 Do both, in the order under "Deploy". Either step alone is safe: the new code works with the old database and the
 old code with the new one, but you get every fix only after both.
 
 ## What the audit left open
 
-- Many senders at once can still close the corrections form. One address can send at most 5 a day, but 6 addresses
-  can fill the hourly cap and 40 the daily one, and then the form refuses everyone (429) until the window passes.
-  Nothing alerts you. If people say the form refuses them, look at `GET /api/admin/corrections` and reject or delete
-  the spam: that reopens the form at once. Turnstile (a bot check) on the form would stop this. It needs a site key
-  and a secret from your Cloudflare account.
-- The `CORRECTIONS_LIMITER` rate-limit binding. The code uses it if it exists, but none is configured. I couldn't
-  confirm that the binding is available on the Free plan, and a binding the account can't have would make the deploy
-  fail. Its period can only be 10 or 60 seconds, so even its strictest setting (1 a minute per address) allows more
-  than the 5 a day the code already allows. It would only take load off the database when one address floods the
-  form. To add it, put this in `wrangler.jsonc` and deploy:
+- One person can still close the corrections form for everyone. The caps count addresses, not people: an IPv4
+  address or an IPv6 /64 is one address, and one address can send at most 5 a day. But 6 addresses fill the hourly
+  cap and 40 the daily one, and one person can control that many: the /64s of an IPv6 /48 or /56 they route
+  (tunnel brokers hand out /48s free), or Tor and other proxies. Then the form refuses everyone (429) until the window
+  passes. Nothing alerts you. If people say the form refuses them, look at `GET /api/admin/corrections` and reject or
+  delete the spam through the admin endpoints: that reopens the form at once. (If you delete rows in D1 directly,
+  also run `DELETE FROM correction_gate`.) Turnstile (a bot check) on the form would stop this. It needs a site key
+  and a secret from your Cloudflare account. Counting wider IPv6 blocks would not: it would put unrelated phone
+  users, who each get a /64 from their carrier's shared block, under one allowance.
+- The `CORRECTIONS_LIMITER` rate-limit binding. The code uses it if it exists, keyed like the per-address cap (an
+  IPv6 /64 as one), but none is configured. I couldn't confirm that the binding is available on the Free plan, and a
+  binding the account can't have would make the deploy fail. Its period can only be 10 or 60 seconds, so even its
+  strictest setting (1 a minute per address) allows more than the 5 a day the code already allows, and refused
+  requests already cost the database only a few row reads. To add it anyway, put this in `wrangler.jsonc` and deploy:
 
   ```jsonc
   "ratelimits": [{ "name": "CORRECTIONS_LIMITER", "namespace_id": "2026111201", "simple": { "limit": 1, "period": 60 } }]
