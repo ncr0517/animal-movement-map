@@ -1885,7 +1885,9 @@
   {
     "id": "brooks-institute",
     "name": "Brooks Institute for Animal Rights Law and Policy",
-    "aliases": [],
+    "aliases": [
+      "Brooks Institute"
+    ],
     "kind": "funder",
     "parent_id": null,
     "categories": [

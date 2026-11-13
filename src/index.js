@@ -1,12 +1,14 @@
 import { runRefresh } from './refresh.js';
 import { readCapped } from './lib/body.js';
 import { callState } from './lib/calls.js';
+import { clientPrefix } from './lib/client.js';
 import { cleanLink, detectMentions } from './lib/feeds.js';
 import { refresherHealth } from './lib/health.js';
 import STATIC from './generated/static.js';
 
 // Only the default export lives here: the runtime reads other exports of the entry module as entrypoints.
 const STALE_DAYS = 180;
+const CHANGES_MAX_BYTES = 1_500_000;
 const HOUR = 3600_000;
 const DAY = 24 * HOUR;
 
@@ -99,14 +101,24 @@ async function buildSnapshot(env) {
   const recheck = (i, ids) => (!ids.length || i.excerpt == null ? ids
     : detectMentions(`${i.title}. ${i.excerpt}`, aliasRows.filter((r) => ids.includes(r[1])), i.entity_id));
 
-  const changes = items.results.map(({ source_id, ...i }) => ({
-    ...i,
-    link: cleanLink(i.link),
-    excerpt: headlineOnly.has(source_id) ? null : i.excerpt,
-    species: parse(i.species, []),
-    mentions: recheck(i, parse(i.mentions, [])),
-    meaningful: Boolean(i.meaningful),
-  }));
+  // Newest first, until CHANGES_MAX_BYTES of JSON: whatever the feeds hold, the snapshot stays well under the
+  // 4 MB Movement Match accepts.
+  const changes = [];
+  let changeBytes = 0;
+  const utf8 = new TextEncoder();
+  for (const { source_id, ...i } of items.results) {
+    const change = {
+      ...i,
+      link: cleanLink(i.link),
+      excerpt: headlineOnly.has(source_id) ? null : i.excerpt,
+      species: parse(i.species, []),
+      mentions: recheck(i, parse(i.mentions, [])),
+      meaningful: Boolean(i.meaningful),
+    };
+    changeBytes += utf8.encode(JSON.stringify(change)).length + 1;
+    if (changeBytes > CHANGES_MAX_BYTES) break;
+    changes.push(change);
+  }
 
   const s = srcs.results;
   const lastSourceCheck = s.reduce((m, x) => (x.last_checked && x.last_checked > m ? x.last_checked : m), '') || null;
@@ -171,13 +183,63 @@ async function cached(request, ctx, ttl, producer) {
 // The form is the only public write. Its limits: JSON only (a cross-site form or text/plain POST is
 // refused, and a cross-site fetch with a JSON content type needs a CORS preflight, which this Worker never
 // grants), a 16 KB body, an optional per-IP rate limiter (the CORRECTIONS_LIMITER binding, when the owner
-// adds it), and a global cap on new submissions per hour and per day.
+// adds it), at most CORRECTIONS_PER_CLIENT_DAY a day from one address, and an overall cap per hour and per
+// day. The caps are checked in the same statement that stores the correction, so parallel requests cannot
+// get past them. They count the corrections of the last hour and day that are still in the queue and not
+// rejected, so deleting or rejecting spam reopens the form. One address alone cannot reach the overall caps;
+// many addresses together still can (docs/handoff.md).
 const CORRECTION_KINDS = new Set(['correction', 'missing-entity', 'removal-request', 'access-concern']);
 const CORRECTION_STATUSES = ['accepted', 'rejected', 'needs-info', 'pending'];
 const CORRECTION_MAX_BYTES = 16 * 1024;
 const CORRECTIONS_PER_HOUR = 30;
 const CORRECTIONS_PER_DAY = 200;
+const CORRECTIONS_PER_CLIENT_DAY = 5;
 const clip = (v, n) => (typeof v === 'string' ? v.trim().slice(0, n) : null) || null;
+
+// Who sent a correction, for the per-address cap: the address (an IPv6 address cut to its /64) as an HMAC keyed
+// with the admin token, so the stored value cannot be turned back into an address without it. Rows older than
+// two days are deleted.
+async function clientKey(request, env) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(env.ADMIN_TOKEN || 'animal-movement-map'), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, enc.encode(clientPrefix(request.headers.get('cf-connecting-ip'))));
+  return [...new Uint8Array(sig)].slice(0, 16).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Created by db/schema.sql; created here too, so corrections keep working on a database that has not been
+// reseeded since this table was added.
+const CORRECTION_CLIENTS_DDL = [
+  `CREATE TABLE IF NOT EXISTS correction_clients (correction_id INTEGER PRIMARY KEY, client TEXT NOT NULL, created_at TEXT NOT NULL)`,
+  'CREATE INDEX IF NOT EXISTS idx_correction_clients ON correction_clients(client, created_at)',
+  'CREATE INDEX IF NOT EXISTS idx_corrections_recent ON corrections(created_at, status)',
+];
+
+// Stores the correction if every cap allows it, and returns its id (null when a cap is reached). One batch,
+// which D1 runs as a single transaction: the first statement checks the caps and inserts in one step; the
+// second records the sender against the row the first one inserted (when it inserted nothing, the newest row
+// belongs to an earlier batch that already recorded its sender, and OR IGNORE leaves that alone).
+async function storeCorrection(db, values, client, now) {
+  const at = new Date(now).toISOString();
+  const since = (ms) => new Date(now - ms).toISOString();
+  // How many rows matching `where` exist, reading at most `cap` of them.
+  const count = (from, where) => `(SELECT COUNT(*) FROM (SELECT 1 FROM ${from} WHERE ${where} LIMIT ?))`;
+  const [inserted] = await db.batch([
+    db.prepare(`INSERT INTO corrections (entity_id, event_id, kind, field, proposed_value, evidence_url, note, contact, created_at)
+        SELECT ?,?,?,?,?,?,?,?,?
+        WHERE ${count('correction_clients', 'client = ? AND created_at > ?')} < ?
+          AND ${count('corrections', "created_at > ? AND status <> 'rejected'")} < ?
+          AND ${count('corrections', "created_at > ? AND status <> 'rejected'")} < ?
+        RETURNING id`)
+      .bind(...values, at,
+        client, since(DAY), CORRECTIONS_PER_CLIENT_DAY, CORRECTIONS_PER_CLIENT_DAY,
+        since(HOUR), CORRECTIONS_PER_HOUR, CORRECTIONS_PER_HOUR,
+        since(DAY), CORRECTIONS_PER_DAY, CORRECTIONS_PER_DAY),
+    db.prepare(`INSERT OR IGNORE INTO correction_clients (correction_id, client, created_at)
+        SELECT id, ?, created_at FROM corrections WHERE id = (SELECT MAX(id) FROM corrections) AND created_at = ?`)
+      .bind(client, at),
+  ]);
+  return inserted.results[0]?.id ?? null;
+}
 
 async function submitCorrection(request, env) {
   if (!/^application\/json\s*(;|$)/i.test(request.headers.get('content-type') || '')) {
@@ -203,21 +265,23 @@ async function submitCorrection(request, env) {
     const { success } = await env.CORRECTIONS_LIMITER.limit({ key: request.headers.get('cf-connecting-ip') || 'unknown' });
     if (!success) return busy();
   }
-  // The created_at of the Nth newest row, found through the primary key (a few rows read, not a scan).
-  const edges = await env.DB.prepare(`SELECT
-      (SELECT created_at FROM corrections WHERE id <= (SELECT MAX(id) FROM corrections) - ? ORDER BY id DESC LIMIT 1) AS hour_edge,
-      (SELECT created_at FROM corrections WHERE id <= (SELECT MAX(id) FROM corrections) - ? ORDER BY id DESC LIMIT 1) AS day_edge`)
-    .bind(CORRECTIONS_PER_HOUR - 1, CORRECTIONS_PER_DAY - 1)
-    .first();
+  const values = [clip(body.entity_id, 120), clip(body.event_id, 120), kind, clip(body.field, 80), clip(body.proposed_value, 2000),
+    evidence, note, clip(body.contact, 200)];
+  const client = await clientKey(request, env);
   const now = Date.now();
-  if ((edges?.hour_edge && now - Date.parse(edges.hour_edge) < HOUR) || (edges?.day_edge && now - Date.parse(edges.day_edge) < DAY)) return busy();
-
-  const r = await env.DB.prepare(`INSERT INTO corrections (entity_id, event_id, kind, field, proposed_value, evidence_url, note, contact, created_at)
-      VALUES (?,?,?,?,?,?,?,?,?) RETURNING id`)
-    .bind(clip(body.entity_id, 120), clip(body.event_id, 120), kind, clip(body.field, 80), clip(body.proposed_value, 2000),
-      evidence, note, clip(body.contact, 200), new Date(now).toISOString())
-    .first();
-  return json({ ok: true, id: r.id }, { status: 201 });
+  let id;
+  try {
+    id = await storeCorrection(env.DB, values, client, now);
+  } catch (err) {
+    if (!/no such table: correction_clients/i.test(String(err?.message || err))) throw err;
+    await env.DB.batch(CORRECTION_CLIENTS_DDL.map((sql) => env.DB.prepare(sql)));
+    id = await storeCorrection(env.DB, values, client, now);
+  }
+  if (id == null) return busy();
+  // Senders are kept only as long as the per-address cap needs them.
+  await env.DB.prepare('DELETE FROM correction_clients WHERE created_at < ?').bind(new Date(now - 2 * DAY).toISOString()).run()
+    .catch((err) => console.error('pruning correction_clients failed', err));
+  return json({ ok: true, id }, { status: 201 });
 }
 
 // ids (an array of integers) → a single bound JSON parameter, read with json_each: D1 allows at most 100

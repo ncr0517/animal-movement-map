@@ -72,9 +72,12 @@ feed `"reuse": "headline"`: the refresher still reads the text to classify a pos
   are one record.
 - Grants dated only by year are never compared. Grants with different `source_record_id`s (or EA Funds "record id"s
   in notes) are never merged or disputed.
-- Grants for the same funder, recipient and month with different known amounts are both kept and marked `disputed`.
-  An unknown amount is not a disagreement.
+- Grants for the same funder, recipient and month with different known amounts are kept as they are and listed as
+  warnings: one funder can make two grants to one recipient in a month. If they are two reports of one grant, add
+  `same_as`, or mark both `"status": "disputed"` with `conflicts_with` in data/curated/overrides.json (disputed
+  amounts are left out of the Funding totals). An unknown amount is not a disagreement.
 - data/curated/overrides.json is applied after reconciliation, and each overridden field is checked like a research
   value (a typo in a kind, category, currency or deadline is dropped with a warning).
 - An unreadable or invalid input file stops the build, and so does a build that would publish more than 10% fewer
-  entities or events than the committed db/seed.sql (set ALLOW_SHRINK=1 when that is intended).
+  researched (non-stub) entities or events than the committed db/seed.sql, or lose more than half of a section's
+  researched entities (set ALLOW_SHRINK=1 when that is intended).

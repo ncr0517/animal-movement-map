@@ -17,11 +17,14 @@
   "entities": {
     "university-of-stirling": {
       "name": "University of Stirling (Institute of Aquaculture)",
+      "aliases": [
+        "University of Stirling"
+      ],
       "kind": "organisation",
       "categories": [
         "welfare-science"
       ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
       "species": [
         "farmed-fish"
       ],
@@ -42,11 +45,14 @@
     },
     "wageningen-university": {
       "name": "Wageningen University & Research",
+      "aliases": [
+        "Wageningen University"
+      ],
       "kind": "organisation",
       "categories": [
         "welfare-science"
       ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
       "species": [
         "wild-fish"
       ],
@@ -221,11 +227,14 @@
     },
     "european-commission": {
       "name": "European Commission (Horizon Europe)",
+      "aliases": [
+        "European Commission"
+      ],
       "kind": "funder",
       "categories": [
         "funding"
       ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
+      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
       "regions": [
         "europe"
       ]

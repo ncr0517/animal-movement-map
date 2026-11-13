@@ -7,6 +7,12 @@ const CADENCE_MS = { daily: 24 * HOUR, weekly: 7 * 24 * HOUR, monthly: 30 * 24 *
 const DEFAULT_BATCH = 6;
 // One deadline for the whole check: the request, the headers and reading the body.
 const FETCH_TIMEOUT_MS = 12_000;
+// A source claimed less than this long ago may still be in the middle of another run's check: the deadline,
+// plus time to parse and store what it fetched.
+const IN_FLIGHT_SLACK_MS = 30_000;
+// What a source shows from the moment it is claimed until its check ends. If the invocation is killed
+// mid-check, it stays, so the source shows as failing while it is in backoff.
+export const UNFINISHED_CHECK = 'Check did not finish';
 
 async function sha1(s) {
   const buf = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(s));
@@ -51,7 +57,7 @@ export async function runRefresh(env, { trigger = 'cron', batch = DEFAULT_BATCH,
     .bind(new Date().toISOString(), trigger)
     .first();
 
-  let checked = 0, newItems = 0, meaningful = 0, errors = 0;
+  let checked = 0, newItems = 0, meaningful = 0, errors = 0, skipped = 0;
   // finished_at is written even when the run throws, so a crash shows as a run with errors rather than as a
   // run that never ends. (If the platform kills the invocation outright, finished_at stays empty, and the
   // snapshot's `refresher` status reports that.)
@@ -66,16 +72,21 @@ export async function runRefresh(env, { trigger = 'cron', batch = DEFAULT_BATCH,
     const ua = `AnimalMovementMap/0.1 (+${env.PUBLIC_URL || 'https://animal-movement-map.workers.dev'}/#about)`;
 
     for (const src of due) {
-      const checkedAt = new Date().toISOString();
-      // Claim the source before fetching it, and count the attempt as a failure until it succeeds. If another
-      // run (a manual refresh overlapping the cron) claimed it first, skip it. If this invocation is killed
+      const claimedAt = Date.now();
+      const checkedAt = new Date(claimedAt).toISOString();
+      // Claim the source before fetching it, and count the attempt as a failure (with UNFINISHED_CHECK as its
+      // error) until it succeeds. Skip it if another run claimed it first, or claimed it so recently that its
+      // check may still be running: a manual refresh of one source skips isDue, so without the second test it
+      // would fetch a source the cron is fetching and count one failure twice. If this invocation is killed
       // mid-check, the source has still moved to the back of the queue and into backoff, so it cannot block
-      // every later run.
+      // every later run, and it shows as failing rather than healthy.
+      const inFlightSince = new Date(claimedAt - Math.max(timeoutMs, FETCH_TIMEOUT_MS) - IN_FLIGHT_SLACK_MS).toISOString();
       const claim = await db
-        .prepare('UPDATE sources SET last_checked=?, consecutive_failures=consecutive_failures+1 WHERE id=? AND last_checked IS ?')
-        .bind(checkedAt, src.id, src.last_checked ?? null)
+        .prepare(`UPDATE sources SET last_checked=?, consecutive_failures=consecutive_failures+1, error=?
+                  WHERE id=? AND last_checked IS ? AND (last_checked IS NULL OR last_checked < ?)`)
+        .bind(checkedAt, UNFINISHED_CHECK, src.id, src.last_checked ?? null, inFlightSince)
         .run();
-      if (!claim.meta?.changes) continue;
+      if (!claim.meta?.changes) { skipped++; continue; }
       checked++;
 
       const succeeded = async (status, etag, lastModified) => {
@@ -144,5 +155,6 @@ export async function runRefresh(env, { trigger = 'cron', batch = DEFAULT_BATCH,
       .bind(new Date().toISOString(), checked, newItems, meaningful, errors, run.id).run();
   }
 
-  return { run_id: run.id, sources_checked: checked, new_items: newItems, meaningful_items: meaningful, errors };
+  // skipped: sources another run had claimed (it is checking them, or did so moments ago).
+  return { run_id: run.id, sources_checked: checked, new_items: newItems, meaningful_items: meaningful, errors, skipped };
 }

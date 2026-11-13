@@ -27,6 +27,12 @@ at ×16). Conditional requests (`ETag` / `If-Modified-Since`) avoid re-downloadi
 Each check has one 12-second deadline covering the request and the body, and reads at most 400 KB of a feed. A source
 is marked as being checked (and counted as a failure until it succeeds) before it is fetched, so a check that never
 finishes cannot hold the front of the queue, and a manual refresh that overlaps the cron does not check a source twice.
+Until its check ends, a source's error reads "Check did not finish", so a check that was killed shows as failing, not
+healthy. A manual refresh of one source (`{"source_id": "..."}`) leaves alone a source checked in the last 42 seconds
+and reports it under `skipped`.
+
+Feed parsing takes time in proportion to the feed's size, whatever the feed contains. Control characters are dropped
+from feed text, links must be printable web addresses, and `/api/snapshot` carries at most 1.5 MB of feed posts.
 
 If the refresher stops (no run finished in 3 hours, the latest run never finished, or no source checked in 26 hours),
 `/api/snapshot` and `/api/health` report `refresher.status: "degraded"` and the page's status dot turns amber.
@@ -53,19 +59,28 @@ link only) are classified from their text, but the text is never stored or shown
    page, `?status=` for other statuses), then set each to accepted / rejected / needs-info via
    `POST /api/admin/corrections/:id`. Clear spam in bulk with `POST /api/admin/corrections/bulk` and
    `{"action": "reject" | "delete", "ids": [...]}` or `{"action": ..., "from_id": n, "to_id": m}` (pending rows only,
-   unless you add `"status": "any"`). Apply accepted corrections to the curated JSON and redeploy the seed.
+   unless you add `"status": "any"`). Rejected and deleted corrections no longer count toward the form's caps, so
+   clearing spam reopens the form. Apply accepted corrections to the curated JSON and redeploy the seed.
 3. **Monthly:** check `GET /api/admin/sources` for failing feeds; spot-check 20 random claims.
 4. **Rebuild:** `npm run build` regenerates `db/seed.sql` and the report (merges, stubs, conflicts, warnings). It stops
-   without writing anything if an input file is invalid, or if it would publish far fewer records than before.
+   without writing anything if an input file is invalid, or if it would publish far fewer researched entries (stubs
+   are not counted) or records than before.
    `npm run db:remote` reloads entities, events, aliases and sources. **Corrections, feed items and the refresh-run log
-   are never dropped by a reseed.** While the reseed runs, `/api/snapshot` answers 503 and the page uses its built-in
-   copy.
+   are never dropped by a reseed.** Deploy the Worker first: while the reseed runs, it answers 503 on `/api/snapshot`
+   (not cached) and the page uses its built-in copy.
 
 All admin endpoints need `Authorization: Bearer $ADMIN_TOKEN` (set with `wrangler secret put ADMIN_TOKEN`).
 
-The public corrections form accepts JSON only, at most 16 KB, and at most 30 new corrections an hour and 200 a day
-across everyone (`src/index.js`). If a `CORRECTIONS_LIMITER` rate-limit binding is added in `wrangler.jsonc`, it is
-also applied per IP address.
+The public corrections form accepts JSON only, at most 16 KB, at most 5 corrections a day from one address (an IPv6
+/64 counts as one; only an HMAC of it is stored, for two days), and at most 30 an hour and 200 a day across everyone
+(`src/index.js`). Rejected and deleted corrections do not count. The caps are checked in the statement that stores the
+correction, so parallel requests cannot get past them.
+
+One address cannot close the form, but enough addresses together can: 6 fill the hourly cap and 40 the daily one, and
+then everyone gets 429 until the window passes. Nothing alerts the maintainer. Clearing the spam reopens the form;
+Turnstile would stop it happening. If a `CORRECTIONS_LIMITER` rate-limit binding is added in `wrangler.jsonc`, it is
+also applied per IP address. Its period can only be 10 or 60 seconds, so even its strictest setting (1 a minute)
+allows more than the 5 a day above: it only takes load off the database when one address floods the form.
 
 ## Reconciliation rules
 
@@ -75,9 +90,11 @@ also applied per IP address.
   combined, and the merge is logged in the build report.
 - Event records are merged only when one names the other in `same_as`, or when they are identical. Records that only
   look alike are kept apart and listed as warnings, for a person to settle (see `data/research/SCHEMA.md`).
-- Grant records with the same funder, recipient and month and different known amounts → **both kept**, marked
-  `disputed`, and cross-linked. Year-only dates are never compared, an unknown amount is not a disagreement, and grants
-  with different funder record ids are separate grants.
+- Grant records with the same funder, recipient and month and different known amounts → **both kept as they are** and
+  listed as warnings: one funder can make two real grants to one recipient in a month. If they are two reports of one
+  grant that disagree, a person marks both `"status": "disputed"` with `conflicts_with` in overrides.json. Year-only
+  dates are never compared, an unknown amount is not a disagreement, and grants with different funder record ids are
+  separate grants.
 - A grant record with no recipient is a round total. The Funding view counts it once and does not add that round's
   per-recipient grants (same funder and announcement) again. Disputed amounts are left out of the totals.
 - References to unknown funders or recipients create **stub** entities. They are shown in italics as "not yet researched" and

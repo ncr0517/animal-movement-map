@@ -3,6 +3,7 @@ import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { createD1, ensureStaticBundle, installCache, makeCtx } from './helpers/d1.js';
 import { refresherHealth } from '../src/lib/health.js';
+import { clientPrefix } from '../src/lib/client.js';
 
 let worker;
 
@@ -61,16 +62,84 @@ test('corrections must be JSON and at most 16 KB', async () => {
   assert.equal(count, 1, 'only the valid JSON correction was stored');
 });
 
+const from = (ip) => ({ 'content-type': 'application/json', 'cf-connecting-ip': ip });
+const countRows = (db, where = '1') => db.sqlite.prepare(`SELECT COUNT(*) AS n FROM corrections WHERE ${where}`).get().n;
+
 test('new corrections are capped per hour, and an optional rate limiter is used when bound', async () => {
   const env = { DB: seeded() };
-  for (let i = 0; i < 30; i++) assert.equal((await call(env, '/api/corrections', post(note))).status, 201, `submission ${i + 1}`);
-  const r = await call(env, '/api/corrections', post(note));
+  for (let i = 0; i < 30; i++) assert.equal((await call(env, '/api/corrections', post(note, from(`192.0.2.${i}`)))).status, 201, `submission ${i + 1}`);
+  const r = await call(env, '/api/corrections', post(note, from('192.0.2.200')));
   assert.equal(r.status, 429);
-  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM corrections').get().n, 30);
+  assert.equal(countRows(env.DB), 30);
 
   const limited = { DB: seeded(), CORRECTIONS_LIMITER: { limit: async ({ key }) => ({ success: key !== '203.0.113.9' }) } };
   const blocked = await call(limited, '/api/corrections', post(note, { 'content-type': 'application/json', 'cf-connecting-ip': '203.0.113.9' }));
   assert.equal(blocked.status, 429);
+});
+
+test('parallel submissions cannot get past the caps', async () => {
+  const env = { DB: seeded() };
+  const burst = (ipOf) => Promise.all(Array.from({ length: 300 }, (_, i) => call(env, '/api/corrections', post(note, from(ipOf(i))))));
+  const many = await burst((i) => `198.51.${100 + (i >> 8)}.${i & 255}`);
+  assert.equal(countRows(env.DB), 30, '300 parallel posts from 300 addresses store at most the hourly cap');
+  assert.equal(many.filter((r) => r.status === 201).length, 30);
+
+  const env2 = { DB: seeded() };
+  await Promise.all(Array.from({ length: 300 }, () => call(env2, '/api/corrections', post(note, from('203.0.113.50')))));
+  assert.equal(countRows(env2.DB), 5, '300 parallel posts from one address store at most its daily cap');
+});
+
+test('one address cannot close the form for everyone', async () => {
+  const env = { DB: seeded() };
+  const statuses = [];
+  for (let i = 0; i < 40; i++) statuses.push((await call(env, '/api/corrections', post(note, from('198.51.100.7')))).status);
+  assert.equal(statuses.filter((s) => s === 201).length, 5);
+  for (let i = 0; i < 10; i++) assert.equal((await call(env, '/api/corrections', post(note, from(`203.0.113.${i}`)))).status, 201, `visitor ${i}`);
+
+  // Addresses in one IPv6 /64 share an allowance; the next /64 has its own.
+  for (let i = 0; i < 5; i++) assert.equal((await call(env, '/api/corrections', post(note, from(`2001:db8:1:2::${i + 1}`)))).status, 201);
+  assert.equal((await call(env, '/api/corrections', post(note, from('2001:0db8:0001:0002:ffff::9')))).status, 429);
+  assert.equal((await call(env, '/api/corrections', post(note, from('2001:db8:1:3::1')))).status, 201);
+  assert.equal(clientPrefix('2001:db8:1:2:ffff:0:0:9'), '2001:db8:1:2::/64');
+  assert.equal(clientPrefix('2001:db8::1'), '2001:db8:0:0::/64');
+  assert.equal(clientPrefix('::ffff:192.0.2.1'), '192.0.2.1');
+  assert.equal(clientPrefix(null), 'unknown');
+
+  const stored = env.DB.sqlite.prepare('SELECT client FROM correction_clients').all().map((r) => r.client);
+  assert.ok(stored.length > 0 && stored.every((c) => /^[0-9a-f]{32}$/.test(c)), 'only a keyed hash of the address is stored');
+});
+
+test('deleting or rejecting spam reopens the form', async () => {
+  const env = { DB: seeded(), ADMIN_TOKEN: 'test-token' };
+  const auth = { authorization: 'Bearer test-token', 'content-type': 'application/json' };
+  const ago = (ms) => new Date(Date.now() - ms).toISOString();
+  const ins = env.DB.sqlite.prepare("INSERT INTO corrections (id, note, kind, created_at) VALUES (?, 'spam', 'correction', ?)");
+  for (let id = 1; id <= 800; id++) ins.run(id, ago(3 * 24 * 3600_000));
+  ins.run(801, ago(2 * 3600_000));
+  for (let id = 802; id <= 1001; id++) ins.run(id, ago(30 * 60_000));
+  assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.1')))).status, 429);
+  const bulk = (body) => call(env, '/api/admin/corrections/bulk', { method: 'POST', headers: auth, body: JSON.stringify(body) }).then((r) => r.json());
+  assert.equal((await bulk({ action: 'delete', from_id: 802, to_id: 1001 })).changed, 200);
+  // The deleted rows leave a gap in the ids; the caps count rows, so the form is open again at once.
+  for (let i = 0; i < 5; i++) assert.equal((await call(env, '/api/corrections', post(note, from(`192.0.2.${10 + i}`)))).status, 201, `submission ${i + 1}`);
+
+  const env2 = { DB: seeded(), ADMIN_TOKEN: 'test-token' };
+  const ins2 = env2.DB.sqlite.prepare("INSERT INTO corrections (note, kind, created_at) VALUES ('spam', 'correction', ?)");
+  for (let i = 0; i < 30; i++) ins2.run(ago(10 * 60_000));
+  assert.equal((await call(env2, '/api/corrections', post(note, from('192.0.2.1')))).status, 429);
+  const rej = await call(env2, '/api/admin/corrections/bulk', { method: 'POST', headers: auth, body: JSON.stringify({ action: 'reject', from_id: 1, to_id: 30 }) });
+  assert.equal((await rej.json()).changed, 30);
+  assert.equal((await call(env2, '/api/corrections', post(note, from('192.0.2.1')))).status, 201, 'rejected corrections no longer count');
+});
+
+test('corrections work on a database not reseeded since the sender table was added, and old senders are deleted', async () => {
+  const env = { DB: seeded() };
+  env.DB.sqlite.exec('DROP TABLE correction_clients; DROP INDEX idx_corrections_recent');
+  assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.1')))).status, 201);
+  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM correction_clients').get().n, 1);
+  env.DB.sqlite.prepare("INSERT INTO correction_clients VALUES (999, 'old', ?)").run(new Date(Date.now() - 3 * 24 * 3600_000).toISOString());
+  assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.2')))).status, 201);
+  assert.deepEqual(env.DB.sqlite.prepare("SELECT client FROM correction_clients WHERE client = 'old'").all(), []);
 });
 
 test('admin can page through corrections and reject or delete them in bulk', async () => {
@@ -136,6 +205,22 @@ test('snapshot: passed deadlines close calls, restricted excerpts and bad links 
   assert.equal(ch.long.link, null);
   assert.deepEqual(ch.podcast.mentions, ['humane-league']);
   assert.equal('source_id' in ch.fa, false, 'change items keep their published shape');
+});
+
+test('mentions of entries by their plain names survive the snapshot recheck', async () => {
+  installCache();
+  const env = { DB: seeded() };
+  const now = new Date().toISOString();
+  const item = env.DB.sqlite.prepare(`INSERT INTO feed_items (id, source_id, entity_id, title, link, published, first_seen, excerpt, mentions, meaningful)
+                                      VALUES (?, 'hive-feed', 'hive', ?, 'https://hive.example/p', ?, ?, ?, ?, 1)`);
+  item.run('ec', '160 NGOs and scientists ask the Commission to ban octopus farming', now, now,
+    'The European Commission is drafting new rules.', '["european-commission"]');
+  item.run('unis', 'New fish welfare research', now, now,
+    'Work by the University of Stirling and Wageningen University, funded by the Brooks Institute.', '["university-of-stirling","wageningen-university","brooks-institute"]');
+  const snap = await (await call(env, '/api/snapshot')).json();
+  const ch = Object.fromEntries(snap.changes.map((c) => [c.id, c]));
+  assert.deepEqual(ch.ec.mentions, ['european-commission']);
+  assert.deepEqual(ch.unis.mentions.sort(), ['brooks-institute', 'university-of-stirling', 'wageningen-university']);
 });
 
 test('the refresher status turns degraded when runs stop finishing', async () => {

@@ -2,8 +2,8 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
-import { createD1 } from './helpers/d1.js';
-import { runRefresh } from '../src/refresh.js';
+import { createD1, ensureStaticBundle, installCache, makeCtx } from './helpers/d1.js';
+import { runRefresh, UNFINISHED_CHECK } from '../src/refresh.js';
 
 const RSS = (title, extra = '') => `<?xml version="1.0"?><rss><channel><title>t</title>
   <item><title>${title}</title><link>https://example.org/${encodeURIComponent(title)}</link><guid>${title}</guid>
@@ -156,4 +156,48 @@ test('a run that crashes part-way is still marked finished', async () => {
   const [r] = runs(db);
   assert.ok(r.finished_at, 'finished_at is written in finally');
   assert.equal(r.errors, 1);
+});
+
+// ---- Review of PR #1 (2026-11-13) ---------------------------------------------------------------------
+test('a check killed mid-flight leaves the source showing as failing, not healthy', { timeout: 15_000 }, async () => {
+  const db = freshDb([{ id: 'a-hang', path: '/hang.xml?killed', last_checked: '2026-01-01T00:00:00.000Z' }]);
+  db.sqlite.exec("UPDATE sources SET last_status=200, last_success='2026-01-01T00:00:00.000Z', error=NULL");
+  const running = runRefresh({ DB: db }, { timeoutMs: 1500, batch: 1 });
+  while (!hits.includes('/hang.xml?killed')) await new Promise((r) => setTimeout(r, 20));
+  // The request is in flight: if the platform killed the invocation now, this is what would be left.
+  const mid = row(db, 'a-hang');
+  assert.equal(mid.consecutive_failures, 1);
+  assert.equal(mid.error, UNFINISHED_CHECK);
+
+  ensureStaticBundle();
+  const { default: worker } = await import('../src/index.js');
+  installCache();
+  const ctx = makeCtx();
+  const snap = await (await worker.fetch(new Request('https://amm.test/api/snapshot'), { DB: db }, ctx)).json();
+  await ctx.settle();
+  const org = snap.entities.find((e) => e.id === 'org');
+  assert.deepEqual(org.monitoring.map((m) => [m.healthy, m.error]), [[false, UNFINISHED_CHECK]]);
+  assert.equal(snap.source_health.failing, 1);
+  await running;
+  assert.match(row(db, 'a-hang').error, /Timed out/, 'a check that ends records its own outcome');
+});
+
+test('a manual refresh of one source does not fetch it again while another run is checking it', { timeout: 15_000 }, async () => {
+  hits.length = 0;
+  const db = freshDb([{ id: 's', path: '/slow503?single', kind: 'homepage', cadence: 'monthly' }]);
+  const cron = runRefresh({ DB: db }, { trigger: 'cron', timeoutMs: 3000 });
+  await new Promise((r) => setTimeout(r, 100));
+  const manual = await runRefresh({ DB: db }, { trigger: 'manual', sourceId: 's', timeoutMs: 3000 });
+  const done = await cron;
+  assert.equal(hits.filter((h) => h === '/slow503?single').length, 1, 'fetched once');
+  assert.equal(done.sources_checked, 1);
+  assert.equal(manual.sources_checked, 0);
+  assert.equal(manual.skipped, 1);
+  assert.equal(row(db, 's').consecutive_failures, 1, 'one outage, one failure');
+
+  // Once the other check is long over, a manual refresh of the source runs as before.
+  db.sqlite.exec(`UPDATE sources SET last_checked='${new Date(Date.now() - 10 * 60_000).toISOString()}' WHERE id='s'`);
+  const again = await runRefresh({ DB: db }, { trigger: 'manual', sourceId: 's', timeoutMs: 3000 });
+  assert.equal(again.sources_checked, 1);
+  assert.equal(row(db, 's').consecutive_failures, 2);
 });

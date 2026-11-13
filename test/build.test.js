@@ -43,10 +43,28 @@ test('an input file that does not parse stops the build instead of shrinking the
 });
 
 test('a build that drops many entities or events is refused', () => {
-  assert.deepEqual(shrinkProblems({ entities: 117, events: 104 }, { entities: 116, events: 103 }), []);
-  assert.equal(shrinkProblems({ entities: 117, events: 104 }, { entities: 73, events: 104 }).length, 1);
-  assert.deepEqual(shrinkProblems(null, { entities: 1, events: 1 }), []);
-  assert.deepEqual(seedCounts('INSERT INTO entities (a) VALUES (1);\nINSERT INTO events (a) VALUES (1);\nINSERT INTO entities (a) VALUES (2);'), { entities: 2, events: 1 });
+  const counts = (researched, events, sections = { aquatic: 39, movement: researched - 39 }) => ({ entities: researched + 18, researched, events, sections });
+  assert.deepEqual(shrinkProblems(counts(99, 104), counts(98, 103)), []);
+  assert.equal(shrinkProblems(counts(99, 104), counts(55, 104)).length, 2, 'the total and the section that lost them');
+  assert.equal(shrinkProblems(counts(99, 104), counts(99, 80)).length, 1);
+  assert.deepEqual(shrinkProblems(null, counts(40, 1)), []);
+  const r = build([], { entities: [ent('a-org'), ent('b-org', { name: "O'Brien Trust" })] });
+  const sql = seedSql(r, '2026-11-12T00:00:00.000Z') + "INSERT INTO entities (id,name,kind,parent_id,primary_category,section,status,profile,stub,last_checked,updated_at) VALUES ('s','S','funder',NULL,'funding','funding','unclear','{\"x\":\"a,1,NULL,''b'');\"}',1,NULL,'2026-11-12');\n";
+  assert.deepEqual(seedCounts(sql), { entities: 3, researched: 2, sections: { test: 2 }, events: 0 });
+});
+
+test('a build without one research file is refused, even though records keep its entries as stubs', () => {
+  const committed = seedCounts(fs.readFileSync(path.join(ROOT, 'db/seed.sql'), 'utf8'));
+  for (const mode of ['deleted', 'emptied']) {
+    const inputs = readInputs(ROOT);
+    inputs.entityFiles = mode === 'deleted'
+      ? inputs.entityFiles.filter((f) => f.name !== 'aquatic-entities.json')
+      : inputs.entityFiles.map((f) => (f.name === 'aquatic-entities.json' ? { ...f, records: [] } : f));
+    const next = seedCounts(seedSql(buildSeed(inputs), '2026-11-13T00:00:00.000Z'));
+    assert.ok(next.entities >= committed.entities * 0.9, 'the row count alone would not have caught it');
+    assert.ok(shrinkProblems(committed, next).length > 0, `aquatic-entities.json ${mode}`);
+  }
+  assert.deepEqual(shrinkProblems(committed, seedCounts(seedSql(buildSeed(readInputs(ROOT)), '2026-11-13T00:00:00.000Z'))), []);
 });
 
 // ---- Grant reconciliation --------------------------------------------------------------------------------
@@ -75,15 +93,49 @@ test('same funder, recipient, month and amount is a warning, not a deletion', ()
   assert.ok(r.warnings.some((w) => /Possible duplicate grants kept separate: ga, gb/.test(w)));
 });
 
-test('an unknown amount is not a conflict; different amounts are disputed; an override can settle it', () => {
+test('an unknown amount is not a conflict; different amounts are a warning, and a person can mark a dispute', () => {
   const r = build([grant('ta'), grant('tb', { amount: null, title: 'B' })]);
   assert.equal(r.events.get('ta').status, 'confirmed');
   assert.equal(r.events.get('tb').status, 'confirmed');
 
-  const c = build([grant('ca'), grant('cb', { amount: 1500, title: 'B' })], { overrides: { events: { ca: { status: 'confirmed', _why: 'checked' } } } });
-  assert.deepEqual(c.events.get('cb').conflicts_with, ['ca']);
-  assert.equal(c.events.get('cb').status, 'disputed');
-  assert.equal(c.events.get('ca').status, 'confirmed', 'a reviewed override is applied after reconciliation');
+  // Two real grants: general support and a project, to one recipient in one month. Both stay as they are (and
+  // in the Funding totals) until a person says otherwise.
+  const two = build([
+    grant('g-general', { amount: 2_000_000, event_date: '2023-11', title: 'General support' }),
+    grant('g-project', { amount: 500_000, event_date: '2023-11', title: 'Project grant' }),
+  ]);
+  for (const id of ['g-general', 'g-project']) {
+    assert.equal(two.events.get(id).status, 'confirmed', id);
+    assert.deepEqual(two.events.get(id).conflicts_with, [], id);
+  }
+  assert.ok(two.warnings.some((w) => /Possible conflicting grant reports kept as they are: g-general \(2000000 USD\), g-project \(500000 USD\)/.test(w)));
+
+  const marked = build([grant('ca'), grant('cb', { amount: 1500, title: 'B' })], { overrides: { events: {
+    ca: { status: 'disputed', conflicts_with: ['cb'], _why: 'one grant, two reports' },
+    cb: { status: 'disputed', conflicts_with: ['ca'], _why: 'one grant, two reports' },
+  } } });
+  assert.deepEqual(marked.events.get('cb').conflicts_with, ['ca']);
+  assert.equal(marked.events.get('cb').status, 'disputed');
+  assert.equal(marked.events.get('ca').status, 'disputed');
+});
+
+test('same_as is followed through records already merged: two records naming each other become one, and chains resolve', () => {
+  const call = (id, extra = {}) => ({ id, type: 'open_call', title: `Call ${id}`, source_url: `https://f.example/${id}`, accessed: '2026-11-05', ...extra });
+  const mutual = build([call('call-one', { same_as: 'call-two' }), call('call-two', { same_as: 'call-one' })]);
+  assert.deepEqual([...mutual.events.keys()], ['call-two']);
+  assert.match(mutual.events.get('call-two').notes, /Also reported at https:\/\/f\.example\/call-one/);
+
+  const viaOverride = build([call('call-one', { same_as: 'call-two' }), call('call-two')], { overrides: { events: { 'call-two': { same_as: 'call-one' } } } });
+  assert.deepEqual([...viaOverride.events.keys()], ['call-two']);
+
+  const chain = build([call('b', { same_as: 'c' }), call('c', { same_as: 'd' }), call('a', { same_as: 'b' }), call('d')]);
+  assert.deepEqual([...chain.events.keys()], ['d']);
+  assert.deepEqual(chain.merges.filter((m) => m.startsWith('event')), ['event b → c (same_as)', 'event c → d (same_as)', 'event a → d (same_as)']);
+  assert.deepEqual(chain.warnings.filter((w) => /same_as/.test(w)), []);
+
+  const unknown = build([call('x', { same_as: 'nowhere' })]);
+  assert.ok(unknown.events.has('x'));
+  assert.ok(unknown.warnings.some((w) => /event x: same_as "nowhere" is not a known event/.test(w)));
 });
 
 test('same_as merges two records and keeps both sources; identical records merge on their own', () => {

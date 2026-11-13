@@ -346,11 +346,17 @@ export function buildSeed({ entityFiles, eventFiles, overrides = {} }) {
     merges.push(`event ${dupe.id} → ${keep.id} (${why})`);
   }
 
+  // A same_as target may itself have been merged already (a chain, a->b->c, in any order): follow the merges to
+  // the record that is still kept. Two records that name each other end up as one record, the second one.
   for (const ev of [...events.values()]) {
     const target = eventOverrides[ev.id]?.same_as ? slug(eventOverrides[ev.id].same_as) : ev._sameAs;
     if (!target || target === ev.id || !events.has(ev.id)) continue;
-    const keep = events.get(mergedInto.get(target) || target);
+    let t = target;
+    const seen = new Set();
+    while (mergedInto.has(t) && !seen.has(t)) { seen.add(t); t = mergedInto.get(t); }
+    const keep = events.get(t);
     if (!keep) { warn(`event ${ev.id}: same_as "${target}" is not a known event — kept separate`); continue; }
+    if (keep === ev) continue; // its target was already merged into it
     mergeEvent(keep, ev, 'same_as');
   }
 
@@ -372,24 +378,24 @@ export function buildSeed({ entityFiles, eventFiles, overrides = {} }) {
   const distinctRecords = (a, b) => a._recordId && b._recordId && a._recordId !== b._recordId;
 
   // Grants: same funder, recipient and month. Dates without a month (just a year) or with no date are never
-  // compared: a year is not precise enough to say two grants are one.
+  // compared: a year is not precise enough to say two grants are one. Neither is a different amount: one
+  // funder can give one recipient a general grant and a project grant in the same month. So nothing is changed
+  // here. A person settles each pair: same_as if they are one grant, or, if they are two reports of one grant
+  // that disagree, conflicts_with and status "disputed" in data/curated/overrides.json.
   const month = (d) => (typeof d === 'string' && /^\d{4}-\d{2}/.test(d) ? d.slice(0, 7) : null);
   const grants = [...events.values()].filter((ev) => ev.type === 'grant_awarded' && ev.funder_id && ev.recipient_id);
+  const amountOf = (g) => `${g.amount} ${g.currency || '?'}`;
   for (const group of groupBy(grants, (ev) => month(ev.event_date) && `${ev.funder_id}|${ev.recipient_id}|${month(ev.event_date)}`)) {
-    const disputed = new Set();
     for (const [a, b] of pairs(group)) {
       if (distinctRecords(a, b)) continue; // separate rows in the funder's own database
       if (a.amount === null || b.amount === null) continue; // an unknown amount is not a disagreement
       if (a.amount === b.amount && a.currency === b.currency) {
         warn(`Possible duplicate grants kept separate: ${a.id}, ${b.id} (same funder, recipient, month and amount). If they are one grant, add "same_as" to one of them.`);
-        continue;
+      } else {
+        warn(`Possible conflicting grant reports kept as they are: ${a.id} (${amountOf(a)}), ${b.id} (${amountOf(b)}) (same funder, recipient and month). ` +
+          'If they are two reports of one grant, add "same_as", or mark both "disputed" with "conflicts_with" in data/curated/overrides.json.');
       }
-      a.conflicts_with = uniq([...a.conflicts_with, b.id]);
-      b.conflicts_with = uniq([...b.conflicts_with, a.id]);
-      disputed.add(a).add(b);
     }
-    for (const g of disputed) g.status = 'disputed';
-    if (disputed.size) warn(`Conflicting grant reports kept side by side: ${[...disputed].map((g) => g.id).join(', ')}`);
   }
 
   // Other records: the same funder's record of the same type on the same page and date, or the same funder's
@@ -561,17 +567,32 @@ export function buildReport(result, now) {
 }
 
 // ---- Guard against a build that silently loses records -------------------------------------------------
+// Stubs are not counted: a deleted research file turns many of its profiles into stubs (records still name
+// them), so the row count barely moves while the researched entries are gone. Researched entries are counted
+// in total and per section.
 export function seedCounts(sql) {
+  const researched = {};
+  // ...,section,status,'{profile}',stub,last_checked,updated_at); — stub is 0 or 1, the dates are quoted or NULL.
+  const row = /^INSERT INTO entities \(id,name,kind,parent_id,primary_category,section,[^)]*\) VALUES \((?:'(?:[^']|'')*'|NULL),(?:'(?:[^']|'')*'|NULL),(?:'(?:[^']|'')*'|NULL),(?:'(?:[^']|'')*'|NULL),(?:'(?:[^']|'')*'|NULL),'((?:[^']|'')*)',.*,([01]),(?:NULL|'[^']*'),(?:NULL|'[^']*')\);$/gm;
+  for (const m of sql.matchAll(row)) if (m[2] === '0') researched[m[1]] = (researched[m[1]] || 0) + 1;
   return {
     entities: (sql.match(/^INSERT INTO entities /gm) || []).length,
+    researched: Object.values(researched).reduce((a, b) => a + b, 0),
+    sections: researched,
     events: (sql.match(/^INSERT INTO events /gm) || []).length,
   };
 }
 
-// Problems when the new build has more than maxDrop fewer entities or events than the committed seed.
+// Problems when the new build has more than maxDrop fewer researched entities or events than the committed
+// seed, or a section that had at least 10 researched entries has lost more than half of them.
 export function shrinkProblems(prev, next, maxDrop = 0.1) {
   if (!prev) return [];
-  return ['entities', 'events']
-    .filter((k) => prev[k] > 0 && next[k] < prev[k] * (1 - maxDrop))
-    .map((k) => `${k}: ${prev[k]} in the committed db/seed.sql, ${next[k]} now`);
+  const problems = [['researched', 'researched entities'], ['events', 'events']]
+    .filter(([k]) => prev[k] > 0 && (next[k] ?? 0) < prev[k] * (1 - maxDrop))
+    .map(([k, label]) => `${label}: ${prev[k]} in the committed db/seed.sql, ${next[k] ?? 0} now`);
+  for (const [section, n] of Object.entries(prev.sections || {})) {
+    const now = next.sections?.[section] || 0;
+    if (n >= 10 && now < n / 2) problems.push(`researched entities in section "${section}": ${n} in the committed db/seed.sql, ${now} now`);
+  }
+  return problems;
 }
