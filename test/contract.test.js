@@ -38,6 +38,16 @@ test('our intervention tags are exactly the ones Movement Match mirrors', () => 
   assert.deepEqual([...ENUMS.interventions].sort(), [...MM_INTERVENTIONS].sort());
 });
 
+// The species tags Movement Match maps to Global Burden of Suffering atlas groups (movement-match src/core/funnel-rules.ts
+// AMM_TAGS, checked there against this same list). A tag it doesn't map is ignored when it looks for organisations already
+// working on an idea's animals, so a new or renamed tag here needs a mapping there.
+const MM_SPECIES = ['farmed-fish', 'wild-fish', 'crustaceans', 'cephalopods', 'chickens', 'pigs', 'cows', 'farmed-animals',
+  'wild-animals', 'insects', 'companion-animals', 'animals-in-research', 'fur-animals', 'all-animals'];
+
+test('our species tags are exactly the ones Movement Match maps to atlas groups', () => {
+  assert.deepEqual([...ENUMS.species].sort(), [...MM_SPECIES].sort());
+});
+
 test('the built snapshot gives Movement Match the entity fields it reads, with known values', () => {
   const snap = JSON.parse(fs.readFileSync(`${ROOT}/public/snapshot.json`, 'utf8'));
   assert.equal(typeof snap.generated_at, 'string');
