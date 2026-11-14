@@ -80,12 +80,15 @@ checked in the statement that stores the correction, so parallel requests cannot
 An address is not a person, so one person can still close the form: 6 addresses fill the hourly cap and 40 the daily
 one, and one person can control that many (the /64s of an IPv6 /48 or /56 they route, or Tor and other proxies).
 Then everyone gets 429 until the window passes. Nothing alerts the maintainer. While the form is closed, each refused
-request reads the closed mark (`correction_gate`) and the sender's own count, not the queue. Rejecting or deleting
+request reads the closed mark (`correction_gate`) and the sender's own count, not the queue: 2 rows when requests come
+one at a time, about 10 to 25 when many arrive at the same moment. Only the first request the full caps refuse reads
+the queue (about 400 rows), to set the mark. Rejecting or deleting
 spam through the admin endpoints reopens the form at once. If you delete corrections in D1 directly instead, also run
 `DELETE FROM correction_gate`, or the form stays closed until the window passes. Turnstile would stop all this
 happening. If a `CORRECTIONS_LIMITER` rate-limit binding is added in `wrangler.jsonc`, it is also applied per address
 (an IPv6 /64 counts as one). Its period can only be 10 or 60 seconds, so even its strictest setting (1 a minute)
-allows more than the 5 a day above, and refused requests already cost the database only a few row reads.
+allows more than the 5 a day above, and refused requests already cost the database at most about 25 row reads each,
+apart from the one that marks the form closed.
 
 ## Reconciliation rules
 

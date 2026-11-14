@@ -1,7 +1,7 @@
 // The Worker's routes (src/index.js) over an in-memory D1 loaded with db/schema.sql and db/seed.sql.
 import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
-import { createD1, ensureStaticBundle, installCache, makeCtx } from './helpers/d1.js';
+import { createD1, ensureStaticBundle, installCache, makeCtx, metered, together } from './helpers/d1.js';
 import { refresherHealth } from '../src/lib/health.js';
 import { clientPrefix } from '../src/lib/client.js';
 
@@ -196,6 +196,47 @@ test('once the overall caps are full, a refused correction reads only the closed
   db.prepare('DELETE FROM corrections WHERE created_at = ?').run(times[199]);
   db.prepare('UPDATE correction_gate SET closed_until = ?').run(new Date(Date.now() - 1000).toISOString());
   assert.equal((await call(env, '/api/corrections', post(note, from('203.0.113.11')))).status, 201);
+});
+
+// Requests sent at the same moment all get past the pre-check before any is stored (test/corrections-cost.test.js
+// measures the rows they read on workerd's D1).
+const atOnce = (db, ips) => { const wait = together(ips.length); return Promise.all(ips.map((ip) => call({ DB: metered(db, wait) }, '/api/corrections', post(note, from(ip))).then((r) => r.status))); };
+
+test('many addresses at once while the caps are full write the closed mark once, not once each', { timeout: 30_000 }, async () => {
+  const db = seeded();
+  const now = Date.now();
+  const ins = db.sqlite.prepare("INSERT INTO corrections (note, kind, created_at) VALUES ('x', 'correction', ?)");
+  const times = Array.from({ length: 200 }, (_, i) => new Date(now - 2 * HOUR - i * 6 * 60_000).toISOString());
+  for (const t of times) ins.run(t);
+  // A mark whose time has passed, the same state as an admin change while the caps are still full.
+  db.sqlite.prepare('INSERT INTO correction_gate (id, closed_until) VALUES (1, ?)').run(new Date(now - 1000).toISOString());
+  db.sqlite.exec(`CREATE TEMP TABLE gate_writes (n INTEGER);
+    CREATE TEMP TRIGGER count_gate_writes AFTER INSERT ON main.correction_gate BEGIN INSERT INTO gate_writes VALUES (1); END;`);
+
+  const statuses = await atOnce(db, Array.from({ length: 50 }, (_, i) => `203.0.113.${i}`));
+  assert.deepEqual([...new Set(statuses)], [429]);
+  assert.equal(db.sqlite.prepare('SELECT COUNT(*) AS n FROM gate_writes').get().n, 1, 'the first refused request marks the form closed; the rest find the mark');
+  assert.equal(db.sqlite.prepare('SELECT closed_until FROM correction_gate').get().closed_until, new Date(Date.parse(times[199]) + DAY).toISOString());
+});
+
+test('one address sending many at once does not mark the form closed; the full hourly cap does', { timeout: 30_000 }, async () => {
+  const env = { DB: seeded() };
+  const db = env.DB;
+  const gate = () => db.sqlite.prepare('SELECT closed_until FROM correction_gate').get()?.closed_until;
+  const ins = db.sqlite.prepare("INSERT INTO corrections (note, kind, created_at) VALUES ('x', 'correction', ?)");
+  const times = Array.from({ length: 20 }, (_, i) => new Date(Date.now() - 10 * 60_000 - i * 1000).toISOString());
+  for (const t of times) ins.run(t);
+  // The overall caps have room: 5 stored, the rest refused by the sender's own cap, and no mark.
+  const statuses = await atOnce(db, Array(50).fill('198.51.100.77'));
+  assert.equal(statuses.filter((s) => s === 201).length, 5);
+  assert.equal(gate(), undefined);
+
+  // Five more fill the hourly cap (30 counted in the hour); the next address is refused and closes the form until
+  // the oldest of the 30 is an hour old.
+  for (let i = 0; i < 5; i++) assert.equal((await call(env, '/api/corrections', post(note, from(`192.0.2.${i}`)))).status, 201);
+  assert.deepEqual([...new Set(await atOnce(db, Array(5).fill('198.51.100.77')))], [429]);
+  assert.equal((await call(env, '/api/corrections', post(note, from('192.0.2.99')))).status, 429);
+  assert.equal(gate(), new Date(Date.parse(times[19]) + HOUR).toISOString());
 });
 
 test('the hourly cron deletes senders older than two days, even when no correction has been accepted since', async () => {
