@@ -89,6 +89,40 @@ export function installCache() {
   return store;
 }
 
+// For requests sent at the same moment: together(n) returns a wait that holds each caller until n have called
+// it. metered(d1, wait) wraps a D1 binding (this stand-in, or workerd's) so that first() answers only after
+// wait(), and adds up the rows each statement read and wrote (meta.rows_read and rows_written, which workerd's D1
+// reports and this stand-in does not). The corrections form reads with first() only in its pre-check, so with
+// one metered binding per request and a shared wait, every request gets past the pre-check before any is stored.
+export function together(n) {
+  let arrived = 0;
+  let release;
+  const all = new Promise((resolve) => { release = resolve; });
+  return () => { if (++arrived >= n) release(); return all; };
+}
+
+export function metered(d1, wait = async () => {}) {
+  const meter = { rows: 0, written: 0 };
+  const add = (r) => { meter.rows += r.meta?.rows_read ?? 0; meter.written += r.meta?.rows_written ?? 0; return r; };
+  const wrap = (stmt) => ({
+    stmt,
+    bind: (...params) => wrap(stmt.bind(...params)),
+    async first(column) {
+      const row = add(await stmt.all()).results[0] ?? null;
+      await wait();
+      return column ? row?.[column] ?? null : row;
+    },
+    all: async () => add(await stmt.all()),
+    run: async () => add(await stmt.run()),
+  });
+  return {
+    meter,
+    prepare: (sql) => wrap(d1.prepare(sql)),
+    batch: async (list) => (await d1.batch(list.map((s) => s.stmt))).map(add),
+    exec: (sql) => d1.exec(sql),
+  };
+}
+
 export function makeCtx() {
   const pending = [];
   return { pending, waitUntil: (p) => pending.push(p), settle: () => Promise.all(pending) };

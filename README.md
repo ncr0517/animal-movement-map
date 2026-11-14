@@ -55,7 +55,8 @@ It stops if an input file is invalid or if far fewer researched entries or recor
 
 ```bash
 npm ci
-npm test           # node --test: feeds, build, refresher, Worker routes, Movement Match contract
+npm test           # node --test: feeds, build, refresher, Worker routes, Movement Match contract,
+                   # and the corrections form's database reads on workerd's local D1 (no account needed)
 npm run build      # db/seed.sql, public/snapshot.json, data/seed/build-report.md, src/generated/static.js
 npm run dev        # builds seed, loads local D1, runs wrangler dev
 ```

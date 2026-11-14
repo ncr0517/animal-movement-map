@@ -192,7 +192,7 @@ async function cached(request, ctx, ttl, producer) {
 // IPv6 /48 or /56 they route, or Tor and other proxies (docs/handoff.md). Turnstile is the real fix.
 // Once the overall caps refuse a correction, the form is marked closed until they could next allow one
 // (correction_gate), so each refused request after that reads that row and the sender's own count, not the
-// recent queue.
+// recent queue, even when many arrive at the same moment.
 const CORRECTION_KINDS = new Set(['correction', 'missing-entity', 'removal-request', 'access-concern']);
 const CORRECTION_STATUSES = ['accepted', 'rejected', 'needs-info', 'pending'];
 const CORRECTION_MAX_BYTES = 16 * 1024;
@@ -225,42 +225,60 @@ const CORRECTIONS_DDL = [
 ];
 const missingTable = (err) => /no such table: correction_(clients|gate)\b/i.test(String(err?.message || err));
 
-// Stores the correction if every cap allows it, and returns its id (null when a cap is reached). One batch,
-// which D1 runs as a single transaction: the first statement checks the caps and inserts in one step; the
-// second records the sender against the row the first one inserted (when it inserted nothing, the newest row
-// belongs to an earlier batch that already recorded its sender, and OR IGNORE leaves that alone).
+// Stores the correction if every cap allows it, and returns its id (null when the form is marked closed or a cap
+// is reached). One batch, which D1 runs as a single transaction, so requests sent at the same moment are taken
+// one after another, each seeing what the ones before it wrote:
+// 1. checks, cheapest first, that the form is not marked closed, that this address has not used its allowance,
+//    and that the overall caps allow one more, and inserts the correction in the same step. SQLite stops at the
+//    first check that fails, so a refusal by the mark or by the sender's own cap reads a handful of rows;
+// 2. records the sender against the row the first one inserted (when it inserted nothing, the newest row
+//    belongs to an earlier batch that already recorded its sender, and OR IGNORE leaves that alone);
+// 3. when the overall caps refused it, marks the form closed (see closeFormSql).
 async function storeCorrection(db, values, client, now) {
   const at = new Date(now).toISOString();
+  const markedClosed = 'EXISTS (SELECT 1 FROM correction_gate WHERE id = 1 AND closed_until > ?)';
+  const mine = `${count('correction_clients', 'client = ? AND created_at > ?')} < ?`;
+  const mineBinds = [client, isoAgo(now, DAY), CORRECTIONS_PER_CLIENT_DAY, CORRECTIONS_PER_CLIENT_DAY];
   const [inserted] = await db.batch([
     db.prepare(`INSERT INTO corrections (entity_id, event_id, kind, field, proposed_value, evidence_url, note, contact, created_at)
         SELECT ?,?,?,?,?,?,?,?,?
-        WHERE ${count('correction_clients', 'client = ? AND created_at > ?')} < ?
+        WHERE NOT ${markedClosed}
+          AND ${mine}
           AND ${count('corrections', "created_at > ? AND status <> 'rejected'")} < ?
           AND ${count('corrections', "created_at > ? AND status <> 'rejected'")} < ?
         RETURNING id`)
-      .bind(...values, at,
-        client, isoAgo(now, DAY), CORRECTIONS_PER_CLIENT_DAY, CORRECTIONS_PER_CLIENT_DAY,
+      .bind(...values, at, at, ...mineBinds,
         isoAgo(now, HOUR), CORRECTIONS_PER_HOUR, CORRECTIONS_PER_HOUR,
         isoAgo(now, DAY), CORRECTIONS_PER_DAY, CORRECTIONS_PER_DAY),
     db.prepare(`INSERT OR IGNORE INTO correction_clients (correction_id, client, created_at)
         SELECT id, ?, created_at FROM corrections WHERE id = (SELECT MAX(id) FROM corrections) AND created_at = ?`)
       .bind(client, at),
+    db.prepare(closeFormSql(markedClosed, mine))
+      .bind(isoAgo(now, HOUR), CORRECTIONS_PER_HOUR - 1, isoAgo(now, DAY), CORRECTIONS_PER_DAY - 1, at, at, client, at, ...mineBinds),
   ]);
   return inserted.results[0]?.id ?? null;
 }
 
-// After the overall caps refuse a correction: mark the form closed until the first moment they could allow one
-// again. That is when the 30th newest counted correction of the last hour turns an hour old, or the 200th of the
-// last day turns a day old (the later of the two when both caps are full). One statement, so it cannot undo an
-// admin's reopenForm that ran in between. When the refusal came from the sender's own cap instead (two requests
-// from one address at once), neither cap is full and nothing is written. This reads the recent queue, but only
-// once each time the form closes.
-async function closeForm(db, now) {
+// The batch's third statement. When the overall caps refused this correction, it marks the form closed until
+// the first moment they could allow one again: when the 30th newest counted correction of the last hour turns an
+// hour old, or the 200th of the last day turns a day old (the later of the two when both caps are full).
+// Finding those two rows reads the recent queue, so the statement first checks, cheapest first and in a WHERE
+// with no FROM (which SQLite evaluates, stopping at the first false term, before the SELECT list), that the
+// refusal really came from the overall caps: the form is not already marked closed (by an earlier request, even
+// one sent at the same moment), the second statement did not record this sender against the newest correction
+// (nothing was stored), and this address has not used its allowance. So the recent queue is read for the mark
+// once each time the form closes, by the first request the caps refuse, and refusals by the mark or by the
+// sender's own cap never read it. It runs in the same transaction as the refusal, so it cannot undo an admin's
+// reopenForm that ran in between. COALESCE only keeps the column from being NULL ("closed until now" is open).
+function closeFormSql(markedClosed, mine) {
   const edge = (shift) => `SELECT strftime('%Y-%m-%dT%H:%M:%fZ', created_at, '${shift}') AS t
       FROM (SELECT created_at FROM corrections WHERE created_at > ? AND status <> 'rejected' ORDER BY created_at DESC LIMIT 1 OFFSET ?)`;
-  await db.prepare(`INSERT OR REPLACE INTO correction_gate (id, closed_until)
-      SELECT 1, MAX(t) FROM (${edge('+1 hour')} UNION ALL ${edge('+1 day')}) HAVING MAX(t) IS NOT NULL`)
-    .bind(isoAgo(now, HOUR), CORRECTIONS_PER_HOUR - 1, isoAgo(now, DAY), CORRECTIONS_PER_DAY - 1).run();
+  return `INSERT OR REPLACE INTO correction_gate (id, closed_until)
+      SELECT 1, COALESCE((SELECT MAX(t) FROM (${edge('+1 hour')} UNION ALL ${edge('+1 day')})), ?)
+      WHERE NOT ${markedClosed}
+        AND NOT EXISTS (SELECT 1 FROM correction_clients
+          WHERE correction_id = (SELECT MAX(id) FROM corrections) AND client = ? AND created_at = ?)
+        AND ${mine}`;
 }
 
 // Rejected and deleted corrections stop counting toward the caps: drop the "closed" mark so the form opens again
@@ -271,16 +289,15 @@ async function reopenForm(db) {
 
 // The correction's id, or null when the form is closed or a cap is reached. A request the form would refuse in
 // any case (the form is marked closed, or this address has used its allowance) is answered from one small read
-// of a primary key and an index, before anything counts the recent queue.
+// of a primary key and an index, without the store batch. Requests sent at the same moment all get past this
+// read before any of them is stored; the batch's own checks then refuse them, in the same order of cost.
 async function admitCorrection(db, values, client, now) {
   const at = new Date(now).toISOString();
   const pre = await db.prepare(`SELECT (SELECT closed_until FROM correction_gate WHERE id = 1) AS closed_until,
       ${count('correction_clients', 'client = ? AND created_at > ?')} AS mine`)
     .bind(client, isoAgo(now, DAY), CORRECTIONS_PER_CLIENT_DAY).first();
   if ((pre?.closed_until && pre.closed_until > at) || (pre?.mine ?? 0) >= CORRECTIONS_PER_CLIENT_DAY) return null;
-  const id = await storeCorrection(db, values, client, now);
-  if (id == null) await closeForm(db, now).catch((err) => console.error('marking the corrections form closed failed', err));
-  return id;
+  return storeCorrection(db, values, client, now);
 }
 
 // Senders are kept only as long as the per-address cap needs them. Run by the hourly cron, so rows go after two

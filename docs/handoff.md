@@ -31,11 +31,12 @@ Adding new top-level fields is fine (this audit added `refresher`).
 ## Run, test, build
 
 Needs Node 22.16 or later (the test helper uses `node:sqlite` and its `StatementSync.columns()`, added in 22.16).
-On Windows, use Git Bash.
+On Windows, use Git Bash. One test file (`test/corrections-cost.test.js`) measures database reads on workerd's own
+local D1, started through wrangler with a throwaway config: no account, no remote bindings, nothing kept.
 
 ```bash
 npm ci
-npm test         # 68 tests, about 6 seconds
+npm test         # 72 tests, about 6 seconds
 npm run build    # writes db/seed.sql, public/snapshot.json, data/seed/build-report.md
 npm run dev      # local site with a local database
 ```
@@ -124,7 +125,9 @@ The public site and API:
   stores the correction, so parallel requests can't get past them. Rejected and deleted corrections don't count, so
   clearing spam reopens the form. Before, anyone could fill the database. Once the overall caps are full, the form is
   marked closed until they would next allow a correction, so each refused request reads 2 rows of the database
-  instead of counting the recent queue (it read about 200, or thousands with rejected spam in the day). The hourly
+  instead of counting the recent queue (it read about 200, or thousands with rejected spam in the day). Requests
+  that arrive at the same moment all get past that first read, and each then reads about 10 to 25 rows; only the
+  first one the full caps refuse reads the queue, to set the mark. The hourly
   cron deletes the stored address hashes after two days, whether or not anyone writes in between.
 - New admin tools: page through corrections (`?before_id=`), reject or delete in bulk
   (`/api/admin/corrections/bulk`), and mark feed posts reviewed (`/api/admin/items/reviewed`).
@@ -155,7 +158,10 @@ A review of these fixes on 13 November found 14 more problems in them. They are 
 the list above describes the result. A second review the same day found 4 more in those fixes: refused corrections
 were costly to the database, address hashes outlived their two days on a quiet form, the docs called an address one
 sender, and `&#146;`-style punctuation was deleted. They are fixed in a follow-up pull request (`fix/review-round-2`),
-and the list above includes them.
+and the list above includes them. A third review found that corrections refused at the same moment each still read the
+recent queue, so a burst from one address cost about 7 times what it did before round 2. That is fixed in
+`fix/review-round-3` (code only: it comes with `npm run deploy`, and needs no reseed), and the list above
+describes the result.
 
 ## What changes only after the owner deploys
 
@@ -187,7 +193,9 @@ old code with the new one, but you get every fix only after both.
   IPv6 /64 as one), but none is configured. I couldn't confirm that the binding is available on the Free plan, and a
   binding the account can't have would make the deploy fail. Its period can only be 10 or 60 seconds, so even its
   strictest setting (1 a minute per address) allows more than the 5 a day the code already allows, and refused
-  requests already cost the database only a few row reads. To add it anyway, put this in `wrangler.jsonc` and deploy:
+  requests already cost the database at most about 25 row reads each (2 when they come one at a time), apart from the
+  one each time the form closes that reads the queue to mark it closed. To add it anyway, put this in
+  `wrangler.jsonc` and deploy:
 
   ```jsonc
   "ratelimits": [{ "name": "CORRECTIONS_LIMITER", "namespace_id": "2026111201", "simple": { "limit": 1, "period": 60 } }]
