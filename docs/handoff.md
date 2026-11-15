@@ -1,7 +1,21 @@
 # Handoff: Animal Movement Map
 
 Start here. Written for the owner and the next agent. Last updated 13 November 2026, after the audit fixes and two
-reviews of them.
+reviews of them. Deployment record updated 15 November 2026.
+
+## Production deployment: 14 November 2026
+
+PR #3 passed 72 tests and merged as `3255a9b`. Its `closeFormSql` uses the request timestamp as a non-null fallback
+for `closed_until`. From that commit, build, Worker deploy and remote database reseed all succeeded, in that order.
+Worker version: `eb555e79-e546-4f83-9645-1ef2d1dd32ad`.
+
+The admin token was unavailable, so no manual refresh POST was sent. The hourly refresh finished at 15:24:02 UTC,
+checking 6 sources with 0 failing. The snapshot had 117 entities, 103 events and was 500,157 bytes, below MM's
+4,000,000-byte limit. At 15:45:39 UTC, Movement Match read it without error. Its retained entity fields were
+unchanged, so MM correctly kept its existing 117-entity snapshot (39,183 bytes).
+
+PR #4 (`1128234`) adds a species contract test only; no additional production deployment was needed.
+MM draft PR #17 adds the cephalopods mapping and follows GBS's new wild groups. It must wait for GBS's release.
 
 ## What it is
 
@@ -36,7 +50,7 @@ local D1, started through wrangler with a throwaway config: no account, no remot
 
 ```bash
 npm ci
-npm test         # 72 tests, about 6 seconds
+npm test         # 73 tests, about 6 seconds
 npm run build    # writes db/seed.sql, public/snapshot.json, data/seed/build-report.md
 npm run dev      # local site with a local database
 ```
@@ -48,9 +62,10 @@ The build stops without writing anything when a data file is broken, or when it 
 researched entries (stubs are not counted) or records than the last build, or lose more than half of a section's
 entries. Set `ALLOW_SHRINK=1` only if the removal is intended.
 
-## Deploy (owner only)
+## Deploy (manually authorized)
 
-There is no CI and no automatic deploy. Merging to `main` changes nothing on the live site. Only the owner deploys.
+There is no CI and no automatic deploy. Merging to `main` changes nothing on the live site. On 13 November 2026,
+the owner authorized the agent to deploy the reviewed audit fixes; that deployment is recorded above.
 
 Run these in order, from an up-to-date `main`:
 
@@ -74,8 +89,8 @@ curl -X POST -H "authorization: Bearer $ADMIN_TOKEN" -H 'content-type: applicati
 A reseed (`db:remote`) keeps corrections, feed posts and the refresh log. While it runs, the site shows its built-in
 copy of the data for a minute.
 
-Agents: never run `npm run deploy`, `npm run db:remote`, `wrangler deploy` or any wrangler command with `--remote`,
-and never call the live site's `/api/admin/*` endpoints. Reading its public pages is fine.
+Agents: follow the owner's deployment authorization. Never create or change credentials. If the admin token is
+unavailable, do not expose or request it: report the omitted POST and verify the next hourly refresh instead.
 
 ## What the audit fixed
 
