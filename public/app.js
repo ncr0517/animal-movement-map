@@ -142,46 +142,38 @@ function recentIds() {
 
 // ---- Views ----------------------------------------------------------------
 function renderMap() {
-  const recent = recentIds();
   const groups = Object.fromEntries(CATEGORIES.map(([id]) => [id, []]));
   for (const e of state.data.entities) (groups[e.primary_category] ||= []).push(e);
-  const active = filtersActive();
   let shown = 0;
-  const html = CATEGORIES.filter(([id]) => state.f.direct || id !== 'direct-action').map(([id, label, desc]) => {
-    const list = (groups[id] || []).sort((a, b) => Number(a.stub) - Number(b.stub) || a.name.localeCompare(b.name));
-    const n = list.filter(matches).length;
-    shown += n;
-    const review = id === 'direct-action';
-    const markers = list.map((e) => {
-      const m = matches(e);
-      return `<li><button class="marker${isAquatic(e) ? ' aq' : ''}${m ? '' : ' dim'}${e.stub ? ' stub' : ''}${e.stale ? ' stale' : ''}" data-id="${esc(e.id)}"
-        title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · profile not yet researched' : ''}${e.stale ? ' · not checked in 6+ months' : ''}"
-        ${m ? '' : 'tabindex="-1" aria-hidden="true"'}>${glyph(e)}<span class="name">${esc(e.name)}</span>${recent.has(e.id) ? '<span class="new" title="Change in the last 45 days"></span>' : ''}</button></li>`;
-    }).join('');
-    return `<section class="territory${list.length > 14 ? ' wide' : ''}${review ? ' review' : ''}" aria-labelledby="t-${id}">
-      <header><h2 id="t-${id}">${esc(label)}</h2><span class="count">${active ? `${n}/` : ''}${list.length}</span></header>
-      <p class="desc">${esc(desc)}</p>
-      ${review ? '<p class="review-note">Included in v1 to test coverage. Listing is descriptive: it is not endorsement, and it does not imply association with any other group on the map.</p>' : ''}
-      ${list.length ? `<ul class="markers">${markers}</ul>` : '<p class="empty-territory">No entries in this sample yet.</p>'}
+  const html = CATEGORIES.map(([id, label, desc]) => {
+    // Hide non-matching entries outright; a quiet map is easier to scan than a dimmed one.
+    const list = (groups[id] || []).filter(matches).sort((a, b) => Number(a.stub) - Number(b.stub) || a.name.localeCompare(b.name));
+    shown += list.length;
+    if (!list.length) return '';
+    const markers = list.map((e) => `<li><button class="marker${e.stub ? ' stub' : ''}" data-id="${esc(e.id)}"
+        title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}">${glyph(e)}<span class="name">${esc(e.name)}</span></button></li>`).join('');
+    return `<section class="territory${list.length > 14 ? ' wide' : ''}" aria-labelledby="t-${id}" title="${esc(desc)}">
+      <header><h2 id="t-${id}">${esc(label)}${id === 'direct-action' ? '<span class="review-tag" title="Included in v1 to test coverage. Listing is not endorsement and does not imply association.">under review</span>' : ''}</h2><span class="count">${list.length}</span></header>
+      <ul class="markers">${markers}</ul>
     </section>`;
   }).join('');
 
+  const aq = state.f.aquatic;
   $('#view').innerHTML = `
-    <div class="caveat"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-      <span>Entries are grouped by their <strong>primary function</strong>. Sharing a territory does not mean organisations work together, and the map shows only a sample: a missing name is not evidence that nobody does that work. ${active ? `<strong>${shown}</strong> of ${state.data.entities.length} entries match your filters.` : ''}</span></div>
-    <div class="chart">${html}</div>
-    <div class="legend" aria-label="Legend">
+    <div class="mapbar">
+      <div class="scope" role="group" aria-label="Scope">
+        <button type="button" data-scope="all" aria-pressed="${!aq}">Whole movement</button>
+        <button type="button" data-scope="aquatic" aria-pressed="${aq}">Fish &amp; aquatic</button>
+      </div>
+      <p class="note">${shown} entries, grouped by main focus. A missing name doesn't mean nobody does that work.</p>
+    </div>
+    ${shown ? `<div class="chart">${html}</div>` : '<p class="muted" style="padding:24px 0">Nothing matches. <button class="reset" type="button" data-clear>Clear search and filters</button></p>'}
+    <div class="legend quiet" aria-label="Key">
+      <span>${glyph({ kind: 'organisation', section: 'aquatic' })} Works on aquatic animals</span>
       <span>${glyph({ kind: 'organisation' })} Organisation</span>
-      <span>${glyph({ kind: 'programme' })} Programme</span>
       <span>${glyph({ kind: 'funder' })} Funder</span>
       <span>${glyph({ kind: 'resource' })} Resource</span>
-      <span>${glyph({ kind: 'network' })} Network</span>
-      <span>${glyph({ kind: 'banner' })} Leaderless banner</span>
-      <span>${glyph({ kind: 'organisation', section: 'aquatic' })} Works on aquatic animals</span>
-      <span><span class="new" style="width:6px;height:6px;border-radius:50%;background:var(--warn);display:inline-block"></span> Changed in last 45 days</span>
-      <span><span style="text-decoration:underline dotted;text-underline-offset:3px">Name</span> Not checked in 6+ months</span>
-      <span><em style="color:var(--ink-3)">Name</em> Not yet researched</span>
-      <span><span class="sw hatch"></span> Inclusion under review</span>
+      <span>${glyph({ kind: 'programme' })} Programme</span>
     </div>`;
 }
 
@@ -488,7 +480,7 @@ const VIEWS = { map: renderMap, directory: renderDirectory, changes: renderChang
 
 function updateFilterCount() {
   const f = state.f;
-  const n = (f.q ? 1 : 0) + f.species.size + (f.region ? 1 : 0) + (f.intervention ? 1 : 0) + (f.kind ? 1 : 0) + (f.aquatic ? 1 : 0) + (f.direct ? 0 : 1);
+  const n = f.species.size + (f.region ? 1 : 0) + (f.intervention ? 1 : 0) + (f.kind ? 1 : 0) + (f.aquatic ? 1 : 0) + (f.direct ? 0 : 1);
   $('#filter-count').textContent = n ? `(${n})` : '';
 }
 
@@ -563,10 +555,8 @@ function renderFreshness() {
   const health = d.source_health;
   const delayed = refreshDelayed();
   const cls = !state.live ? '' : delayed || health.failing > health.total * 0.25 ? 'warn' : 'ok';
-  $('#freshness').innerHTML = `
-    <div><span class="dot ${cls}"></span><b>${state.live ? (delayed ? 'Live data · refresh delayed' : 'Live data') : 'Static snapshot'}</b> · ${d.entities.length} entries · ${d.events.length} records</div>
-    <div>${delayed ? `${esc(d.refresher.detail)} ` : ''}${lr ? `Last refresh ${ago(lr.finished_at)} · ${lr.sources_checked} sources checked` : state.live ? 'Waiting for the first scheduled refresh' : `Built ${fmtDate(d.generated_at)}`}</div>`;
-  $('#footer-meta').textContent = `${health.total} public sources monitored · snapshot generated ${fmtDate(d.generated_at, { precise: true })} UTC`;
+  const when = lr ? `updated ${ago(lr.finished_at)}` : state.live ? 'waiting for the first refresh' : `snapshot from ${fmtDate(d.generated_at)}`;
+  $('#freshness').innerHTML = `<span class="dot ${cls}"></span>${d.entities.length} entries · ${d.events.length} records · ${health.total} public sources monitored · ${esc(when)}${delayed ? ` · <b style="color:var(--warn)">refresh delayed</b>${d.refresher?.detail ? `: ${esc(d.refresher.detail)}` : ''}` : ''}`;
 }
 
 async function load() {
@@ -598,6 +588,9 @@ async function main() {
     if (ev.target.closest('[data-close]')) { closeProfile(); return; }
     const sort = ev.target.closest('[data-sort]');
     if (sort) { const k = sort.dataset.sort; state.dirSort = [k, state.dirSort[0] === k ? -state.dirSort[1] : 1]; renderDirectory(); return; }
+    const scope = ev.target.closest('[data-scope]');
+    if (scope) { state.f.aquatic = scope.dataset.scope === 'aquatic'; $('#f-aquatic').checked = state.f.aquatic; render(); return; }
+    if (ev.target.closest('[data-clear]')) { $('#reset').click(); return; }
     const mode = ev.target.closest('[data-mode]');
     if (mode) { state.changesMode = mode.dataset.mode; renderChanges(); }
   });

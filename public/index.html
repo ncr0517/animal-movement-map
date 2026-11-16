@@ -12,11 +12,8 @@
 </head>
 <body>
 <div class="wrap masthead">
-  <div>
-    <h1>Animal Movement Map <em>v0.1</em></h1>
-    <p>Who is doing what across the animal movement: organisations, programmes, funders and resources, each with linked sources. This first version looks in depth at <strong>fish and other aquatic animals</strong> and sketches the rest of the movement more lightly.</p>
-  </div>
-  <div class="freshness" id="freshness" aria-live="polite">Loading data…</div>
+  <h1>Animal Movement Map</h1>
+  <p>Who works on what across the animal movement, with sources. In depth for fish and other aquatic animals.</p>
 </div>
 
 <div class="toolbar">
@@ -31,18 +28,22 @@
       </nav>
       <label class="search">
         <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Search names, aliases, summaries…" aria-label="Search the map">
+        <input id="q" type="search" placeholder="Search organisations" aria-label="Search organisations, programmes and funders">
       </label>
       <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filters">Filters <span class="n" id="filter-count"></span></button>
     </div>
     <div class="filters collapsed" id="filters">
-      <div class="chipset" id="species-chips" role="group" aria-label="Species"></div>
-      <select id="f-region" aria-label="Region"><option value="">All regions</option></select>
-      <select id="f-intervention" aria-label="Intervention"><option value="">All interventions</option></select>
-      <select id="f-kind" aria-label="Kind"><option value="">All kinds</option></select>
-      <label class="toggle"><input type="checkbox" id="f-aquatic"> Aquatic deep-dive only</label>
-      <label class="toggle"><input type="checkbox" id="f-direct" checked> Show direct-action &amp; abolitionist groups</label>
-      <button class="reset" id="reset" type="button">Clear filters</button>
+      <div class="frow"><span class="flabel">Animals</span><div class="chipset" id="species-chips" role="group" aria-label="Animals"></div></div>
+      <div class="frow">
+        <label class="fsel"><span class="flabel">Region</span><select id="f-region"><option value="">Any</option></select></label>
+        <label class="fsel"><span class="flabel">Approach</span><select id="f-intervention"><option value="">Any</option></select></label>
+        <label class="fsel"><span class="flabel">Type</span><select id="f-kind"><option value="">Any</option></select></label>
+      </div>
+      <div class="frow">
+        <label class="toggle"><input type="checkbox" id="f-aquatic"> Fish &amp; aquatic only</label>
+        <label class="toggle"><input type="checkbox" id="f-direct" checked> Include direct-action &amp; abolitionist groups</label>
+        <button class="reset" id="reset" type="button">Clear all</button>
+      </div>
     </div>
   </div>
 </div>
@@ -50,8 +51,8 @@
 <main class="wrap" id="view" tabindex="-1"></main>
 
 <footer class="wrap">
+  <p id="freshness" aria-live="polite"></p>
   <p>Absence from the map is not evidence that no work exists. Posting volume is not organisational activity or effectiveness. Where markers sit shows a primary function only; it does not imply collaboration, endorsement or influence.</p>
-  <p id="footer-meta"></p>
 </footer>
 
 <div id="drawer-root"></div>
