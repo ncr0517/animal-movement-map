@@ -103,12 +103,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* ---- Map (field chart) ---- */
 main { padding-block: 4px 48px; }
-.chart { align-items: start;
-  display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); grid-auto-flow: dense;
-}
+/* Columns pack sections of very different lengths without leaving holes. */
+.chart { columns: 300px; column-gap: 12px; }
+.chart > .territory { break-inside: avoid; margin-bottom: 12px; }
 .territory { position: relative; padding: 14px 16px 16px; border-radius: 6px; min-width: 0; background: var(--plate); }
-.territory.wide { grid-column: span 2; }
-@media (max-width: 640px) { .territory.wide { grid-column: auto; } }
 .territory header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; margin-bottom: 8px; }
 .territory h2 { font-size: var(--s-lg); font-style: italic; font-weight: 500; letter-spacing: 0.01em; }
 .territory .count { font: 500 var(--s-xs)/1 var(--f-data); color: var(--ink-3); }
@@ -178,16 +176,6 @@ td .rowlink:hover { color: var(--water); text-decoration: underline; }
 .seg button { border: none; background: none; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: var(--s-xs); color: var(--ink-2); }
 .seg button[aria-pressed="true"] { background: var(--paper); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
 
-/* ---- Funding ---- */
-.stats { display: flex; flex-wrap: wrap; gap: 10px 32px; padding-block: 6px 16px; }
-.stat .v { font: 500 var(--s-xl)/1.1 var(--f-data); font-variant-numeric: tabular-nums; }
-.stat .l { font-size: var(--s-xs); color: var(--ink-3); }
-.amount { font-family: var(--f-data); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
-.calls { display: grid; gap: 10px; list-style: none; padding: 0; margin: 0; }
-.call { border: 1px solid var(--rule); border-radius: var(--r); padding: 10px 12px; }
-.call h3 { font-family: var(--f-body); font-size: var(--s-sm); font-weight: 600; }
-.call p { margin: 4px 0 6px; font-size: var(--s-xs); color: var(--ink-2); }
-section.fund + section.fund { margin-top: 28px; }
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
 .section-head h2 { font-size: var(--s-xl); }
 

@@ -152,7 +152,7 @@ function renderMap() {
     if (!list.length) return '';
     const markers = list.map((e) => `<li><button class="marker${e.stub ? ' stub' : ''}" data-id="${esc(e.id)}"
         title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}">${glyph(e)}<span class="name">${esc(e.name)}</span></button></li>`).join('');
-    return `<section class="territory${list.length > 14 ? ' wide' : ''}" aria-labelledby="t-${id}" title="${esc(desc)}">
+    return `<section class="territory" aria-labelledby="t-${id}" title="${esc(desc)}">
       <header><h2 id="t-${id}">${esc(label)}${id === 'direct-action' ? '<span class="review-tag" title="Included in v1 to test coverage. Listing is not endorsement and does not imply association.">under review</span>' : ''}</h2><span class="count">${list.length}</span></header>
       <ul class="markers">${markers}</ul>
     </section>`;
@@ -289,63 +289,6 @@ function renderChanges() {
     </aside></div>`;
 }
 
-function renderFunding() {
-  const active = filtersActive();
-  const ok = (ev) => !active || ev.entity_ids.some((id) => state.byId[id] && matches(state.byId[id]));
-  const grants = state.data.events.filter((e) => e.type === 'grant_awarded' && ok(e)).sort((a, b) => String(b.event_date || '').localeCompare(String(a.event_date || '')));
-  const calls = state.data.events.filter((e) => e.type === 'open_call' && ok(e));
-  // A grant record with no single recipient is a round total (all the grants of one round). Per-recipient
-  // records from the same funder and announcement are part of it, so they are not added a second time.
-  // Records whose sources disagree (disputed) are left out of the sums rather than counted twice.
-  const counted = (g) => g.amount != null && g.status !== 'superseded' && g.status !== 'disputed';
-  const rounds = grants.filter((g) => !g.recipient_id);
-  const single = grants.filter((g) => g.recipient_id);
-  const inRound = (g) => rounds.some((r) => counted(r) && r.funder_id === g.funder_id && r.source_url === g.source_url && (r.currency || '?') === (g.currency || '?'));
-  const totals = {};
-  const add = (g) => { totals[g.currency || '?'] = (totals[g.currency || '?'] || 0) + g.amount; };
-  for (const g of single) if (counted(g) && !inRound(g)) add(g);
-  for (const r of rounds) if (counted(r)) add(r);
-  const nDisputed = grants.filter((g) => g.amount != null && g.status === 'disputed').length;
-  const funders = new Set(grants.map((g) => g.funder_id).filter(Boolean));
-  const recips = new Set(grants.map((g) => g.recipient_id).filter(Boolean));
-  const order = { open: 0, 'rolling-or-unstated': 1, forthcoming: 2, closed: 3 };
-  calls.sort((a, b) => (order[a.call_state] ?? 3) - (order[b.call_state] ?? 3) || String(a.deadline || '9').localeCompare(String(b.deadline || '9')));
-  const name = (id) => (state.byId[id] ? `<button class="elink" data-id="${esc(id)}">${esc(state.byId[id].name)}</button>` : '—');
-
-  $('#view').innerHTML = `
-    <section class="fund" style="margin-top:16px">
-      <div class="section-head"><h2>Grants awarded</h2></div>
-      <div class="stats">
-        <div class="stat"><div class="v">${single.length}</div><div class="l">disclosed grants to named recipients</div></div>
-        ${rounds.length ? `<div class="stat"><div class="v">${rounds.length}</div><div class="l">round totals (several grants each)</div></div>` : ''}
-        <div class="stat"><div class="v">${funders.size}</div><div class="l">funders</div></div>
-        <div class="stat"><div class="v">${recips.size}</div><div class="l">recipients</div></div>
-        ${Object.entries(totals).map(([c, v]) => `<div class="stat"><div class="v">${money(v, c)}</div><div class="l">total disclosed in ${esc(c)}</div></div>`).join('')}
-      </div>
-      <p class="muted" style="font-size:var(--s-sm);max-width:90ch">These totals add up publicly disclosed awards in this sample only. They do not show an organisation's budget, or how much of the money is still unspent. A round total counts its whole round once; the round's individual grants listed below are not added again.${nDisputed ? ` ${nDisputed} record${nDisputed === 1 ? '' : 's'} whose sources disagree ${nDisputed === 1 ? 'is' : 'are'} left out of the totals.` : ''}</p>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Awarded</th><th>Funder</th><th>Recipient</th><th>Purpose</th><th style="text-align:right">Amount</th><th>Status</th><th>Source</th></tr></thead>
-        <tbody>${grants.map((g) => `<tr>
-          <td class="mono" style="white-space:nowrap">${fmtDate(g.event_date)}</td><td>${name(g.funder_id)}</td><td>${g.recipient_id ? name(g.recipient_id) : '<span class="muted">several (round total)</span>'}</td>
-          <td>${esc(g.title)}${g.conflicts_with?.length ? ' <span class="pill disputed">conflicting reports</span>' : ''}</td>
-          <td class="amount">${money(g.amount, g.currency)}</td>
-          <td><span class="pill ${esc(g.status)}" title="${esc(STATUS_HELP[g.status] || '')}">${esc(g.status)}</span></td>
-          <td>${safeUrl(g.source_url) ? `<a href="${esc(g.source_url)}" target="_blank" rel="noopener">${esc(host(g.source_url))}</a>` : '—'}</td>
-        </tr>`).join('') || '<tr><td colspan="7" class="muted">No grant records match these filters.</td></tr>'}</tbody>
-      </table></div>
-    </section>
-    <section class="fund">
-      <div class="section-head"><h2>Funding opportunities</h2><span class="muted" style="font-size:var(--s-sm)">Check the funder's page before applying; deadlines change.</span></div>
-      <ul class="calls">${calls.map((c) => `<li class="call">
-        <div class="meta" style="margin-bottom:4px"><span class="pill ${esc(c.call_state)}">${c.call_state === 'rolling-or-unstated' ? 'rolling / no deadline stated' : esc(c.call_state)}</span>
-          <span class="pill ${esc(c.status)}">${esc(c.status)}</span>${c.deadline ? `<span>Deadline <span class="mono">${fmtDate(c.deadline)}</span></span>` : ''}</div>
-        <h3>${safeUrl(c.source_url) ? `<a href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(c.title)}</a>` : esc(c.title)}</h3>
-        ${c.summary ? `<p>${esc(c.summary)}</p>` : ''}
-        <div class="meta">${c.funder_id ? `Offered by ${name(c.funder_id)} · ` : ''}Last checked <span class="mono">${fmtDate(c.last_checked)}</span></div>
-      </li>`).join('') || '<li class="muted">No funding opportunities match these filters.</li>'}</ul>
-    </section>`;
-}
-
 function renderAbout() {
   const d = state.data;
   $('#view').innerHTML = `<div class="prose" style="margin-top:20px">
@@ -355,7 +298,7 @@ function renderAbout() {
     <ul>
       <li><strong>The deep-dive:</strong> organisations, programmes, funders and resources working on farmed fish, wild-caught fish, shrimp and other crustaceans, and octopus and other cephalopods.</li>
       <li><strong>The wider movement:</strong> a lighter sample across every category, so the map shows the overall shape of the field.</li>
-      <li><strong>Funding:</strong> disclosed grant records and open funding opportunities, kept separate.</li>
+      <li><strong>Funding:</strong> disclosed grants and open funding calls, shown in each organisation's profile and on the Changes page.</li>
       <li><strong>Direct action and abolitionist groups</strong> are included in this version so we can see how including them works. Their profiles are encyclopedic only. Being listed is not endorsement and does not imply association with anyone else on the map. You can hide them with the filter.</li>
     </ul>
     <h2>How to read it</h2>
@@ -476,7 +419,7 @@ async function submitCorrection(ev, entityId) {
 }
 
 // ---- Shell ---------------------------------------------------------------
-const VIEWS = { map: renderMap, directory: renderDirectory, changes: renderChanges, funding: renderFunding, about: renderAbout };
+const VIEWS = { map: renderMap, directory: renderDirectory, changes: renderChanges, about: renderAbout };
 
 function updateFilterCount() {
   const f = state.f;

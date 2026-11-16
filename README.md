@@ -16,8 +16,7 @@ including direct-action and abolitionist groups so we can see how including them
   programme, funder, resource, network, leaderless banner). Blue markers work on aquatic animals.
 - **Directory**: a sortable table of the same data.
 - **Changes**: curated records (grants, calls, reports, legal developments) plus items auto-detected from public RSS feeds.
-- **Funding**: grants awarded and open calls, kept separate.
-- **Profiles**: aliases, tags, sources with dates, records, recent posts, monitoring health, and a corrections form.
+- **Profiles** (grants and funding calls appear here and on Changes): aliases, tags, sources with dates, records, recent posts, monitoring health, and a corrections form.
 
 Filters: species, region, intervention, kind, aquatic-only, and show/hide direct-action groups. Search covers names,
 aliases and summaries.
