@@ -141,14 +141,20 @@ function recentIds() {
 }
 
 // ---- Views ----------------------------------------------------------------
+// Every marker shape that can appear on the map, in key order.
+const KEY_ORDER = ['organisation', 'programme', 'network', 'funder', 'resource', 'banner'];
+const KEY_LABEL = { organisation: 'Organisation', programme: 'Programme of another organisation', network: 'Network or coalition', funder: 'Funder', resource: 'Resource (report, database, standard)', banner: 'Leaderless banner (not an organisation)' };
+
 function renderMap() {
   const groups = Object.fromEntries(CATEGORIES.map(([id]) => [id, []]));
   for (const e of state.data.entities) (groups[e.primary_category] ||= []).push(e);
   let shown = 0;
+  const kindsShown = new Set();
   const html = CATEGORIES.map(([id, label, desc]) => {
     // Hide non-matching entries outright; a quiet map is easier to scan than a dimmed one.
     const list = (groups[id] || []).filter(matches).sort((a, b) => Number(a.stub) - Number(b.stub) || a.name.localeCompare(b.name));
     shown += list.length;
+    for (const e of list) kindsShown.add(e.kind);
     if (!list.length) return '';
     const markers = list.map((e) => `<li><button class="marker${e.stub ? ' stub' : ''}" data-id="${esc(e.id)}"
         title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}">${glyph(e)}<span class="name">${esc(e.name)}</span></button></li>`).join('');
@@ -169,11 +175,8 @@ function renderMap() {
     </div>
     ${shown ? `<div class="chart">${html}</div>` : '<p class="muted" style="padding:24px 0">Nothing matches. <button class="reset" type="button" data-clear>Clear search and filters</button></p>'}
     <div class="legend quiet" aria-label="Key">
-      <span>${glyph({ kind: 'organisation', section: 'aquatic' })} Works on aquatic animals</span>
-      <span>${glyph({ kind: 'organisation' })} Organisation</span>
-      <span>${glyph({ kind: 'funder' })} Funder</span>
-      <span>${glyph({ kind: 'resource' })} Resource</span>
-      <span>${glyph({ kind: 'programme' })} Programme</span>
+      <span>${glyph({ kind: 'organisation', section: 'aquatic' })} Blue: works on aquatic animals</span>
+      ${KEY_ORDER.filter((k) => kindsShown.has(k)).map((k) => `<span>${glyph({ kind: k })} ${esc(KEY_LABEL[k])}</span>`).join('')}
     </div>`;
 }
 
