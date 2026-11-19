@@ -12,14 +12,26 @@ including direct-action and abolitionist groups so we can see how including them
 
 ## Views
 
-- **Map**: entries grouped into functional "territories". Marker shape shows the kind of entry (organisation,
-  programme, funder, resource, network, leaderless banner). Blue markers work on aquatic animals.
-- **Directory**: a sortable table of the same data.
-- **Changes**: curated records (grants, calls, reports, legal developments) plus items auto-detected from public RSS feeds.
-- **Profiles** (grants and funding calls appear here and on Changes): aliases, tags, sources with dates, records, recent posts, monitoring health, and a corrections form.
+- **Map**: entries grouped by main focus. An entry is repeated under every other area it works in. Marker shape shows
+  the kind of entry (organisation, programme, funder, resource, network, leaderless banner); a wave mark, repeated in
+  blue, shows work on aquatic animals. On a phone the sections start collapsed, as an overview.
+- **Coverage**: a grid of animals against regions (or methods) with a count in every cell. Select a cell to see who is
+  in it, and who else works on that animal globally. Empty cells show where the sample is thin.
+- **Directory**: one sortable list (cards on a phone).
+- **Changes**: checked records (grants, calls, reports, legal developments) grouped by month, and on a separate tab the
+  unchecked posts picked from public RSS feeds, grouped by week.
+- **Profiles**: what the entry does, where and how; its grants and other records; recent posts. Sources, checks and
+  the corrections form sit in collapsed sections.
 
-Filters: species, region, intervention, kind, aquatic-only, and show/hide direct-action groups. Search covers names,
-aliases and summaries.
+Search reads names, aliases and summaries, and also every tag: animals, regions, countries, methods, focus and type
+("shrimp southeast asia", "funder india"). A word nothing contains falls back to close spellings. Filters: animals,
+region, method, type, a whole-movement / fish-and-aquatic switch, and show/hide direct-action groups.
+
+A region filter never passes a global group off as a local one: entries tagged with the region come first, and the
+ones that match only because they work globally or region-wide are labelled and can be hidden.
+
+Filters, search, the selected grid cell and the open view are kept in the link, so any view can be shared:
+`/?animals=crustaceans&region=southeast-asia#map`, `/?cell=crustaceans.southeast-asia#coverage`.
 
 ## Architecture
 

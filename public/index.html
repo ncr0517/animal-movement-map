@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" id="skip" href="#map">Skip to the list</a>
 <div class="wrap masthead">
   <h1>Animal Movement Map</h1>
   <p>Who works on what across the animal movement, with sources. In depth for fish and other aquatic animals.</p>
@@ -21,37 +22,43 @@
     <div class="toolbar-inner">
       <nav class="tabs" aria-label="Views">
         <a href="#map" data-view="map">Map</a>
+        <a href="#coverage" data-view="coverage">Coverage</a>
         <a href="#directory" data-view="directory">Directory</a>
         <a href="#changes" data-view="changes">Changes</a>
         <a href="#about" data-view="about">About</a>
       </nav>
       <label class="search">
         <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Search organisations" aria-label="Search organisations, programmes and funders">
+        <input id="q" type="search" placeholder="Search by name, animal, country or method" aria-label="Search by name, animal, country or method" autocomplete="off">
       </label>
       <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filters">Filters <span class="n" id="filter-count"></span></button>
     </div>
-    <div class="filters collapsed" id="filters">
+    <div class="active" id="active-filters" hidden></div>
+    <div class="filters collapsed" id="filters" role="region" aria-label="Filters" tabindex="-1">
+      <div class="fhead"><strong>Filters</strong><button type="button" class="xbtn" id="filters-close" aria-label="Close filters">×</button></div>
       <div class="frow"><span class="flabel">Animals</span><div class="chipset" id="species-chips" role="group" aria-label="Animals"></div></div>
       <div class="frow">
         <label class="fsel"><span class="flabel">Region</span><select id="f-region"><option value="">Any</option></select></label>
-        <label class="fsel"><span class="flabel">Approach</span><select id="f-intervention"><option value="">Any</option></select></label>
+        <label class="fsel"><span class="flabel">Method</span><select id="f-intervention"><option value="">Any</option></select></label>
         <label class="fsel"><span class="flabel">Type</span><select id="f-kind"><option value="">Any</option></select></label>
       </div>
       <div class="frow">
-        <label class="toggle"><input type="checkbox" id="f-aquatic"> Fish &amp; aquatic only</label>
         <label class="toggle"><input type="checkbox" id="f-direct" checked> Include direct-action &amp; abolitionist groups</label>
+      </div>
+      <div class="frow ffoot">
+        <button class="btn" id="filters-done" type="button">Show results</button>
         <button class="reset" id="reset" type="button">Clear all</button>
       </div>
     </div>
   </div>
 </div>
+<div class="filter-scrim" id="filter-scrim" hidden></div>
 
 <main class="wrap" id="view" tabindex="-1"></main>
 
 <footer class="wrap">
   <p id="freshness" aria-live="polite"></p>
-  <p>Absence from the map is not evidence that no work exists. Posting volume is not organisational activity or effectiveness. Where markers sit shows a primary function only; it does not imply collaboration, endorsement or influence.</p>
+  <p>Absence from the map is not evidence that no work exists. Posting volume is not organisational activity or effectiveness. Where an entry sits shows its functions only; it does not imply collaboration, endorsement or influence.</p>
 </footer>
 
 <div id="drawer-root"></div>
