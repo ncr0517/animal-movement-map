@@ -12,7 +12,7 @@ including direct-action and abolitionist groups so we can see how including them
 
 ## Views
 
-- **Map**: entries grouped by main focus. An entry is repeated under every other area it works in. Marker shape shows
+- **Map**: entries grouped by main focus, each appearing once (its profile lists other areas). Marker shape shows
   the kind of entry (organisation, programme, funder, resource, network, leaderless banner). On a phone the sections
   start collapsed, as an overview.
 - **Coverage**: a grid of animals against regions (or methods) with a count in every cell. Select a cell to see who is

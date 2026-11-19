@@ -318,17 +318,15 @@ function renderMap() {
   const autoOpen = !isPhone() || filtersActive() || ents.length <= 40;
   const blocks = CATEGORIES.map(([id, label, desc]) => {
     const primary = ents.filter((e) => e.primary_category === id).sort(order);
-    // An entry sits under its main focus and is repeated under every other area it works in.
-    const also = ents.filter((e) => e.primary_category !== id && (e.categories || []).includes(id)).sort(order);
-    if (!primary.length && !also.length) return null;
+    // Each entry appears once, under its main focus. Its profile lists the other areas it works in.
+    if (!primary.length) return null;
     const open = state.sectionOpen[id] ?? autoOpen;
-    const wide = primary.length + also.length > 24;
+    const wide = primary.length > 24;
     return { wide, html: `<details class="territory${wide ? ' wide' : ''}" data-cat="${id}"${open ? ' open' : ''}>
-      <summary><h2>${esc(label)}</h2><span class="count">${primary.length || ''}</span></summary>
+      <summary><h2>${esc(label)}</h2><span class="count">${primary.length}</span></summary>
       <p class="desc">${esc(desc)}</p>
       ${id === 'direct-action' ? '<p class="desc review">Included to test coverage. Listing is not endorsement and implies no link to other groups here.</p>' : ''}
-      ${primary.length ? `<ul class="markers">${primary.map((e) => marker(e)).join('')}</ul>` : ''}
-      ${also.length ? `<h3 class="also">Also work in this area (${also.length})</h3><ul class="markers">${also.map((e) => marker(e)).join('')}</ul>` : ''}
+      <ul class="markers">${primary.map((e) => marker(e)).join('')}</ul>
     </details>` };
   }).filter(Boolean);
   // Long sections span the page with their own columns; short ones pack into columns below them.
@@ -537,7 +535,7 @@ function renderAbout() {
     </ul>
     <h2>The four views</h2>
     <ul>
-      <li><strong>Map:</strong> everyone grouped by main focus. An entry is repeated under every other area it works in.</li>
+      <li><strong>Map:</strong> everyone grouped by main focus. Each entry appears once; its profile lists the other areas it works in.</li>
       <li><strong>Coverage:</strong> a grid of animals against regions or methods, to see where work overlaps and where the sample is thin.</li>
       <li><strong>Directory:</strong> one sortable list.</li>
       <li><strong>Changes:</strong> checked records, and separately the unchecked posts from organisations' feeds.</li>
