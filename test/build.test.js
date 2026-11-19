@@ -236,7 +236,9 @@ test('the research data builds without losing the second Shrimp Welfare Project 
   const calls = (url) => [...r.events.values()].filter((e) => e.type === 'open_call' && e.source_url === url);
   assert.equal(calls('https://www.fishwelfareinitiative.org/post/rfp-india').length, 1);
   assert.ok(!r.events.has('aim-animal-incubation-round-call-2026'));
-  assert.ok([...r.events.values()].every((e) => e.last_checked === '2026-11-05'), 'events carry their research date');
+  // Records keep the day they were researched, not the day of the build. Later research passes add later dates.
+  assert.ok([...r.events.values()].every((e) => /^\d{4}-\d{2}-\d{2}$/.test(e.last_checked)), 'every event carries a research date');
+  assert.equal(r.events.get('awf-shrimp-welfare-project-2026-q1-direct-work').last_checked, '2026-11-05', 'first-pass records keep their research date');
   assert.deepEqual(r.roundTotals.sort(), ['ace-movement-grants-round-11-2026', 'wai-2026-research-grants']);
   assert.equal(r.events.get('ace-movement-grants-round-11-2026').event_date, '2026-06');
   assert.deepEqual(r.sources.filter((s) => s.reuse === 'headline').map((s) => s.entity_id).sort(), ['animal-charity-evaluators', 'faunalytics', 'sentient-media']);

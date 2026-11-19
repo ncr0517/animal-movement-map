@@ -1,0 +1,234 @@
+[
+  {
+    "id": "soil-association-withdraws-organic-salmon-standards-2026-11",
+    "entity_ids": [
+      "soil-association"
+    ],
+    "type": "announcement",
+    "title": "Soil Association to withdraw from setting organic salmon standards",
+    "summary": "After an extensive review, the Soil Association said it will stop setting standards for organic farmed salmon, citing a lack of evidence that its standards delivered good enough outcomes, high mortality and difficulty assessing fish welfare. Existing certification contracts will be honoured.",
+    "event_date": "2026-11",
+    "source_published": null,
+    "accessed": "2026-11-19",
+    "source_url": "https://www.soilassociation.org/our-standards/standards-innovation-our-work/uk-organic-salmon-standards/",
+    "source_title": "UK organic salmon standards | Soil Association",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "The Soil Association page gives no date; OneKind's blog on the decision is dated 2026-11-17 and trade press (seen in search results, not fetched) reported it in early November 2026. Organic salmon standards in the organic regulations continue; a withdrawal timetable is to be agreed with the sector."
+  },
+  {
+    "id": "onekind-response-soil-association-salmon-2026-11",
+    "entity_ids": [
+      "onekind",
+      "soil-association"
+    ],
+    "type": "announcement",
+    "title": "OneKind responds to Soil Association's withdrawal from organic salmon",
+    "summary": "OneKind's policy director welcomed the Soil Association's decision to withdraw organic certification of farmed salmon, saying its review found serious animal welfare concerns and no evidence they could be addressed soon. OneKind says it raised the issue a decade earlier.",
+    "event_date": "2026-11-17",
+    "source_published": "2026-11-17",
+    "accessed": "2026-11-19",
+    "source_url": "https://www.onekind.org/blog/latest-blow-to-destructive-salmon-farming-industry-18-11-26",
+    "source_title": "Latest blow to destructive salmon farming industry",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Blog post published 17 November 2026 and updated 18 November 2026."
+  },
+  {
+    "id": "eurcaw-aqua-rainbow-trout-roadshow-brescia-2026-11",
+    "entity_ids": [
+      "eurcaw-aqua"
+    ],
+    "type": "announcement",
+    "title": "EURCAW-Aqua holds national roadshow on rainbow trout welfare in Italy",
+    "summary": "EURCAW-Aqua reported holding its National Roadshow on Rainbow Trout Welfare in Brescia, Italy, on 5-6 November 2026.",
+    "event_date": "2026-11-05",
+    "source_published": null,
+    "accessed": "2026-11-19",
+    "source_url": "https://www.eurcaw-aqua.eu/",
+    "source_title": "EURCAW Aqua - Home",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "News item listed on the EURCAW-Aqua homepage in mid/late November 2026; exact posting date not confirmed."
+  },
+  {
+    "id": "animal-outlook-cooke-return-investigation-2026-05",
+    "entity_ids": [
+      "animal-outlook"
+    ],
+    "type": "report_published",
+    "title": "Animal Outlook publishes return investigation of Cooke Aquaculture salmon hatchery",
+    "summary": "Animal Outlook released a second undercover investigation of Cooke Aquaculture's salmon hatchery in Maine, first investigated in 2019. It alleges fish were thrown and clubbed without being killed immediately and that contaminated feed was used. No enforcement outcome is reported.",
+    "event_date": "2026-05-15",
+    "source_published": "2026-05-15",
+    "accessed": "2026-11-19",
+    "source_url": "https://animaloutlook.org/animal-outlooks-return-investigation-of-cooke-aquaculture/",
+    "source_title": "Animal Outlook's return investigation of Cooke Aquaculture",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Findings are Animal Outlook's allegations as described in its own post; the company's response was not reviewed."
+  },
+  {
+    "id": "apon-fish-welfare-implementation-pilot-survey-2026-05",
+    "entity_ids": [
+      "apon-nigeria"
+    ],
+    "type": "report_published",
+    "title": "APON publishes Fish Welfare Implementation Pilot survey of catfish farms in Edo State",
+    "summary": "The Animal Protection Organisation of Nigeria published the final report of its Fish Welfare Implementation Pilot survey, which assessed catfish welfare practices, farm management and operational challenges on ten farms in Olluedede village, Auchi, Edo State.",
+    "event_date": "2026-05-01",
+    "source_published": "2026-05-01",
+    "accessed": "2026-11-19",
+    "source_url": "https://aponwelfare.org/fish-welfare-survey-in-nigeria/",
+    "source_title": "Fish Welfare Survey in Nigeria",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Survey dates and funders are not stated in the post; five cooperative/former NEWMAP farms and five privately owned farms were surveyed."
+  },
+  {
+    "id": "afwn-third-funding-call-2026-09",
+    "entity_ids": [
+      "asian-fish-welfare-network"
+    ],
+    "type": "announcement",
+    "title": "Asian Fish Welfare Network launches third research funding call",
+    "summary": "The University of Stirling-led Asian Fish Welfare Network launched its third competitive call for collaborative fish welfare research projects with a webinar on 3 September 2026. The network covers Thailand, Vietnam and Indonesia.",
+    "event_date": "2026-09-03",
+    "source_published": null,
+    "accessed": "2026-11-19",
+    "source_url": "https://susaquastirling.net/asiafishwelfare",
+    "source_title": "Asian Fish Welfare Network",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Recorded as an announcement rather than an open call because the deadline, grant sizes and whether the call is still open were not confirmed on the page fetched. The network itself is funded by Coefficient Giving."
+  },
+  {
+    "id": "afwn-indonesia-workshop-research-call-2026",
+    "entity_ids": [
+      "asian-fish-welfare-network"
+    ],
+    "type": "announcement",
+    "title": "Asian Fish Welfare Network holds first Indonesian workshop and opens Indonesia research call",
+    "summary": "The Asian Fish Welfare Network held a workshop in Surabaya in April 2026 and launched a call for research proposals in Indonesia on fish welfare narratives, farmer perceptions and welfare improvements in local aquaculture, according to The Fish Site.",
+    "event_date": "2026-04",
+    "source_published": "2026-06-22",
+    "accessed": "2026-11-19",
+    "source_url": "https://thefishsite.com/articles/indonesia-begins-exploring-fish-welfare-through-new-research-initiative",
+    "source_title": "Indonesia begins exploring fish welfare through new research initiative",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "reported",
+    "notes": "Reported by trade press; partners named include Universitas Udayana, Universitas Gadjah Mada and Senang Eco."
+  },
+  {
+    "id": "ida-nueva-pescanova-octopus-farm-abandoned-2026",
+    "entity_ids": [
+      "in-defense-of-animals"
+    ],
+    "type": "campaign_outcome",
+    "title": "In Defense of Animals reports plans for Nueva Pescanova octopus farm abandoned",
+    "summary": "In Defense of Animals reported that Nueva Pescanova's plans for a commercial octopus farm at the Port of Las Palmas, Gran Canaria, have officially been abandoned. The group had campaigned for Spanish authorities to reject the proposal.",
+    "event_date": "2026",
+    "source_published": "2026-07-31",
+    "accessed": "2026-11-19",
+    "source_url": "https://www.idausa.org/campaign/wild-animals-and-habitats/latest-news/victory-plans-for-the-worlds-first-octopus-farm-are-scrapped/",
+    "source_title": "Victory: Plans for the World's First Octopus Farm Are Scrapped",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "reported",
+    "notes": "The post gives no date or primary source for the abandonment; not checked against a statement from Nueva Pescanova or Canary Islands authorities. Many organisations campaigned against the project."
+  },
+  {
+    "id": "world-day-end-of-fishing-10th-edition-2026-03",
+    "entity_ids": [
+      "world-day-for-the-end-of-fishing"
+    ],
+    "type": "announcement",
+    "title": "10th World Day for the End of Fishing and Fish Farming",
+    "summary": "The 10th edition of the World Day for the End of Fishing and Fish Farming took place on 28 March 2026. The organisers report 183 actions by 202 organisations in 32 countries.",
+    "event_date": "2026-03-28",
+    "source_published": null,
+    "accessed": "2026-11-19",
+    "source_url": "https://end-of-fishing.org/en/",
+    "source_title": "End of fishing - World day for the end of fishing and fish farming",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "reported",
+    "notes": "Participation figures are the organisers' own. The next editions are listed for 27 March 2027 and 25 March 2028."
+  },
+  {
+    "id": "norwegian-fish-health-report-2025-published",
+    "entity_ids": [
+      "norwegian-fish-health-report"
+    ],
+    "type": "report_published",
+    "title": "Norwegian Veterinary Institute publishes Fish Health Report 2025",
+    "summary": "The Fish Health Report 2025 finds salmon mortality in Norwegian aquaculture slightly lower than in 2024 and 2023 and farmed cod mortality higher, with injuries after delousing and infectious diseases named as the main causes of death for salmon in sea cages.",
+    "event_date": "2026",
+    "source_published": null,
+    "accessed": "2026-11-19",
+    "source_url": "https://www.vetinst.no/rapporter-og-publikasjoner/rapporter/2026/fish-health-report-2025",
+    "source_title": "Fish Health Report 2025 - Norwegian Veterinary Institute",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": "Exact publication date not stated on the page (URL path: 2026). Includes a new chapter on climate change and fish health."
+  },
+  {
+    "id": "safe-nz-calls-halt-fish-farm-expansion-2026-10",
+    "entity_ids": [
+      "safe-nz"
+    ],
+    "type": "announcement",
+    "title": "SAFE calls for halt to fish farm expansion in New Zealand",
+    "summary": "SAFE called for an immediate halt to proposed fish farm expansions and new developments in New Zealand, criticising fast-track approvals and citing repeated mass mortality events on Chinook salmon farms.",
+    "event_date": "2026-10-23",
+    "source_published": "2026-10-23",
+    "accessed": "2026-11-19",
+    "source_url": "https://safe.org.nz/news/fish-farms-the-underwater-factory-farms-hidden-beneath-the-surface/",
+    "source_title": "Fish farms: the underwater factory farms hidden beneath the surface",
+    "amount": null,
+    "currency": null,
+    "funder_id": null,
+    "recipient_id": null,
+    "deadline": null,
+    "status": "confirmed",
+    "notes": null
+  }
+]

@@ -3,7 +3,7 @@
 All research files are JSON arrays. Use ONLY facts you verified on a fetched page during research.
 Every entity and event must carry at least one source URL you actually fetched. If unsure, put it in `notes`
 and set status "uncertain" rather than guessing. Never invent grant amounts, dates or URLs.
-Today is 2026-11-05 — use that as `accessed` / `last_checked`.
+Use the day you fetched the page as `accessed` / `last_checked` (the first research pass was 2026-11-05).
 
 ## Entity (organisation / programme / funder / resource / network / banner)
 {

@@ -1,28 +1,28 @@
-# Seed build report (2026-11-13T16:34:54.294Z)
+# Seed build report (2026-11-19T23:50:48.620Z)
 
-- Entities: 117 (18 stubs)
-- Events: 103
-- Sources: 140 (45 feeds, 3 headline-only)
+- Entities: 166 (18 stubs)
+- Events: 114
+- Sources: 205 (62 feeds, 3 headline-only)
 
 ## Entities by primary category
-- advocacy-campaigns: 34
+- advocacy-campaigns: 60
 - movement-infrastructure: 5
-- welfare-science: 23
-- welfare-technology: 2
-- policy-law: 11
+- welfare-science: 37
+- welfare-technology: 6
+- policy-law: 15
 - incubation-careers: 3
 - funding: 19
+- direct-action: 11
 - alt-protein: 3
 - community-media: 3
-- direct-action: 10
 - sanctuary-rescue: 4
 
 ## Events by type
 - legal_development: 16
-- report_published: 12
+- report_published: 15
 - project_active: 3
-- announcement: 10
-- campaign_outcome: 2
+- announcement: 17
+- campaign_outcome: 3
 - plan_announced: 3
 - grant_awarded: 42
 - open_call: 15
