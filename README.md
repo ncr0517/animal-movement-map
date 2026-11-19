@@ -13,8 +13,8 @@ including direct-action and abolitionist groups so we can see how including them
 ## Views
 
 - **Map**: entries grouped by main focus. An entry is repeated under every other area it works in. Marker shape shows
-  the kind of entry (organisation, programme, funder, resource, network, leaderless banner); a wave mark, repeated in
-  blue, shows work on aquatic animals. On a phone the sections start collapsed, as an overview.
+  the kind of entry (organisation, programme, funder, resource, network, leaderless banner). On a phone the sections
+  start collapsed, as an overview.
 - **Coverage**: a grid of animals against regions (or methods) with a count in every cell. Select a cell to see who is
   in it, and who else works on that animal globally. Empty cells show where the sample is thin.
 - **Directory**: one sortable list (cards on a phone).

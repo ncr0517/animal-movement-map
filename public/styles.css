@@ -1,6 +1,5 @@
 /* Layout concept: a surveyor's field chart, kept quiet. Entries are grouped into plain sections; marker
-   shape encodes the kind of entry and a wave mark (repeated in blue) marks aquatic work. Greys are tuned
-   to pass 4.5:1 on both the page and the section fill. */
+   shape encodes the kind of entry. Greys are tuned to pass 4.5:1 on both the page and the section fill. */
 :root {
   --paper: #f1f4f1;
   --plate: #e6ece8;
@@ -163,11 +162,7 @@ main:focus { outline: none; }
 .marker .name { min-width: 0; overflow-wrap: anywhere; }
 .marker.stub .name { color: var(--ink-3); }
 .glyph { width: 11px; height: 11px; flex: none; color: var(--ink-3); margin-top: 4px; }
-.glyph.aq { color: var(--water); }
 .legend .glyph { margin-top: 0; }
-.wave { display: inline-block; width: 14px; height: 8px; color: var(--water); margin-left: 6px; vertical-align: 1px; }
-.legend .wave { margin-left: 0; }
-.all-aq .wave { display: none; }
 .fit { flex: none; font-size: 0.6875rem; line-height: 1.5; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; white-space: nowrap; }
 
 /* ---- Coverage grid ---- */

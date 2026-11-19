@@ -107,10 +107,9 @@ function currentCallState(ev, now = Date.now()) {
   return !Number.isNaN(t) && t + 86400000 < now ? 'closed' : ev.call_state;
 }
 
-// Marker shape = kind of entry. Colour repeats the wave mark (works on aquatic animals); it is never the only cue.
+// Marker shape = kind of entry.
 function glyph(e) {
-  const cls = `glyph${isAquatic(e) ? ' aq' : ''}`;
-  const s = (inner) => `<svg class="${cls}" viewBox="0 0 12 12" aria-hidden="true">${inner}</svg>`;
+  const s = (inner) => `<svg class="glyph" viewBox="0 0 12 12" aria-hidden="true">${inner}</svg>`;
   switch (e.kind) {
     case 'programme': return s('<circle cx="6" cy="6" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>');
     case 'funder': return s('<path d="M6 .8 11.2 6 6 11.2.8 6Z" fill="currentColor"/>');
@@ -120,8 +119,6 @@ function glyph(e) {
     default: return s('<circle cx="6" cy="6" r="5" fill="currentColor"/>');
   }
 }
-const WAVE_ICON = '<svg class="wave" viewBox="0 0 14 8" aria-hidden="true"><path d="M1 5c1.4-3 2.8-3 4.2 0s2.8 3 4.2 0 2.4-2.6 3.6-1.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
-const WAVE = `${WAVE_ICON}<span class="vh">, works on aquatic animals</span>`;
 
 // ---------------------------------------------------------------------------
 const state = {
@@ -260,7 +257,7 @@ function readUrl() {
 
 // ---- Shared pieces ------------------------------------------------------------
 function marker(e, tag = fitTag(e, state.f.region)) {
-  return `<li><button class="marker${e.stub ? ' stub' : ''}" data-id="${esc(e.id)}" title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}">${glyph(e)}<span class="name">${esc(e.name)}${isAquatic(e) ? WAVE : ''}</span>${tag ? `<span class="fit">${esc(tag)}</span>` : ''}</button></li>`;
+  return `<li><button class="marker${e.stub ? ' stub' : ''}" data-id="${esc(e.id)}" title="${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}">${glyph(e)}<span class="name">${esc(e.name)}</span>${tag ? `<span class="fit">${esc(tag)}</span>` : ''}</button></li>`;
 }
 
 function viewbar(note) {
@@ -303,7 +300,6 @@ const KEY_LABEL = { organisation: 'Organisation', programme: 'Programme of anoth
 function keyHtml(list) {
   const kinds = new Set(list.map((e) => e.kind));
   const items = [
-    list.some(isAquatic) && !list.every(isAquatic) ? `<span>${WAVE_ICON} Works on aquatic animals</span>` : '',
     ...KEY_ORDER.filter((k) => kinds.has(k)).map((k) => `<span>${glyph({ kind: k })} ${esc(KEY_LABEL[k])}</span>`),
     list.some((e) => e.stub) ? '<span><span class="stubname">Grey name</span> Named in a grant record; not yet researched</span>' : '',
   ].join('');
@@ -339,7 +335,7 @@ function renderMap() {
   const html = [...blocks.filter((b) => b.wide), ...blocks.filter((b) => !b.wide)].map((b) => b.html).join('');
 
   $('#view').innerHTML = `${viewbar(resultNote(ents))}
-    ${ents.length ? `${keyHtml(ents)}<div class="chart${ents.every(isAquatic) ? ' all-aq' : ''}">${html}</div>` : emptyHtml()}`;
+    ${ents.length ? `${keyHtml(ents)}<div class="chart">${html}</div>` : emptyHtml()}`;
 }
 
 // ---- Coverage grid ----------------------------------------------------------------
@@ -417,7 +413,7 @@ function renderDirectory() {
     ${all.length ? `<div class="table-wrap"><table class="dir">
       <thead><tr>${th('name', 'Name')}${th('category', 'Main focus')}<th scope="col">Animals</th><th scope="col">Regions</th>${th('checked', 'Last checked')}</tr></thead>
       <tbody>${rows.map((e) => `<tr>
-        <td><button class="rowlink" data-id="${esc(e.id)}">${esc(e.name)}</button>${isAquatic(e) ? ` ${WAVE}` : ''}<div class="sub">${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}${e.aliases?.length ? ` · ${esc(e.aliases.slice(0, 2).join(', '))}` : ''}</div></td>
+        <td><button class="rowlink" data-id="${esc(e.id)}">${esc(e.name)}</button><div class="sub">${esc(KIND[e.kind] || e.kind)}${e.stub ? ' · not yet researched' : ''}${e.aliases?.length ? ` · ${esc(e.aliases.slice(0, 2).join(', '))}` : ''}</div></td>
         <td>${esc(CAT[e.primary_category]?.label || e.primary_category)}</td>
         <td>${tagList(e.species, SPECIES, AQUATIC)}</td>
         <td>${tagList(e.regions, REGION)}${fitTag(e, f.region) ? ` <span class="fit">${esc(fitTag(e, f.region))}</span>` : ''}</td>
