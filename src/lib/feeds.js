@@ -284,6 +284,9 @@ const GENERIC_MENTIONS = new Set([
   'animal heroes', 'animal justice', 'animal law reform', 'animal liberation', 'animal rights center', 'animal rights initiative',
   'animal think tank', 'animal welfare league', 'animals now', 'care conference', 'fish feel', 'for the fishes',
   'in defense of animals', 'invisible animals', 'safe for animals', 'scale welfare', 'vegan society', 'we animals',
+  // One-word names that also open ordinary sentences or sit inside another group's name ("Anonymous for the
+  // Voiceless", Spanish "Formas de ..."), and two more phrase-like names.
+  'voiceless', 'formas', 'future for fish', 'compromiso verde',
 ]);
 
 const stripAccents = (s) => String(s || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '');

@@ -62,6 +62,38 @@
     "welfarm": {
       "summary": "French association, with a mission recognised as being of public utility, that works for better consideration of the welfare of farmed animals at every stage of their lives: rearing, transport and slaughter. Also produces educational material for teachers. On fish it opposes three planned very large intensive salmon farms in France, calls for a moratorium on such farms and for mandatory stunning of fish before slaughter; campaign launched in April 2024.",
       "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
+    },
+    "arba": {
+      "summary": "Peruvian association that promotes awareness to improve the lives of animals in Peru. Activities include petition campaigns, legislative activism, a legal consultation service and investigations; its Perú Sin Jaulas project focuses on hens kept in cages. It co-leads Pulpos Libres Perú, a campaign to prevent octopus farming in Peru.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "animanaturalis": {
+      "summary": "Ibero-American animal rights organisation founded in 2003, with editions for Spain, Mexico, Colombia and Venezuela. Campaigns against factory farming, fish farming, bullfighting and other uses of animals in entertainment through investigations, petitions, activist networks and education. It has investigated conditions on Spanish rainbow trout farms and joined the Mexican coalition seeking a ban on commercial octopus farming.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "environment-and-animal-society-of-taiwan": {
+      "summary": "Taiwanese animal protection organisation working through investigation, legislative and corporate lobbying, industry guidance and education. Campaigns cover laying hens, ducks, pigs and other farmed animals, animals in research, entertainment and wildlife; runs the EAST Certified welfare scheme. Its aquatic work includes public education on the practice of tying live fish and advocacy for stronger laws against shark finning.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "animal-welfare-league-ghana": {
+      "summary": "Ghanaian animal advocacy organisation founded in November 2021 and registered in Accra in April 2022. Works through corporate outreach, legislation, education and research; aims include cage-free egg production in Ghana, welfare of working donkeys and horses, and dog population and rabies control. Its broader work on chickens and farmed fish includes projects in Ghana, Morocco, South Africa and Egypt.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "animals-now": {
+      "summary": "Israeli non-profit established in 1994 as Anonymous for Animal Rights. Runs undercover investigations of animal industries and campaigns against cages and live transports, school education programmes, and Challenge 22, a 22-day guided programme for trying plant-based eating offered in 12 languages. Its campaigns for animal protection laws include enforcement in fish farming.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "humanny-pokrok": {
+      "summary": "Slovak organisation working for animals kept in industrial farming through gradual systemic change: ending the worst practices, corporate responsibility commitments, legislation protecting animals, and educating the public about farming conditions. It asks retailers to end sales of live carp and eggs from caged hens.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "dierenbescherming": {
+      "summary": "Dutch animal protection society, active for more than 160 years, working for the welfare of all animals in the Netherlands. Owns the Beter Leven (Better Life) star label, whose welfare requirements for farmed animals exceed the legal minimum. It has also asked the Dutch parliament to strengthen protection for fish during capture and killing.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
+    },
+    "gaia-belgium": {
+      "summary": "Belgian animal rights organisation based in Brussels, active since 1992 and funded without public subsidies. Campaigns on slaughter without stunning, piglet castration, fur, animals in captivity and regional animal welfare legislation. It has also challenged an environmental permit for a sturgeon farm.",
+      "_why": "The pasted research pass (movement-z-external-entities.json, 2026-11-19) describes the same organisation and adds its aquatic work. That sentence is appended to the existing summary."
     }
   }
 }

@@ -4,31 +4,32 @@ From the deep search of 19-20 November 2026 (four research passes; see `data/res
 `movement-west-*`). These names came up and were **not added**. Nothing here is verified; treat each as a lead.
 Remove a name when it is added to the map or ruled out.
 
+Updated 20 November 2026: an external research pass (`movement-z-external-entities.json`) verified and added 28 of
+these leads and other missing groups, so they are no longer listed here.
+
 ## Verified by a research pass, record not written yet
 
 Quick to add: the pass confirmed the organisation exists and what it does, then stopped to stay near its target.
 
-- **Asia:** Humane World for Animals Brazil and Mexico country programmes, ACRES (Singapore), Japan Association for
-  Cellular Agriculture, Dharma Voices for Animals, Pakistan Animal Welfare Society, Taiwan SPCA, PEACE (Japan),
-  CARA Welfare Philippines, Wildlife SOS, Animal Aid Unlimited, Wildlife Friends Foundation Thailand.
-- **Africa and Middle East:** Kenya SPCA, Utunzi Africa, Lawyers for Animal Protection in Africa, Rwanda Animal Welfare
+- **Asia:** Japan Association for Cellular Agriculture, Dharma Voices for Animals, Pakistan Animal Welfare Society,
+  Taiwan SPCA, PEACE (Japan), CARA Welfare Philippines, Wildlife SOS, Animal Aid Unlimited, Wildlife Friends
+  Foundation Thailand.
+- **Africa and Middle East:** Kenya SPCA, Lawyers for Animal Protection in Africa, Rwanda Animal Welfare
   Organization, Modern Agriculture Foundation (Israel), SPARE (Egypt).
-- **Latin America:** Te Protejo, Protección Animal Ecuador, ARCA Brasil.
+- **Latin America:** Humane World for Animals Brazil and Mexico country programmes, Protección Animal Ecuador,
+  ARCA Brasil.
 - **Europe and North America:** Fundacja Viva! (Poland), Animals' Angels (Germany), Surge (UK), Woodstock Farm
   Sanctuary, Society for the Protection of Insects, Connect For Animals, Species Unite, Animal Legal & Historical
   Center (animallaw.info).
 
 ## Could not verify: site blocked, unreachable or not found
 
-- **Aquatic, Asia:** ICCAW's fish work (China), Animal Empathy Philippines, Aquatic Initiative Indonesia, Tambuyog
-  Development Center (shrimp welfare campaign), PAWS Philippines "Makaisda", EAST's fish work (Taiwan), AWARE (Korea).
-- **Aquatic, Africa:** Fish Welfare Africa, CAAWO, Nuru Animal Welfare, Humane Global Network, VAW Initiative,
-  Education for African Animals Welfare.
-- **Aquatic, elsewhere:** ARBA (Peru), Acción Océanos, Sea First Foundation, KYMA, Nautilus Collaboration, Aquatically,
-  Friends of Philip Fish Sanctuary, The Dark Hobby, Aquatic Animal Law Project (GWU), Social Compassion in
-  Legislation, Ike Jime Federation, Blue North.
-- **Aquatic research, technology and standards:** CephRes, Nofima (FISHWELL / LAKSVEL), Institute of Marine Research
-  welfare group, Baader, Crustastun, KRAV, RSPCA Australia's salmon standard.
+- **Aquatic, Asia:** ICCAW's fish work (China), PAWS Philippines "Makaisda".
+- **Aquatic, Africa:** Humane Global Network, VAW Initiative.
+- **Aquatic, elsewhere:** Acción Océanos, KYMA, Nautilus Collaboration, Aquatically, Friends of Philip Fish Sanctuary,
+  The Dark Hobby, Aquatic Animal Law Project (GWU), Social Compassion in Legislation, Ike Jime Federation, Blue North.
+- **Aquatic research, technology and standards:** Institute of Marine Research welfare group, Baader, Nofima's
+  LAKSVEL protocol.
 - **Aquatic programmes of organisations already on the map:** Compassion in World Farming's Rethink Fish, Aquatic Life
   Institute's Coalition for Aquatic Conservation.
 - **Asia:** PETA India, Life Conservationist Association (Taiwan), Sneha's Care (Nepal), SPCA Selangor (Malaysia),
@@ -37,13 +38,13 @@ Quick to add: the pass confirmed the organisation exists and what it does, then 
   CARE and PNR (Korea), Capital Animal Welfare Association (China), CUPA, Visakha SPCA, Sharan (India).
 - **Middle East:** Let the Animals Live, Sentient, Freedom Farm Sanctuary and Vegan Friendly (Israel), Palestinian
   Animal League, Princess Alia Foundation (Jordan).
-- **Africa:** Uganda SPCA, Lilongwe SPCA, Uganda Vegan Society, AWANET (Tanzania), Vegan Society of Kenya, The Humane
+- **Africa:** Uganda SPCA, Uganda Vegan Society, AWANET (Tanzania), Vegan Society of Kenya, The Humane
   Education Trust, Beauty Without Cruelty SA, EMS Foundation, International Fund for Africa (Ethiopia; now presents as
   a maternal-health charity), SAFCEI's animal justice programme.
-- **Latin America:** AFADA (Argentina), Fundación Abogados por los Animales, Compromiso Verde, Alianza Alimentaria y
+- **Latin America:** AFADA (Argentina), Fundación Abogados por los Animales, Alianza Alimentaria y
   Acción Climática, Menú por el Planeta, Faunacción, Brigada Animal México, Asociación de Emprendedores Veganos de
   México, Unión Vegetariana del Perú, VEDDAS, Instituto Abolicionista Animal, Voicot, Santuario Igualdad Interespecie.
-- **Europe:** Animal Society (Germany), Convergence Animaux Politique, LFDA, Dyrenes Beskyttelse, Varkens in Nood,
+- **Europe:** Animal Society (Germany), Convergence Animaux Politique, LFDA, Varkens in Nood,
   Dier&Recht, Green REV Institute, Gyvi Gali, Dzīvnieku brīvība, Farmállatvédelem, FAADA, Conservative Animal Welfare
   Foundation, Expertise for Animals, Harrison Collectief, European Vegetarian Union, Humane League Labs (current
   status), In Ovo (site down; apparently closed).
@@ -59,7 +60,7 @@ Quick to add: the pass confirmed the organisation exists and what it does, then 
 
 ## Countries with nothing or almost nothing
 
-Bangladesh, Sri Lanka, Malaysia, Ethiopia. Kenya has only the Africa Network for Animal Welfare and its conference.
+Bangladesh, Sri Lanka, Malaysia, Ethiopia.
 
 ## Deliberately not split out
 

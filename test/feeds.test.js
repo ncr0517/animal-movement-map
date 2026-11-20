@@ -230,4 +230,6 @@ test('names that are also ordinary phrases never count as mentions', () => {
   const text = 'Do fish feel pain? Parliament passes a law after an animal ethics review; the Animal Liberation Front objects. '
     + 'Shrimp Welfare Project wants better lives for the fishes and plans to scale welfare reforms.';
   assert.deepEqual(detectMentions(text, idx, null), ['swp']);
+  const more = [['voiceless', 'voiceless', 'Voiceless'], ['formas', 'formas', 'Formas'], ['future for fish', 'future-for-fish', 'Future for Fish']];
+  assert.deepEqual(detectMentions('Anonymous for the Voiceless wants a better future for fish. Formas de ayudar: dona hoy.', more, null), []);
 });

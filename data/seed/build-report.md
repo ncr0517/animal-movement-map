@@ -1,21 +1,21 @@
-# Seed build report (2026-11-20T00:05:21.099Z)
+# Seed build report (2026-11-20T15:36:38.497Z)
 
-- Entities: 326 (0 stubs)
+- Entities: 354 (0 stubs)
 - Events: 125
-- Sources: 450 (130 feeds, 3 headline-only)
+- Sources: 475 (130 feeds, 3 headline-only)
 
 ## Entities by primary category
-- advocacy-campaigns: 125
-- movement-infrastructure: 14
-- welfare-science: 51
-- welfare-technology: 9
-- policy-law: 38
+- advocacy-campaigns: 140
+- movement-infrastructure: 16
+- welfare-science: 56
+- welfare-technology: 10
+- policy-law: 40
 - incubation-careers: 5
 - funding: 43
 - direct-action: 15
 - alt-protein: 11
 - community-media: 6
-- sanctuary-rescue: 9
+- sanctuary-rescue: 12
 
 ## Events by type
 - legal_development: 16
@@ -57,6 +57,29 @@
 - safe-nz (movement) → safe-nz (aquatic)
 - animals-aotearoa (movement) → animals-aotearoa (aquatic)
 - welfarm (movement) → welfarm (aquatic)
+- asociacion-para-el-rescate-y-bienestar-de-los-animales (movement) → arba (movement)
+- animanaturalis (movement) → animanaturalis (movement)
+- environment-and-animal-society-of-taiwan (movement) → environment-and-animal-society-of-taiwan (movement)
+- coalition-of-african-animal-welfare-organisations (movement) → coalition-of-african-animal-welfare-organisations (movement)
+- animal-welfare-league (movement) → animal-welfare-league-ghana (movement)
+- international-cooperation-committee-of-animal-welfare (movement) → iccaw (movement)
+- ciftlik-hayvanlarini-koruma-dernegi (movement) → ciftlik-hayvanlarini-koruma-dernegi (movement)
+- animals-now (movement) → animals-now (movement)
+- rspca-australia (movement) → rspca-australia (movement)
+- voiceless (movement) → voiceless (movement)
+- animal-welfare-institute (movement) → animal-welfare-institute (movement)
+- humanny-pokrok (movement) → humanny-pokrok (movement)
+- dierenbescherming (movement) → dierenbescherming (movement)
+- gaia (movement) → gaia-belgium (movement)
+- wakker-dier (movement) → wakker-dier (movement)
+- deutscher-tierschutzbund (movement) → deutscher-tierschutzbund (movement)
+- sibanye-animal-welfare-and-conservancy-trust (movement) → sibanye-animal-welfare-and-conservancy-trust (movement)
+- animal-law-reform-south-africa (movement) → animal-law-reform-south-africa (movement)
+- africa-network-for-animal-welfare (movement) → africa-network-for-animal-welfare (movement)
+- animal-libre (movement) → animal-libre (movement)
+- sociedade-vegetariana-brasileira (movement) → sociedade-vegetariana-brasileira (movement)
+- philippine-animal-welfare-society (movement) → philippine-animal-welfare-society (movement)
+- animal-nepal (movement) → animal-nepal (movement)
 - event fwi-open-call-india-2026 → call-fish-welfare-initiative-india-2026 (same_as)
 - event call-movement-infrastructure-lab-kickstarting-for-good-2026 → call-movement-infrastructure-lab-rfp-2026-primary (same_as)
 - event call-blueperch-expressions-of-interest → call-blueperch-expressions-of-interest-primary (same_as)

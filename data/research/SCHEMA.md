@@ -84,4 +84,5 @@ feed `"reuse": "headline"`: the refresher still reads the text to classify a pos
   file's records). Set ALLOW_SHRINK=1 when the removal is intended.
 - A second research pass adds new files (`<section>-<label>-entities.json`); it does not edit earlier ones. If two
   passes describe the same organisation, the build merges them and the first file's summary wins: put a combined
-  summary in data/curated/overrides.json.
+  summary in data/curated/overrides.json. Files load in name order, so a pass that should not replace existing
+  summaries gets a name that sorts last (`movement-z-external-entities.json`).

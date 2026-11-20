@@ -27,8 +27,14 @@ but could not be verified are in `docs/known-gaps.md`.
   `db/seed.sql`) and refuses a build where a file is gone or has lost more than half. The percentage checks stopped
   catching a lost file once there were ten files.
 
-The snapshot's shape is unchanged, so Movement Match needs no change; it will see 326 entities at its next hourly read.
-With about 450 sources and 6 checked per hour, the first check of every new source takes about three days.
+**External pass, 20 November.** The owner ran a research prompt in another agent and pasted its output:
+51 organisations, saved as `data/research/movement-z-external-entities.json`. 28 were new; 23 were already on the
+map and merged (the file name sorts last, so existing summaries win). Eight of those merged entries gained an
+aquatic sentence through `data/curated/overrides.json`. The directory now has 354 entries.
+
+The snapshot's shape is unchanged, so Movement Match needs no change; it will see 354 entities at its next hourly read.
+With about 475 sources and 6 checked per hour, the first check of every new source takes about three days
+unless a manual refresh is run (it was, both times).
 
 ## Production deployment: 14 November 2026
 
