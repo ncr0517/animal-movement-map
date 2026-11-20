@@ -222,3 +222,12 @@ test('Windows-1252 punctuation written as C1 codes is read as browsers read it, 
     assert.equal(feed(`a&#${code};b`, 'x').title, `a${want}b`, code.toString(16));
   }
 });
+
+test('names that are also ordinary phrases never count as mentions', () => {
+  const idx = [['fish feel', 'fish-feel', 'Fish Feel'], ['a law', 'a-law', 'A-LAW'], ['animal ethics', 'animal-ethics', 'Animal Ethics'],
+    ['animal liberation', 'animal-liberation', 'Animal Liberation'], ['for the fishes', 'for-the-fishes', 'For the Fishes'],
+    ['scale welfare', 'scale-welfare', 'Scale Welfare'], ['shrimp welfare project', 'swp', 'Shrimp Welfare Project']];
+  const text = 'Do fish feel pain? Parliament passes a law after an animal ethics review; the Animal Liberation Front objects. '
+    + 'Shrimp Welfare Project wants better lives for the fishes and plans to scale welfare reforms.';
+  assert.deepEqual(detectMentions(text, idx, null), ['swp']);
+});

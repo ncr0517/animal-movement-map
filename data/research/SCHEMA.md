@@ -79,5 +79,9 @@ feed `"reuse": "headline"`: the refresher still reads the text to classify a pos
 - data/curated/overrides.json is applied after reconciliation, and each overridden field is checked like a research
   value (a typo in a kind, category, currency or deadline is dropped with a warning).
 - An unreadable or invalid input file stops the build, and so does a build that would publish more than 10% fewer
-  researched (non-stub) entities or events than the committed db/seed.sql, or lose more than half of a section's
-  researched entities (set ALLOW_SHRINK=1 when that is intended).
+  researched (non-stub) entities or events than the committed db/seed.sql, lose more than half of a section's
+  researched entities, or be missing an input file the committed seed was built from (or more than half of that
+  file's records). Set ALLOW_SHRINK=1 when the removal is intended.
+- A second research pass adds new files (`<section>-<label>-entities.json`); it does not edit earlier ones. If two
+  passes describe the same organisation, the build merges them and the first file's summary wins: put a combined
+  summary in data/curated/overrides.json.

@@ -1,0 +1,3673 @@
+[
+  {
+    "id": "l214",
+    "name": "L214",
+    "aliases": [
+      "L214 Éthique & Animaux"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "FR"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "corporate-campaigns",
+      "legislation-policy",
+      "diet-change"
+    ],
+    "approach": "abolitionist",
+    "summary": "French association defending animals used for food (meat, milk, eggs, fish). Since 2008 it has published more than 175 filmed investigations into farming, transport and slaughter conditions, and campaigns for change at political and individual level.",
+    "website": "https://www.l214.com",
+    "hq": "France",
+    "founded": "2008",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.l214.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.l214.com/",
+        "title": "L214 : Agir pour les animaux (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.l214.com/qui-sommes-nous/en-bref/",
+        "title": "L214 | Qui sommes-nous ? En bref",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/L214",
+        "title": "L214 - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Wikipedia describes its purpose as promotion of animal rights and antispeciesism; it grew out of the Stop Gavage campaign against foie gras. Approach tagged abolitionist on that basis, though it also runs welfare-focused corporate campaigns."
+  },
+  {
+    "id": "djurens-ratt",
+    "name": "Djurens Rätt",
+    "aliases": [
+      "Project 1882",
+      "Nordiska samfundet mot plågsamma djurförsök"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "fur-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "SE"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "Swedish animal rights and animal protection membership organisation, active since 1882 and known internationally as Project 1882. Runs targeted campaigns, corporate outreach and political advocacy for animals in factory farms, fur farms and experiments.",
+    "website": "https://www.djurensratt.se",
+    "hq": "Sweden",
+    "founded": "1882",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.djurensratt.se/",
+        "title": "Djurens Rätt – Sedan 1882 (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.project1882.org/",
+        "title": "Project 1882 – Since 1882 (international site)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://sv.wikipedia.org/wiki/Djurens_R%C3%A4tt",
+        "title": "Djurens Rätt - Wikipedia (sv)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Uses the name Project 1882 internationally (project1882.org); the aquatic-gaps research file lists the same organisation under id 'project-1882' - merge. Homepage (Nov 2026) reports about 70,000 members and donors; Swedish Wikipedia gives c. 50,000 members. No RSS feed found."
+  },
+  {
+    "id": "wakker-dier",
+    "name": "Wakker Dier",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "cows",
+      "pigs"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "public-awareness",
+      "litigation",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Dutch organisation, independent and unsubsidised, that speaks up for animals in the Netherlands' livestock industry. Runs public campaigns aimed at supermarkets and food companies (fast-growing 'plofkip' chickens, dairy cows, heat stress) and a legal campaign.",
+    "website": "https://www.wakkerdier.nl",
+    "hq": "Netherlands",
+    "founded": "1997",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.wakkerdier.nl/",
+        "title": "Wakker Dier (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Wakker_Dier",
+        "title": "Wakker Dier - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year 1997 from Wikipedia (merged with Lekker Dier in 2001). No RSS feed found."
+  },
+  {
+    "id": "dierenbescherming",
+    "name": "Dierenbescherming",
+    "aliases": [
+      "De Dierenbescherming",
+      "Dutch Society for the Protection of Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "certification-standards",
+      "public-awareness",
+      "legislation-policy",
+      "sanctuary"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Dutch animal protection society, active for more than 160 years, working for the welfare of all animals in the Netherlands. Owns the Beter Leven (Better Life) star label, whose welfare requirements for farmed animals exceed the legal minimum.",
+    "website": "https://www.dierenbescherming.nl",
+    "hq": "Netherlands",
+    "founded": "1864",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.dierenbescherming.nl/over-ons",
+        "title": "Over de Dierenbescherming",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://beterleven.dierenbescherming.nl/",
+        "title": "Beter Leven keurmerk (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Dutch_Society_for_the_Protection_of_Animals",
+        "title": "Dutch Society for the Protection of Animals - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding date (25 August 1864) from Wikipedia. No RSS feed found."
+  },
+  {
+    "id": "gaia-belgium",
+    "name": "GAIA",
+    "aliases": [
+      "GAIA vzw",
+      "Global Action in the Interest of Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "fur-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "BE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "investigations",
+      "public-awareness",
+      "protest"
+    ],
+    "approach": "mixed",
+    "summary": "Belgian animal rights organisation based in Brussels, active since 1992 and funded without public subsidies. Campaigns on slaughter without stunning, piglet castration, fur, animals in captivity and regional animal welfare legislation.",
+    "website": "https://www.gaia.be",
+    "hq": "Belgium",
+    "founded": "1992",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.gaia.be/rss.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.gaia.be/en",
+        "title": "Voice of the voiceless | GAIA (English homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.gaia.be/nl",
+        "title": "GAIA (Dutch homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The expanded name 'Global Action in the Interest of Animals' is the commonly cited meaning of the acronym; it does not appear on the pages fetched."
+  },
+  {
+    "id": "deutscher-tierschutzbund",
+    "name": "Deutscher Tierschutzbund",
+    "aliases": [
+      "Deutscher Tierschutzbund e.V.",
+      "German Animal Welfare Federation"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "sanctuary"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Umbrella organisation of animal shelters and animal protection associations in Germany, founded in 1881 and based in Bonn. Supports its member shelters and campaigns against the mistreatment of animals.",
+    "website": "https://www.tierschutzbund.de",
+    "hq": "Germany",
+    "founded": "1881",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.tierschutzbund.de/",
+        "title": "Deutscher Tierschutzbund e.V. (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://de.wikipedia.org/wiki/Deutscher_Tierschutzbund",
+        "title": "Deutscher Tierschutzbund - Wikipedia (de)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Included as a companion-animal-centred federation with national policy weight. Its farmed-animal label ('Für Mehr Tierschutz') and policy programme were not verified on a fetched page - check before describing. English alias is a translation. No RSS feed found."
+  },
+  {
+    "id": "verein-gegen-tierfabriken",
+    "name": "Verein gegen Tierfabriken",
+    "aliases": [
+      "VGT",
+      "VGT Austria"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "pigs"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "AT"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "protest",
+      "legislation-policy"
+    ],
+    "approach": "mixed",
+    "summary": "Austrian association that has campaigned since 1992 for the protection of all animals in Austria through public education, exposing abuses, public actions and campaigns, including a campaign to end fully slatted floors for pigs.",
+    "website": "https://vgt.at",
+    "hq": "Austria",
+    "founded": "1992",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://vgt.at/",
+        "title": "VEREIN GEGEN TIERFABRIKEN (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found."
+  },
+  {
+    "id": "sentience-politics",
+    "name": "Sentience Politics",
+    "aliases": [
+      "Sentience"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "CH"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Swiss political organisation representing the interests of non-human animals. Founded in 2013, it runs political campaigns including ballot initiatives on sustainable food, fundamental rights for primates and a ban on factory farming.",
+    "website": "https://sentience.ch/en/",
+    "hq": "Switzerland",
+    "founded": "2013",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://sentience.ch/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://sentience.ch/en/who-we-are/",
+        "title": "Who we are | Sentience",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Sentience_Politics",
+        "title": "Sentience Politics - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Distinct from the US think tank Sentience Institute, which took over its former research work in 2017 (Wikipedia)."
+  },
+  {
+    "id": "obraz",
+    "name": "OBRAZ – Obránci zvířat",
+    "aliases": [
+      "OBRAZ",
+      "Obránci zvířat"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "fur-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "CZ"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Czech non-profit and movement that pursues systemic change for animals in politics and business and involves the public in its campaigns. Campaigned for the Czech bans on fur farming and on caged hen farming.",
+    "website": "https://obrancizvirat.cz",
+    "hq": "Czechia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://obrancizvirat.cz/o-obrazu",
+        "title": "O OBRAZu | OBRAZ - Obránci zvířat",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://obrancizvirat.cz/",
+        "title": "OBRAZ - Obránci zvířat (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Feed at /feed returned valid RSS but with no items, so not listed. Founding year not found on the pages fetched."
+  },
+  {
+    "id": "humanny-pokrok",
+    "name": "Humánny pokrok",
+    "aliases": [
+      "Humane Progress"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "SK"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Slovak organisation working for animals kept in industrial farming through gradual systemic change: ending the worst practices, corporate responsibility commitments, legislation protecting animals, and educating the public about farming conditions.",
+    "website": "https://humannypokrok.sk",
+    "hq": "Slovakia",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://humannypokrok.sk/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://humannypokrok.sk/o-nas/",
+        "title": "O nás - Humánny pokrok",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://humannypokrok.sk/",
+        "title": "Humánny pokrok (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "About page says it has worked 'for 15 years' (as read Nov 2026); exact founding year not stated. English alias is a translation."
+  },
+  {
+    "id": "lav-italy",
+    "name": "LAV",
+    "aliases": [
+      "Lega Anti Vivisezione",
+      "LAV ETS"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "animals-in-research",
+      "wild-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "IT"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "investigations",
+      "public-awareness",
+      "litigation"
+    ],
+    "approach": "mixed",
+    "summary": "Italian animal rights association (Lega Anti Vivisezione) active since 1977. Campaigns and petitions on hunting and wildlife, circuses, animal experimentation and other uses of animals, and publishes investigations.",
+    "website": "https://www.lav.it",
+    "hq": "Italy",
+    "founded": "1977",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.lav.it/",
+        "title": "LAV - dalla parte degli animali (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Homepage (Nov 2026) foregrounds wildlife, circus and research-animal campaigns; its farmed-animal work was not checked on a fetched page. No RSS feed found."
+  },
+  {
+    "id": "animanaturalis",
+    "name": "AnimaNaturalis",
+    "aliases": [
+      "AnimaNaturalis Internacional"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe",
+      "latin-america"
+    ],
+    "countries": [
+      "ES",
+      "MX"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "legislation-policy",
+      "protest"
+    ],
+    "approach": "abolitionist",
+    "summary": "Ibero-American animal rights organisation founded in 2003, working in Spain and Latin America. Publishes investigations into farms (including rabbit and fish farms) and campaigns against factory farming, hunting with dogs and other uses of animals.",
+    "website": "https://www.animanaturalis.org",
+    "hq": null,
+    "founded": "2003",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animanaturalis.org/rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animanaturalis.org/en",
+        "title": "AnimaNaturalis: for the Defense of All Animals (English homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/AnimaNaturalis",
+        "title": "AnimaNaturalis - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Wikipedia lists offices in Spain, Argentina, Chile, Colombia, Ecuador, Mexico and Venezuela (may be dated); ACE Movement Grants went to its Spain and Mexico entities, so only ES and MX are tagged."
+  },
+  {
+    "id": "dansk-vegetarisk-forening",
+    "name": "Dansk Vegetarisk Forening",
+    "aliases": [
+      "DVF",
+      "Vegetarian Society of Denmark"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "alt-protein",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DK"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "diet-change",
+      "alt-proteins",
+      "certification-standards",
+      "litigation"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Danish organisation founded in 1896 that works to shift Denmark's food system toward plant-based: policy and legislation work including strategic lawsuits, a plant protein network, training for professional kitchens, labelling schemes and international knowledge-sharing.",
+    "website": "https://vegetarisk.dk",
+    "hq": "Denmark",
+    "founded": "1896",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://vegetarisk.dk/english/",
+        "title": "Vegetarian Society of Denmark (English page)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/dansk-vegetarisk-forening/",
+        "title": "Dansk Vegetarisk Forening - ACE charity review",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed by ACE as an Evaluated Charity (Nov 2026). Founding year from the ACE review. Site read via a fetch tool; direct connection from the research sandbox failed, so no feed check was possible."
+  },
+  {
+    "id": "ethical-farming-ireland",
+    "name": "Ethical Farming Ireland",
+    "aliases": [
+      "EFI"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "cows"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "IE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "litigation",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Volunteer-run Irish group campaigning for better conditions for farm animals, specifically against factory farming and live animal export, including the transport of unweaned calves. Also encourages a move to more plant-based foods.",
+    "website": "https://www.ethicalfarmingireland.com",
+    "hq": "Ireland",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.ethicalfarmingireland.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.ethicalfarmingireland.com/",
+        "title": "Ethical Farming Ireland - Campaigning for farm animals (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.ethicalfarmingireland.com/about",
+        "title": "About - Ethical Farming Ireland",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Small volunteer group; included as the Irish anchor for farmed-animal campaigning. Homepage (Nov 2026) reports a formal legal notice issued to a ferry company over calf transport."
+  },
+  {
+    "id": "party-for-the-animals",
+    "name": "Partij voor de Dieren",
+    "aliases": [
+      "Party for the Animals",
+      "PvdD"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Dutch political party founded in 2002 with animal rights and animal welfare among its main goals. Holds seats in the Dutch House of Representatives and supports animal-politics parties in other countries through an affiliated foundation.",
+    "website": "https://www.partyfortheanimals.com",
+    "hq": "Netherlands",
+    "founded": "2002",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.partyfortheanimals.com/",
+        "title": "Party for the Animals (international site)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Party_for_the_Animals",
+        "title": "Party for the Animals - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Political party. Wikipedia (Nov 2026): three of 150 House seats after the 2025 general election. The international site refers to the Animal Politics Foundation."
+  },
+  {
+    "id": "ep-intergroup-welfare-conservation-animals",
+    "name": "Intergroup on the Welfare and Conservation of Animals",
+    "aliases": [
+      "European Parliament Animal Welfare Intergroup"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [],
+    "interventions": [
+      "legislation-policy"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Cross-party group of Members of the European Parliament working to advance animal welfare and conservation in EU policymaking. Holds regular sessions on EU files such as fur, livestock strategy and animal testing; its secretariat is provided by Eurogroup for Animals.",
+    "website": "https://www.animalwelfareintergroup.eu",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animalwelfareintergroup.eu/rss.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animalwelfareintergroup.eu/",
+        "title": "Intergroup on the Welfare and Conservation of Animals (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Secretariat provided by Eurogroup for Animals (already on the map as 'eurogroup-for-animals'); not set as parent because the Intergroup is a parliamentary body."
+  },
+  {
+    "id": "care-conference",
+    "name": "Conference on Animal Rights in Europe",
+    "aliases": [
+      "CARE",
+      "CARE Conference"
+    ],
+    "kind": "programme",
+    "parent_id": "anima-international",
+    "categories": [
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "PL"
+    ],
+    "interventions": [
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Annual animal rights conference held in Warsaw and online, organised by Anima International, with talks, workshops and networking sessions for advocates from many organisations and countries.",
+    "website": "https://careconf.eu",
+    "hq": "Poland",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://careconf.eu/",
+        "title": "CARE 2026: Animal Rights Conference (Warsaw)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found."
+  },
+  {
+    "id": "rspca",
+    "name": "Royal Society for the Prevention of Cruelty to Animals",
+    "aliases": [
+      "RSPCA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "certification-standards",
+      "public-awareness",
+      "sanctuary"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Animal welfare charity operating in England and Wales, founded in 1824 and funded mainly by donations. Specialises in animal rescue and in advancing the welfare of all animals; its RSPCA Assured scheme certifies farms to RSPCA welfare standards.",
+    "website": "https://www.rspca.org.uk",
+    "hq": "United Kingdom",
+    "founded": "1824",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.rspca.org.uk/",
+        "title": "RSPCA (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/RSPCA",
+        "title": "RSPCA - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Parent body of RSPCA Assured, which is already on the map as 'rspca-assured'. HQ Horsham, West Sussex (Wikipedia). No RSS feed found."
+  },
+  {
+    "id": "animal-aid",
+    "name": "Animal Aid",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "diet-change",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "British animal rights organisation founded in 1977. Campaigns peacefully against all forms of animal abuse, carries out undercover investigations, and promotes a cruelty-free lifestyle with free outreach and educational materials.",
+    "website": "https://www.animalaid.org.uk",
+    "hq": "United Kingdom",
+    "founded": "1977",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animalaid.org.uk/",
+        "title": "Animal Aid (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Aid",
+        "title": "Animal Aid - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Based in Tonbridge (Wikipedia). /feed/ returned RSS with no items, so no feed listed."
+  },
+  {
+    "id": "the-vegan-society",
+    "name": "The Vegan Society",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "community-media"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "uk",
+      "global"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "certification-standards",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "UK registered charity founded in 1944, the oldest vegan organisation, whose founders coined the word 'vegan'. Provides information and campaigns on veganism in the UK and internationally.",
+    "website": "https://www.vegansociety.com",
+    "hq": "United Kingdom",
+    "founded": "1944",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.vegansociety.com/rss.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.vegansociety.com/about-us",
+        "title": "About The Vegan Society",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Vegan_Society",
+        "title": "The Vegan Society - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Based in Birmingham (Wikipedia). Its Vegan Trademark product-labelling scheme was not checked on a fetched page."
+  },
+  {
+    "id": "veganuary",
+    "name": "Veganuary",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "uk",
+      "global"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "corporate-campaigns"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Charity registered in England and Wales that inspires people to try vegan for January and throughout the year, through an annual pledge campaign begun in 2014 with recipes and guidance, run by an international team.",
+    "website": "https://veganuary.com",
+    "hq": "United Kingdom",
+    "founded": "2014",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://veganuary.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://veganuary.com/about/",
+        "title": "What is Veganuary? About Us & Our Vision",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Veganuary",
+        "title": "Veganuary - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Runs official campaigns in several countries beyond the UK; the country list was not captured, so only GB is tagged."
+  },
+  {
+    "id": "cruelty-free-international",
+    "name": "Cruelty Free International",
+    "aliases": [
+      "British Union for the Abolition of Vivisection",
+      "BUAV"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "animals-in-research"
+    ],
+    "regions": [
+      "global",
+      "uk",
+      "europe"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "certification-standards",
+      "investigations",
+      "public-awareness"
+    ],
+    "approach": "abolitionist",
+    "summary": "Organisation working to end animal testing worldwide. Works with politicians, businesses and regulators, promotes non-animal science, and supports companies with cruelty-free certification. Founded in 1898 as the British Union for the Abolition of Vivisection.",
+    "website": "https://crueltyfreeinternational.org",
+    "hq": "United Kingdom",
+    "founded": "1898",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.crueltyfreeinternational.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.crueltyfreeinternational.org/our-work/about-us/",
+        "title": "About Us - Cruelty Free International",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Cruelty_Free_International",
+        "title": "Cruelty Free International - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "History (BUAV, 1898; Leaping Bunny certification) from Wikipedia."
+  },
+  {
+    "id": "uk-centre-for-animal-law",
+    "name": "UK Centre for Animal Law",
+    "aliases": [
+      "A-LAW",
+      "Association of Lawyers for Animal Welfare"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "education",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "UK charity that brings together lawyers and others interested in animal protection law to share experience and apply that expertise for the benefit of animals. Runs student membership, an animal law week and the Talking Animal Law podcast.",
+    "website": "https://www.alaw.org.uk",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.alaw.org.uk/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.alaw.org.uk/",
+        "title": "A-LAW (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Former name 'Association of Lawyers for Animal Welfare' is from general knowledge, not a fetched page. ACE Movement Grant recipient 2019-2021."
+  },
+  {
+    "id": "bryant-research",
+    "name": "Bryant Research",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "uk",
+      "europe"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "research",
+      "alt-proteins",
+      "diet-change"
+    ],
+    "approach": "research",
+    "summary": "Research team using social science, market research and policy analysis to help mainstream meat reduction and alternative proteins. Works with alternative protein companies and animal protection non-profits and publishes independent research.",
+    "website": "https://bryantresearch.co.uk",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://bryantresearch.co.uk/",
+        "title": "Bryant Research (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "UK base inferred from the .co.uk domain; not stated on the page fetched. ACE Movement Grant recipient (2023, 2026). Feed returned no items."
+  },
+  {
+    "id": "animal-think-tank",
+    "name": "Animal Think Tank",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure",
+      "welfare-science"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "research",
+      "capacity-building",
+      "public-awareness"
+    ],
+    "approach": "abolitionist",
+    "summary": "UK group that turns research into strategies and narratives for what it calls the animal freedom movement: tested frames and messaging, communication tools and messenger training intended to shift culture.",
+    "website": "https://animalthinktank.org.uk",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalthinktank.org.uk/",
+        "title": "Animal Think Tank (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "UK base inferred from the .org.uk domain. Feed returned no items."
+  },
+  {
+    "id": "social-change-lab",
+    "name": "Social Change Lab",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "uk",
+      "global"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "research",
+      "capacity-building"
+    ],
+    "approach": "research",
+    "summary": "Non-profit that studies how social movements and protest shape public opinion, policy and social change, publishing open-access research for activists, researchers and funders. Animal rights is one of its research areas, alongside climate and AI safety.",
+    "website": "https://www.socialchangelab.org",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.socialchangelab.org/",
+        "title": "Social Change Lab (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Not an animal-specific organisation. UK base inferred from its UK press phone number. No RSS feed found."
+  },
+  {
+    "id": "fur-free-alliance",
+    "name": "Fur Free Alliance",
+    "aliases": [],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "fur-animals"
+    ],
+    "regions": [
+      "global",
+      "europe"
+    ],
+    "countries": [],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness"
+    ],
+    "approach": "abolitionist",
+    "summary": "International coalition of more than 40 animal protection organisations working together to end animal cruelty in the fur industry, through fur farming bans and fur-free policies of fashion companies.",
+    "website": "https://www.furfreealliance.com",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.furfreealliance.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.furfreealliance.com/",
+        "title": "Fur Free Alliance (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": null
+  },
+  {
+    "id": "world-federation-for-animals",
+    "name": "World Federation for Animals",
+    "aliases": [
+      "WFA"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Federation of more than 70 NGOs working for recognition of animal welfare in the sustainable development agenda. Focuses on integrating animal welfare into international health, food and environmental regimes and into trade and development finance rules.",
+    "website": "https://wfa.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://wfa.org/",
+        "title": "World Federation for Animals (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://wfa.org/the-team/",
+        "title": "The World Federation for Animals Team",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Secretariat works remotely across five countries (team page). No RSS feed found."
+  },
+  {
+    "id": "better-chicken-commitment",
+    "name": "Better Chicken Commitment",
+    "aliases": [
+      "European Chicken Commitment",
+      "ECC"
+    ],
+    "kind": "resource",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens"
+    ],
+    "regions": [
+      "global",
+      "north-america",
+      "europe",
+      "uk",
+      "oceania",
+      "latin-america"
+    ],
+    "countries": [
+      "US",
+      "CA",
+      "GB",
+      "AU",
+      "NZ",
+      "BR"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "certification-standards",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Set of broiler chicken welfare standards that food companies are asked to commit to publicly. The site reports more than 200 company commitments since November 2016 and publishes regional versions for the US, UK, EU, Canada, Australia/New Zealand and Brazil.",
+    "website": "https://betterchickencommitment.com",
+    "hq": null,
+    "founded": "2016",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://betterchickencommitment.com/us/",
+        "title": "The Better Chicken Commitment - BCC [US]",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A shared policy standard, not an organisation; the site does not name a single owner on the page fetched. The EU version is widely known as the European Chicken Commitment (alias from general knowledge). 'founded' is the date of the first commitments given on the site. No RSS feed found."
+  },
+  {
+    "id": "ava-international",
+    "name": "AVA International",
+    "aliases": [
+      "AVA Summit",
+      "Animal & Vegan Advocacy Summit",
+      "Animal & Vegan Advocacy (AVA) International"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "global",
+      "latin-america",
+      "asia",
+      "africa"
+    ],
+    "countries": [
+      "MX",
+      "ZA",
+      "HK"
+    ],
+    "interventions": [
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Organiser of conferences, workshops and training events for animal and vegan advocates worldwide: the AVA Summit series, AVA Academy cohort programmes, AVAx events and a Grantee Day. Upcoming editions listed for South Africa, Mexico City and Hong Kong in 2027.",
+    "website": "https://www.avainternational.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.avainternational.org/",
+        "title": "AVA International (homepage; avasummit.com redirects here)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.avainternational.org/about",
+        "title": "About - AVA International",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "avasummit.com now redirects to avainternational.org. Countries tagged are those of the 2027 events listed on the site; its US summit and headquarters were not confirmed on the pages fetched - check. No RSS feed found."
+  },
+  {
+    "id": "aspca",
+    "name": "American Society for the Prevention of Cruelty to Animals",
+    "aliases": [
+      "ASPCA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue",
+      "policy-law"
+    ],
+    "species": [
+      "companion-animals",
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness",
+      "sanctuary"
+    ],
+    "approach": "welfare-reform",
+    "summary": "US non-profit founded in 1866 and based in New York City, dedicated to preventing cruelty to animals. Its farm animal programme calls for greater transparency in animal agriculture, stronger laws and an end to the cruellest factory farming practices.",
+    "website": "https://www.aspca.org",
+    "hq": "United States",
+    "founded": "1866",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.aspca.org/rss.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.aspca.org/protecting-farm-animals",
+        "title": "Protecting Farm Animals from Abuse and Suffering | ASPCA",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/American_Society_for_the_Prevention_of_Cruelty_to_Animals",
+        "title": "American Society for the Prevention of Cruelty to Animals - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Included for its farm animal welfare programme (the Global Animal Partnership site refers to an 'ASPCA ShopKind' product listing). A second feed exists at https://www.aspca.org/blog/feed/."
+  },
+  {
+    "id": "animal-outlook",
+    "name": "Animal Outlook",
+    "aliases": [
+      "Compassion Over Killing",
+      "COK"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "investigations",
+      "litigation",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "US national non-profit animal advocacy organisation, formed in 1995 as Compassion Over Killing and based in Washington, D.C. Its investigators, attorneys and advocates expose conditions in animal agribusiness, pursue legal accountability and promote vegan eating.",
+    "website": "https://animaloutlook.org",
+    "hq": "United States",
+    "founded": "1995",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animaloutlook.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animaloutlook.org/about/",
+        "title": "About Us - Animal Outlook",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Outlook",
+        "title": "Animal Outlook - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Former name, founding year and location from Wikipedia."
+  },
+  {
+    "id": "animal-welfare-institute",
+    "name": "Animal Welfare Institute",
+    "aliases": [
+      "AWI"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "animals-in-research",
+      "wild-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research",
+      "public-awareness",
+      "certification-standards"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Washington, D.C. non-profit dedicated since 1951 to alleviating animal suffering caused by people, in agriculture, commerce, homes and communities, research and the wild. Its farmed animal programme covers factory farms, aquaculture, slaughter, transport and labelling.",
+    "website": "https://awionline.org",
+    "hq": "United States",
+    "founded": "1951",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://awionline.org/content/about-awi",
+        "title": "About AWI - Animal Welfare Institute",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Welfare_Institute",
+        "title": "Animal Welfare Institute - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site returned 403 to direct requests from the research sandbox; the About page was read through a fetch tool, so no feed check was possible."
+  },
+  {
+    "id": "farm-forward",
+    "name": "Farm Forward",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "public-awareness",
+      "investigations",
+      "legislation-policy",
+      "certification-standards"
+    ],
+    "approach": "mixed",
+    "summary": "US non-profit whose stated mission is to end factory farming by changing farming, changing policy and changing the stories told about animal agriculture. Runs a campaign against 'humanewashing', the deceptive welfare labelling of animal products.",
+    "website": "https://www.farmforward.com",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.farmforward.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.farmforward.com/",
+        "title": "Farm Forward (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Farm_Forward",
+        "title": "Farm Forward - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not confirmed on a fetched page (commonly given as 2007); left null."
+  },
+  {
+    "id": "nonhuman-rights-project",
+    "name": "Nonhuman Rights Project",
+    "aliases": [
+      "NhRP"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "litigation",
+      "legislation-policy",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "US civil rights organisation working to secure fundamental rights for nonhuman animals through litigation, legislation and education. Its cases seek to change the legal status of certain animals from 'things' to rights-holders, with rights such as bodily liberty.",
+    "website": "https://www.nonhumanrights.org",
+    "hq": "United States",
+    "founded": "2007",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.nonhumanrights.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nonhumanrights.org/about-us/",
+        "title": "About Us | Nonhuman Rights Project",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Nonhuman_Rights_Project",
+        "title": "Nonhuman Rights Project - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Wikipedia: founded 2007 as a project of the Center for the Expansion of Fundamental Rights, renamed NhRP in 2012. ACE Movement Grant recipient in 2020."
+  },
+  {
+    "id": "legal-impact-for-chickens",
+    "name": "Legal Impact for Chickens",
+    "aliases": [
+      "LIC"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "litigation"
+    ],
+    "approach": "welfare-reform",
+    "summary": "US animal law non-profit founded in 2021 that brings civil lawsuits against companies and executives over the treatment of chickens and other farmed animals, aiming to enforce existing cruelty laws in industrial farming.",
+    "website": "https://www.legalimpactforchickens.org",
+    "hq": "United States",
+    "founded": "2021",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.legalimpactforchickens.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.legalimpactforchickens.org/",
+        "title": "Legal Impact for Chickens (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Legal_Impact_for_Chickens",
+        "title": "Legal Impact for Chickens - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/evaluated-charities/",
+        "title": "Evaluated Charities - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed among ACE's evaluated charities (Nov 2026). Founding date and Sacramento headquarters from Wikipedia."
+  },
+  {
+    "id": "global-animal-partnership",
+    "name": "Global Animal Partnership",
+    "aliases": [
+      "G.A.P."
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs",
+      "cows"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "certification-standards",
+      "farm-practices",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "US non-profit that develops and publishes welfare standards for farm animals, structured as a five-tier 'Five Step' animal welfare programme, and labels products from farms certified to those standards. Founded in 2008 with assistance from Whole Foods Market.",
+    "website": "https://globalanimalpartnership.org",
+    "hq": "United States",
+    "founded": "2008",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://globalanimalpartnership.org/",
+        "title": "Global Animal Partnership (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Global_Animal_Partnership",
+        "title": "Global Animal Partnership - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding details from Wikipedia. Feed URL returned no items."
+  },
+  {
+    "id": "greener-by-default",
+    "name": "Greener by Default",
+    "aliases": [
+      "GBD"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america",
+      "europe"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "diet-change",
+      "corporate-campaigns",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Organisation that works with hospitals, universities, corporate dining programmes and city governments to make plant-based food the default menu option while keeping meat and dairy available on request. Named an ACE Recommended Charity for 2026.",
+    "website": "https://www.greenerbydefault.com",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.greenerbydefault.com/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.greenerbydefault.com/",
+        "title": "Greener by Default (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/recommended-charities/",
+        "title": "Recommended Charities - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE describes it as working in North America and Europe. US headquarters not stated on the pages fetched - check."
+  },
+  {
+    "id": "new-roots-institute",
+    "name": "New Roots Institute",
+    "aliases": [
+      "Factory Farming Awareness Coalition",
+      "FFAC"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "incubation-careers",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "education",
+      "careers-talent",
+      "capacity-building"
+    ],
+    "approach": "mixed",
+    "summary": "US non-profit that gives students knowledge and training to end factory farming through leadership programmes: a summer leadership academy, an academic-year fellowship and an alumni network that supports moves into related careers.",
+    "website": "https://www.newrootsinstitute.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.newrootsinstitute.org/about",
+        "title": "About New Roots Institute | Who We Are & What We Do",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/evaluated-charities/",
+        "title": "Evaluated Charities - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed among ACE's evaluated charities (Nov 2026). Former name Factory Farming Awareness Coalition (an ACE Movement Grant recipient in 2019-2020) is from general knowledge, not confirmed on a fetched page. No RSS feed found."
+  },
+  {
+    "id": "pro-animal-future",
+    "name": "Pro-Animal Future",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "abolitionist",
+    "summary": "US organisation building a political movement to end factory farming through citizen ballot initiatives and local legislation, with regional volunteer chapters. Reports a 2026 Washington, DC initiative banning sales of force-fed foie gras and a similar Portland ordinance.",
+    "website": "https://proanimal.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://proanimal.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://proanimal.org/",
+        "title": "Pro-Animal Future (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://paxfauna.org/",
+        "title": "Pax Fauna (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Grew out of Pax Fauna's research (Pax Fauna's site carries Pro-Animal Future's 10-year plan). ACE Movement Grant recipient in 2024."
+  },
+  {
+    "id": "pax-fauna",
+    "name": "Pax Fauna",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "capacity-building"
+    ],
+    "approach": "abolitionist",
+    "summary": "US group conducting research on how animal advocates organise, take action and communicate with the public, with the stated aim of bringing about a nonviolent grassroots mass movement for animals. Publishes messaging and polling studies and a movement strategy blog.",
+    "website": "https://paxfauna.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://paxfauna.org/",
+        "title": "Pax Fauna (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "US base inferred from its Denver polling and US-focused work; not stated on the page fetched. No RSS feed found."
+  },
+  {
+    "id": "sentience-institute",
+    "name": "Sentience Institute",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "north-america",
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research"
+    ],
+    "approach": "research",
+    "summary": "US non-profit interdisciplinary think tank, founded in 2017, researching long-term social and technological change, particularly moral circle expansion and digital minds. Has published reports on social movements and animal advocacy; research is free to use.",
+    "website": "https://www.sentienceinstitute.org",
+    "hq": "United States",
+    "founded": "2017",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.sentienceinstitute.org/",
+        "title": "Sentience Institute (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Sentience_Institute",
+        "title": "Sentience Institute - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Homepage (Nov 2026) emphasises digital minds; the extent of its current animal advocacy research is not confirmed. No RSS feed found."
+  },
+  {
+    "id": "humane-canada",
+    "name": "Humane Canada",
+    "aliases": [
+      "Canadian Federation of Humane Societies"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals",
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "CA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "certification-standards",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "National federation of SPCAs and humane societies in Canada, active since 1957. Works to end animal cruelty and strengthen laws and enforcement, supports member shelters, and lists advancing standards of care for farmed animals among its aims.",
+    "website": "https://humanecanada.ca",
+    "hq": "Canada",
+    "founded": "1957",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://humanecanada.ca/en/about-us",
+        "title": "About Us - Humane Canada",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://humanecanada.ca/en",
+        "title": "Humane Canada (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Former name Canadian Federation of Humane Societies is from general knowledge, not a fetched page. About page (Nov 2026) centres on companion animals. No RSS feed found."
+  },
+  {
+    "id": "vancouver-humane-society",
+    "name": "Vancouver Humane Society",
+    "aliases": [
+      "VHS"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "wild-animals",
+      "companion-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "CA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Registered Canadian charity dedicated to the humane treatment of animals. Since 1984 it has encouraged individuals, organisations and governments to take responsibility for the welfare and rights of domestic animals and of wildlife affected by human activity.",
+    "website": "https://vancouverhumanesociety.bc.ca",
+    "hq": "Canada",
+    "founded": "1984",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://vancouverhumanesociety.bc.ca/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://vancouverhumanesociety.bc.ca/about/",
+        "title": "About – Vancouver Humane Society",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Its farmed-animal and plant-based campaigns were not checked on a fetched page."
+  },
+  {
+    "id": "we-animals",
+    "name": "We Animals",
+    "aliases": [
+      "We Animals Media"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "community-media"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "data-tools"
+    ],
+    "approach": "abolitionist",
+    "summary": "Photojournalism organisation that advocates for animals through global investigations and stories about human relationships with animals, and offers a stock library of its images.",
+    "website": "https://weanimals.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://weanimals.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://weanimals.org/about/",
+        "title": "ABOUT - We Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Widely described as a Canada-based organisation; headquarters not stated on the page fetched, so left null - check. ACE Movement Grant recipient as 'We Animals Media' (2021) and 'We Animals' (2024)."
+  },
+  {
+    "id": "safe-nz",
+    "name": "SAFE",
+    "aliases": [
+      "Save Animals From Exploitation",
+      "SAFE for Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "NZ"
+    ],
+    "interventions": [
+      "investigations",
+      "legislation-policy",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "New Zealand animal rights charity that uses research, strategic communications, investigations and public support to drive institutional, political and societal change for animals, with campaigns on farmed animals and the animal welfare system.",
+    "website": "https://safe.org.nz",
+    "hq": "New Zealand",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://safe.org.nz/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://safe.org.nz/about-us/",
+        "title": "How we work – SAFE",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/SAFE_(New_Zealand_organisation)",
+        "title": "SAFE (New Zealand organisation) - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Wikipedia: evolved from an Auckland branch of the British Union for the Abolition of Vivisection; renamed Save Animals from Experiments in 1972 and Save Animals from Exploitation in 1987. Founding year left null because sources give different starting points."
+  },
+  {
+    "id": "animals-aotearoa",
+    "name": "Animals Aotearoa",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "NZ"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "New Zealand organisation, part of the Open Wing Alliance, working to end the abuse of farmed animals. Its work centres on chicken welfare, including corporate campaigns and an election scorecard on farmed animal welfare.",
+    "website": "https://animalsaotearoa.org",
+    "hq": "New Zealand",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animalsaotearoa.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animalsaotearoa.org/feed/",
+        "title": "Animals Aotearoa (site feed: description and recent posts)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site pages returned HTTP 429 (rate limit) to the research sandbox, so the description comes from the site's own RSS feed. ACE Movement Grant recipient in 2025; also an EA Animal Welfare Fund grantee."
+  },
+  {
+    "id": "voiceless",
+    "name": "Voiceless",
+    "aliases": [
+      "Voiceless, the animal protection institute"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "community-media"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "education",
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Australian animal protection institute founded in 2004. Has worked to build the animal law field in Australia and New Zealand, runs animal protection education programmes for high-school students, and has raised media coverage of factory farming.",
+    "website": "https://voiceless.org.au",
+    "hq": "Australia",
+    "founded": "2004",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://voiceless.org.au/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://voiceless.org.au/about-us/",
+        "title": "About us - Voiceless",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Newest feed item when checked was dated October 2025."
+  },
+  {
+    "id": "animal-liberation-australia",
+    "name": "Animal Liberation",
+    "aliases": [
+      "Animal Liberation NSW",
+      "Animal Liberation Australia"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "investigations",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "abolitionist",
+    "summary": "Sydney-based non-profit animal rights organisation formed in 1976. Exposes the treatment of animals used for food, entertainment, fashion and science, lobbies governments and industry, campaigns to end animal farming and promotes a vegan lifestyle.",
+    "website": "https://www.al.org.au",
+    "hq": "Australia",
+    "founded": "1976",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.al.org.au/",
+        "title": "Animal Liberation (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Liberation_(organisation)",
+        "title": "Animal Liberation (organisation) - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Separate state-based Animal Liberation groups exist elsewhere in Australia; this record is the Sydney (NSW) organisation. No RSS feed found."
+  },
+  {
+    "id": "rspca-australia",
+    "name": "RSPCA Australia",
+    "aliases": [
+      "Royal Society for the Prevention of Cruelty to Animals Australia"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "certification-standards",
+      "public-awareness",
+      "sanctuary"
+    ],
+    "approach": "welfare-reform",
+    "summary": "National body of the federation of state and territory RSPCA societies in Australia, established in 1981. Member societies run shelters and investigate and prosecute cruelty; the federation advocates for changes in policy and practice and publishes welfare science updates.",
+    "website": "https://www.rspca.org.au",
+    "hq": "Australia",
+    "founded": "1981",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.rspca.org.au/about/",
+        "title": "About | RSPCA Australia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/RSPCA_Australia",
+        "title": "RSPCA Australia - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Its RSPCA Approved Farming Scheme was not checked on a fetched page. No RSS feed found."
+  },
+  {
+    "id": "australian-alliance-for-animals",
+    "name": "Australian Alliance for Animals",
+    "aliases": [
+      "Alliance for Animals"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Policy organisation leading a strategic alliance of Australian animal protection organisations, which it says represent over 2 million people. Focuses on reforming the governance of Australia's animal welfare system so that it is fair and independent.",
+    "website": "https://www.allianceforanimals.org.au",
+    "hq": "Australia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.allianceforanimals.org.au/about",
+        "title": "Who we are — Australian Alliance for Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Member organisations not captured from the page fetched. EA Animal Welfare Fund grantee. No RSS feed found."
+  },
+  {
+    "id": "cellular-agriculture-australia",
+    "name": "Cellular Agriculture Australia",
+    "aliases": [
+      "Food Frontier"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU",
+      "NZ"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "research",
+      "legislation-policy"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Australian non-profit working to accelerate the commercialisation and adoption of emerging food production technologies such as cellular agriculture. In 2026 the alternative-protein think tank Food Frontier (active 2017-2025) merged into it.",
+    "website": "https://www.cellularagricultureaustralia.org",
+    "hq": "Australia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.cellularagricultureaustralia.org/",
+        "title": "Cellular Agriculture Australia (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.foodfrontier.org/about-us/",
+        "title": "About us - Food Frontier",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Food Frontier's site (still online, with a feed last updated March 2026) states it joined CAA in 2026; Food Frontier is therefore recorded as an alias rather than a separate entity. Food Frontier covered Australia and New Zealand."
+  },
+  {
+    "id": "animal-justice-party",
+    "name": "Animal Justice Party",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Australian political party founded in 2009 and registered federally in 2011, described as the first party in Australia formed solely to advance animal welfare issues. Registered in the states and territories as well as federally.",
+    "website": "https://www.animaljusticeparty.org",
+    "hq": "Australia",
+    "founded": "2009",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Justice_Party",
+        "title": "Animal Justice Party - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Political party. Its own site returned a bot-protection page (HTTP 403) to the research sandbox, so the record rests on Wikipedia; website URL not fetched successfully."
+  },
+  {
+    "id": "farm-transparency-project",
+    "name": "Farm Transparency Project",
+    "aliases": [
+      "Aussie Farms"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "community-media",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "pigs",
+      "chickens"
+    ],
+    "regions": [
+      "oceania"
+    ],
+    "countries": [
+      "AU"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "data-tools"
+    ],
+    "approach": "abolitionist",
+    "summary": "Australian animal protection charity and independent media outlet, established in 2014 as Aussie Farms. Uses investigative journalism, documentary films and online tools and resources to force transparency on farms, slaughterhouses and other commercial animal industries.",
+    "website": "https://www.farmtransparency.org",
+    "hq": "Australia",
+    "founded": "2014",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.farmtransparency.org/about",
+        "title": "About Us - Farm Transparency Project (FTP)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found."
+  },
+  {
+    "id": "animal-policy-international",
+    "name": "Animal Policy International",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe",
+      "uk",
+      "oceania"
+    ],
+    "countries": [
+      "NZ",
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Trade policy and advocacy organisation working to close the gap between domestic animal welfare standards and those applied to imports. Produces legal and supply-chain research and advises parliamentarians and trade officials in the European Union, New Zealand and the United Kingdom.",
+    "website": "https://www.animalpolicyinternational.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animalpolicyinternational.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animalpolicyinternational.org/",
+        "title": "Animal Policy International (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE Movement Grant recipient in 2026; also an EA Animal Welfare Fund grantee. Headquarters not stated on the page fetched."
+  },
+  {
+    "id": "insect-institute",
+    "name": "The Insect Institute",
+    "aliases": [
+      "Insect Institute"
+    ],
+    "kind": "programme",
+    "parent_id": "rethink-priorities",
+    "categories": [
+      "welfare-science",
+      "policy-law"
+    ],
+    "species": [
+      "insects"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "legislation-policy",
+      "producer-engagement"
+    ],
+    "approach": "research",
+    "summary": "Fiscally sponsored project of Rethink Priorities addressing challenges and uncertainties in the production and use of insects for food and feed. Provides evidence-based information on insect rearing to industry, policymakers and others, covering animal welfare, public health and sustainability.",
+    "website": "https://www.insectinstitute.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://insectinstitute.org/news?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.insectinstitute.org/",
+        "title": "The Insect Institute (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site footer: 'a fiscally sponsored project of Rethink Priorities, a 501(c)3 nonprofit'. HQ given as the sponsor's country. Geographic focus is not stated on the page fetched; tagged 'global' provisionally. Newest feed item when checked: June 2026."
+  },
+  {
+    "id": "arthropoda-foundation",
+    "name": "Arthropoda Foundation",
+    "aliases": [
+      "Arthropod Foundation"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "insects",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "research",
+    "summary": "US 501(c)(3) organisation that supports scientific research on the welfare of understudied animals, focusing on arthropods (insects, crustaceans, arachnids). Awards competitive research grants and runs workshops for researchers and industry stakeholders.",
+    "website": "https://www.arthropoda.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.arthropoda.org/",
+        "title": "Arthropoda Foundation (homepage; arthropodafoundation.org redirects here)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Often referred to as 'Arthropod Foundation'; the organisation's name is Arthropoda Foundation. Primarily a research grantmaker, so it may also appear in the funders research file - deduplicate. An EA Forum post found by search says it was established in 2024; not confirmed on its own site. No RSS feed found."
+  },
+  {
+    "id": "animal-ethics",
+    "name": "Animal Ethics",
+    "aliases": [
+      "Ética Animal"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "wild-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "education",
+      "public-awareness"
+    ],
+    "approach": "abolitionist",
+    "summary": "US-registered charity that promotes respect for nonhuman animals through outreach, research and education. Supports and researches interventions to improve the lives of animals in the wild, such as vaccination and help in natural disasters, and studies how future technologies may affect animals.",
+    "website": "https://www.animal-ethics.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animal-ethics.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animal-ethics.org/about-us/",
+        "title": "About us - Animal Ethics",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Described as a 501(c)(3) public charity in the site footer. ACE Movement Grant recipient (2019, 2025). Spanish alias from general knowledge."
+  },
+  {
+    "id": "center-for-wild-animal-welfare",
+    "name": "Center for Wild Animal Welfare",
+    "aliases": [
+      "CWAW"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "welfare-science"
+    ],
+    "species": [
+      "wild-animals"
+    ],
+    "regions": [
+      "uk",
+      "europe"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Organisation that gives policymakers evidence-based guidance to reduce wild animal suffering from poisons, culling, unsafe buildings and other human-caused harms. Current work includes rodenticide use and wildlife fertility control policy in the UK and the EU.",
+    "website": "https://www.wildanimalwelfare.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.wildanimalwelfare.org/",
+        "title": "Center for Wild Animal Welfare (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.wildanimalwelfare.org/our-work",
+        "title": "Our work - Center for Wild Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE Movement Grant recipient in early 2026. Headquarters and founding date not stated on the pages fetched; its policy work is described for the UK and EU. Feed URL exists but had no items."
+  },
+  {
+    "id": "nyu-wild-animal-welfare-program",
+    "name": "NYU Wild Animal Welfare Program",
+    "aliases": [
+      "WAWP",
+      "Wild Animal Welfare Program, New York University"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "wild-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "New York University programme that aims to advance understanding of what wild animals are like, how humans and wild animals interact, and how humans can improve their interactions with wild animals at scale.",
+    "website": "https://sites.google.com/nyu.edu/wildanimalwelfare",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://sites.google.com/nyu.edu/wildanimalwelfare",
+        "title": "NYU Wild Animal Welfare Program (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE Movement Grant recipient in early 2026. No RSS feed found."
+  },
+  {
+    "id": "nyu-center-for-mind-ethics-and-policy",
+    "name": "NYU Center for Mind, Ethics, and Policy",
+    "aliases": [
+      "CMEP",
+      "NYU Mind, Ethics, and Policy Program"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "New York University centre providing academic leadership for research and policy on nonhuman consciousness, sentience, agency and moral, legal and political status, with a special focus on animals and AI. Hosted the 2024 launch of the New York Declaration on Animal Consciousness.",
+    "website": "https://nonhumanminds.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://nonhumanminds.org/",
+        "title": "Center for Mind, Ethics, and Policy (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://sites.google.com/nyu.edu/mindethicspolicy",
+        "title": "NYU Center for Mind, Ethics, and Policy (former site, with notice of move)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Former name 'Mind, Ethics, and Policy Program' is from general knowledge. No RSS feed found."
+  },
+  {
+    "id": "cambridge-centre-for-animal-rights-law",
+    "name": "Cambridge Centre for Animal Rights Law",
+    "aliases": [
+      "CCARL"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "welfare-science"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "Academic centre based in Cambridge, UK, and a registered charity, dedicated to the study of fundamental rights for non-human animals. Runs a talk series, conferences and an annual lecture, with an online archive of talks by legal experts, academics and judges.",
+    "website": "https://www.animalrightslaw.org",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animalrightslaw.org/",
+        "title": "Cambridge Centre for Animal Rights Law (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Registered charity no. 1190232 (site footer). No RSS feed found."
+  },
+  {
+    "id": "oxford-centre-for-animal-ethics",
+    "name": "Oxford Centre for Animal Ethics",
+    "aliases": [
+      "OCAE"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "uk",
+      "global"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "Academy dedicated to the ethical study of the status of animals. Facilitates collaborative research among its Fellows worldwide on the philosophical and theological foundations of animal ethics, animal awareness and links between animal abuse and violence to humans; runs a summer school.",
+    "website": "https://www.oxfordanimalethics.com",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.oxfordanimalethics.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.oxfordanimalethics.com/",
+        "title": "Oxford Centre for Animal Ethics (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.oxfordanimalethics.com/what-we-do/",
+        "title": "Research - Oxford Centre for Animal Ethics",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Its relationship to the University of Oxford was not checked (it is generally described as an independent centre). Founding year not found on the pages fetched."
+  },
+  {
+    "id": "ubc-animal-welfare-program",
+    "name": "UBC Animal Welfare Program",
+    "aliases": [
+      "University of British Columbia Animal Welfare Program"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "cows",
+      "animals-in-research",
+      "companion-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "CA"
+    ],
+    "interventions": [
+      "research",
+      "education",
+      "farm-practices"
+    ],
+    "approach": "research",
+    "summary": "Animal welfare science programme at the University of British Columbia, started in 1997. Its mission is to improve the welfare and humane care of animals in agriculture, research, companionship and other areas through research, education and public outreach.",
+    "website": "https://awp.landfood.ubc.ca",
+    "hq": "Canada",
+    "founded": "1997",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://awp.landfood.ubc.ca/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://awp.landfood.ubc.ca/",
+        "title": "UBC Animal Welfare Program (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "'cows' tagged for its dairy cattle welfare research, which is from general knowledge rather than the page fetched."
+  },
+  {
+    "id": "innovate-animal-ag",
+    "name": "Innovate Animal Ag",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-technology"
+    ],
+    "species": [
+      "chickens",
+      "pigs",
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "producer-engagement",
+      "farm-practices",
+      "grantmaking"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Non-profit industry think tank that works with producers and the supply chain to speed adoption of technologies that improve animal health and welfare. Publishes technology overviews and market reports on in-ovo sexing, immunocastration and on-farm hatching, and offers technology grants.",
+    "website": "https://innovateanimalag.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://innovateanimalag.org/",
+        "title": "Innovate Animal Ag (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://innovateanimalag.org/about",
+        "title": "About - Innovate Animal Ag",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "US base inferred from its US-focused reports; EA Animal Welfare Fund grantee. No RSS feed found."
+  },
+  {
+    "id": "orbem",
+    "name": "Orbem",
+    "aliases": [
+      "Orbem GmbH"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-technology"
+    ],
+    "species": [
+      "chickens"
+    ],
+    "regions": [
+      "europe",
+      "north-america"
+    ],
+    "countries": [
+      "DE",
+      "US"
+    ],
+    "interventions": [
+      "farm-practices"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "German technology company applying AI-powered MRI imaging to food and health. Its poultry products include in-ovo sexing, which identifies the sex of chicks in the egg before hatching, and fertilisation-status scanning for hatcheries.",
+    "website": "https://www.orbem.ai",
+    "hq": "Germany",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.orbem.ai/",
+        "title": "Orbem | AI-Powered MRI for Food & Health Sustainability (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Commercial company, not an advocacy organisation; included as an in-ovo sexing provider. Site footer lists offices in Germany and Houston, Texas. No RSS feed found."
+  },
+  {
+    "id": "seleggt",
+    "name": "SELEGGT",
+    "aliases": [
+      "SelEggt",
+      "respeggt",
+      "respeggt group"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "welfare-technology"
+    ],
+    "species": [
+      "chickens"
+    ],
+    "regions": [
+      "europe",
+      "north-america"
+    ],
+    "countries": [],
+    "interventions": [
+      "farm-practices"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "In-ovo sexing technology offered by HatchTech Group, which determines the sex of hatching eggs from around day 8-9 of incubation so that male layer chicks need not be hatched, alongside egg-handling equipment for hatcheries.",
+    "website": "https://www.seleggt.com",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.seleggt.com/",
+        "title": "Home - Seleggt (respeggt.com redirects here)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://hatchtechgroup.com/seleggt/",
+        "title": "SELEGGT - HatchTech Group (respeggt-group.com redirects here)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://hatchtechgroup.com/",
+        "title": "HatchTech Group (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Commercial technology, not an advocacy organisation. When checked, respeggt.com and respeggt-group.com both redirected to SELEGGT/HatchTech Group pages, so 'respeggt' is recorded as an alias; the corporate history behind the change was not researched. A second Dutch in-ovo provider, In Ovo (inovo.nl), showed a closed/maintenance page."
+  },
+  {
+    "id": "sentient-futures",
+    "name": "Sentient Futures",
+    "aliases": [
+      "AI for Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure",
+      "incubation-careers"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "global",
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "capacity-building",
+      "education",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US non-profit supporting research, policy and community on the welfare of animals and artificial minds. Runs an AI x Animals course, a project incubator, a residency and summits, and hosts an online community it puts at more than 1,700 members.",
+    "website": "https://www.sentientfutures.ai",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.sentientfutures.ai/",
+        "title": "Sentient Futures (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE lists it as 'Sentient Futures (formerly AI for Animals)'; EA Animal Welfare Fund records list 'AI for Animals, a project of Hive Community, Inc', so it began as a project of Hive (on the map as 'hive'). No RSS feed found."
+  },
+  {
+    "id": "the-mission-motor",
+    "name": "The Mission Motor",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "global",
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "capacity-building",
+      "data-tools"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Charity registered in the Netherlands that gives free training and coaching to organisations in the farmed animal and food-system change movement so they can build monitoring, evaluation and learning (MEL) practices and use data to increase their impact.",
+    "website": "https://www.themissionmotor.org",
+    "hq": "Netherlands",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.themissionmotor.org/",
+        "title": "The Mission Motor (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE Movement Grant recipient in early 2026; EA Animal Welfare Fund grantee. No RSS feed found."
+  },
+  {
+    "id": "how-i-learned-to-love-shrimp",
+    "name": "How I Learned to Love Shrimp",
+    "aliases": [],
+    "kind": "resource",
+    "parent_id": null,
+    "categories": [
+      "community-media"
+    ],
+    "species": [
+      "farmed-animals",
+      "wild-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "public-awareness",
+      "education"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Podcast about promising ways to help animals and build the animal advocacy movement. Interviews practitioners and experts on farmed and wild animal welfare, alternative proteins, policy change, protest and movement strategy.",
+    "website": "https://www.howilearnedtoloveshrimp.com",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.howilearnedtoloveshrimp.com/",
+        "title": "How I Learned To Love Shrimp: Animal Advocacy Podcast (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Podcast feed is hosted off-site and was not checked; no RSS link on the homepage."
+  },
+  {
+    "id": "269-liberation-animale",
+    "name": "269 Libération animale",
+    "aliases": [
+      "269 Life Libération Animale"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "direct-action"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "FR"
+    ],
+    "interventions": [
+      "direct-action",
+      "sanctuary"
+    ],
+    "approach": "abolitionist",
+    "summary": "French antispeciesist association created in Lyon in 2016, known for direct action against speciesism and for running sanctuaries. Originally linked to the association 269 Life France, it later became independent and shortened its name.",
+    "website": "https://fr.wikipedia.org/wiki/269_Lib%C3%A9ration_animale",
+    "hq": "France",
+    "founded": "2016",
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fr.wikipedia.org/wiki/269_Lib%C3%A9ration_animale",
+        "title": "269 Libération animale - Wikipédia (fr)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Encyclopedic entry only; the website field points to Wikipedia rather than the group's own site. Current activity level not verified, so status is 'unclear'."
+  },
+  {
+    "id": "meat-the-victims",
+    "name": "Meat the Victims",
+    "aliases": [],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "direct-action"
+    ],
+    "species": [
+      "farmed-animals",
+      "pigs"
+    ],
+    "regions": [
+      "oceania",
+      "north-america",
+      "europe",
+      "uk"
+    ],
+    "countries": [
+      "AU",
+      "CA",
+      "NL",
+      "IE",
+      "GB"
+    ],
+    "interventions": [
+      "direct-action",
+      "protest"
+    ],
+    "approach": "abolitionist",
+    "summary": "International animal rights collective that began in Australia in 2018 and describes its aim as abolishing animal exploitation. News media reported its protests at farms in Canada and the Netherlands in 2019, which led to arrests and, in Canada, to criminal convictions.",
+    "website": "https://thetyee.ca/News/2022/12/13/Excelsior-Case-Animal-Welfare/",
+    "hq": null,
+    "founded": "2018",
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://thetyee.ca/News/2022/12/13/Excelsior-Case-Animal-Welfare/",
+        "title": "The Escalating Fight Against Animal Agriculture | The Tyee",
+        "accessed": "2026-11-19",
+        "published": "2022-12-13"
+      },
+      {
+        "url": "https://www.dutchnews.nl/2019/05/police-end-pig-farm-occupation-dozens-of-activists-arrested/",
+        "title": "Police end pig farm occupation, dozens of activists arrested - DutchNews.nl",
+        "accessed": "2026-11-19",
+        "published": "2019-05-14"
+      }
+    ],
+    "notes": "Encyclopedic entry only; the website field points to a news article rather than the group's own channels. The Tyee also reports protests in Ireland, the UK and Israel. No documented activity after 2022 was found, so status is 'unclear'."
+  }
+]

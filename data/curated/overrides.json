@@ -9,235 +9,59 @@
       "call_state": "forthcoming",
       "_why": "EU Funding & Tenders lists the topic as 'forthcoming'; the deadline is not an open window."
     },
-    "call-blueperch-expressions-of-interest": {
+    "call-blueperch-expressions-of-interest-primary": {
       "call_state": "forthcoming",
-      "_why": "Hive round-up describes timing as mid-2027."
+      "_why": "Hive round-up describes timing as mid-2027. (Moved from call-blueperch-expressions-of-interest when the primary-source record replaced it, 2026-11-20.)"
     }
   },
   "entities": {
-    "university-of-stirling": {
-      "name": "University of Stirling (Institute of Aquaculture)",
-      "aliases": [
-        "University of Stirling"
-      ],
-      "kind": "organisation",
-      "categories": [
-        "welfare-science"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
-      "species": [
-        "farmed-fish"
-      ],
-      "regions": [
-        "uk"
-      ]
+    "samayu": {
+      "summary": "Indian non-profit working at the intersection of food, health and justice. Combines research, policy advocacy and community work on aquaculture reform, poultry antimicrobial resistance with state governments, faith-based engagement on animals, food-system convenings and dog coexistence. Its aquaculture work includes a One Health One Welfare project with the Madhya Pradesh Fisheries Department involving over 120 farmers and eight fisher cooperatives.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "fai-farms": {
-      "name": "FAI Farms",
-      "kind": "organisation",
-      "categories": [
-        "welfare-science"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "farmed-fish"
-      ]
+    "animal-rights-center-japan": {
+      "summary": "Tokyo-based certified nonprofit, established in 1987, focused on reducing the suffering of animals used for food. Carries out farm investigations, corporate outreach and negotiation, street activism, education and awareness surveys; projects include a company welfare benchmark and a sanctuary. Its #ShrimpsMatter campaign, launched in August 2021 with funding from Compassion in World Farming, informs consumers about eyestalk ablation of breeder shrimp.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "wageningen-university": {
-      "name": "Wageningen University & Research",
-      "aliases": [
-        "Wageningen University"
-      ],
-      "kind": "organisation",
-      "categories": [
-        "welfare-science"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
-      "species": [
-        "wild-fish"
-      ],
-      "regions": [
-        "europe"
-      ]
+    "animal-kingdom": {
+      "summary": "Philippine non-profit founded in 2002. Runs a rescue centre and low-cost clinic and campaigns to end the dog meat trade; its campaigns also include 'Cage-Free, Go Cruel-Free' for laying hens and 'Better Fish Tomorrow'. Also responds to disasters affecting animals. Its 'Better Fish, Tomorrow' campaign works on farmed fish welfare: a study of farmers' and stakeholders' views, educational materials and a call to include fish welfare in aquaculture policy.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "animal-law-italia": {
-      "name": "Animal Law Italia",
-      "kind": "organisation",
-      "categories": [
-        "policy-law"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "crustaceans"
-      ],
-      "regions": [
-        "europe"
-      ]
+    "fundacion-veg": {
+      "summary": "Non-profit created in Santiago, Chile, in 2012 to promote plant-based eating and reduce the suffering of animals raised for food in Latin America. Runs vegan product certification, the Cambia Tu Plato food campaign and policy advocacy, with teams in Argentina, Chile, Colombia, Mexico and Peru. In July 2024 it published a survey with Inside Research on how Chileans perceive fish and other aquatic animals as sentient beings.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "awash": {
-      "name": "AWASH",
-      "kind": "organisation",
-      "categories": [
-        "advocacy-campaigns"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "farmed-fish"
-      ],
-      "regions": [
-        "africa"
-      ]
+    "animal-law-focus": {
+      "summary": "Chile-rooted legal organisation that uses the law against cruelty to farmed animals in the Global South. Researches regulatory gaps, files complaints, proposes reforms and works with authorities and companies; programmes cover farm animals, animals in aquaculture and Veg Focus. Its aquaculture programme runs the #22Minutos campaign for recognition of fish sentience, an interactive map of Chile's aquaculture sites and a ranking of companies by violations.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "mtu-loomus": {
-      "name": "MTÜ Loomus",
-      "kind": "organisation",
-      "categories": [
-        "advocacy-campaigns"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "farmed-fish"
-      ],
-      "regions": [
-        "europe"
-      ]
+    "l214": {
+      "summary": "French association defending animals used for food (meat, milk, eggs, fish). Since 2008 it has published more than 175 filmed investigations into farming, transport and slaughter conditions, and campaigns for change at political and individual level. On fish it publishes a dossier on fishing and aquaculture and an investigation of trout farms and a trout slaughterhouse of the Aqualande group.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "animal-activism-collective": {
-      "name": "Animal Activism Collective",
-      "kind": "organisation",
-      "categories": [
-        "advocacy-campaigns"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "crustaceans"
-      ]
+    "project-1882": {
+      "summary": "Swedish animal rights and animal protection membership organisation, active since 1882 and known internationally as Project 1882. Runs targeted campaigns, corporate outreach and political advocacy for animals in factory farms, fur farms and experiments. On fishes it seeks stronger welfare law in Sweden and the EU, a ban on carbon dioxide stunning at slaughter, legal coverage of wild-caught fish and welfare criteria in fish certifications.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "fundacion-derecho-y-defensa-animal": {
-      "name": "Fundación Derecho y Defensa Animal",
-      "kind": "organisation",
-      "categories": [
-        "policy-law"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "farmed-fish"
-      ],
-      "regions": [
-        "latin-america"
-      ]
+    "animal-outlook": {
+      "summary": "US national non-profit animal advocacy organisation, formed in 1995 as Compassion Over Killing and based in Washington, D.C. Its investigators, attorneys and advocates expose conditions in animal agribusiness, pursue legal accountability and promote vegan eating. It investigated Cooke Aquaculture's salmon hatchery in Maine in 2019 and published a return investigation of the same facility in May 2026.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "center-for-responsible-seafood": {
-      "name": "Center for Responsible Seafood",
-      "kind": "organisation",
-      "categories": [
-        "welfare-technology"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "crustaceans"
-      ]
+    "global-animal-partnership": {
+      "summary": "US non-profit that develops and publishes welfare standards for farm animals, structured as a five-tier 'Five Step' animal welfare programme, and labels products from farms certified to those standards. Founded in 2008 with assistance from Whole Foods Market. Its standards include Farmed Atlantic Salmon Standards v1.0 and Farmed Atlantic Salmon Slaughter Facility Standards v1.0, issued in June 2022.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "national-lottery-community-fund": {
-      "name": "National Lottery Community Fund",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "regions": [
-        "uk"
-      ]
+    "safe-nz": {
+      "summary": "New Zealand animal rights charity that uses research, strategic communications, investigations and public support to drive institutional, political and societal change for animals, with campaigns on farmed animals and the animal welfare system. On fish it calls for an immediate halt to proposed fish farm expansions and new developments, citing repeated mass mortality events on Chinook salmon farms.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "sharegift": {
-      "name": "ShareGift",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "regions": [
-        "uk"
-      ]
+    "animals-aotearoa": {
+      "summary": "New Zealand organisation, part of the Open Wing Alliance, working to end the abuse of farmed animals. Its work centres on chicken welfare, including corporate campaigns and an election scorecard on farmed animal welfare. It campaigns for a pre-emptive ban on octopus factory farming in New Zealand, including an open letter to the Government signed by 169 organisations and a petition.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     },
-    "bbsrc": {
-      "name": "BBSRC (UKRI)",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "aliases": [
-        "Biotechnology and Biological Sciences Research Council"
-      ],
-      "regions": [
-        "uk"
-      ]
-    },
-    "science-for-animal-welfare": {
-      "name": "Science for Animal Welfare",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "aliases": [
-        "UFAW",
-        "Universities Federation for Animal Welfare"
-      ],
-      "regions": [
-        "uk"
-      ]
-    },
-    "kickstarting-for-good": {
-      "name": "Kickstarting for Good",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
-    },
-    "blueperch": {
-      "name": "BluePerch",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched.",
-      "species": [
-        "farmed-fish",
-        "wild-fish"
-      ]
-    },
-    "who-let-docs-out": {
-      "name": "Who Let the Docs Out",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
-    },
-    "strategic-animal-funding-circle": {
-      "name": "Strategic Animal Funding Circle",
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched."
-    },
-    "european-commission": {
-      "name": "European Commission (Horizon Europe)",
-      "aliases": [
-        "European Commission"
-      ],
-      "kind": "funder",
-      "categories": [
-        "funding"
-      ],
-      "_why": "Stub created from a grant/call record; name and category set from that record (2026-11-05). Profile not yet researched. The alias is the plain name news posts use, for spotting mentions (2026-11-13).",
-      "regions": [
-        "europe"
-      ]
+    "welfarm": {
+      "summary": "French association, with a mission recognised as being of public utility, that works for better consideration of the welfare of farmed animals at every stage of their lives: rearing, transport and slaughter. Also produces educational material for teachers. On fish it opposes three planned very large intensive salmon farms in France, calls for a moratorium on such farms and for mandatory stunning of fish before slaughter; campaign launched in April 2024.",
+      "_why": "Found by both the aquatic and the movement-wide research pass (2026-11-19). The summary joins the whole-organisation description with its aquatic work, in the two passes' own words."
     }
   }
 }

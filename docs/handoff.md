@@ -1,7 +1,34 @@
 # Handoff: Animal Movement Map
 
-Start here. Written for the owner and the next agent. Last updated 13 November 2026, after the audit fixes and two
-reviews of them. Deployment record updated 15 November 2026.
+Start here. Written for the owner and the next agent. Last updated 20 November 2026, after the interface
+rebuild and the deep search for missing organisations.
+
+## Update: 19-20 November 2026 (interface rebuild and deep search)
+
+**Interface.** A red-team of the page found seven problems; all are fixed and live. Search reads every tag and
+tolerates typos; a region filter labels entries that match only because they work globally; a new Coverage view shows
+animals against regions or methods; Changes opens on checked records; phones get 44px targets, a collapsed overview
+and a filter sheet; filters live in the link. The owner then asked for three simplifications, also live: no
+"works on aquatic animals" mark, no Funding page, and each entry shown once on the Map, under its main area.
+
+**Data.** Four research passes looked for missing organisations. The directory went from 117 entries (18 of them
+unresearched stubs) to 326 with no stubs, and from 103 records to 125. New files: `aquatic-gaps-*`, `funding-gaps-*`,
+`movement-south-entities.json`, `movement-west-entities.json`, `movement-west-more-entities.json`. Names that came up
+but could not be verified are in `docs/known-gaps.md`.
+
+- Twelve organisations were found by both the aquatic and the movement-wide pass. Their summaries in
+  `data/curated/overrides.json` join the whole-organisation description with its aquatic work.
+- The 18 stub overrides are gone: the researched profiles replace them.
+- Three funding calls that were known only from a newsletter now have primary-source records; the old records
+  carry `same_as` and fold into the new ones.
+- Names that are also everyday phrases ("A-LAW" reads as "a law", "Fish Feel", "Animal Ethics", "Animal Liberation")
+  are listed in `GENERIC_MENTIONS` in `src/lib/feeds.js` and never link a feed post to an entry.
+- The build's safety check now also records how many records each input file held (`-- inputs` at the top of
+  `db/seed.sql`) and refuses a build where a file is gone or has lost more than half. The percentage checks stopped
+  catching a lost file once there were ten files.
+
+The snapshot's shape is unchanged, so Movement Match needs no change; it will see 326 entities at its next hourly read.
+With about 450 sources and 6 checked per hour, the first check of every new source takes about three days.
 
 ## Production deployment: 14 November 2026
 
@@ -50,7 +77,7 @@ local D1, started through wrangler with a throwaway config: no account, no remot
 
 ```bash
 npm ci
-npm test         # 73 tests, about 6 seconds
+npm test         # 75 tests, about 6 seconds
 npm run build    # writes db/seed.sql, public/snapshot.json, data/seed/build-report.md
 npm run dev      # local site with a local database
 ```

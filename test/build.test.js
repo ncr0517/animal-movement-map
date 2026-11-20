@@ -50,7 +50,7 @@ test('a build that drops many entities or events is refused', () => {
   assert.deepEqual(shrinkProblems(null, counts(40, 1)), []);
   const r = build([], { entities: [ent('a-org'), ent('b-org', { name: "O'Brien Trust" })] });
   const sql = seedSql(r, '2026-11-12T00:00:00.000Z') + "INSERT INTO entities (id,name,kind,parent_id,primary_category,section,status,profile,stub,last_checked,updated_at) VALUES ('s','S','funder',NULL,'funding','funding','unclear','{\"x\":\"a,1,NULL,''b'');\"}',1,NULL,'2026-11-12');\n";
-  assert.deepEqual(seedCounts(sql), { entities: 3, researched: 2, sections: { test: 2 }, events: 0 });
+  assert.deepEqual(seedCounts(sql), { entities: 3, researched: 2, sections: { test: 2 }, events: 0, inputs: { 'test-entities.json': 2, 'test-events.json': 0 } });
 });
 
 test('a build without one research file is refused, even though records keep its entries as stubs', () => {
@@ -65,6 +65,22 @@ test('a build without one research file is refused, even though records keep its
     assert.ok(shrinkProblems(committed, next).length > 0, `aquatic-entities.json ${mode}`);
   }
   assert.deepEqual(shrinkProblems(committed, seedCounts(seedSql(buildSeed(readInputs(ROOT)), '2026-11-13T00:00:00.000Z'))), []);
+});
+
+test('a missing or halved input file is refused even when it is a small share of the whole', () => {
+  const file = (name, n) => ({ name, dir: 'research', records: Array.from({ length: n }, (_, i) => ent(`${name.replace(/[^a-z0-9]+/g, '-')}-${i}`)) });
+  const events = [{ name: 'x-events.json', dir: 'research', records: [] }];
+  // One small file among ten in the same section: neither the 10% rule nor the half-a-section rule can see it go.
+  const files = [file('movement-extra-entities.json', 12), ...Array.from({ length: 9 }, (_, i) => file(`movement-part${i}-entities.json`, 40))];
+  const counts = (entityFiles) => seedCounts(seedSql(buildSeed({ entityFiles, eventFiles: events }), '2026-11-20T00:00:00.000Z'));
+  const committed = counts(files);
+  assert.equal(committed.inputs['movement-extra-entities.json'], 12);
+  assert.deepEqual(shrinkProblems(committed, committed), []);
+  const without = counts(files.slice(1));
+  assert.deepEqual(shrinkProblems({ ...committed, inputs: null }, without), [], 'the older checks alone let it through');
+  assert.match(shrinkProblems(committed, without).join('; '), /movement-extra-entities\.json: 12 records .* missing now/);
+  const halved = counts([file('movement-extra-entities.json', 5), ...files.slice(1)]);
+  assert.match(shrinkProblems(committed, halved).join('; '), /movement-extra-entities\.json: 12 records .* 5 now/);
 });
 
 // ---- Grant reconciliation --------------------------------------------------------------------------------
@@ -239,7 +255,7 @@ test('the research data builds without losing the second Shrimp Welfare Project 
   // Records keep the day they were researched, not the day of the build. Later research passes add later dates.
   assert.ok([...r.events.values()].every((e) => /^\d{4}-\d{2}-\d{2}$/.test(e.last_checked)), 'every event carries a research date');
   assert.equal(r.events.get('awf-shrimp-welfare-project-2026-q1-direct-work').last_checked, '2026-11-05', 'first-pass records keep their research date');
-  assert.deepEqual(r.roundTotals.sort(), ['ace-movement-grants-round-11-2026', 'wai-2026-research-grants']);
+  assert.deepEqual(r.roundTotals.sort(), ['ace-movement-grants-round-11-2026', 'aquatic-animal-funding-circle-2025-round', 'wai-2026-research-grants']);
   assert.equal(r.events.get('ace-movement-grants-round-11-2026').event_date, '2026-06');
   assert.deepEqual(r.sources.filter((s) => s.reuse === 'headline').map((s) => s.entity_id).sort(), ['animal-charity-evaluators', 'faunalytics', 'sentient-media']);
   assert.deepEqual(r.warnings.filter((w) => !/^alias "AAA"/.test(w)), [], 'no new warnings in the research data');

@@ -1,0 +1,3430 @@
+[
+  {
+    "id": "mercy-for-animals-india",
+    "name": "Mercy For Animals India",
+    "aliases": [
+      "MFA India"
+    ],
+    "kind": "programme",
+    "parent_id": "mercy-for-animals",
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Indian arm of Mercy For Animals. Works to end the cruellest practices in food systems, including holding companies to cage-free egg pledges, to shift public perception of farmed animals and to promote plant-based eating. Contact address in Chennai.",
+    "website": "https://mercyforanimals.in",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://mercyforanimals.in/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mercyforanimals.in/",
+        "title": "Mercy For Animals India (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Start year of the India operation and the Indian legal entity are not stated on the site (footer: Mercy For Animals, Inc.)."
+  },
+  {
+    "id": "humane-world-for-animals-india",
+    "name": "Humane World for Animals India",
+    "aliases": [
+      "Humane Society International/India",
+      "HSI/India",
+      "HSI India"
+    ],
+    "kind": "programme",
+    "parent_id": "humane-world-for-animals",
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals",
+      "wild-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "diet-change",
+      "capacity-building",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Indian arm of Humane World for Animals (formerly Humane Society International/India). Works on street dog sterilisation and vaccination, disaster response, the dog meat trade, animal testing, human-wildlife coexistence, farmed animal welfare and plant-based food through its EatKind programme.",
+    "website": "https://www.humaneworld.org/en/india",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.humaneworld.org/en/india",
+        "title": "India | Humane World for Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year and office location in India are not stated on the page."
+  },
+  {
+    "id": "blue-cross-of-india",
+    "name": "Blue Cross of India",
+    "aliases": [
+      "BCI",
+      "Animal Aid Association"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "sanctuary-rescue",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "sanctuary",
+      "education",
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Chennai-based animal welfare organisation, formed in 1959 as the Animal Aid Association and renamed in 1964. Runs rescues, hospitals, shelters, ambulances, adoptions and humane education; it started the Animal Birth Control-anti-rabies (ABC-AR) programme for street dogs, national policy since 1997.",
+    "website": "https://bluecrossofindia.org",
+    "hq": "India",
+    "founded": "1959",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://bluecrossofindia.org/",
+        "title": "Blue Cross of India (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founded 1959 as Animal Aid Association; took the name Blue Cross of India in 1964 (own timeline). No RSS feed at /feed/ (404)."
+  },
+  {
+    "id": "samayu",
+    "name": "Samayu",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish",
+      "chickens",
+      "companion-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "research",
+      "legislation-policy",
+      "farm-practices",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Indian non-profit working at the intersection of food, health and justice. Combines research, policy advocacy and community work on aquaculture reform, poultry antimicrobial resistance with state governments, faith-based engagement on animals, food-system convenings and dog coexistence.",
+    "website": "https://samayu.org",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://samayu.org/",
+        "title": "Samayu (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the site. Not fish-only: also works on poultry and dogs. /feed/ returns RSS with no items, so no feed listed. Also profiled in aquatic-gaps-entities.json under the same id; the build merges the two records (this one adds the movement-wide tags)."
+  },
+  {
+    "id": "animal-law-centre-nalsar",
+    "name": "Animal Law Centre, NALSAR University of Law",
+    "aliases": [
+      "ALC",
+      "NALSAR Animal Law Centre"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "research",
+      "education",
+      "legislation-policy"
+    ],
+    "approach": "research",
+    "summary": "Research centre on animal law and policy at NALSAR University of Law, set up in 2016 in collaboration with Humane Society International/India. Offers an advanced diploma and a master's degree in animal protection laws and runs a student animal law clinic producing policy papers and draft petitions.",
+    "website": "https://animallawcentre.nalsar.ac.in",
+    "hq": "India",
+    "founded": "2016",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animallawcentre.nalsar.ac.in/",
+        "title": "Animal Law Centre, NALSAR University of Law",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "University research centre; its host university is not an entity on the map, so parent_id is null."
+  },
+  {
+    "id": "plant-based-foods-industry-association",
+    "name": "Plant Based Foods Industry Association",
+    "aliases": [
+      "PBFIA",
+      "Plant Based Food Industry Association"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Indian trade association for plant-based food companies. Engages government, regulators and standards bodies, offers members innovation, supply chain, policy and investment services, and hosts the Plant Based Foods Show. Founding member of the International Plant Based Foods Global Alliance.",
+    "website": "https://pbfia.org",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://pbfia.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://pbfia.org/",
+        "title": "Plant Based Foods Industry Association (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year and office location not stated on the homepage."
+  },
+  {
+    "id": "good-food-institute-india",
+    "name": "The Good Food Institute India",
+    "aliases": [
+      "Good Food Institute India",
+      "Alternative Protein Solutions Pvt. Ltd.",
+      "APSPL"
+    ],
+    "kind": "programme",
+    "parent_id": "good-food-institute",
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "research",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "India affiliate in the Good Food Institute network, focused on the country's 'smart protein' sector (plant-based, cultivated and fermentation-derived). Provides market intelligence, research, ecosystem development and advisory support to companies, public institutions, academia and civil society.",
+    "website": "https://gfi-india.org",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://gfi-india.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://gfi-india.org/",
+        "title": "GFI India (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site states 'GFI India refers to the brand name used by Alternative Protein Solutions Pvt. Ltd. (APSPL)'; footer copyright The Good Food Institute. gfi.org.in redirects to gfi-india.org. Founding year not stated. Commonly called 'GFI India': that short name is currently an alias of good-food-institute on the map, and the build merges any record carrying it into the parent, so it is left out of this record's aliases; move the alias here to keep the affiliate separate."
+  },
+  {
+    "id": "india-animal-fund",
+    "name": "India Animal Fund",
+    "aliases": [
+      "IAF"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "grantmaking",
+      "capacity-building",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Self-described backbone organisation for farmed animal welfare in India. Funds and incubates organisations directly and by advising philanthropists and foundations, connects animal welfare groups with businesses, academics and policymakers, and commissions research on food systems.",
+    "website": "https://indiaanimalfund.org",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://indiaanimalfund.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://indiaanimalfund.org/",
+        "title": "Farmed Animal Welfare in India | India Animal Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://indiaanimalfund.org/about-us/",
+        "title": "About India Animal Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the pages fetched. A funder/intermediary; flagged for the funders pass in case of overlap."
+  },
+  {
+    "id": "animals-asia",
+    "name": "Animals Asia Foundation",
+    "aliases": [
+      "Animals Asia",
+      "AAF"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "wild-animals",
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "east-asia",
+      "southeast-asia"
+    ],
+    "countries": [
+      "HK",
+      "CN",
+      "VN"
+    ],
+    "interventions": [
+      "sanctuary",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Hong Kong-based charity founded in 1998 that works to end cruelty to animals in Asia. Campaigns against bear bile farming, promotes alternatives to bile and runs moon bear sanctuaries in China and Vietnam; has offices in mainland China, Germany, Australia, the US and the UK.",
+    "website": "https://www.animalsasia.org",
+    "hq": "Hong Kong",
+    "founded": "1998",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Animals_Asia_Foundation",
+        "title": "Animals Asia Foundation - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Own site (animalsasia.org) returned 403 (Cloudflare challenge) to automated fetches; facts taken from Wikipedia, which also gives the website URL."
+  },
+  {
+    "id": "good-food-fund",
+    "name": "Good Food Fund",
+    "aliases": [
+      "良食基金",
+      "GoodFood Fund",
+      "绿发会良食专项基金",
+      "CBCGDF Good Food Fund"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "CN"
+    ],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "education",
+      "capacity-building"
+    ],
+    "approach": "mixed",
+    "summary": "Special fund under the China Biodiversity Conservation and Green Development Foundation that promotes healthy, sustainable food systems in China. Runs the Good Food Summit, the Good Food Pledge, a Meatless Monday project and a fellowship; its consensus statement rejects the abuse of farmed animals.",
+    "website": "https://www.goodfoodchina.net/en",
+    "hq": "China",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.goodfoodchina.net/en",
+        "title": "Home - GoodFood Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Relationship to the foundation (绿发会, founded 1985) is from the site's Chinese meta description. Founding year of the fund not stated. Parent foundation is not on the map, so parent_id is null."
+  },
+  {
+    "id": "iccaw",
+    "name": "International Cooperation Committee of Animal Welfare",
+    "aliases": [
+      "ICCAW",
+      "动物福利与可持续农食分会",
+      "Animal Welfare International Cooperation Branch of the China Association for the Promotion of International Agricultural Cooperation"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "CN"
+    ],
+    "interventions": [
+      "certification-standards",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Beijing-based animal welfare branch of the China Association for the Promotion of International Agricultural Cooperation, established in 2013. Promotes animal welfare concepts and welfare-friendly farming systems, including through China's farm animal welfare standards.",
+    "website": "http://www.iccaw.org.cn",
+    "hq": "China",
+    "founded": "2013",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.unccd.int/cso/animal-welfare-international-cooperation-branch-china-association-promotion-international",
+        "title": "UNCCD civil society organisations: Animal Welfare International Cooperation Branch of CAPIAC",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://uia.org/s/or/en/1122282670",
+        "title": "International Cooperation Committee of Animal Welfare (ICCAW) - UIA Global Civil Society Database",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Own site (iccaw.org.cn) was unreachable from this session (connection reset / 503); facts from the UNCCD and UIA listings, which both give that website. Partner pages describing its pig and poultry welfare work (Compassion in World Farming) returned 429 and were seen only as search snippets, so they are not cited."
+  },
+  {
+    "id": "environment-and-animal-society-of-taiwan",
+    "name": "Environment & Animal Society of Taiwan",
+    "aliases": [
+      "EAST",
+      "台灣動物社會研究會"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs",
+      "animals-in-research",
+      "wild-animals",
+      "companion-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "TW"
+    ],
+    "interventions": [
+      "investigations",
+      "legislation-policy",
+      "corporate-campaigns",
+      "certification-standards",
+      "producer-engagement",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Taiwanese animal protection organisation working through investigation, legislative and corporate lobbying, industry guidance and education. Campaigns cover laying hens, ducks, pigs and other farmed animals, animals in research, entertainment and wildlife; runs the EAST Certified welfare scheme.",
+    "website": "https://www.east.org.tw/en/",
+    "hq": "Taiwan",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.east.org.tw/en/",
+        "title": "Environment & Animal Society of Taiwan (EAST) - English site",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.east.org.tw/",
+        "title": "台灣動物社會研究會 (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the pages fetched. No working RSS feed found (/rss.xml is not a feed)."
+  },
+  {
+    "id": "animal-rights-center-japan",
+    "name": "Animal Rights Center Japan",
+    "aliases": [
+      "ARCJ",
+      "アニマルライツセンター",
+      "Animal Rights Center"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "JP"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "investigations",
+      "public-awareness",
+      "protest",
+      "education",
+      "research"
+    ],
+    "approach": "mixed",
+    "summary": "Tokyo-based certified nonprofit, established in 1987, focused on reducing the suffering of animals used for food. Carries out farm investigations, corporate outreach and negotiation, street activism, education and awareness surveys; projects include a company welfare benchmark and a sanctuary.",
+    "website": "https://arcj.org/en/",
+    "hq": "Japan",
+    "founded": "1987",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://arcj.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arcj.org/en/",
+        "title": "Animal Rights Center Japan (English homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://arcj.org/en/about-us/",
+        "title": "About us - Animal Rights Center Japan",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Established October 1987; approved specified nonprofit corporation since 18 August 2017 (about page). Feed is the main Japanese-language feed; an English feed also exists at /en/feed/. Also profiled in aquatic-gaps-entities.json under the same id; the build merges the two records (this one adds the movement-wide tags)."
+  },
+  {
+    "id": "japan-anti-vivisection-association",
+    "name": "Japan Anti-Vivisection Association",
+    "aliases": [
+      "JAVA",
+      "動物実験の廃止を求める会"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "animals-in-research",
+      "all-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "JP"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "Tokyo-based nationwide citizens' group (NPO) established in 1986 that campaigns to end animal testing. Asks research institutions and cosmetics companies to adopt non-animal methods, petitions for a legal ban on cosmetics testing on animals and promotes alternatives.",
+    "website": "https://www.java-animal.org",
+    "hq": "Japan",
+    "founded": "1986",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.java-animal.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.java-animal.org/",
+        "title": "動物実験の廃止を求める会（JAVA） (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.java-animal.org/english/",
+        "title": "JAVA - English page",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Approach set to abolitionist because the stated mission is to stop all animal testing."
+  },
+  {
+    "id": "korea-animal-rights-advocates",
+    "name": "Korea Animal Rights Advocates",
+    "aliases": [
+      "KARA",
+      "동물권행동 카라",
+      "카라"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "education",
+      "sanctuary",
+      "public-awareness",
+      "investigations"
+    ],
+    "approach": "mixed",
+    "summary": "South Korean animal rights nonprofit funded by citizen donations. Campaigns on the dog meat trade, farmed animals, animal testing, wildlife and exhibitions and animal protection law, investigates breeding facilities, and runs an adoption centre, an animal hospital and an education centre.",
+    "website": "https://www.ekara.org",
+    "hq": "South Korea",
+    "founded": "2002",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.ekara.org/",
+        "title": "동물권행동 카라 (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Korea_Animal_Rights_Advocates",
+        "title": "Korea Animal Rights Advocates - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year 2002 (as Arumppom; registered as a nonprofit and renamed KARA in 2006) from Wikipedia. Own site lists the secretariat in Paju, Gyeonggi; Wikipedia gives Seoul."
+  },
+  {
+    "id": "korean-animal-welfare-association",
+    "name": "Korean Animal Welfare Association",
+    "aliases": [
+      "KAWA",
+      "동물자유연대"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "chickens",
+      "wild-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "sanctuary",
+      "public-awareness",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Seoul-based incorporated association funded by citizen donations. Campaigns to free bears from bile farms, for cage-free farming of hens, against puppy mills, animal exhibitions and dog meat, conducts animal welfare research and runs a rescue and adoption shelter.",
+    "website": "https://www.animals.or.kr",
+    "hq": "South Korea",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animals.or.kr/",
+        "title": "동물자유연대 (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the homepage. 'corporate-campaigns' reflects the cage-free hen campaign listed on the site; the campaign's targets were not checked in detail."
+  },
+  {
+    "id": "animal-liberation-wave",
+    "name": "Animal Liberation Wave",
+    "aliases": [
+      "ALW",
+      "동물해방물결",
+      "Dongmul Haebang Mulgyeol"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "interventions": [
+      "public-awareness",
+      "diet-change",
+      "protest",
+      "legislation-policy"
+    ],
+    "approach": "abolitionist",
+    "summary": "South Korean animal rights group launched in November 2017 with an anti-speciesist platform. Seeks an end to the use of animals for companionship trade, exhibition, farming and research, promotes veganism and aims to influence policy; its charter commits it to non-violence.",
+    "website": "https://donghaemul.com",
+    "hq": "South Korea",
+    "founded": "2017",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.dailyvet.co.kr/?p=86333",
+        "title": "'느끼는 모두에게 자유를' 동물권단체 '동물해방물결' 발족 - Daily Vet",
+        "accessed": "2026-11-19",
+        "published": "2017-11-15"
+      }
+    ],
+    "notes": "Own site (donghaemul.com) blocks automated access (403); facts from Korean veterinary news coverage of the launch, which names the site. Later activity (e.g. campaigning for the dog meat ban) was seen only in search snippets and is not asserted here."
+  },
+  {
+    "id": "humane-world-for-animals-south-korea",
+    "name": "Humane World for Animals South Korea",
+    "aliases": [
+      "Humane World for Animals Korea",
+      "Humane Society International/Korea",
+      "HSI/Korea"
+    ],
+    "kind": "programme",
+    "parent_id": "humane-world-for-animals",
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "companion-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "east-asia"
+    ],
+    "countries": [
+      "KR"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "South Korea programme of Humane World for Animals. Campaigned for the national dog meat ban, helping close 18 farms and rescue more than 2,700 dogs, and works on the phase-out; also campaigns to replace animal testing for cosmetics, chemicals and vaccines with animal-free methods.",
+    "website": "https://www.humaneworld.org/south-korea/en",
+    "hq": "South Korea",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.humaneworld.org/south-korea/en",
+        "title": "South Korea | Humane World for Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Page does not give the local entity name, start year or office; 'HSI/Korea' alias reflects the parent's former name (Humane Society International)."
+  },
+  {
+    "id": "act-for-farmed-animals",
+    "name": "Act for Farmed Animals",
+    "aliases": [
+      "AFFA"
+    ],
+    "kind": "programme",
+    "parent_id": "animal-friends-jogja",
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "ID"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "diet-change",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Collaborative initiative of Animal Friends Jogja and Sinergia Animal to reduce the suffering of farmed animals in Indonesia and promote more compassionate food choices. Runs a cage-free programme (Bebas Sangkar) and a food programme (Nutrisi Esok Hari), reporting results since 2020.",
+    "website": "https://actforfarmedanimals.org",
+    "hq": "Indonesia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://actforfarmedanimals.org/",
+        "title": "Act for Farmed Animals (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Joint initiative of two entities already on the map (animal-friends-jogja and sinergia-animal); parent_id set to the Indonesian partner. Start year not stated (impact counted from 2020)."
+  },
+  {
+    "id": "jakarta-animal-aid-network",
+    "name": "Jakarta Animal Aid Network",
+    "aliases": [
+      "JAAN",
+      "Yayasan JAAN Kesejahteraan Hewan",
+      "JAAN Domestic"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "sanctuary-rescue",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals",
+      "wild-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "ID"
+    ],
+    "interventions": [
+      "sanctuary",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Indonesian grassroots non-profit established in February 2008 as a contact point for reporting animal abuse. Has a domestic division (dogs, cats, horses) and a wildlife and marine division; programmes centre on rescue, rehabilitation and raising awareness of animal suffering.",
+    "website": "https://www.jaandomestic.org",
+    "hq": "Indonesia",
+    "founded": "2008",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.jaandomestic.org/aboutus",
+        "title": "About us - JAAN Domestic",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Website given is the domestic division's site (verified). The main site jakartaanimalaid.com failed TLS verification (self-signed certificate) from this session. Domestic division registered since 2020 as Yayasan JAAN Kesejahteraan Hewan."
+  },
+  {
+    "id": "animal-kingdom-foundation",
+    "name": "Animal Kingdom Foundation",
+    "aliases": [
+      "AKF"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "companion-animals",
+      "chickens",
+      "farmed-fish",
+      "farmed-animals"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "PH"
+    ],
+    "interventions": [
+      "sanctuary",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Philippine non-profit founded in 2002. Runs a rescue centre and low-cost clinic and campaigns to end the dog meat trade; its campaigns also include 'Cage-Free, Go Cruel-Free' for laying hens and 'Better Fish Tomorrow'. Also responds to disasters affecting animals.",
+    "website": "https://www.akfrescues.org",
+    "hq": "Philippines",
+    "founded": "2002",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.akfrescues.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.akfrescues.org/",
+        "title": "Animal Kingdom Foundation | Animal Welfare Philippines",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Kingdom_Foundation",
+        "title": "Animal Kingdom Foundation - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Based in Capas, Tarlac (Wikipedia). Older domain akf.org.ph returned 503. Also profiled in aquatic-gaps-entities.json under the same id; the build merges the two records (this one adds the movement-wide tags)."
+  },
+  {
+    "id": "philippine-animal-welfare-society",
+    "name": "Philippine Animal Welfare Society",
+    "aliases": [
+      "PAWS Philippines"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "PH"
+    ],
+    "interventions": [
+      "education",
+      "legislation-policy",
+      "sanctuary",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Volunteer-based animal welfare NGO in Quezon City, founded in 1954 and reorganised in 1986. Runs an animal rehabilitation centre and low-cost spay/neuter clinic, campaigns against cruelty such as dog and horse fights, and lobbied for the Animal Welfare Act of 1998 and the Anti-Rabies Act of 2007.",
+    "website": "https://paws.org.ph",
+    "hq": "Philippines",
+    "founded": "1954",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://paws.org.ph/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://paws.org.ph/about-us/",
+        "title": "About us - Philippine Animal Welfare Society",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Usually called PAWS; the bare acronym is left out of aliases because other organisations share it."
+  },
+  {
+    "id": "humane-world-for-animals-viet-nam",
+    "name": "Humane World for Animals Viet Nam",
+    "aliases": [
+      "Humane Society International Viet Nam",
+      "HSI Viet Nam",
+      "HSI Vietnam"
+    ],
+    "kind": "programme",
+    "parent_id": "humane-world-for-animals",
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "companion-animals",
+      "wild-animals",
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "VN"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "producer-engagement",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Viet Nam programme of Humane World for Animals. Works with provincial authorities against the dog and cat meat trades and on rabies control, on wildlife trade and legal reform, with companies and producers on cage-free and other farmed animal welfare changes, and on disaster response.",
+    "website": "https://www.humaneworld.org/en/viet-nam",
+    "hq": "Vietnam",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.humaneworld.org/en/viet-nam",
+        "title": "Viet Nam | Humane World for Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Start year and office location not stated; 'HSI' aliases reflect the parent's former name."
+  },
+  {
+    "id": "soi-dog-foundation",
+    "name": "Soi Dog Foundation",
+    "aliases": [
+      "Soi Dog"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "sanctuary-rescue",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals"
+    ],
+    "regions": [
+      "southeast-asia"
+    ],
+    "countries": [
+      "TH",
+      "KH",
+      "PH",
+      "VN"
+    ],
+    "interventions": [
+      "sanctuary",
+      "legislation-policy",
+      "education",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Non-profit founded in Phuket, Thailand, in 2003 for stray dogs and cats. Runs rescue, a shelter hospital, mass sterilisation and vaccination (CNVR), adoption, emergency response and education, and campaigns to end the dog and cat meat trade in Asia.",
+    "website": "https://www.soidog.org",
+    "hq": "Thailand",
+    "founded": "2003",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.soidog.org/content/about-us",
+        "title": "Our work - Soi Dog Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Soi_Dog_Foundation",
+        "title": "Soi Dog Foundation - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year, headquarters and expansion into Cambodia, the Philippines and Vietnam are from Wikipedia. Companion-animal organisation, included as a central institution in Thailand."
+  },
+  {
+    "id": "good-food-institute-apac",
+    "name": "The Good Food Institute Asia Pacific",
+    "aliases": [
+      "Good Food Institute APAC",
+      "GFI Asia Pacific"
+    ],
+    "kind": "programme",
+    "parent_id": "good-food-institute",
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "asia"
+    ],
+    "countries": [
+      "SG",
+      "MY",
+      "TH",
+      "ID",
+      "JP",
+      "KR"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "research",
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Singapore-headquartered registered charity in the Good Food Institute network, working as an alternative protein think tank for Asia through open-access food science R&D, corporate engagement and public policy, with emphasis on Singapore, Malaysia, Thailand, Indonesia, Japan and South Korea.",
+    "website": "https://gfi-apac.org",
+    "hq": "Singapore",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://gfi-apac.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://gfi-apac.org/",
+        "title": "GFI APAC (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://gfi-apac.org/about/",
+        "title": "About - GFI APAC",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated. Commonly called 'GFI APAC': that short name is currently an alias of good-food-institute on the map, and the build merges any record carrying it into the parent, so it is left out of this record's aliases; move the alias here to keep the affiliate separate."
+  },
+  {
+    "id": "apac-society-for-cellular-agriculture",
+    "name": "APAC Society for Cellular Agriculture",
+    "aliases": [
+      "APAC-SCA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "asia"
+    ],
+    "countries": [],
+    "interventions": [
+      "alt-proteins",
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Membership association, established in 2022, of companies making food and feed with cultivated and precision-fermentation technologies in the Asia-Pacific. Tracks policy and regulatory changes for members and runs a regulatory coordination forum, an investment forum, training and a student chapter.",
+    "website": "https://www.apac-sca.org",
+    "hq": null,
+    "founded": "2022",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.apac-sca.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.apac-sca.org/",
+        "title": "Cell Ag | APAC Society for Cellular Agriculture",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Headquarters not stated on the homepage. Remit covers Asia-Pacific, including Australia and New Zealand regulatory updates."
+  },
+  {
+    "id": "animal-alliance-asia",
+    "name": "Animal Alliance Asia",
+    "aliases": [
+      "AAA (Asia)"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure",
+      "incubation-careers"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "asia"
+    ],
+    "countries": [],
+    "interventions": [
+      "capacity-building",
+      "grantmaking",
+      "diet-change",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Organisation founded in 2019 to build and mobilise local animal justice and vegan advocates across Asia. Runs New Waves Asia (advocate mobilisation in seven Asian countries), the ReRoot Asia Fund (mentorship and funding for farmed animal projects) and the Animal Advocacy Conference Asia.",
+    "website": "https://www.animalallianceasia.org",
+    "hq": null,
+    "founded": "2019",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animalallianceasia.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animalallianceasia.org/",
+        "title": "Animal Alliance Asia (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animalallianceasia.org/about",
+        "title": "About - Animal Alliance Asia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Country of registration and the seven programme countries are not named on the pages fetched. Shares the abbreviation AAA with Animal Advocacy Africa and the Aquatic Animal Alliance."
+  },
+  {
+    "id": "good-growth",
+    "name": "The Good Growth Co",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "asia"
+    ],
+    "countries": [
+      "CN",
+      "IN"
+    ],
+    "interventions": [
+      "research",
+      "capacity-building"
+    ],
+    "approach": "research",
+    "summary": "Research and strategy consultancy, launched in 2018, working on food systems in Asia for NGOs, alternative protein brands and funders. Offers consumer research, landscape reviews, strategy consulting and workshops; published work covers China, India and Southeast Asia.",
+    "website": "https://www.goodgrowth.io",
+    "hq": null,
+    "founded": "2018",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.goodgrowth.io/",
+        "title": "The Good Growth Co (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Brand name is 'Good Growth'; it is left out of aliases because, as an ordinary phrase, it would trigger false mention matches in feed text. Headquarters not stated on the site."
+  },
+  {
+    "id": "animal-nepal",
+    "name": "Animal Nepal",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "companion-animals",
+      "farmed-animals",
+      "chickens",
+      "all-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "NP"
+    ],
+    "interventions": [
+      "sanctuary",
+      "legislation-policy",
+      "farm-practices",
+      "education",
+      "capacity-building"
+    ],
+    "approach": "welfare-reform",
+    "summary": "NGO registered in 2009 and based in Lalitpur. Runs companion animal, equine welfare and sanctuary programmes plus farm animal welfare work on live transport of buffaloes and a cage-free hen programme in Kathmandu, Chitwan and Pokhara; also trains police and works towards an Animal Welfare Act.",
+    "website": "https://animalnepal.org.np",
+    "hq": "Nepal",
+    "founded": "2009",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalnepal.org.np/",
+        "title": "Animal Nepal | Voice for the Voiceless Since 2009",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalnepal.org.np/who-we-are/",
+        "title": "Who we are - Animal Nepal",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "/feed/ returns RSS with no items, so no feed listed."
+  },
+  {
+    "id": "acf-animal-rescue",
+    "name": "ACF Animal Rescue",
+    "aliases": [
+      "Ayesha Chundrigar Foundation",
+      "ACF"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "sanctuary-rescue",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "PK"
+    ],
+    "interventions": [
+      "sanctuary",
+      "public-awareness",
+      "education",
+      "legislation-policy"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Karachi-based registered charity established in 2013. Takes in and rehabilitates injured, mistreated and homeless street and working animals, and runs community programmes and awareness campaigns that advocate for stronger animal protection laws in Pakistan.",
+    "website": "https://www.acfanimalrescue.org",
+    "hq": "Pakistan",
+    "founded": "2013",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.acfanimalrescue.org/",
+        "title": "ACF Animal Rescue (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.acfanimalrescue.org/us-in-a-nutshell",
+        "title": "Us in a nutshell - ACF Animal Rescue",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Organisation name includes its founder's name; no individual is listed as an entity."
+  },
+  {
+    "id": "animals-now",
+    "name": "Animals Now",
+    "aliases": [
+      "Anonymous for Animal Rights",
+      "Animals Now International"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "farmed-fish"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "IL"
+    ],
+    "interventions": [
+      "investigations",
+      "legislation-policy",
+      "diet-change",
+      "education",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Israeli non-profit established in 1994 as Anonymous for Animal Rights. Runs undercover investigations of animal industries and campaigns against cages and live transports, school education programmes, and Challenge 22, a 22-day guided programme for trying plant-based eating offered in 12 languages.",
+    "website": "https://animals-now.org/en/",
+    "hq": "Israel",
+    "founded": "1994",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://animals-now.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://animals-now.org/en/",
+        "title": "Animals Now (formerly Anonymous for Animal Rights)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animals-now.org/en/about/",
+        "title": "About us - Animals Now",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A separate US entity (Animals Now, Inc. / Animals Now International) partners with the Israeli organisation. Name is also an ordinary phrase ('...for animals now'), so mention detection in feed text may over-match; consider adding it to the generic-phrase skip list."
+  },
+  {
+    "id": "good-food-institute-israel",
+    "name": "The Good Food Institute Israel",
+    "aliases": [
+      "Good Food Institute Israel"
+    ],
+    "kind": "programme",
+    "parent_id": "good-food-institute",
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "IL"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "research",
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Israel organisation in the Good Food Institute's international network. Works as an alternative protein think tank through open-access food science and R&D, corporate engagement and public policy, covering plant-based, cultivated and fermentation-derived proteins.",
+    "website": "https://gfi.org.il",
+    "hq": "Israel",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://gfi.org.il/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://gfi.org.il/",
+        "title": "GFI Israel - the Good Food Institute Israel",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the homepage. Feed's latest item is from December 2025. Commonly called 'GFI Israel': that short name is currently an alias of good-food-institute on the map, and the build merges any record carrying it into the parent, so it is left out of this record's aliases; move the alias here to keep the affiliate separate."
+  },
+  {
+    "id": "269life",
+    "name": "269Life",
+    "aliases": [
+      "269 Life"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "direct-action"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "middle-east",
+      "global"
+    ],
+    "countries": [
+      "IL"
+    ],
+    "interventions": [
+      "protest",
+      "public-awareness",
+      "direct-action"
+    ],
+    "approach": "abolitionist",
+    "summary": "Animal rights movement that began in Tel Aviv in 2012, named after the ear-tag number of a calf on an Israeli dairy farm. It opposes all use of animals for food, research or entertainment and became known for public protest performances; loosely organised groups elsewhere have used the name.",
+    "website": "https://en.wikipedia.org/wiki/Animal_welfare_and_rights_in_Israel",
+    "hq": "Israel",
+    "founded": "2012",
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_welfare_and_rights_in_Israel",
+        "title": "Animal welfare and rights in Israel - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.timesofisrael.com/human-branding-for-animal-rights-catches-on/",
+        "title": "The Times of Israel (AP) report on the 269life movement",
+        "accessed": "2026-11-19",
+        "published": "2013-06-27"
+      }
+    ],
+    "notes": "Direct-action category entry kept strictly encyclopedic; the website field points to Wikipedia rather than a movement site. Sources date from 2012-2015, so current activity is not verified (status unclear)."
+  },
+  {
+    "id": "ciftlik-hayvanlarini-koruma-dernegi",
+    "name": "Çiftlik Hayvanlarını Koruma Derneği",
+    "aliases": [
+      "ÇHKD",
+      "CHKD",
+      "Kafessiz Türkiye",
+      "Farm Animal Protection Association"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens",
+      "farmed-fish",
+      "farmed-animals"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "TR"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "public-awareness",
+      "producer-engagement",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Turkish association founded in 2020 to improve welfare for egg-laying hens and farmed fish. Its cage-free programme Kafessiz Türkiye, begun as a volunteer campaign in 2018, secures corporate cage-free commitments; it also runs public campaigns and producer training and funds fish welfare research.",
+    "website": "https://kafessizturkiye.com",
+    "hq": "Turkey",
+    "founded": "2020",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalcharityevaluators.org/charity-review/ciftlik-hayvanlarini-koruma-dernegi/",
+        "title": "Çiftlik Hayvanlarını Koruma Derneği - Animal Charity Evaluators review",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://kafessizturkiye.com/hikayemiz",
+        "title": "Hikayemiz - Kafessiz Türkiye",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://kafessizturkiye.com/",
+        "title": "Kafessiz Türkiye (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed by Animal Charity Evaluators as a Recommended Charity at the time of access. Headquarters city not stated. Türkiye tagged as middle-east for this pass (transcontinental). Blog RSS exists but its latest item is from 2023, so it is not listed."
+  },
+  {
+    "id": "haytap",
+    "name": "HAYTAP",
+    "aliases": [
+      "Hayvan Hakları Federasyonu",
+      "Animal Rights Federation in Turkey",
+      "HAYTAP Hayvan Hakları Federasyonu"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "TR"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "litigation",
+      "education",
+      "public-awareness",
+      "sanctuary"
+    ],
+    "approach": "mixed",
+    "summary": "Istanbul-based animal rights federation formed in July 2008 by the merger of five Turkish animal rights organisations. Raises awareness of animal rights violations, files lawsuits, lobbies for stronger animal cruelty laws, runs school education programmes and operates farms for retired animals.",
+    "website": "https://www.haytap.org",
+    "hq": "Turkey",
+    "founded": "2008",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/HAYTAP",
+        "title": "HAYTAP - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.haytap.org/",
+        "title": "HAYTAP - Hayvan Hakları Federasyonu (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding, base and activities from Wikipedia; the own-site menu lists 'Emekli Hayvanlar Çiftliklerimiz' (retired animals farms) and court cases. Türkiye tagged as middle-east (transcontinental)."
+  },
+  {
+    "id": "vegan-dernegi-turkiye",
+    "name": "Vegan Derneği Türkiye",
+    "aliases": [
+      "TVD",
+      "Türkiye Vegan Derneği",
+      "Vegan Association of Turkey"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "TR"
+    ],
+    "interventions": [
+      "diet-change",
+      "litigation",
+      "legislation-policy",
+      "certification-standards",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "Rights organisation in Türkiye that began as a volunteer group in 2006 and became an association in 2012. Advocates veganism and animal rights from an anti-speciesist position, pursues strategic litigation and food-law changes, and runs Istanbul VegFest, a vegan academy and V-Label licensing.",
+    "website": "https://tvd.org.tr",
+    "hq": "Turkey",
+    "founded": "2012",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://tvd.org.tr/",
+        "title": "Vegan Derneği - TVD (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://tvd.org.tr/biz-kimiz-turkiye-vegan-dernegi/",
+        "title": "Biz Kimiz? - Türkiye Vegan Derneği",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founded year is the year of legal incorporation (2012); the group dates its origins to 2006. Site RSS feed has no items after 2020, so it is not listed. Türkiye tagged as middle-east (transcontinental)."
+  },
+  {
+    "id": "egyptian-society-for-mercy-to-animals",
+    "name": "Egyptian Society for Mercy to Animals",
+    "aliases": [
+      "ESMA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "sanctuary-rescue",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "middle-east",
+      "africa"
+    ],
+    "countries": [
+      "EG"
+    ],
+    "interventions": [
+      "sanctuary",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Registered Egyptian NGO formed in late 2007. Operates no-kill shelters and adoption centres, including a facility in Sakkara, Giza, housing rescued dogs and cats, runs a feeding and care initiative for animals at the pyramids, and takes part in campaigns and advocacy on animal welfare in Egypt.",
+    "website": "https://www.esmaegypt.org",
+    "hq": "Egypt",
+    "founded": "2007",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.esmaegypt.org/",
+        "title": "Egyptian Society for Mercy to Animals (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.esmaegypt.org/?page_id=1278",
+        "title": "About ESMA",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site RSS feed's latest item is from December 2024, so it is not listed. Egypt tagged as both middle-east and africa."
+  },
+  {
+    "id": "animals-lebanon",
+    "name": "Animals Lebanon",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "companion-animals",
+      "wild-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "middle-east"
+    ],
+    "countries": [
+      "LB"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "sanctuary",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Lebanese organisation that campaigns for comprehensive national animal protection and welfare legislation and its enforcement. Provides nationwide assistance for companion animals, rescues captive endangered wildlife, works to close substandard zoos and promotes Lebanon's implementation of CITES.",
+    "website": "https://www.animalslebanon.org",
+    "hq": "Lebanon",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animalslebanon.org/",
+        "title": "Animals Lebanon (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animalslebanon.org/who-we-are/what-we-achieve",
+        "title": "What we achieve - Animals Lebanon",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the pages fetched (/who-we-are returned HTTP 500)."
+  },
+  {
+    "id": "middle-east-vegan-society",
+    "name": "Middle East Vegan Society",
+    "aliases": [
+      "MEVS"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "community-media"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "middle-east",
+      "africa"
+    ],
+    "countries": [],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "education",
+      "certification-standards"
+    ],
+    "approach": "abolitionist",
+    "summary": "Organisation supporting individuals and businesses in the Middle East and North Africa to adopt vegan choices. Produces educational content and country vegan guides in Arabic and other languages, offers V-Label, and supplies resources and volunteers to other groups' campaigns for farmed animals.",
+    "website": "https://www.middleeastvegansociety.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.middleeastvegansociety.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.middleeastvegansociety.org/",
+        "title": "Middle East Vegan Society (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.middleeastvegansociety.org/about-us",
+        "title": "About us - Middle East Vegan Society",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year and place of registration not stated on the site. Country guides cover Bahrain, Egypt, Iran, Jordan, Kuwait, Lebanon, Morocco, Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia and the UAE; no country codes set because operating presence per country was not verified."
+  },
+  {
+    "id": "africa-network-for-animal-welfare",
+    "name": "Africa Network for Animal Welfare",
+    "aliases": [
+      "ANAW"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "sanctuary-rescue"
+    ],
+    "species": [
+      "all-animals",
+      "wild-animals",
+      "companion-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "KE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "education",
+      "capacity-building",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Pan-African NGO established in 2006, with work concentrated in Kenya. Influences policy, runs animal welfare education in schools, rabies vaccination, wildlife de-snaring and rescue with the Kenya Wildlife Service, and co-hosts the annual Africa Animal Welfare Conference with UNEP and AU-IBAR.",
+    "website": "https://www.anaw.org",
+    "hq": "Kenya",
+    "founded": "2006",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.anaw.org/",
+        "title": "Africa Network for Animal Welfare (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.anaw.org/index.php/about-us",
+        "title": "About us - ANAW",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Headquarters not stated on the pages fetched; Kenya taken from the location of its programmes and its listing in the Farmed Animal Advocacy Directory. Holds UN ECOSOC consultative status and is a founding member of the World Federation for Animals (own site)."
+  },
+  {
+    "id": "africa-animal-welfare-conference",
+    "name": "Africa Animal Welfare Conference",
+    "aliases": [
+      "AAWC"
+    ],
+    "kind": "programme",
+    "parent_id": "africa-network-for-animal-welfare",
+    "categories": [
+      "movement-infrastructure",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [],
+    "interventions": [
+      "capacity-building",
+      "education",
+      "legislation-policy"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Annual conference co-hosted by the Africa Network for Animal Welfare with UNEP, AU-IBAR and the host government, bringing together animal welfare, wildlife and conservation organisations, officials, academics and practitioners. The 10th edition was scheduled for 5-7 October 2026 in Lusaka, Zambia.",
+    "website": "https://www.aawconference.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.aawconference.org/index.php/en",
+        "title": "Africa Animal Welfare Conference (AAWC)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.anaw.org/",
+        "title": "Africa Network for Animal Welfare (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Year of the first conference not stated on the pages fetched. Host country changes each year, so no hq is given."
+  },
+  {
+    "id": "farmed-animal-advocacy-directory",
+    "name": "Farmed Animal Advocacy Directory",
+    "aliases": [
+      "African Farmed Animal Advocacy Directory",
+      "AAA Directory"
+    ],
+    "kind": "resource",
+    "parent_id": "animal-advocacy-africa",
+    "categories": [
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [],
+    "interventions": [
+      "data-tools"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Community-led online directory of African farmed animal advocacy organisations, linked from Animal Advocacy Africa's site. Lists around 60 organisations with their country, the species they work on and their focus areas.",
+    "website": "https://africafarmedanimals.info",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://africafarmedanimals.info/",
+        "title": "Farmed Animal Advocacy Directory",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animaladvocacyafrica.org/african-animal-advocacy-organisations",
+        "title": "African Organisations - Animal Advocacy Africa",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "JavaScript app; entries read from the site's bundled data (61 organisations at time of access). Used as a discovery source for this file."
+  },
+  {
+    "id": "coalition-of-african-animal-welfare-organisations",
+    "name": "Coalition of African Animal Welfare Organisations",
+    "aliases": [
+      "CAAWO"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "chickens",
+      "pigs"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "ZA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "education",
+      "research",
+      "capacity-building",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "South Africa-based organisation working across Africa on animal and human welfare. Lobbies for better and harmonised animal welfare laws, campaigns against sow stalls and battery cages, engages on fish welfare in aquaculture law, and runs humane education, research and e-learning courses.",
+    "website": "https://caawo.org",
+    "hq": "South Africa",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://caawo.org/feed",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://caawo.org/",
+        "title": "CAAWO | Advancing Animal Welfare & Human Wellbeing in Africa",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://caawo.org/our-work",
+        "title": "Our work - CAAWO",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated. Contact address in Gordons Bay. The Farmed Animal Advocacy Directory lists activity in Botswana, Kenya, Malawi, Rwanda, South Africa, Tanzania, Zambia and Zimbabwe; only ZA is tagged."
+  },
+  {
+    "id": "humane-world-for-animals-south-africa",
+    "name": "Humane World for Animals South Africa",
+    "aliases": [
+      "Humane Society International/Africa",
+      "HSI/Africa",
+      "HSI-Africa"
+    ],
+    "kind": "programme",
+    "parent_id": "humane-world-for-animals",
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "wild-animals",
+      "companion-animals",
+      "animals-in-research"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "ZA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "diet-change",
+      "public-awareness",
+      "corporate-campaigns"
+    ],
+    "approach": "welfare-reform",
+    "summary": "South Africa programme of Humane World for Animals. Advocates better farmed animal welfare standards, plant-based eating, non-lethal solutions to human-wildlife conflict, ethical tourism, access to care for street dogs, an end to cosmetics testing on animals and a ban on live animal exports by sea.",
+    "website": "https://www.humaneworld.org/en/south-africa",
+    "hq": "South Africa",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.humaneworld.org/en/south-africa",
+        "title": "South Africa | Humane World for Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Former name (Humane Society International/Africa) is not stated on the page and is given as an alias from the parent's former name. Start year and office not stated."
+  },
+  {
+    "id": "animal-law-reform-south-africa",
+    "name": "Animal Law Reform South Africa",
+    "aliases": [
+      "ALRSA",
+      "Animal Law Reform"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "ZA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Non-profit company of legal professionals, informally established in 2014 and formally registered in 2017, that uses the law to advance protection for animals in South Africa. Works under three pillars (animal flourishing, social justice and law), engaging government, civil society and industry.",
+    "website": "https://animallawreform.org",
+    "hq": "South Africa",
+    "founded": "2017",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animallawreform.org/",
+        "title": "Animal Law Reform South Africa (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animallawreform.org/about/",
+        "title": "About us - Animal Law Reform South Africa",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founded year is formal registration (2017); informal start 2014. Site RSS feed's latest item is from 2021, so it is not listed."
+  },
+  {
+    "id": "nspca",
+    "name": "National Council of SPCAs",
+    "aliases": [
+      "NSPCA",
+      "National Council of Societies for the Prevention of Cruelty to Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "wild-animals",
+      "companion-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "ZA"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "litigation",
+      "investigations",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "South African statutory body, operating since 1955, that administers the SPCA Act 169 of 1993 and enforces the Animals Protection Act through inspectors in specialised units. Units cover farm animals (broilers, dairy, hatcheries, slaughter, live transport and export), wildlife and special projects.",
+    "website": "https://nspca.co.za",
+    "hq": "South Africa",
+    "founded": "1955",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://nspca.co.za/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://nspca.co.za/about-us/",
+        "title": "About NSPCA",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Local SPCAs are registered with the National Council but are independent societies. Can institute private prosecutions (2016 Constitutional Court ruling, per own site)."
+  },
+  {
+    "id": "animal-welfare-league-ghana",
+    "name": "Animal Welfare League",
+    "aliases": [
+      "AWL",
+      "Animal Welfare League Ghana"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals",
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "GH"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "education",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Ghanaian animal advocacy organisation founded in November 2021 and registered in Accra in April 2022. Works through corporate outreach, legislation, education and research; aims include cage-free egg production in Ghana, welfare of working donkeys and horses, and dog population and rabies control.",
+    "website": "https://www.animalwelfareleague.org",
+    "hq": "Ghana",
+    "founded": "2021",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animalwelfareleague.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animalwelfareleague.org/",
+        "title": "Animal Welfare League (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animalwelfareleague.org/our-history",
+        "title": "Our history - Animal Welfare League",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animalwelfareleague.org/who-we-are",
+        "title": "Who we are - Animal Welfare League",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Own history page says it has worked with Animal Advocacy Africa and joined the Open Wing Alliance and the Aquatic Animal Alliance."
+  },
+  {
+    "id": "wacpaw",
+    "name": "West Africa Centre for the Protection of Animal Welfare",
+    "aliases": [
+      "WACPAW"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "cows",
+      "pigs",
+      "chickens"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "GH"
+    ],
+    "interventions": [
+      "humane-slaughter",
+      "farm-practices",
+      "producer-engagement",
+      "education",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Ghana-registered charity focused on the welfare of farmed animals at livestock markets, during transport and at slaughter. Inspects markets and slaughterhouses, trains farmers, butchers, animal dealers and abattoir staff in humane handling and stunning, and promotes plant-based diets to youth.",
+    "website": "https://wacpaw.org",
+    "hq": "Ghana",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://wacpaw.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://wacpaw.org/",
+        "title": "West Africa Centre for the Protection of Animal Welfare (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://wacpaw.org/about-us/",
+        "title": "About us - WACPAW",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated. The Farmed Animal Advocacy Directory also lists activity in Uganda; only GH is tagged."
+  },
+  {
+    "id": "proveg-nigeria",
+    "name": "ProVeg Nigeria",
+    "aliases": [],
+    "kind": "programme",
+    "parent_id": "proveg-international",
+    "categories": [
+      "alt-protein",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "NG"
+    ],
+    "interventions": [
+      "diet-change",
+      "legislation-policy",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Nigerian country programme of ProVeg International, working from Lagos. Promotes plant-based eating through recipes, a Veggie Challenge, and health and nutrition content and events, and takes part in policy consultations such as the draft African standard for intensive chicken farms.",
+    "website": "https://proveg.org/ng/",
+    "hq": "Nigeria",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://proveg.org/ng/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://proveg.org/ng/",
+        "title": "ProVeg Nigeria (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Launch year not stated on the page."
+  },
+  {
+    "id": "animal-welfare-competence-center-for-africa",
+    "name": "Animal Welfare Competence Center for Africa",
+    "aliases": [
+      "AWeCCA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "UG"
+    ],
+    "interventions": [
+      "research",
+      "education",
+      "capacity-building",
+      "legislation-policy"
+    ],
+    "approach": "research",
+    "summary": "Centre with an office at Makerere University's College of Veterinary Medicine in Kampala. Conducts animal welfare research with a One Health-One Welfare approach, makes policy recommendations, trains farmers, pastoralists and students, and coordinates a network of African universities.",
+    "website": "https://www.awecca.org",
+    "hq": "Uganda",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.awecca.org/",
+        "title": "AWeCCA | Animal Welfare Competence Center for Africa",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the site. Named partners include ILRI and ANAW."
+  },
+  {
+    "id": "tanzania-animal-welfare-society",
+    "name": "Tanzania Animal Welfare Society",
+    "aliases": [
+      "TAWESO"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "chickens",
+      "companion-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "TZ"
+    ],
+    "interventions": [
+      "education",
+      "farm-practices",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Registered Tanzanian NGO, largely volunteer-run, operating in four zones of the country. Projects include humane education in schools and communities, veterinary outreach clinics in rural areas, a cage-free initiative for chickens, and welfare of farm animals in markets, transport and abattoirs.",
+    "website": "https://taweso.org",
+    "hq": "Tanzania",
+    "founded": null,
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://taweso.org/about/",
+        "title": "About - Tanzania Animal Welfare Society (TAWESO)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://taweso.org/projects/",
+        "title": "Projects - Tanzania Animal Welfare Society (TAWESO)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated. The site's blog feed has no posts after August 2021, so current activity level is not confirmed (status unclear)."
+  },
+  {
+    "id": "sibanye-animal-welfare-and-conservancy-trust",
+    "name": "Sibanye Animal Welfare and Conservancy Trust",
+    "aliases": [
+      "SAWCT",
+      "Sibanye Animal Welfare and Conservancy"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "pigs",
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "ZW"
+    ],
+    "interventions": [
+      "public-awareness",
+      "education",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Trust founded and registered in Zimbabwe in 2018, working on animal welfare, wildlife and biodiversity conservation and climate mitigation with a One Health approach. Runs campaigns including one to end sow stalls, community education, vaccinations and non-lethal human-wildlife conflict prevention.",
+    "website": "https://sibanyezim.org",
+    "hq": "Zimbabwe",
+    "founded": "2018",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://sibanyezim.org/",
+        "title": "Sibanye Animal Welfare and Conservancy Trust (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The Farmed Animal Advocacy Directory also lists Botswana and Zambia; only ZW is tagged. Site feed has a single item from 2024, so it is not listed."
+  },
+  {
+    "id": "africa-platform-for-animal-welfare",
+    "name": "Africa Platform for Animal Welfare",
+    "aliases": [
+      "APAW",
+      "African Platform for Animal Welfare"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [],
+    "interventions": [
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Multi-stakeholder platform proposed by AU-IBAR, the African Union's animal resources bureau, to support implementation of the 2017 Animal Welfare Strategy for Africa. Designed to bring together veterinary and livestock authorities, donors, NGOs and research bodies, with AU-IBAR as secretariat.",
+    "website": "https://www.au-ibar.org/platforms/africa-platform-for-animal-welfare",
+    "hq": null,
+    "founded": null,
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.au-ibar.org/platforms/africa-platform-for-animal-welfare",
+        "title": "Africa Platform for Animal Welfare | AU-IBAR",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.au-ibar.org/",
+        "title": "AU-IBAR (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "AU-IBAR's page describes the platform as 'proposed' and does not confirm how active it is; status set to unclear. Structure per the page: African General Assembly for Animal Welfare, Coordination Committee for Animal Welfare in Africa, and the secretariat."
+  },
+  {
+    "id": "sociedade-vegetariana-brasileira",
+    "name": "Sociedade Vegetariana Brasileira",
+    "aliases": [
+      "SVB",
+      "Brazilian Vegetarian Society"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "certification-standards",
+      "education",
+      "research"
+    ],
+    "approach": "mixed",
+    "summary": "Brazilian non-profit founded in 2003 that promotes vegan eating as an ethical, healthy and sustainable choice. Runs campaigns and programmes such as Segunda Sem Carne (Meatless Monday), Opção Vegana and the Selo Vegano label, and works to widen access to vegan products and services.",
+    "website": "https://svb.org.br",
+    "hq": "Brazil",
+    "founded": "2003",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://svb.org.br/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://svb.org.br/",
+        "title": "Sociedade Vegetariana Brasileira - SVB (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://svb.org.br/a-svb/sobre-a-svb/",
+        "title": "Sobre a SVB",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/charity-reviews/all-charity-reviews/",
+        "title": "All charity reviews - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed by Animal Charity Evaluators as a Recommended Charity at the time of access. Office address in Vila Mariana, São Paulo."
+  },
+  {
+    "id": "mercy-for-animals-brasil",
+    "name": "Mercy For Animals Brasil",
+    "aliases": [
+      "MFA Brasil",
+      "Mercy For Animals Brazil"
+    ],
+    "kind": "programme",
+    "parent_id": "mercy-for-animals",
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "investigations",
+      "diet-change",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Brazilian arm of Mercy For Animals. Works to end the cruellest practices in food systems, carries out undercover investigations, and promotes plant-based eating through initiatives including Alimentação Consciente Brasil, EscolhaVeg and 21 Dias Veg.",
+    "website": "https://mercyforanimals.org.br",
+    "hq": "Brazil",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://mercyforanimals.org.br/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mercyforanimals.org.br/",
+        "title": "Mercy For Animals Brasil (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Start year in Brazil not stated on the homepage."
+  },
+  {
+    "id": "good-food-institute-brasil",
+    "name": "The Good Food Institute Brasil",
+    "aliases": [
+      "Good Food Institute Brazil",
+      "GFI Brazil"
+    ],
+    "kind": "programme",
+    "parent_id": "good-food-institute",
+    "categories": [
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "alt-proteins",
+      "research",
+      "legislation-policy",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Brazilian organisation in the Good Food Institute network. Supports alternative protein science (research grants, courses, a researcher directory), industry and startups (market data, guides) and public policy and regulation for plant-based, cultivated and fermentation-derived foods in Brazil.",
+    "website": "https://gfi.org.br",
+    "hq": "Brazil",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://gfi.org.br/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://gfi.org.br/",
+        "title": "GFI Brasil (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the homepage. Commonly called 'GFI Brasil': that short name is currently an alias of good-food-institute on the map, and the build merges any record carrying it into the parent, so it is left out of this record's aliases; move the alias here to keep the affiliate separate."
+  },
+  {
+    "id": "certified-humane-brasil",
+    "name": "Certified Humane Brasil",
+    "aliases": [
+      "Certified Humane International"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens",
+      "pigs",
+      "cows",
+      "farmed-fish"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "BR"
+    ],
+    "interventions": [
+      "certification-standards",
+      "farm-practices",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Animal welfare certification for farmed animal products, promoted and audited in Brazil by the non-profit Certified Humane International using Humane Farm Animal Care species standards. The programme reached Brazil in 2008; standards cover laying hens, dairy and beef cattle, pigs and tilapia.",
+    "website": "https://certifiedhumanebrasil.org",
+    "hq": "Brazil",
+    "founded": "2008",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://certifiedhumanebrasil.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://certifiedhumanebrasil.org/",
+        "title": "Certified Humane Brasil - Certificação de Bem-Estar Animal",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://certifiedhumanebrasil.org/historia/",
+        "title": "História - Certified Humane Brasil",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founded year is the year the programme arrived in Brazil (history page). The site also lists certified products in other Latin American and Asian countries; only BR is tagged. Parent standards body (Humane Farm Animal Care, US) is not on the map, so parent_id is null."
+  },
+  {
+    "id": "mercy-for-animals-latinoamerica",
+    "name": "Mercy For Animals Latinoamérica",
+    "aliases": [
+      "MFA Latinoamérica",
+      "Mercy For Animals México",
+      "MFA Latam"
+    ],
+    "kind": "programme",
+    "parent_id": "mercy-for-animals",
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "MX"
+    ],
+    "interventions": [
+      "investigations",
+      "diet-change",
+      "public-awareness",
+      "corporate-campaigns"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Spanish-language Latin America arm of Mercy For Animals, with an office address in Mexico City. Works to end the cruellest practices in food systems, runs undercover investigations and consumer campaigns such as 'Mala Leche' on plant-milk surcharges, and promotes plant-based eating.",
+    "website": "https://mercyforanimals.lat",
+    "hq": "Mexico",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://mercyforanimals.lat/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mercyforanimals.lat/",
+        "title": "Mercy For Animals Latinoamérica (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Countries covered are not listed on the homepage; MX tagged from the footer address. Alias 'Mercy For Animals México' is descriptive."
+  },
+  {
+    "id": "animal-heroes",
+    "name": "Animal Heroes",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "MX"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Mexican organisation active since 2015 that defends animals mainly through legislative change. Campaigns include México sin Tauromaquia (against bullfighting), tougher penalties for animal abuse and an end to captivity of dolphins; it also runs dog and cat sterilisation drives.",
+    "website": "https://beanimalheroes.org",
+    "hq": "Mexico",
+    "founded": "2015",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://beanimalheroes.org/",
+        "title": "Animal Heroes | Defensa y bienestar animal en México",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The domain animalheroes.org is parked; the live site is beanimalheroes.org. Site RSS feed's latest item is from 2023, so it is not listed. Name is also an ordinary phrase, so mention detection in feed text may over-match."
+  },
+  {
+    "id": "animanaturalis",
+    "name": "AnimaNaturalis",
+    "aliases": [
+      "AnimaNaturalis Internacional"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "farmed-fish"
+    ],
+    "regions": [
+      "latin-america",
+      "europe"
+    ],
+    "countries": [
+      "ES",
+      "MX",
+      "CO",
+      "VE"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "protest",
+      "legislation-policy",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "Ibero-American animal rights organisation founded in 2003, with editions for Spain, Mexico, Colombia and Venezuela. Campaigns against factory farming, fish farming, bullfighting and other uses of animals in entertainment through investigations, petitions, activist networks and education.",
+    "website": "https://www.animanaturalis.org",
+    "hq": null,
+    "founded": "2003",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animanaturalis.org/rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animanaturalis.org/en",
+        "title": "AnimaNaturalis: for the Defense of All Animals",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/AnimaNaturalis",
+        "title": "AnimaNaturalis - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding date (March 2003) from Wikipedia, which also lists Argentina, Chile and Ecuador. Works in Spain as well as Latin America, so it may also be picked up by the Europe pass."
+  },
+  {
+    "id": "fundacion-veg",
+    "name": "Fundación Veg",
+    "aliases": [
+      "Vegetarianos Hoy",
+      "Fundación Vegetarianos Hoy"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "CL",
+      "MX",
+      "CO",
+      "PE",
+      "AR"
+    ],
+    "interventions": [
+      "diet-change",
+      "certification-standards",
+      "legislation-policy",
+      "public-awareness"
+    ],
+    "approach": "mixed",
+    "summary": "Non-profit created in Santiago, Chile, in 2012 to promote plant-based eating and reduce the suffering of animals raised for food in Latin America. Runs vegan product certification, the Cambia Tu Plato food campaign and policy advocacy, with teams in Argentina, Chile, Colombia, Mexico and Peru.",
+    "website": "https://fundacionveg.org",
+    "hq": "Chile",
+    "founded": "2012",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://fundacionveg.org/",
+        "title": "Fundación Veg (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://fundacionveg.org/quienes-somos/",
+        "title": "Quiénes somos - Fundación Veg",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The about page also uses the earlier name Fundación Vegetarianos Hoy. Site RSS feed has a single item from 2024, so it is not listed. Also profiled in aquatic-gaps-entities.json under the same id; the build merges the two records (this one adds the movement-wide tags)."
+  },
+  {
+    "id": "animal-libre",
+    "name": "Animal Libre",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "CL",
+      "AR",
+      "BR"
+    ],
+    "interventions": [
+      "investigations",
+      "education",
+      "legislation-policy",
+      "public-awareness",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "Animal rights non-profit active since 2010 in Chile, Argentina and Brazil. Investigates animal production, offers free courses on veganism and animal rights, and runs advocacy campaigns and public complaints aimed at changing laws and habits, including a campaign for greyhounds (Galgos Libres).",
+    "website": "https://animallibre.org",
+    "hq": null,
+    "founded": "2010",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animallibre.org/",
+        "title": "Animal Libre (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animallibre.org/quienes-somos",
+        "title": "Quiénes somos - Animal Libre",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Headquarters not stated on the pages fetched; the site lists Chile first among its three countries."
+  },
+  {
+    "id": "animal-law-focus",
+    "name": "Animal Law Focus",
+    "aliases": [
+      "Fundación Animal Law Focus"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "CL"
+    ],
+    "interventions": [
+      "litigation",
+      "legislation-policy",
+      "research",
+      "investigations"
+    ],
+    "approach": "mixed",
+    "summary": "Chile-rooted legal organisation that uses the law against cruelty to farmed animals in the Global South. Researches regulatory gaps, files complaints, proposes reforms and works with authorities and companies; programmes cover farm animals, animals in aquaculture and Veg Focus.",
+    "website": "https://www.animallawfocus.org",
+    "hq": "Chile",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.animallawfocus.org/blog?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.animallawfocus.org/",
+        "title": "Animal Law Focus (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animallawfocus.org/ourwork",
+        "title": "Our work - Animal Law Focus",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/blog/announcing-round-11-movement-grants/",
+        "title": "Announcing Round 11 Movement Grants - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Chile base taken from the site description and ACE's grant listing (Fundación Animal Law Focus, Chile; litigation against farms and slaughterhouses). Site says work focuses on selected countries of Latin America, Africa and South and Southeast Asia; founding year not stated. Also profiled in aquatic-gaps-entities.json under the same id; the build merges the two records (this one adds the movement-wide tags)."
+  },
+  {
+    "id": "plataforma-alto",
+    "name": "Plataforma Colombiana por los Animales ALTO",
+    "aliases": [
+      "Plataforma ALTO",
+      "ALTO"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "chickens"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "CO"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "corporate-campaigns",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Colombian platform that brings together national groups to put animal protection on the public agenda. Has taken part in legislative advocacy for Law 1774 of 2016 (animals as sentient beings) and Law 2385 of 2024 banning bullfighting, and runs a cage-free hens campaign with committed companies.",
+    "website": "https://plataformaalto.org",
+    "hq": "Colombia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://plataformaalto.org/",
+        "title": "Plataforma Colombiana por los Animales ALTO (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://plataformaalto.org/nosotros.php",
+        "title": "Acerca de - Plataforma ALTO",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the pages fetched."
+  },
+  {
+    "id": "union-vegana-argentina",
+    "name": "Unión Vegana Argentina",
+    "aliases": [
+      "UVA",
+      "Unión Vegetariana Argentina",
+      "Fundación UVA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "community-media"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "AR"
+    ],
+    "interventions": [
+      "diet-change",
+      "public-awareness",
+      "certification-standards",
+      "education"
+    ],
+    "approach": "abolitionist",
+    "summary": "Argentine NGO founded in May 2000 as Unión Vegetariana Argentina to promote veganism from an animal rights perspective. Publishes articles and a magazine, organises Vegan Fest Argentina, runs Lunes Sin Carne (Meatless Monday) and a vegan certification, and reports on Argentina's vegan population.",
+    "website": "https://www.unionvegana.org",
+    "hq": "Argentina",
+    "founded": "2000",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.unionvegana.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.unionvegana.org/",
+        "title": "UVA - Unión Vegana Argentina (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.unionvegana.org/sobre-la-uva/",
+        "title": "Sobre la UVA",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Alias 'Fundación UVA' is the name used in ACE Movement Grants listings."
+  },
+  {
+    "id": "arba",
+    "name": "Asociación para el Rescate y Bienestar de los Animales",
+    "aliases": [
+      "ARBA",
+      "ARBA Perú"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "PE"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "investigations",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Peruvian association that promotes awareness to improve the lives of animals in Peru. Activities include petition campaigns, legislative activism, a legal consultation service and investigations; its Perú Sin Jaulas project focuses on hens kept in cages.",
+    "website": "https://arba.pe",
+    "hq": "Peru",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://arba.pe/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arba.pe/",
+        "title": "ARBA - Asociación para el Rescate y Bienestar de los Animales (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the homepage (press coverage seen in search results says 2008 and Open Wing Alliance membership since 2017; not verified on a fetched page). 'corporate-campaigns' reflects the Perú Sin Jaulas cage-free project, whose own site (perusinjaulas.org) was not fetched."
+  }
+]

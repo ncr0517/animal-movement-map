@@ -961,7 +961,8 @@
     "recipient_id": null,
     "deadline": "2026-11-30",
     "status": "uncertain",
-    "notes": "Secondary source only (Hive newsletter; RFP co-opened by Hive co-founder Sofia Balderson). Primary EA Forum post returned HTTP 429; per-grant size and eligibility not verified."
+    "notes": "Secondary source only (Hive newsletter; RFP co-opened by Hive co-founder Sofia Balderson). Primary EA Forum post returned HTTP 429; per-grant size and eligibility not verified. Superseded by the primary-source record call-movement-infrastructure-lab-rfp-2026-primary (2026-11-19).",
+    "same_as": "call-movement-infrastructure-lab-rfp-2026-primary"
   },
   {
     "id": "call-blueperch-expressions-of-interest",
@@ -982,7 +983,8 @@
     "recipient_id": null,
     "deadline": null,
     "status": "uncertain",
-    "notes": "Secondary source only (Hive newsletter); 'mid-2027' timing from Hive's 2026-10-07 Slack round-up. Primary EA Forum announcement not fetched (HTTP 429)."
+    "notes": "Secondary source only (Hive newsletter); 'mid-2027' timing from Hive's 2026-10-07 Slack round-up. Primary EA Forum announcement not fetched (HTTP 429). Superseded by the primary-source record call-blueperch-expressions-of-interest-primary (2026-11-19).",
+    "same_as": "call-blueperch-expressions-of-interest-primary"
   },
   {
     "id": "call-who-let-the-docs-out-documentary-fund",
@@ -1003,7 +1005,8 @@
     "recipient_id": null,
     "deadline": null,
     "status": "uncertain",
-    "notes": "Secondary source only; not aquatic-specific. Primary EA Forum post not fetched (HTTP 429)."
+    "notes": "Secondary source only; not aquatic-specific. Primary EA Forum post not fetched (HTTP 429). Superseded by the primary-source record call-who-let-the-docs-out-2026-autumn-cycle (2026-11-19).",
+    "same_as": "call-who-let-the-docs-out-2026-autumn-cycle"
   },
   {
     "id": "call-ace-movement-grants-round-12",

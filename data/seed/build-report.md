@@ -1,21 +1,21 @@
-# Seed build report (2026-11-19T23:50:48.620Z)
+# Seed build report (2026-11-20T00:05:21.099Z)
 
-- Entities: 166 (18 stubs)
-- Events: 114
-- Sources: 205 (62 feeds, 3 headline-only)
+- Entities: 326 (0 stubs)
+- Events: 125
+- Sources: 450 (130 feeds, 3 headline-only)
 
 ## Entities by primary category
-- advocacy-campaigns: 60
-- movement-infrastructure: 5
-- welfare-science: 37
-- welfare-technology: 6
-- policy-law: 15
-- incubation-careers: 3
-- funding: 19
-- direct-action: 11
-- alt-protein: 3
-- community-media: 3
-- sanctuary-rescue: 4
+- advocacy-campaigns: 125
+- movement-infrastructure: 14
+- welfare-science: 51
+- welfare-technology: 9
+- policy-law: 38
+- incubation-careers: 5
+- funding: 43
+- direct-action: 15
+- alt-protein: 11
+- community-media: 6
+- sanctuary-rescue: 9
 
 ## Events by type
 - legal_development: 16
@@ -24,10 +24,11 @@
 - announcement: 17
 - campaign_outcome: 3
 - plan_announced: 3
-- grant_awarded: 42
-- open_call: 15
+- grant_awarded: 45
+- open_call: 23
 
 ## Reconciled (merged) records
+- humane-slaughter-association (funding) → humane-slaughter-association (aquatic)
 - mercy-for-animals (movement) → mercy-for-animals (aquatic)
 - animal-equality (movement) → animal-equality (aquatic)
 - compassion-in-world-farming (movement) → compassion-in-world-farming (aquatic)
@@ -42,32 +43,33 @@
 - ea-animal-welfare-fund (movement) → ea-animal-welfare-fund (aquatic)
 - animal-charity-evaluators (movement) → animal-charity-evaluators (aquatic)
 - ambitious-impact (movement) → ambitious-impact (aquatic)
+- samayu (movement) → samayu (aquatic)
+- india-animal-fund (movement) → india-animal-fund (funding)
+- animal-rights-center-japan (movement) → animal-rights-center-japan (aquatic)
+- animal-kingdom (movement) → animal-kingdom (aquatic)
+- fundacion-veg (movement) → fundacion-veg (aquatic)
+- animal-law-focus (movement) → animal-law-focus (aquatic)
+- l214 (movement) → l214 (aquatic)
+- djurens-ratt (movement) → project-1882 (aquatic)
+- animanaturalis (movement) → animanaturalis (movement)
+- animal-outlook (movement) → animal-outlook (aquatic)
+- global-animal-partnership (movement) → global-animal-partnership (aquatic)
+- safe-nz (movement) → safe-nz (aquatic)
+- animals-aotearoa (movement) → animals-aotearoa (aquatic)
+- welfarm (movement) → welfarm (aquatic)
 - event fwi-open-call-india-2026 → call-fish-welfare-initiative-india-2026 (same_as)
+- event call-movement-infrastructure-lab-kickstarting-for-good-2026 → call-movement-infrastructure-lab-rfp-2026-primary (same_as)
+- event call-blueperch-expressions-of-interest → call-blueperch-expressions-of-interest-primary (same_as)
+- event call-who-let-docs-out-documentary-fund → call-who-let-docs-out-2026-autumn-cycle (same_as)
 - event aim-animal-incubation-round-call-2026 → call-ambitious-impact-incubation-feb-2027-factory-farming (same_as)
 
 ## Round totals (grant records with no single recipient; the Funding view counts them separately)
+- aquatic-animal-funding-circle-2025-round
 - wai-2026-research-grants
 - ace-movement-grants-round-11-2026
 
 ## Stub entities created from references
-- university-of-stirling (from cg-university-of-stirling-fish-welfare-research-2025)
-- fai-farms (from cg-fai-farms-aquaculture-welfare-reforms-2023)
-- wageningen-university (from cg-wageningen-university-wild-caught-fish-welfare-2024)
-- animal-law-italia (from awf-animal-law-italia-2026-q1-crustaceans)
-- awash (from awf-awash-2026-q1-ghana-farmed-fish)
-- mtu-loomus (from awf-mtu-loomus-2025-q4-estonia-fish-welfare)
-- animal-activism-collective (from awf-animal-activism-collective-2025-q4-shrimp)
-- fundacion-derecho-y-defensa-animal (from awf-fundacion-derecho-y-defensa-animal-2025-q1-chile-aquaculture)
-- center-for-responsible-seafood (from awf-center-for-responsible-seafood-2024-q4-shrimp-chill-killing)
-- national-lottery-community-fund (from nlcf-crustacean-compassion-decade-of-decapods-2026)
-- sharegift (from sharegift-crustacean-compassion-2026)
-- bbsrc (from bbsrc-university-of-stirling-electric-aeration-salmon-welfare)
-- science-for-animal-welfare (from call-science-for-animal-welfare-centenary-research-award)
-- kickstarting-for-good (from call-movement-infrastructure-lab-kickstarting-for-good-2026)
-- blueperch (from call-blueperch-expressions-of-interest)
-- who-let-docs-out (from call-who-let-docs-out-documentary-fund)
-- strategic-animal-funding-circle (from call-strategic-animal-funding-circle-2026-h2)
-- european-commission (from call-horizon-europe-cl6-2027-02-farm2fork-06)
+- none
 
 ## Warnings
 - alias "AAA" is used by both aquatic-animal-alliance and animal-advocacy-africa — not used for matching

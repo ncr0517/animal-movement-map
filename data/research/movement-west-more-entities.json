@@ -1,0 +1,602 @@
+[
+  {
+    "id": "welfarm",
+    "name": "Welfarm",
+    "aliases": [
+      "WELFARM – Protection mondiale des animaux de ferme"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "FR"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "education",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "French association, with a mission recognised as being of public utility, that works for better consideration of the welfare of farmed animals at every stage of their lives: rearing, transport and slaughter. Also produces educational material for teachers.",
+    "website": "https://welfarm.fr",
+    "hq": "France",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://welfarm.fr/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://welfarm.fr/",
+        "title": "Welfarm (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Founding year not stated on the pages fetched (commonly given as 1994, formerly PMAF) - unverified, left null."
+  },
+  {
+    "id": "provieh",
+    "name": "PROVIEH",
+    "aliases": [
+      "PROVIEH e.V.",
+      "Verein gegen tierquälerische Massentierhaltung"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "German association for the protection of farmed animals, based in Kiel. Since 1973 it has worked for species-appropriate husbandry and against industrial intensive animal farming.",
+    "website": "https://www.provieh.de",
+    "hq": "Germany",
+    "founded": "1973",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.provieh.de/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.provieh.de/",
+        "title": "PROVIEH (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://de.wikipedia.org/wiki/Provieh",
+        "title": "Provieh - Wikipedia (de)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": null
+  },
+  {
+    "id": "tier-im-recht",
+    "name": "Stiftung für das Tier im Recht",
+    "aliases": [
+      "TIR",
+      "Tier im Recht",
+      "Foundation for the Animal in the Law"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "CH"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Swiss non-profit foundation that has advocated for strong legal protection of animals since 1996. Works for animal-friendly laws and their enforcement and gives information and advice on animal-related legal questions.",
+    "website": "https://www.tierimrecht.org",
+    "hq": "Switzerland",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.tierimrecht.org/en/",
+        "title": "Stiftung für das Tier im Recht (TIR) - English homepage",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://de.wikipedia.org/wiki/Stiftung_f%C3%BCr_das_Tier_im_Recht",
+        "title": "Stiftung für das Tier im Recht - Wikipedia (de)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Site says it has campaigned 'since 1996'; exact founding date not confirmed, so left null. Seat Zürich per German Wikipedia. English alias is a translation. No RSS feed found."
+  },
+  {
+    "id": "oikeutta-elaimille",
+    "name": "Oikeutta eläimille",
+    "aliases": [
+      "Justice for Animals (Finland)",
+      "OE"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "fur-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "FI"
+    ],
+    "interventions": [
+      "investigations",
+      "public-awareness",
+      "diet-change",
+      "protest"
+    ],
+    "approach": "abolitionist",
+    "summary": "Finnish animal rights organisation founded in 1995. Works to end the exploitation of animals and improve their status: it publicises conditions in the animal industry, campaigns for animal rights and promotes veganism.",
+    "website": "https://oikeuttaelaimille.fi",
+    "hq": "Finland",
+    "founded": "1995",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://oikeuttaelaimille.fi/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://oikeuttaelaimille.fi/meista/",
+        "title": "Meistä - Oikeutta eläimille",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "English alias is a translation of the Finnish name."
+  },
+  {
+    "id": "nahtamatud-loomad",
+    "name": "Nähtamatud Loomad",
+    "aliases": [
+      "Invisible Animals",
+      "MTÜ Nähtamatud Loomad"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals",
+      "chickens"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "EE"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "legislation-policy",
+      "diet-change",
+      "public-awareness"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Estonian animal protection organisation focused on farmed animal welfare, meat reduction and plant-based food, and systemic change, including a campaign for a legal ban on keeping hens in cages.",
+    "website": "https://nahtamatudloomad.ee",
+    "hq": "Estonia",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://nahtamatudloomad.ee/",
+        "title": "Nähtamatud Loomad (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/movement-grants/past-movement-grants-recipients/",
+        "title": "ACE Movement Grants: past recipients",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "ACE Movement Grant recipient in 2026 (listed as 'Nähtamatud Loomad (Invisible Animals)'). The /en page returned a server error when fetched; Estonian homepage used. No RSS feed found."
+  },
+  {
+    "id": "eyes-on-animals",
+    "name": "Eyes on Animals",
+    "aliases": [
+      "EonA"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "welfare-technology"
+    ],
+    "species": [
+      "farmed-animals",
+      "pigs",
+      "cows",
+      "chickens"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "investigations",
+      "humane-slaughter",
+      "producer-engagement",
+      "farm-practices"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Amsterdam-based organisation that inspects farm animal transport, markets and slaughterhouses, reports breaches of European legislation to the authorities, and works with slaughter plants and transporters on stunning, catching and loading practices.",
+    "website": "https://www.eyesonanimals.com",
+    "hq": "Netherlands",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.eyesonanimals.com/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.eyesonanimals.com/",
+        "title": "Eyes on Animals - Watching out for their Welfare (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Homepage (Nov 2026) also reports advisory work outside Europe (a seminar for Japanese slaughterhouses). Founding year not found on the page fetched."
+  },
+  {
+    "id": "madre-brava",
+    "name": "Madre Brava",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "alt-protein"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "DE",
+      "ES"
+    ],
+    "interventions": [
+      "corporate-campaigns",
+      "research",
+      "diet-change",
+      "legislation-policy"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "International climate advocacy organisation whose mission is to protect people, animals and the planet through a shift to more plants in food. Publishes research and campaigns with partners, focusing on supermarkets, companies and policymakers.",
+    "website": "https://www.madrebrava.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.madrebrava.org/",
+        "title": "Madre Brava (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.madrebrava.org/about",
+        "title": "About - Madre Brava",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Climate/food-system organisation rather than an animal advocacy group. Germany and Spain are the countries its site content refers to most; full country list not verified. No RSS feed found."
+  },
+  {
+    "id": "better-food-foundation",
+    "name": "Better Food Foundation",
+    "aliases": [
+      "BFF"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "diet-change",
+      "research",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Non-profit working toward plant-rich foods as the norm. Educates and mobilises students, universities, employers, city officials, food service directors, media and NGO partners around climate-smart diets and institutional food change.",
+    "website": "https://www.betterfoodfoundation.org",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.betterfoodfoundation.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.betterfoodfoundation.org/about/",
+        "title": "About Better Food Foundation | Our Vision",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalcharityevaluators.org/evaluated-charities/",
+        "title": "Evaluated Charities - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Listed among ACE's evaluated charities (Nov 2026). US base not stated on the page fetched - check."
+  },
+  {
+    "id": "physicians-committee-for-responsible-medicine",
+    "name": "Physicians Committee for Responsible Medicine",
+    "aliases": [
+      "PCRM",
+      "Physicians Committee"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "animals-in-research",
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "diet-change",
+      "legislation-policy",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Washington, DC non-profit founded in 1985 that promotes non-animal methods in research and medical education and plant-based diets for disease prevention. Reports more than 17,000 physician members and nearly one million members and supporters.",
+    "website": "https://www.pcrm.org",
+    "hq": "United States",
+    "founded": "1985",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.pcrm.org/rss.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.pcrm.org/about-us",
+        "title": "About Us - Physicians Committee for Responsible Medicine",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Physicians_Committee_for_Responsible_Medicine",
+        "title": "Physicians Committee for Responsible Medicine - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Membership figures are the organisation's own."
+  },
+  {
+    "id": "insect-welfare-research-society",
+    "name": "Insect Welfare Research Society",
+    "aliases": [
+      "IWRS"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "insects"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "research",
+      "capacity-building"
+    ],
+    "approach": "research",
+    "summary": "Society supporting the advancement of insect welfare research by connecting people, resources and research: it brings researchers and other stakeholders together, encourages collaborations that can inform policy and practice, and runs a listserv for academics.",
+    "website": "https://www.insectwelfare.com",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.insectwelfare.com/",
+        "title": "Insect Welfare Research Society (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "No RSS feed found."
+  },
+  {
+    "id": "yale-law-environment-animals-program",
+    "name": "Law, Environment & Animals Program, Yale Law School",
+    "aliases": [
+      "LEAP",
+      "Yale LEAP",
+      "Law, Ethics & Animals Program"
+    ],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "policy-law"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "education",
+      "legislation-policy"
+    ],
+    "approach": "research",
+    "summary": "Yale Law School programme that supports learning and scholarship on the legal, scientific and moral questions raised by humanity's treatment of other animals, and helps Yale scholars and students produce legal and political change. Hosts the 'When We Talk About Animals' podcast.",
+    "website": "https://law.yale.edu/animals",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://law.yale.edu/animals",
+        "title": "Law, Environment & Animals Program | Yale Law School",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Page title (Nov 2026) reads 'Law, Environment & Animals Program'; it was previously known as the Law, Ethics & Animals Program (general knowledge). No RSS feed found."
+  },
+  {
+    "id": "scarlet-spark",
+    "name": "Scarlet Spark",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "north-america",
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Non-profit providing free leadership development and organisational support to animal protection organisations, covering strategy, recruitment, retention, workplace culture and team collaboration.",
+    "website": "https://www.scarletspark.org",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.scarletspark.org/blog-feed.xml",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.scarletspark.org/",
+        "title": "Scarlet Spark | animal advocacy consulting (homepage)",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "EA Animal Welfare Fund grantee. US base not stated on the page fetched."
+  }
+]

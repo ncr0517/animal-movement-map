@@ -112,6 +112,7 @@ curl -X POST -H "authorization: Bearer $ADMIN_TOKEN" -H 'content-type: applicati
 - `docs/source-inventory.md`: candidate sources, machine-readable access, reuse terms
 - `docs/hive-access.md`: separate investigation of permissioned Hive Slack access (nothing connected)
 - `docs/update-workflow.md`: refresh cadence, change detection, maintainer loop, reconciliation rules
+- `docs/known-gaps.md`: organisations found but not yet verified or added, and directories that could not be read
 
 ## Principles
 

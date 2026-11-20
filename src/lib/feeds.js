@@ -275,9 +275,16 @@ export function mentionForm(s) {
     .replace(/^the /, '');
 }
 
-// Ordinary phrases that happen to be an entity's name once generic words are removed. Rows built before
-// mentionForm existed still hold these forms, so they are skipped until the next reseed replaces them.
-const GENERIC_MENTIONS = new Set(['animal law']);
+// Names and aliases that are also ordinary phrases. Multi-word names match feed text whatever its capitals, so
+// "do fish feel pain", "passes a law" or "the animal liberation movement" would each link a post to an entry
+// that is not mentioned. These forms are never used to detect mentions; the entry is still found by any other
+// name it has. ('animal law' is here because rows built before mentionForm existed still hold that form.)
+const GENERIC_MENTIONS = new Set([
+  'animal law', 'a law', 'act for farmed animals', 'ai for animals', 'alliance for animals', 'animal aid', 'animal ethics',
+  'animal heroes', 'animal justice', 'animal law reform', 'animal liberation', 'animal rights center', 'animal rights initiative',
+  'animal think tank', 'animal welfare league', 'animals now', 'care conference', 'fish feel', 'for the fishes',
+  'in defense of animals', 'invisible animals', 'safe for animals', 'scale welfare', 'vegan society', 'we animals',
+]);
 
 const stripAccents = (s) => String(s || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
 

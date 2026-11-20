@@ -1,0 +1,2386 @@
+[
+  {
+    "id": "animal-activism-collective",
+    "name": "Animal Activism Collective",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "direct-action",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "crustaceans"
+    ],
+    "regions": [
+      "north-america",
+      "europe"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "capacity-building",
+      "education",
+      "protest",
+      "corporate-campaigns"
+    ],
+    "approach": "abolitionist",
+    "summary": "Trains and supports grassroots animal rights activists through a free one-to-one mentorship programme, online livestreams and a podcast, in-person convergences, a directory of activist groups and a grassroots campaigns training programme.",
+    "website": "https://www.animalactivismcollective.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animalactivismcollective.org/about",
+        "title": "Animal Activism Collective - Taking Action for Change (About page)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.animalactivismcollective.org/",
+        "title": "Animal Activism Collective - Taking Action for Change",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://funds.effectivealtruism.org/grants",
+        "title": "Grants Database | Effective Altruism Funds",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The site does not state a headquarters or founding year; it lists convergences in Miami and Chicago (US). The crustacean and Europe tags come from the EA Animal Welfare Fund grant record (2025 Q4: grassroots communities in European cities pressing for shrimp welfare policies), not from the site, whose campaigns page is script-rendered and could not be read. It abbreviates itself AAC, which Animal Advocacy Careers also uses, so the abbreviation is not listed as an alias."
+  },
+  {
+    "id": "animal-law-italia",
+    "name": "Animal Law Italia",
+    "aliases": [
+      "ALI (Animal Law Italia) ETS"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "all-animals",
+      "crustaceans",
+      "companion-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "IT"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "education",
+      "research"
+    ],
+    "approach": "mixed",
+    "summary": "Italian non-profit association, founded in 2016, that promotes stronger legal protection for animals and respect for existing laws. It runs the \"Dalla parte dei crostacei\" campaign on the treatment of lobsters and crabs, a legal reporting service, a law journal and education projects.",
+    "website": "https://ali.ong/",
+    "hq": "Italy",
+    "founded": "2016",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://ali.ong/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ali.ong/chi-siamo/",
+        "title": "Chi siamo, i nostri obiettivi e cosa facciamo - ALI - Animal Law Italia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://ali.ong/",
+        "title": "ALI (Animal Law Italia) ETS – Vogliamo leggi eque per gli animali",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://funds.effectivealtruism.org/grants",
+        "title": "Grants Database | Effective Altruism Funds",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Its own short name is ALI, which Aquatic Life Institute also uses, so \"ALI\" alone is not listed as an alias. Site and feed are in Italian. The older domain animallaw.it did not respond; animal-law.it redirects to ali.ong. The EA Funds grants database (CSV at funds.effectivealtruism.org/api/grants) lists three Animal Welfare Fund grants to it: 2022 Q3, 2024 Q3 and 2026 Q1, all for crustacean or aquatic animal welfare."
+  },
+  {
+    "id": "awash",
+    "name": "AWASH",
+    "aliases": [
+      "Aquatic Welfare for African Sustainability and Health",
+      "Aquatic Welfare for African Sustainability and Health LBG"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "africa"
+    ],
+    "countries": [
+      "GH"
+    ],
+    "interventions": [
+      "research",
+      "farm-practices",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "Works to improve the welfare of farmed Nile tilapia in Ghana. It has published a literature review, a scoping report based on visits to cage farms on Lake Volta and an intervention comparison, and is piloting egg disinfection at hatcheries to reduce disease and early mortality.",
+    "website": null,
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/Ng2xJfeRLJtAZoK5Y/awash-intervention-selection-improving-farmed-fish-welfare",
+        "title": "AWASH: Intervention Selection - Improving farmed fish welfare in Ghana — EA Forum",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/NJpxXEvkwhG93qcwE/awash-ghana-scoping-report",
+        "title": "AWASH: Ghana scoping report — EA Forum",
+        "accessed": "2026-11-19",
+        "published": "2026-06-09"
+      },
+      {
+        "url": "https://animalcharityevaluators.org/blog/announcing-round-11-movement-grants/",
+        "title": "Announcing our latest Movement Grants - Animal Charity Evaluators",
+        "accessed": "2026-11-19",
+        "published": "2026-09-29"
+      }
+    ],
+    "notes": "No website of its own was found; profile is built from its own EA Forum reports and the ACE grant announcement, which gives the legal name. Headquarters and founding year are not stated in those sources."
+  },
+  {
+    "id": "bbsrc",
+    "name": "Biotechnology and Biological Sciences Research Council",
+    "aliases": [
+      "BBSRC",
+      "BBSRC (UKRI)",
+      "UKRI-BBSRC"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish",
+      "animals-in-research",
+      "companion-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "UK public research council for bioscience, part of UK Research and Innovation. Listed here as a funder: its \"welfare of managed animals\" priority supports UK research on farmed, laboratory and companion animal welfare through standard research grants of up to £2 million, open at any time.",
+    "website": "https://www.ukri.org/councils/bbsrc/",
+    "hq": "United Kingdom",
+    "founded": "1994",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.ukri.org/what-we-do/browse-our-areas-of-investment-and-support/welfare-of-managed-animals/",
+        "title": "Welfare of managed animals – UKRI",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.ukri.org/councils/bbsrc/",
+        "title": "Biotechnology and Biological Sciences Research Council (BBSRC) – UKRI",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Biotechnology_and_Biological_Sciences_Research_Council",
+        "title": "Biotechnology and Biological Sciences Research Council - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A general bioscience funder; animal welfare is one priority area among many. The area page lists stunning of aquatic species and welfare indicators among example topics, and says BBSRC co-funds the Animal Welfare Research Network with Defra. Founding year and Swindon base are from Wikipedia."
+  },
+  {
+    "id": "blueperch",
+    "name": "BluePerch",
+    "aliases": [],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "New fund for farmed animal advocacy projects, with a stated interest in early-stage projects, time-sensitive policy windows and work other funders miss. It expects most grants to be about USD 5,000-100,000, with open, rolling applications from mid-2027; expressions of interest are open now.",
+    "website": "https://www.blueperch.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.blueperch.org/about",
+        "title": "About (BluePerch)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.blueperch.org/",
+        "title": "BluePerch · Funding for high-impact farmed animal advocacy projects",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Despite the name, not a fish-specific fund: scope is farmed animals (chickens, fish, pigs, insects, shrimp), wild animals and comparable neglected groups; it expects to exclude diet-change work, alternative proteins, pet welfare, direct care and conservation. Fiscally sponsored by Anti Entropy (US 501(c)(3)). Says it hopes to fund anywhere in the world, with the probable exception of China, and that timelines may change. Not yet making grants as of 2026-11-19. Its Atom feed returned no entries."
+  },
+  {
+    "id": "center-for-responsible-seafood",
+    "name": "The Center for Responsible Seafood",
+    "aliases": [
+      "TCRS",
+      "Center for Responsible Seafood",
+      "Responsible Aquaculture Foundation"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-technology",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "wild-fish"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "research",
+      "humane-slaughter",
+      "certification-standards",
+      "education",
+      "producer-engagement"
+    ],
+    "approach": "research",
+    "summary": "US non-profit, known as the Responsible Aquaculture Foundation from 2009 until 2021, that runs knowledge-sharing, applied research and industry programmes on seafood production. Its fish welfare project evaluates humane slaughter technologies and feeds results into certification standards.",
+    "website": "https://responsibleseafood.org/",
+    "hq": "United States",
+    "founded": "2009",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://responsibleseafood.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.responsibleseafood.org/about",
+        "title": "About TCRS – The Center for Responsible Seafood",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://responsibleseafood.org/applied-research/",
+        "title": "Applied Research – The Center for Responsible Seafood",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://responsibleseafood.org/",
+        "title": "The Center for Responsible Seafood",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "An industry-facing seafood organisation, not an advocacy group; founders and board come from the aquaculture industry. The site says its fish welfare work has been supported by Open Philanthropy (now Coefficient Giving) since 2018 and that results go to the Global Seafood Alliance for its Best Aquaculture Practices standards. A white paper on shrimp welfare at reproduction and slaughter appears in its feed (October 2026). Grant records use the id the-center-for-responsible-seafood."
+  },
+  {
+    "id": "european-commission",
+    "name": "European Commission (Horizon Europe)",
+    "aliases": [
+      "European Commission",
+      "Horizon Europe"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "legislation-policy"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Executive body of the European Union. Listed here as a public funder: Horizon Europe (2021-2027, indicative EUR 93.5 billion) funds research that includes farmed and aquatic animal welfare under its food and agriculture cluster and co-funds the European Partnership on Animal Health and Welfare.",
+    "website": "https://commission.europa.eu/index_en",
+    "hq": "Belgium",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en",
+        "title": "Horizon Europe - Research and innovation - European Commission",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/cluster-6-food-bioeconomy-natural-resources-agriculture-and-environment_en",
+        "title": "Cluster 6: Food, Bioeconomy, Natural Resources, Agriculture and Environment - Research and innovation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.eupahw.eu/about-us",
+        "title": "EUPAHW - European Partnership on Animal Health and Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://food.ec.europa.eu/animals/animal-welfare_en",
+        "title": "Animal welfare - Food Safety - European Commission",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A general research funder and regulator, not an animal welfare funder as such: welfare appears as one topic within much larger programmes. Calls are published on the EU Funding & Tenders portal and are open to consortia, mostly of research bodies. The Commission also proposes EU animal welfare legislation and designates EU reference centres for animal welfare."
+  },
+  {
+    "id": "fai-farms",
+    "name": "FAI Farms",
+    "aliases": [
+      "FAI",
+      "FAI Farms Ltd"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science",
+      "welfare-technology"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans",
+      "chickens",
+      "cows",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "GB",
+      "BR",
+      "VN"
+    ],
+    "interventions": [
+      "producer-engagement",
+      "farm-practices",
+      "education",
+      "data-tools",
+      "research"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK-based research, data and consultancy company that works with livestock and aquaculture supply chains on welfare and sustainability. Its aquaculture work includes a tilapia welfare assessment app and online Tilapia and Shrimp Hubs with free training for farmers in several languages.",
+    "website": "https://www.faifarms.com/",
+    "hq": "United Kingdom",
+    "founded": "2000",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.faifarms.com/",
+        "title": "Homepage - FAI Farms",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.faifarms.com/products/tilapia-welfare/",
+        "title": "Tilapia Welfare App - FAI Farms",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.faifarms.com/fai-puts-welfare-front-and-centre-of-shrimp-production/",
+        "title": "FAI puts welfare front and centre of shrimp production - FAI Farms",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/04131435",
+        "title": "FAI FARMS LIMITED overview - Companies House",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A private company (England and Wales no. 04131435) that sells consultancy, data and training services to food businesses; it receives philanthropic grants for its aquaculture welfare training. \"Founded\" is the Companies House incorporation date (28 December 2000). Country tags reflect its UK base and the Brazil and Vietnam projects named in grant records and on its site."
+  },
+  {
+    "id": "fundacion-derecho-y-defensa-animal",
+    "name": "Fundación Derecho y Defensa Animal",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "policy-law",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-fish",
+      "cephalopods",
+      "crustaceans",
+      "chickens",
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "latin-america"
+    ],
+    "countries": [
+      "CL"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "research",
+      "corporate-campaigns",
+      "public-awareness",
+      "education"
+    ],
+    "approach": "mixed",
+    "summary": "Chilean foundation of lawyers that works for animals through legislative advocacy, legal advice and research. Its campaigns seek a ban on octopus farms, a ban on selling and boiling live lobsters, and humane slaughter standards for farmed fish in Chilean aquaculture law.",
+    "website": "https://fundaciondyda.com/",
+    "hq": "Chile",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.fundaciondyda.com",
+        "title": "Fundación Derecho y Defensa Animal",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.aquaticwelfare.org",
+        "title": "Aquatic Welfare | acuicultura, animal, acuaticos",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/pik5Br8EzxnEg5vPw/new-aquaculture-law-in-chile-now-is-the-time",
+        "title": "New Aquaculture Law in Chile: Now is the time! — EA Forum",
+        "accessed": "2026-11-19",
+        "published": "2025-02-25"
+      },
+      {
+        "url": "https://www.diarioconstitucional.cl/2025/02/25/fundacion-derecho-y-defensa-animal-llama-a-prohibir-el-cultivo-de-pulpos-en-la-nueva-ley-de-acuicultura/",
+        "title": "Fundación Derecho y Defensa Animal llama a prohibir el cultivo de pulpos en la nueva Ley de Acuicultura - Diario Constitucional",
+        "accessed": "2026-11-19",
+        "published": "2025-02-25"
+      }
+    ],
+    "notes": "Its site says it has worked for 10 years but gives no founding year. aquaticwelfare.org is its project site on Chilean aquaculture law (linked from its own EA Forum post). Other campaigns on its site: a ban on dog racing and a cage-free egg campaign aimed at LATAM Airlines. Its RSS feeds returned no items."
+  },
+  {
+    "id": "kickstarting-for-good",
+    "name": "Kickstarting for Good",
+    "aliases": [
+      "K4G",
+      "Kickstarting For Good Incubator"
+    ],
+    "kind": "funder",
+    "parent_id": "proveg-international",
+    "categories": [
+      "incubation-careers",
+      "funding"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "capacity-building",
+      "grantmaking",
+      "careers-talent"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Incubator run by ProVeg International: an 18-week programme, with two in-person weeks in Berlin, for non-profits and initiatives working towards a plant-forward food system. Graduates receive seed grants (over USD 1 million in total in 2026); it also seeds the Movement Infrastructure Lab grants.",
+    "website": "https://kickstartingforgood.org/",
+    "hq": "Germany",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://kickstartingforgood.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://kickstartingforgood.org/",
+        "title": "Kickstarting For Good Incubator - Kickstarting For Good",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://kickstartingforgood.org/incubator/frequently-asked-questions/",
+        "title": "Frequently Asked Questions - Kickstarting For Good",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://kickstartingforgood.org/legal-disclosure/",
+        "title": "Legal disclosure - Kickstarting For Good",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/CD2B4E52EhGtdsZgi/why-i-m-launching-a-movement-infrastructure-lab-a-request",
+        "title": "Why I’m launching a Movement Infrastructure Lab: a request for proposals — EA Forum",
+        "accessed": "2026-11-19",
+        "published": "2026-10-17"
+      }
+    ],
+    "notes": "Primarily an incubation programme rather than a grant-maker: funding goes to people accepted into the programme (every 2026 graduate receives at least USD 10,000, up to USD 100,000 on pitch day) plus development grants of up to USD 12,000 for some applicants not admitted. The site's legal disclosure names ProVeg International, Inc. Applicants worldwide are eligible; the in-person weeks are in Berlin, which is the basis for the Germany tags (no headquarters is stated). Kind is kept as \"funder\" to match the existing stub; \"programme\" would also fit."
+  },
+  {
+    "id": "mtu-loomus",
+    "name": "MTÜ Loomus",
+    "aliases": [
+      "Loomus"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "advocacy-campaigns",
+      "policy-law"
+    ],
+    "species": [
+      "fur-animals",
+      "farmed-fish",
+      "farmed-animals",
+      "companion-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "EE"
+    ],
+    "interventions": [
+      "legislation-policy",
+      "public-awareness",
+      "protest",
+      "diet-change"
+    ],
+    "approach": "mixed",
+    "summary": "Estonian animal advocacy organisation, founded in 2014, that works to raise the profile of animal issues in Estonia, promote animal-friendly behaviour and consumption, and shape animal protection policy. Its work includes fur farming, fish and other aquatic animals, and veganism.",
+    "website": "https://loomus.ee/",
+    "hq": "Estonia",
+    "founded": "2014",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://loomus.ee/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://loomus.ee/visioon/",
+        "title": "Loomade eestkoste - Loomakaitse - MTÜ Loomus",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://loomus.ee/en/news/",
+        "title": "News - Loomus",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://loomus.ee/kalad/",
+        "title": "Armas Kala (MTÜ Loomus)",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://funds.effectivealtruism.org/grants",
+        "title": "Grants Database | Effective Altruism Funds",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The main site and feed are in Estonian; the English feed (https://loomus.ee/en/feed/) is valid but its newest item is from September 2024. A November 2026 feed item calls for binding requirements to protect aquatic animals rather than expansion of aquaculture. The site was intermittently slow to respond."
+  },
+  {
+    "id": "national-lottery-community-fund",
+    "name": "The National Lottery Community Fund",
+    "aliases": [
+      "National Lottery Community Fund",
+      "Big Lottery Fund"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "UK public body that distributes money raised by National Lottery players to charities and community projects across the UK. A general community funder, not an animal welfare funder; listed because its Awards for All England programme (£300 to £20,000) funded a Crustacean Compassion project in 2026.",
+    "website": "https://www.tnlcommunityfund.org.uk/",
+    "hq": "United Kingdom",
+    "founded": "2004",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.tnlcommunityfund.org.uk/",
+        "title": "Home | The National Lottery Community Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.tnlcommunityfund.org.uk/funding/funding-programmes/national-lottery-awards-for-all-england",
+        "title": "National Lottery Awards for All England | The National Lottery Community Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.tnlcommunityfund.org.uk/about-us/our-strategy",
+        "title": "The National Lottery Community Fund Strategy 2023 to 2030",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/National_Lottery_Community_Fund",
+        "title": "National Lottery Community Fund - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Funds community projects that bring people together, with a focus on poverty, disadvantage and discrimination; animal welfare is not a stated priority, so the species field is left empty. Awards for All England is open to applications on a rolling basis with a decision in about 16 weeks. Founding year (formed June 2004 as the Big Lottery Fund) is from Wikipedia. Grant records use the id the-national-lottery-community-fund. The Crustacean Compassion grant comes from the 360Giving record already on the map, which was not re-fetched on 2026-11-19."
+  },
+  {
+    "id": "science-for-animal-welfare",
+    "name": "Science for Animal Welfare",
+    "aliases": [
+      "UFAW",
+      "Universities Federation for Animal Welfare",
+      "University of London Animal Welfare Society"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals",
+      "companion-animals",
+      "animals-in-research",
+      "wild-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "UK charity and international scientific society, founded in 1926 and known as UFAW until 2026, that funds and promotes animal welfare science. It offers small and large research grants, awards and scholarships to applicants worldwide, publishes the journal Animal Welfare and runs conferences.",
+    "website": "https://scienceforanimalwelfare.org/",
+    "hq": "United Kingdom",
+    "founded": "1926",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://scienceforanimalwelfare.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://scienceforanimalwelfare.org/what-we-do/our-history/",
+        "title": "Our history - Science for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://scienceforanimalwelfare.org/for-scientists/grants-and-awards/",
+        "title": "Grants and Awards - Science for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://scienceforanimalwelfare.org/award/large-research-grants/",
+        "title": "Large Research Grants - Science for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://scienceforanimalwelfare.org/",
+        "title": "Home - Science for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Open on 2026-11-19: Centenary Research Award (concept notes by 31 Dec 2026), Small Research Grants (up to £5,000) and Large Research Grants (over £5,000; deadlines 1 April and 1 October each year). Research on farmed animals in transport, at markets or at slaughter is referred to its sister charity, the Humane Slaughter Association. Registered charity in England no. 207996. More a scientific society that also makes grants than a pure funder; kind kept as \"funder\" to match the existing stub."
+  },
+  {
+    "id": "sharegift",
+    "name": "ShareGift",
+    "aliases": [
+      "The Orr Mackintosh Foundation"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "UK charity that collects donated shareholdings, sells them and passes the proceeds to UK registered charities as unrestricted one-off grants, guided by donor suggestions. A general funder, not animal-specific, and it takes no applications; it made a grant to Crustacean Compassion in 2026.",
+    "website": "https://www.sharegift.org/",
+    "hq": "United Kingdom",
+    "founded": "1996",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.sharegift.org/for-charities/",
+        "title": "For charities - ShareGift",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.sharegift.org/",
+        "title": "Home - ShareGift",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.sharegift.org/about-sharegift/",
+        "title": "About us - ShareGift",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Legal name The Orr Mackintosh Foundation Limited, registered charity no. 1052686. Founding year is inferred from its site, which says 2026 is its 30th year as a charity. Charities cannot apply; the suggested route is for a charity's supporters to donate shares and name it. Its site says it gave more than £10 million in 2025. Species left empty because it has no animal remit. Its RSS feed holds a single page item, so it is not listed. The 2026 Crustacean Compassion grant comes from the 360Giving record already on the map, which was not re-fetched on 2026-11-19."
+  },
+  {
+    "id": "strategic-animal-funding-circle",
+    "name": "Strategic Animal Funding Circle",
+    "aliases": [],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Group of donors that holds two collaborative grant rounds a year for animal welfare and protection non-profits, with a preference for organisations under four years old or with budgets under USD 500,000. It is not a pooled fund: each member makes independent funding decisions.",
+    "website": "https://www.animalfundingcircle.com/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.animalfundingcircle.com/",
+        "title": "HOME | Strategic Animal Funding Circle",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The site describes it as a project of Senterra Funders and Ambitious Impact. Its stated aims are funding welfare-focused interventions, supporting plant-based innovations and movement building in neglected regions. Members contribute at least USD 100,000 a year to farmed animal advocacy. The latest round closed on 1 November 2026, with decisions expected by early December; applicants must be registered non-profits or have a fiscal agent."
+  },
+  {
+    "id": "university-of-stirling",
+    "name": "University of Stirling (Institute of Aquaculture)",
+    "aliases": [
+      "University of Stirling",
+      "Institute of Aquaculture"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish"
+    ],
+    "regions": [
+      "uk",
+      "southeast-asia"
+    ],
+    "countries": [
+      "GB",
+      "TH",
+      "VN",
+      "ID"
+    ],
+    "interventions": [
+      "research",
+      "education",
+      "capacity-building"
+    ],
+    "approach": "research",
+    "summary": "Scottish university listed here for its Institute of Aquaculture, a teaching, research and consultancy centre for the aquaculture sector. The institute leads grant-funded projects on farmed fish welfare in Thailand, Vietnam and Indonesia, and UK research on fish health and welfare in salmon farming.",
+    "website": "https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/",
+        "title": "Institute of Aquaculture | About | University of Stirling",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.stir.ac.uk/news/2022/november-2022-news/funding-announced-for-major-aquaculture-project-in-thailand-and-vietnam/",
+        "title": "Funding announced for major aquaculture project in Thailand and Vietnam | University of Stirling",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.globalseafood.org/advocate/university-of-stirlings-new-grant-aims-to-advance-fish-welfare-and-responsible-aquaculture-in-southeast-asia/",
+        "title": "University of Stirling's new grant aims to advance fish welfare and responsible aquaculture in Southeast Asia - Responsible Seafood Advocate",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://gtr.ukri.org/find-research-and-innovation/project/8d91e5bd-2a56-483e-9f75-6210a34a7ff2",
+        "title": "UKRI Gateway to Research: BB/Z515255/1",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A research and teaching institution serving the aquaculture industry, not an advocacy group; welfare is one strand of its work. The website field points to the institute page rather than the university homepage. The 2022 university news item reports £780,000 from Open Philanthropy for the Thailand and Vietnam project; the later, larger grant covering Indonesia is reported by Global Seafood Alliance. The salmon work refers to the BBSRC-funded project on electric-powered aeration for fish welfare (Gateway to Research BB/Z515255/1)."
+  },
+  {
+    "id": "wageningen-university",
+    "name": "Wageningen University & Research",
+    "aliases": [
+      "WUR",
+      "Wageningen University",
+      "Wageningen Research"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "welfare-science"
+    ],
+    "species": [
+      "wild-fish",
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "research",
+      "humane-slaughter"
+    ],
+    "approach": "research",
+    "summary": "Dutch university and research organisation for life sciences and agriculture. Listed here for fish welfare research: Wageningen Research co-founded the Catch Welfare Platform in 2023, an industry and research network on the welfare of wild-caught fish, including stunning and slaughter on board.",
+    "website": "https://www.wur.nl/en.htm",
+    "hq": "Netherlands",
+    "founded": "1918",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.wur.nl/en/about-wur.htm",
+        "title": "About Wageningen University & Research | WUR",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://catchwelfareplatform.com/what-we-do/",
+        "title": "ABOUT US – catchwelfareplatform.com",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Wageningen_University_%26_Research",
+        "title": "Wageningen University & Research - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A large general research institution; fish welfare is a small part of its work. WUR's own pages on fish welfare research returned 404 or errors on 2026-11-19, so the welfare link rests on the Catch Welfare Platform site and the Coefficient Giving grant records for wild-caught fish welfare. \"Founded\" is the year it was recognised as a university (Wikipedia: established 1876 as an agricultural college)."
+  },
+  {
+    "id": "who-let-docs-out",
+    "name": "Who Let The Docs Out",
+    "aliases": [
+      "Who Let the Docs Out"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "community-media"
+    ],
+    "species": [
+      "all-animals",
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "public-awareness",
+      "capacity-building"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Filmmaker-led non-profit that makes grants to impact documentaries about animals, food systems and the planet, at four production stages and in three funding cycles a year. It also offers filmmakers worldwide mentorship, a community, distribution support and advises philanthropists on film funding.",
+    "website": "https://www.docsout.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.docsout.org/",
+        "title": "Who Let The Docs Out | Secure Funding Today – Apply Now",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.docsout.org/funding",
+        "title": "Grant Cycles — Who Let The Docs Out",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.docsout.org/about",
+        "title": "About Us — Who Let The Docs Out",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "wholetthedocsout.org redirects to docsout.org. Cycles on its site on 2026-11-19: 2026 Autumn (pre-applications closed 13 Nov 2026; full applications due 1 Jan), 2027 Spring (pre-application deadline 19 March 2027) and 2027 Summer (16 July 2027). The per-stage grant ceiling of USD 50,000 reported by Hive was not found on the pages fetched, which are partly script-rendered. Headquarters and founding year are not stated. Grant records use the id who-let-the-docs-out."
+  },
+  {
+    "id": "senterra-funders",
+    "name": "Senterra Funders",
+    "aliases": [
+      "Farmed Animal Funders",
+      "FAF",
+      "Senterra"
+    ],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "capacity-building",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Membership community of individual and institutional funders who each give USD 250,000 or more a year to end factory farming. It offers members philanthropic advising, shared learning and co-funding vehicles such as its Aquatic Animal Funding Circle and EU policy portfolio. Renamed in 2025.",
+    "website": "https://www.senterrafunders.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.senterrafunders.org/articles?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.senterrafunders.org/",
+        "title": "Senterra Funders",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.senterrafunders.org/opportunities-for-funders",
+        "title": "Advising | Empower Sustainable Giving Now — Senterra Funders",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.senterrafunders.org/how-we-work",
+        "title": "Our Work | Join the Movement Now — Senterra Funders",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/7qZ9tRiBztSqF9oNH/introducing-senterra-funders-the-new-name-for-farmed-animal",
+        "title": "Introducing Senterra Funders: the new name for Farmed Animal Funders — EA Forum",
+        "accessed": "2026-11-19",
+        "published": "2025-10-15"
+      }
+    ],
+    "notes": "A donor network, not a fund that charities can apply to: members make their own grants. Its homepage gives 56 members and says members account for roughly 75% of global philanthropic funding to end factory farming (its own figure). Founding year is reported as 2017 or 2018 by secondary sources and is left empty. Co-runs the Strategic Animal Funding Circle with Ambitious Impact. The newest item in its articles feed is from December 2025. The old domain farmedanimalfunders.org did not respond."
+  },
+  {
+    "id": "aquatic-animal-funding-circle",
+    "name": "Aquatic Animal Funding Circle",
+    "aliases": [],
+    "kind": "programme",
+    "parent_id": "senterra-funders",
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Funding circle hosted by Senterra Funders since January 2025 that brings major donors together to learn about, evaluate and co-fund work to reduce the suffering of farmed aquatic animals and prevent the growth of aquaculture, with a co-funding goal of at least USD 1 million per cycle.",
+    "website": "https://www.senterrafunders.org/articles/the-aquatic-animal-funding-circle-tmphf",
+    "hq": null,
+    "founded": "2025",
+    "status": "unclear",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.senterrafunders.org/articles/the-aquatic-animal-funding-circle-tmphf",
+        "title": "Aquatic Animal Funding Circle — Senterra Funders",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://forum-bots.effectivealtruism.org/posts/dBwoeth8y9dQjTeSw/aquatic-animal-funding-recommendations",
+        "title": "Aquatic Animal Funding Recommendations — EA Forum",
+        "accessed": "2026-11-19",
+        "published": "2025-08-14"
+      }
+    ],
+    "notes": "Open to Senterra members able to co-fund significantly, and case by case to other donors giving at least USD 100,000 per round; not open to public applications, though the 2025 cycle ran a request for proposals. In 2025 circle members and aligned funders granted over USD 1.5 million to ten organisations. Senterra's page describes the circle in the past tense, so whether a further cycle is running is not confirmed: status set to unclear. Stated inspiration: proposals from Rethink Priorities and Aquatic Life Institute."
+  },
+  {
+    "id": "india-animal-fund",
+    "name": "India Animal Fund",
+    "aliases": [
+      "IAF"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure",
+      "incubation-careers"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "grantmaking",
+      "capacity-building",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Indian organisation that works to build the country's farmed animal welfare field: it funds organisations and early-stage ideas, advises philanthropists, foundations and companies, incubates new organisations, connects NGOs with corporate funding and publishes research.",
+    "website": "https://indiaanimalfund.org/",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://indiaanimalfund.org/",
+        "title": "Farmed Animal Welfare in India | India Animal Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://indiaanimalfund.org/our-approach/",
+        "title": "Animal Welfare Funding & Philanthropy, Partnerships, Research India",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://indiaanimalfund.org/about-us/",
+        "title": "About India Animal Fund | Animal Welfare India",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The site does not describe an application process or state a founding year. It links to the India Animal Welfare Funding Circle. Its RSS feed holds only a placeholder post, so it is not listed. Also profiled in data/research/movement-south-entities.json under the same id."
+  },
+  {
+    "id": "india-animal-welfare-funding-circle",
+    "name": "India Animal Welfare Funding Circle",
+    "aliases": [],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "south-asia"
+    ],
+    "countries": [
+      "IN"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Group of donors that makes grants to animal-focused non-profits in India, particularly for farmed animals, in funding rounds. Each funder decides independently; it is not a pooled fund. Open to non-profits registered in India, partner programmes and people planning a new organisation.",
+    "website": "https://animalfundingcircle.in/",
+    "hq": "India",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalfundingcircle.in/",
+        "title": "India Animal Welfare Funding Circle | Strategic Animal Welfare Funding",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://indiaanimalfund.org/",
+        "title": "Farmed Animal Welfare in India | India Animal Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "The site is script-rendered: the description was read from the page metadata and the site's own script bundle (animalfundingcircle.in/assets/index-CASVqhLR.js), which says applicants need Indian 80G and 12A registration or a registered partner. Round dates were not readable; the site offers sign-up for round announcements. Linked from India Animal Fund's site; the relationship between the two is not spelled out. Named in Hive's fundraising guide."
+  },
+  {
+    "id": "thrive-philanthropy",
+    "name": "Thrive Philanthropy",
+    "aliases": [],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "global",
+      "africa",
+      "asia",
+      "latin-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "capacity-building",
+      "diet-change"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US-registered grantmaker funding initiatives that accelerate alternatives to industrial animal agriculture and build plant-rich food systems worldwide. It offers seed grants of up to USD 5,000, larger grants for established groups, and accelerators and programmes in Africa, Asia and Latin America.",
+    "website": "https://www.thrivephilanthropy.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.thrivephilanthropy.org/latest-news?format=rss",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.thrivephilanthropy.org/grants",
+        "title": "Apply | Join the Movement Today — Thrive Philanthropy",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.thrivephilanthropy.org/",
+        "title": "Thrive Philanthropy | Join Us to End Factory Farming",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Seed grants are aimed at new or smaller organisations, one-off projects and individuals without non-profit status; the larger grant type is mainly for mid-size and larger organisations with a track record or previous grantees. Application deadlines were not found on the pages fetched. Focus is plant-based food systems and diet change rather than farm welfare standards. Thrive Philanthropy, Inc. is a US 501(c)(3); founding year not found."
+  },
+  {
+    "id": "greenbaum-foundation",
+    "name": "The Greenbaum Foundation",
+    "aliases": [
+      "Greenbaum Foundation"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "north-america",
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "diet-change",
+      "public-awareness"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US private grantmaking foundation, operational since 1999, that now concentrates on moving the world to whole-food, plant-based diets and ending factory farming, including funding documentary films. It does not accept unsolicited proposals and does not fund sanctuaries.",
+    "website": "https://www.greenbaumfoundation.org/",
+    "hq": "United States",
+    "founded": "1999",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.greenbaumfoundation.org/about",
+        "title": "About — Greenbaum Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.greenbaumfoundation.org/contact",
+        "title": "Contact — Greenbaum Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.greenbaumfoundation.org/",
+        "title": "Greenbaum Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Invitation only. Its site says annual grant-making is currently in the USD 6-7 million range and that it still funds a small number of legacy human rights organisations. \"Founded\" is the year the site says it became fully operational. The global tag reflects its stated aim and internationally distributed films; where grantees are based was not checked."
+  },
+  {
+    "id": "quinn-foundation",
+    "name": "The Quinn Foundation",
+    "aliases": [
+      "Quinn Foundation"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "companion-animals",
+      "farmed-animals",
+      "farmed-fish",
+      "animals-in-research",
+      "wild-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US private family foundation that funds animal protection, the environment and a food system free of factory farming, mainly in the US. It is affiliated with Stray Dog Institute, through which it makes some international food-systems grants. It is not currently accepting unsolicited proposals.",
+    "website": "https://thequinnfoundation.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://thequinnfoundation.org/",
+        "title": "Home - The Quinn Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalgrantmakers.org/Sys/PublicProfile/41940796/1588687",
+        "title": "Animal Grantmakers - Member public profile: The Quinn Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Invitation only according to its own site; its Animal Grantmakers member profile suggests email outreach as the initial approach. That profile gives Leawood, United States, and lists funding for companion and equine animals, farmed land and aquatic animals (cows, pigs, poultry, fish), animals used in testing and some marine and wild animals, across direct care, policy, litigation, narrative change, movement building and diet change. Stray Dog Institute is already on the map as a separate entry; the two share founders. Founding year not found."
+  },
+  {
+    "id": "mobius",
+    "name": "Mobius",
+    "aliases": [
+      "Mobius Life"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "global",
+      "asia",
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "legislation-policy",
+      "alt-proteins"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Family office that gives to work on factory farming and the food system alongside its investments. Its stated philanthropic priorities are political advocacy for farmed animals, alternative proteins, neglected regions such as Asia, and newer organisations that can attract further funding.",
+    "website": "https://mobius.life/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://mobius.life/for-grant-seekers/",
+        "title": "For grant-seekers | Mobius",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://mobius.life/",
+        "title": "Mobius | Capital Allocation Office",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "How to apply: it considers unsolicited applications only through the Strategic Animal Funding Circle (two rounds a year). It has no endowment and gives according to yearly business results, so it rarely makes grant decisions between January and September and does not make multi-year commitments. Its site says it has donated over USD 40 million to food-system non-profits. Headquarters not stated; the US tag reflects its US policy work."
+  },
+  {
+    "id": "craigslist-charitable-fund",
+    "name": "Craigslist Charitable Fund",
+    "aliases": [
+      "CCF",
+      "Craigslist Fund"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Grant-making fund focused on ending animal exploitation, in particular animal agriculture. It accepts applications through an online portal from organisations anywhere in the world, with or without US charity status, and typically funds no more than 30% of an organisation's annual budget.",
+    "website": "https://www.craigslistfund.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.craigslistfund.org/faq",
+        "title": "Frequently Asked Questions — Craigslist Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.craigslistfund.org/",
+        "title": "Craigslist Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "No deadlines are stated; the FAQ says review can take up to 6 months and that it cannot meet urgent deadlines. Academic research is eligible if at most 10% goes to overheads. Its funding priorities page lists categories including schools and universities and documentaries, but the page is partly script-rendered and was not fully read. The United States base is inferred from FAQ references to the San Francisco Bay Area."
+  },
+  {
+    "id": "food-system-research-fund",
+    "name": "Food System Research Fund",
+    "aliases": [
+      "Food Systems Research Fund"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish",
+      "chickens"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "research",
+    "summary": "Research fund managed by the US non-profit Food System Innovations. It funds empirical studies on interventions for a more sustainable, plant-forward food system that could affect large numbers of animals, often fish and chickens. Grants are rarely above USD 50,000. Not accepting applications now.",
+    "website": "https://www.fsrfund.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.fsrfund.org/",
+        "title": "Food System Research Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.fsrfund.org/research-focus",
+        "title": "Research Focus — Food System Research Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.fsrfund.org/faqs",
+        "title": "FAQs & Policies — Food System Research Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.fsrfund.org/about",
+        "title": "About Us — Food System Research Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "On 2026-11-19 the site said it was not accepting applications and that its portal may re-open at any time; during a funding cycle applications are rolling, and it also issues requests for proposals with deadlines. It may support a PhD or postdoctoral project but not a programme generally. Food System Innovations is not on the map, so no parent is set. No worldwide eligibility statement was found; \"global\" reflects its stated aim of generalisable research."
+  },
+  {
+    "id": "effective-animal-advocacy-fund",
+    "name": "Effective Animal Advocacy Fund",
+    "aliases": [
+      "Giving What We Can Effective Animal Advocacy Fund"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Donor fund run by Giving What We Can. It pools donations and allocates them quarterly to grantmakers its research team judges best placed to improve animal welfare; the current plan is half to the EA Animal Welfare Fund and half to Animal Charity Evaluators' Movement Grants.",
+    "website": "https://www.givingwhatwecan.org/charities/effective-animal-advocacy-fund",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.givingwhatwecan.org/charities/effective-animal-advocacy-fund",
+        "title": "Effective Animal Advocacy Fund · Giving What We Can",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A fund for donors, not one that organisations apply to: applicants go to the EA Animal Welfare Fund or ACE Movement Grants. Giving What We Can says it reviews the allocation at least once a year. Giving What We Can itself is not on the map, so no parent is set."
+  },
+  {
+    "id": "effektiv-spenden-tierleid-verringern",
+    "name": "Spendenfonds: Tierleid verringern (Effektiv Spenden)",
+    "aliases": [
+      "Effektiv Spenden animal welfare fund",
+      "Tierleid verringern"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [
+      "DE"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Donation fund of the German effective-giving organisation Effektiv Spenden for reducing animal suffering, with a focus on farmed animals. Donations are pooled and passed on following the recommendations of the EA Animal Welfare Fund.",
+    "website": "https://effektiv-spenden.org/effektiver-tierschutz/",
+    "hq": "Germany",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://effektiv-spenden.org/effektiver-tierschutz/",
+        "title": "Tierleid verringern | Effektiv Spenden",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A fund for donors in Germany, not one that organisations apply to. The page (in German) also recommends individual charities assessed by Animal Charity Evaluators, such as The Humane League. Donors are in Germany; the money is regranted internationally, hence both region tags. The fund's own detail page was not fetched."
+  },
+  {
+    "id": "doneer-effectief-dierenwelzijn-fonds",
+    "name": "Fonds Dierenwelzijn & voedseltransitie (Doneer Effectief)",
+    "aliases": [
+      "Doneer Effectief animal welfare fund",
+      "Dierenwelzijn en voedseltransitie"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish"
+    ],
+    "regions": [
+      "europe",
+      "global"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Animal welfare and food transition fund of the Dutch effective-giving foundation Doneer Effectief (founded 2022). It pools donations for charities that improve farmed animal welfare or reduce consumption of animal products, basing allocations on Animal Charity Evaluators' evaluations.",
+    "website": "https://doneereffectief.nl/toporganisaties/dierenwelzijn-en-voedseltransitie/",
+    "hq": "Netherlands",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://doneereffectief.nl/toporganisaties/dierenwelzijn-en-voedseltransitie/",
+        "title": "Dierenwelzijn & voedseltransitie - Doneer Effectief",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://doneereffectief.nl/over-ons/",
+        "title": "Over ons - Doneer Effectief",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A fund for donors in the Netherlands, not one that organisations apply to. The page is in Dutch; its news items credit the fund with support for groups such as Animal Welfare Observatory. The 2022 date is when Doneer Effectief was founded; the fund's own start date was not found."
+  },
+  {
+    "id": "culture-and-animals-foundation",
+    "name": "Culture & Animals Foundation",
+    "aliases": [
+      "CAF"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "community-media"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "public-awareness"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Foundation, begun in 1985, that gives annual grants to scholars and artists whose research, creative work or performances build understanding of human-animal relationships and respect for animal rights. Grants are up to USD 5,000 and open to applicants in any country.",
+    "website": "https://cultureandanimals.org/",
+    "hq": null,
+    "founded": "1985",
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://cultureandanimals.org/feed/",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cultureandanimals.org/grants/",
+        "title": "Grants – Culture & Animals Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://cultureandanimals.org/grants/grant_faqs/",
+        "title": "Grant Essential Information – Culture & Animals Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://cultureandanimals.org/about/history/",
+        "title": "History – Culture & Animals Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Next cycle: proposals accepted 4-17 January 2027 or until 200 applications are received, whichever comes first; decisions by mid-March. Grants go to individuals, not institutions, and applications must be in English. Founded by the philosopher Tom Regan and Nancy Regan. Headquarters not stated on the pages fetched."
+  },
+  {
+    "id": "a-well-fed-world",
+    "name": "A Well-Fed World",
+    "aliases": [],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "advocacy-campaigns"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "diet-change",
+      "public-awareness"
+    ],
+    "approach": "unclear",
+    "summary": "Organisation working on hunger and plant-based food that runs global grants and climate-food funds. It has moved away from open online grant applications and now funds through its established partnership circles.",
+    "website": "https://awellfedworld.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://awellfedworld.org/grants/",
+        "title": "Global Grants, Climate Food & Impact Funds - A Well-Fed World",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Only its grants page was read. Not open to unsolicited applications as of 2026-11-19; the page invites sign-up to hear if open granting relaunches. Headquarters, founding year and its wider programmes were not verified, so approach is left as unclear."
+  },
+  {
+    "id": "marchig-animal-welfare-trust",
+    "name": "Marchig Animal Welfare Trust",
+    "aliases": [
+      "Marchig Trust"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "animals-in-research",
+      "wild-animals"
+    ],
+    "regions": [
+      "global",
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "UK charity established in 1989 that gives grants and awards for practical work preventing cruelty and relieving animal suffering, and for alternatives to animal experiments, anywhere except the USA and Canada. It is not accepting new grant applications until further notice.",
+    "website": "https://marchigtrust.org/",
+    "hq": "United Kingdom",
+    "founded": "1989",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://marchigtrust.org/",
+        "title": "The Marchig Animal Welfare Trust – Grants & Awards",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://marchigtrust.org/grants/",
+        "title": "Grants Programme – The Marchig Animal Welfare Trust",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Closed to new applications on 2026-11-19 because of the number of requests received. Past support listed on its site includes spay/neuter programmes, veterinary clinics, sanctuaries and anti-poaching work, so it is mainly a companion and wild animal funder rather than a farmed animal one. Registered charity nos. 802133 (England and Wales) and SC038057 (Scotland)."
+  },
+  {
+    "id": "parks-foundation-for-animal-welfare",
+    "name": "The William and Charlotte Parks Foundation for Animal Welfare",
+    "aliases": [
+      "Parks Foundation"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding"
+    ],
+    "species": [
+      "all-animals"
+    ],
+    "regions": [
+      "global"
+    ],
+    "countries": [],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Foundation that makes project grants, usually of no more than USD 10,000 a year, to animal protection organisations and scholars for projects and research that reduce animal suffering or improve the status of animals. Applicants must be registered charities in the US or their home country.",
+    "website": "https://www.parksfoundation.org/",
+    "hq": null,
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.parksfoundation.org/",
+        "title": "The William and Charlotte Parks Foundation for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.parksfoundation.org/types-of-grants",
+        "title": "Types of Grants — The William and Charlotte Parks Foundation for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.parksfoundation.org/how-to-apply",
+        "title": "How to Apply — The William and Charlotte Parks Foundation for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Applies through an online portal with a listed close date (the date itself was not readable on the pages fetched); notifications generally within 90 days of closing. Project grants only: no capital or general operating grants, and none for animal health, spay/neuter, endangered species, wildlife rehabilitation or basic US shelter costs. The site says the foundation has worked for nearly half a century; headquarters and founding year are not stated."
+  },
+  {
+    "id": "nc3rs",
+    "name": "NC3Rs",
+    "aliases": [
+      "National Centre for the Replacement, Refinement and Reduction of Animals in Research"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "animals-in-research"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "UK-based scientific organisation that works with the research community to replace, refine and reduce the use of animals in research and testing. It funds 3Rs research, studentships, fellowships and technology challenges, and publishes guidance and training resources.",
+    "website": "https://nc3rs.org.uk/",
+    "hq": "United Kingdom",
+    "founded": "2004",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://nc3rs.org.uk/who-we-are",
+        "title": "Who we are | NC3Rs",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://nc3rs.org.uk/our-funding-schemes",
+        "title": "Research and innovation funding schemes | NC3Rs",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://nc3rs.org.uk/",
+        "title": "NC3Rs",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/National_Centre_for_the_Replacement,_Refinement_and_Reduction_of_Animals_in_Research",
+        "title": "National Centre for the Replacement, Refinement and Reduction of Animals in Research - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "On 2026-11-19 its funding page said NC3Rs funding schemes are not open for applications at this time, with updates to follow on each scheme page. Concerned with animals used in science, not farmed animals. Full name and founding year (established 2004) are from Wikipedia."
+  },
+  {
+    "id": "foundation-for-food-and-agriculture-research",
+    "name": "Foundation for Food & Agriculture Research",
+    "aliases": [
+      "FFAR"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-technology"
+    ],
+    "species": [
+      "chickens",
+      "farmed-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "US food and agriculture research funder that works through public-private partnerships. Its animal programmes have included SMART Broiler (USD 4 million for automated broiler welfare monitoring, with McDonald's) and the Egg-Tech Prize for in-ovo sexing technology to end male chick culling.",
+    "website": "https://foundationfar.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://foundationfar.org/programs/smart-broiler/",
+        "title": "SMART Broiler - Foundation for Food & Agriculture Research",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://foundationfar.org/programs/egg-tech-prize/",
+        "title": "Egg-Tech Prize - Foundation for Food & Agriculture Research",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://foundationfar.org/what-we-do/research-priorities/production-systems/",
+        "title": "Production Systems - Foundation for Food & Agriculture Research",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://foundationfar.org/grants-funding/open-opportunities/",
+        "title": "Open Opportunities - Foundation for Food & Agriculture Research",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A general agricultural research funder oriented to production; welfare is one aim of its Production Systems priority, alongside productivity. Its open opportunities page said there were no open funding opportunities when fetched on 2026-11-19, while also listing consortium requests. The Egg-Tech Prize page says it offers up to USD 6 million and was run with Open Philanthropy. Founding year and legal basis were not verified."
+  },
+  {
+    "id": "fhf-norwegian-seafood-research-fund",
+    "name": "FHF – Norwegian Seafood Research Fund",
+    "aliases": [
+      "FHF",
+      "Fiskeri- og havbruksnæringens forskningsfinansiering"
+    ],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-fish",
+      "wild-fish",
+      "crustaceans"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "NO"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Norwegian state-owned company that funds research and development for the seafood industry, financed by a 0.3% levy on seafood exports. Fish health and welfare in salmon farming is one of its largest research areas, and it publishes calls for projects on topics such as welfare indicators.",
+    "website": "https://www.fhf.no/",
+    "hq": "Norway",
+    "founded": null,
+    "status": "active",
+    "feeds": [
+      {
+        "url": "https://www.fhf.no/feed-utlysninger",
+        "type": "rss",
+        "verified": true
+      },
+      {
+        "url": "https://www.fhf.no/feed-nyheter",
+        "type": "rss",
+        "verified": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.fhf.no/fhf/about-fhf-english/",
+        "title": "FHF – Norwegian Seafood Research Fund",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.fhf.no/prioriteringer/havbruk/fiskehelse-og-fiskevelferd/",
+        "title": "Fiskehelse og fiskevelferd – FHF",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.fhf.no/utlysninger/utlysninger/risikoreduserende-tiltak-ved-lave-oksygennivaa-i-aapne-merder/",
+        "title": "Risikoreduserende tiltak ved lave oksygennivå i åpne merder – FHF",
+        "accessed": "2026-11-19",
+        "published": "2026-09-24"
+      }
+    ],
+    "notes": "An industry research fund, not an advocacy funder: its goal is added value for the seafood industry, with welfare treated alongside survival, biosecurity and production. Owned by the Ministry of Trade, Industry and Fisheries, with an industry board. Site and feeds are in Norwegian (feed-utlysninger lists calls, feed-nyheter news). Open on 2026-11-19: a call of up to NOK 10 million on low oxygen in open sea cages, deadline 4 December 2026. Founding year not verified."
+  },
+  {
+    "id": "european-partnership-on-animal-health-and-welfare",
+    "name": "European Partnership on Animal Health and Welfare",
+    "aliases": [
+      "EUPAHW",
+      "EUP AH&W"
+    ],
+    "kind": "funder",
+    "parent_id": "european-commission",
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals",
+      "farmed-fish",
+      "chickens",
+      "pigs",
+      "cows"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "BE"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "education"
+    ],
+    "approach": "research",
+    "summary": "EU research partnership launched in 2024, expected to invest EUR 360 million over seven years in research on livestock, poultry and aquaculture health and welfare. Co-funded by Horizon Europe and national funders, it runs joint calls for research consortia. Coordinated by Ghent University.",
+    "website": "https://www.eupahw.eu/",
+    "hq": "Belgium",
+    "founded": "2024",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.eupahw.eu/",
+        "title": "EUPAHW - Home",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.eupahw.eu/about-us",
+        "title": "About us - EUPAHW",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://www.ukri.org/opportunity/shaping-the-future-of-animal-health-and-welfare/",
+        "title": "Shaping the future of animal health and welfare – UKRI",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Health (infectious disease control, antimicrobial use) is as central as welfare. Its site lists two external calls, but the open-calls pages are script-rendered and could not be read; the call described by UKRI (\"Shaping the future of animal health and welfare\", with national co-funders including BBSRC and Defra) had a pre-proposal deadline of 30 March 2026, with full proposals by invitation. Co-funded under Horizon Europe project 101136346. Parent set to the European Commission entry as its EU co-funder; national agencies fund their own countries' teams."
+  },
+  {
+    "id": "humane-slaughter-association",
+    "name": "Humane Slaughter Association",
+    "aliases": [
+      "Council of Justice to Animals"
+    ],
+    "kind": "organisation",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science",
+      "welfare-technology"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research",
+      "humane-slaughter",
+      "education"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK charity, founded in 1911, concerned with the welfare of food animals during transport, marketing and slaughter. It provides technical information and training, advises governments and industry, and funds science and technology for humane slaughter. Sister charity of Science for Animal Welfare.",
+    "website": "https://www.hsa.org.uk/",
+    "hq": "United Kingdom",
+    "founded": "1911",
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Humane_Slaughter_Association",
+        "title": "Humane Slaughter Association - Wikipedia",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://scienceforanimalwelfare.org/award/large-research-grants/",
+        "title": "Large Research Grants - Science for Animal Welfare",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "Its own site (hsa.org.uk) returned HTTP 403 to automated requests on 2026-11-19, so this profile rests on Wikipedia and on Science for Animal Welfare, which refers applicants working on farmed animal transport, markets or slaughter to HSA grants. Current grant schemes, amounts, deadlines, species covered (for example fish and crustaceans) and international reach were not verified: check the HSA site. Founded in 1911 as the Council of Justice to Animals. Usually abbreviated HSA, which the Hunt Saboteurs Association also uses, so the abbreviation is not listed as an alias. Also profiled in data/research/aquatic-gaps-entities.json under the same id; this entry adds its role as a research funder."
+  },
+  {
+    "id": "animal-health-and-welfare-pathway",
+    "name": "Animal Health and Welfare Pathway",
+    "aliases": [],
+    "kind": "programme",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "policy-law"
+    ],
+    "species": [
+      "farmed-animals",
+      "cows",
+      "chickens"
+    ],
+    "regions": [
+      "uk"
+    ],
+    "countries": [
+      "GB"
+    ],
+    "interventions": [
+      "grantmaking",
+      "farm-practices",
+      "producer-engagement"
+    ],
+    "approach": "welfare-reform",
+    "summary": "UK government programme for England that uses public funds to pay livestock farmers for health and welfare improvements: funded vet visits (the animal health and welfare review), capital grants and other schemes, with priorities set for each livestock sector together with industry, vets and NGOs.",
+    "website": "https://www.gov.uk/government/publications/animal-health-and-welfare-pathway/animal-health-and-welfare-pathway",
+    "hq": "United Kingdom",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://www.gov.uk/government/publications/animal-health-and-welfare-pathway/animal-health-and-welfare-pathway",
+        "title": "Animal Health and Welfare Pathway - GOV.UK",
+        "accessed": "2026-11-19",
+        "published": "2026-09-10"
+      }
+    ],
+    "notes": "Run by the Department for Environment, Food and Rural Affairs (Defra), which is not on the map, so no parent is set. Funding goes to farmers and vets, not to charities or researchers; it also aims to stimulate market demand for higher-welfare products. The page was last updated 10 September 2026 and applies to England only. The review launched in February 2023 and capital grants in March 2023; the Pathway's own start year was not read. Separately, Defra co-funds welfare research with BBSRC."
+  },
+  {
+    "id": "formas",
+    "name": "Formas",
+    "aliases": [],
+    "kind": "funder",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "welfare-science"
+    ],
+    "species": [
+      "farmed-animals"
+    ],
+    "regions": [
+      "europe"
+    ],
+    "countries": [
+      "SE"
+    ],
+    "interventions": [
+      "grantmaking",
+      "research"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Swedish government research council for sustainable development, covering the environment, agricultural sciences and spatial planning. Listed here as a funder: it has run dedicated calls for applied research on the protection and welfare of food-producing animals, at up to SEK 2 million per project.",
+    "website": "https://formas.se/en/",
+    "hq": "Sweden",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://formas.se/en/start-page/about-formas.html",
+        "title": "About Formas - Formas",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://formas.se/en/start-page/apply-for-funding/all-calls/calls/2023-04-24-applied-research-for-increased-animal-protection-and-welfare.html",
+        "title": "Applied research for increased animal protection and welfare - Formas",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A general research funder; animal welfare is a small, recurring strand. The call verified is from 2023 and required a research organisation plus an end user. Formas pages from 2025-2026 that mention animal welfare (an \"Action! From research to impact\" call and an idea-development call on animal protection and wellbeing) appeared in search results but were not fetched, so whether a welfare call is open now is not confirmed. Founding year not verified."
+  },
+  {
+    "id": "animal-grantmakers",
+    "name": "Animal Grantmakers",
+    "aliases": [],
+    "kind": "network",
+    "parent_id": null,
+    "categories": [
+      "funding",
+      "movement-infrastructure"
+    ],
+    "species": [
+      "all-animals",
+      "companion-animals",
+      "farmed-animals",
+      "wild-animals"
+    ],
+    "regions": [
+      "north-america"
+    ],
+    "countries": [
+      "US"
+    ],
+    "interventions": [
+      "capacity-building",
+      "grantmaking"
+    ],
+    "approach": "neutral-infrastructure",
+    "summary": "Affinity group for animal funders: foundations, public charities, corporate giving programmes and individual philanthropists working on issues affecting all types of animals. It runs an annual conference, publishes member profiles with funding areas and lists resources for grantseekers.",
+    "website": "https://animalgrantmakers.org/",
+    "hq": "United States",
+    "founded": null,
+    "status": "active",
+    "feeds": [],
+    "sources": [
+      {
+        "url": "https://animalgrantmakers.org/",
+        "title": "Animal Grantmakers",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalgrantmakers.org/grantseekers",
+        "title": "Resources for Grantseekers - Animal Grantmakers",
+        "accessed": "2026-11-19",
+        "published": null
+      },
+      {
+        "url": "https://animalgrantmakers.org/Sys/PublicProfile/41940796/1588687",
+        "title": "Animal Grantmakers - Member public profile: The Quinn Foundation",
+        "accessed": "2026-11-19",
+        "published": null
+      }
+    ],
+    "notes": "A membership body for funders, not a grant-maker: it does not fund charities itself. Its member profiles state each funder's species, project types, geography and preferred approach, which makes it a way to find US animal funders. Much of its programming concerns companion animals and shelters. The US base is inferred from its \"Animal Philanthropy in the United States\" resources and US-based conference; founding year not found."
+  }
+]
